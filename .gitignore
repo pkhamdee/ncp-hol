@@ -1,0 +1,27 @@
+.terraform.tfstate*
+.terraform/
+*_artifacts/
+terraform.tfstate.d/
+*.plan
+.DS_Store
+*DS_Store
+*.tfvars
+*.old
+site/
+__pycache__
+*.pyc
+
+# Secrets & credentials
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+*.p12
+*.pfx
+kubeconfig
+kubeconfig.*
+*kubeconfig*
+credentials
+credentials.*

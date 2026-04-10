@@ -1,0 +1,45 @@
+site_name: Nutanix Cloud Platform Boo
+theme:
+  name: material
+  logo: images/logo_nkp-solo.png
+  favicon: images/logo_nkp-solo.png
+  pallete:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.sections
+
+extra_css:
+  - stylesheets/nx.css
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+nav:
+  - Home: index.md
+  - Configuration:
+    - What is NCP: whatisncp.md
+    - Technology Overview: technologyoverview.md
+    - Storage Configuration: storageconfiguration.md
+    - Network Configuration: networkconfiguration.md
+  - Deploying and Managing Workloads:
+    - Deploying Workloads: deployingworkloads.md
+    - Managing Workloads: managingworkloads.md
+  - Protecting Workloads:
+    - Data Protection: dataprotection.md
+  - Appendix:
+    - Environment Details: environmentdetails.md
