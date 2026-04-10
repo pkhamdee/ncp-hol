@@ -35,8 +35,7 @@ Prism Central คือแพลตฟอร์มการจัดการแ
     -   Tasks
 5.  ถัดไป ให้ดูที่ส่วน App Switcher ที่มุมบนซ้ายของ Prism Central
     
-    หมายเหตุ
-    
+    !!! หมายเหตุ
     คุณสามารถใช้ App Switcher เพื่อนำทางและเข้าถึงความสามารถต่างๆ ของ Nutanix Cloud Platform ที่เปิดใช้งานผ่าน Prism Central ได้อย่างรวดเร็ว
     
     ![](images/pc-login-app-switcher2.447a12a8.png)
