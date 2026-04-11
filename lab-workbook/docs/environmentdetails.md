@@ -66,3 +66,7 @@ PHX Example:
 -   **Type** - Policy Secure (UAC) or Connection Server
 -   **Name** - X-Labs - PHX
 -   **Server URL** - phx-vpn.xlabs.nutanix.com
+
+---
+
+[← Back: Data Protection](dataprotection.md) | [Home](index.md)

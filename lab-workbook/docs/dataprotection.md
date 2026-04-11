@@ -154,3 +154,7 @@ Protection policies คือนโยบายที่สามารถกำ
   - Nutanix นำเสนอโซลูชันการป้องกันข้อมูลสำหรับเวอร์ชวลดาต้าเซ็นเตอร์ผ่านกลยุทธ์ที่หลากหลาย รวมถึงการทำสำเนา (replication) แบบหนึ่งต่อหนึ่ง (one-to-one) หรือแบบหนึ่งต่อหลายจุด (one-to-many)
   - Nutanix มีฟังก์ชันการป้องกันข้อมูลในระดับ VM, ไฟล์ และกลุ่มวอลุ่ม (volume group) เพื่อให้มั่นใจได้ว่า VM และข้อมูลต่างๆ จะปลอดภัย
   - นโยบายการทำสแนปช็อตและทำสำเนาระดับ VM สามารถจัดการได้ผ่าน Prism Central สำหรับไฮเปอร์ไวเซอร์ (hypervisor) ทุกตัวที่รองรับ
+
+---
+
+[← Back: Managing Workloads](managingworkloads.md) | [Home](index.md) | [Next: Environment Details →](environmentdetails.md)
