@@ -1,0 +1,11 @@
+!!! note: General information.
+!!! tip: Helpful advice or shortcuts.
+!!! warning: Important alerts to prevent errors.
+!!! danger: Critical warnings about potential data loss or security.
+!!! info: Supplemental background information.
+
+!!! note "Optional Title"
+    This is the content of the note. It must be indented.
+
+!!! warning
+    This is a warning block without a custom title.

@@ -5,9 +5,9 @@ description: >-
 
 # Nutanix Cloud Platform Bootcamp
 
-ยินดีต้อนรับสู่ Nutanix Cloud Platform (NCP) Bootcamp! คุณจะได้สัมผัสประสบการณ์การใช้งาน Prism Central (PC) และทำความคุ้นเคยกับฟีเจอร์ต่างๆ รวมถึงการใช้งานเมนูนำทาง โดยคุณจะได้ใช้ PC ในการทำงานด้านการบริหารจัดการ Cluster ขั้นพื้นฐาน ซึ่งรวมถึงด้าน storage และ networking นอกจากนี้ คุณจะได้เรียนรู้ขั้นตอนพื้นฐานในการ deploy และบริหารจัดการ VM ผ่าน Prism และ AHV
+ยินดีต้อนรับสู่ Nutanix Cloud Platform (NCP) Bootcamp คุณจะได้สัมผัสประสบการณ์การใช้งาน Prism Central (PC) และทำความคุ้นเคยกับฟีเจอร์ต่างๆ รวมถึงการใช้งานเมนูนำทาง โดยคุณจะได้ใช้ PC ในการทำงานด้านการบริหารจัดการ Cluster พื้นฐาน ซึ่งรวมถึงด้าน storage และ networking นอกจากนี้ คุณจะได้เรียนรู้ขั้นตอนพื้นฐานในการ deploy และบริหารจัดการ VM ผ่าน Prism และ AHV
 
-เมื่อจบ Bootcamp นี้ คุณจะเข้าใจแนวคิดและหลักการณ์รวมถึงเทคโนโลยีต่างๆ ที่ประกอบกันขึ้นเป็น Nutanix Cloud Platform (NCP)
+เมื่อจบ Bootcamp นี้ คุณจะเข้าใจแนวคิดและหลักการ รวมถึงเทคโนโลยีต่างๆ ที่ประกอบกันขึ้นเป็น Nutanix Cloud Platform (NCP)
 
 ## Table of Contents
 

@@ -1,8 +1,8 @@
-site_name: Nutanix Cloud Platform Boo
+site_name: Nutanix Cloud Platform
 theme:
   name: material
-  logo: images/logo_nkp-solo.png
-  favicon: images/logo_nkp-solo.png
+  logo: images/nutanix-logo.png
+  favicon: images/nutanix-logo.png
   pallete:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -20,6 +20,8 @@ theme:
 extra_css:
   - stylesheets/nx.css
 markdown_extensions:
+  - toc:
+      permalink: true
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -31,7 +33,7 @@ markdown_extensions:
       linenums: true
 nav:
   - Home: index.md
-  - Configuration:
+  - Introduction:
     - What is NCP: whatisncp.md
     - Technology Overview: technologyoverview.md
     - Storage Configuration: storageconfiguration.md
