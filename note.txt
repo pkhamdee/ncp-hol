@@ -9,3 +9,4 @@
 
 !!! warning
     This is a warning block without a custom title.
+
