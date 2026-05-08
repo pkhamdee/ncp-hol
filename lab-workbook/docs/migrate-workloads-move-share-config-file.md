@@ -1,105 +1,100 @@
-# Untitled Page
+# Configuring Nutanix Files
 
-# [#](#configuring-nutanix-files) Configuring Nutanix Files
+ในส่วนนี้ คุณจะทำการสร้าง Nutanix Files share บน cluster ที่ถูก provision ไว้ให้โดยอัตโนมัติของเรา share นี้จะเป็นปลายทาง (destination) สำหรับ source share ที่เรากำลังจะทำการ migrate
 
-In this section, you will create a Nutanix Files share on our automatically provisioned cluster. This share is the destination for the source share we are migrating.
+## Creating A Nutanix Files Share
 
-## [#](#creating-a-nutanix-files-share) Creating A Nutanix Files Share
+เราได้ทำการสร้าง 1-node Files instance ที่ชื่อว่า `nextfiles` ซึ่งทำงานอยู่ใน lab สำหรับแบบฝึกหัดนี้ ผู้ใช้จะต้องล็อกอินเข้าสู่ Prism Central ทำการ access Files จากที่นั่น และสร้าง share ที่ไม่ซ้ำกัน share นี้จะทำหน้าที่เป็น destination share สำหรับ data migration ในบทถัดไป
 
-We have already created a 1-node Files instance called `nextfiles` running in the lab for this exercise. Users will log onto Prism Central, access Files from there, and create a unique share. This share will also serve as the destination share for data migration in the next chapter.
-
-1.  Connect to Prism Central from within your VDI session. Ensure the Login screen says **Login with your Company ID**
+1.  เชื่อมต่อเข้าสู่ Prism Central จากภายใน VDI session ของคุณ ตรวจสอบให้แน่ใจว่าหน้า Login ระบุว่า **Login with your Company ID**
     
-    -   **username** - `<PC username> adminuser##@ntnxlab.local` or `adminuser##`
-    -   **password** - `<PC password provided>` from Connection Details
+    -   **username** - `<PC username> adminuser##@ntnxlab.local` หรือ `adminuser##`
+    -   **password** - `<PC password provided>` จาก Connection Details
 
-![](/images/pc-login.0df391a6.png)
+    ![](/images/pc-login.0df391a6.png)
 
-1.  Navigate to the App Switcher section in the top left of Prism Central.
+2.  นำทางไปยังส่วน App Switcher ที่บริเวณด้านซ้ายบนของ Prism Central
     
-    Note
+    !!! note
+        คุณสามารถใช้ App Switcher เพื่อ navigate ระหว่างส่วนต่างๆ ใน Prism Central ได้อย่างรวดเร็ว
     
-    You can use the App Switcher to quickly navigate between sections in Prism Central.
-    
-    Click `Files` in the App Switcher under Unified Storage.
+    คลิก `Files` ใน App Switcher ภายใต้ Unified Storage
     
     ![](/images/open-files.12edd40b.png)
     
-    A file server called **nextfiles** has already been deployed for your use. Click on the name `nextfiles` to access it.
+    file server ที่ชื่อว่า **nextfiles** ได้ถูก deploy ไว้ให้คุณใช้งานเรียบร้อยแล้ว คลิกที่ชื่อ `nextfiles` เพื่อเข้าใช้งาน
     
     ![](/images/nextfiles.edaf5e80.png)
     
-2.  Click on `Shares & Exports` from the top menu.
+3.  คลิกที่ `Shares & Exports` จาก top menu
     
     ![](/images/open-shares.8317afbc.png)
     
-3.  Click `+New Share or Export`.
+4.  คลิก `+New Share or Export`
     
     ![](/images/new-share.9eac7203.png)
     
-4.  Enter `user##` within the **Name** field where `##` is your assigned `User #` from Connection Details. For the rest, leave the default values. For your information, these are the field definitions. Click `Next`
+5.  ใส่ค่า `user##` ในฟิลด์ **Name** โดยที่ `##` คือ `User #` ที่คุณได้รับมอบหมายจาก Connection Details สำหรับส่วนที่เหลือ ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
 
--   Description: User-friendly description of share.
+    -   Description: คำอธิบายเกี่ยวกับ share ที่เข้าใจง่าย
     
--   Share Path: Only for share/export on an existing path.
+    -   Share Path: สำหรับ share/export บน path ที่มีอยู่แล้วเท่านั้น
     
--   Max Size: If you want to restrict the size of share/export to a particular size.
+    -   Max Size: หากคุณต้องการจำกัดขนาดของ share/export ให้มีขนาดเฉพาะเจาะจง
     
--   Primary Protocol Access: Select `SMB (Ideal for Windows Clients)`, since the source share is Windows.
+    -   Primary Protocol Access: เลือก `SMB (Ideal for Windows Clients)` เนื่องจาก source share เป็น Windows
     
     ![](/images/create-file-share1.f799c6c7.png)
     
 
-5.  On the General Settings page, keep the default values. For your information, these are the field definitions. Click `Next`
+6.  ในหน้า General Settings ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
-    -   Enable Self-Service Restore: Allows users to restore files on File Server.
-    -   Enable Compression: Enable Compression on share to provide space savings.
-    -   Blocked File Types: Restrict file types that can be stored on the share/export. ![](/images/create-file-share2.11134c2f.png)
-6.  On the Protocol Settings and Permissions page, keep the default values. For your information, these are the field definitions. Click `Next`
+    -   Enable Self-Service Restore: อนุญาตให้ผู้ใช้งานสามารถ restore files บน File Server ได้
+    -   Enable Compression: เปิดใช้งาน Compression บน share เพื่อช่วยประหยัดพื้นที่จัดเก็บ
+    -   Blocked File Types: จำกัดประเภทของ file ที่อนุญาตให้จัดเก็บไว้บน share/export ได้ ![](/images/create-file-share2.11134c2f.png)
+
+7.  ในหน้า Protocol Settings and Permissions ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
-    -   Enable Access Based Enumeration (ABE): Restrict access to files and folders to only the ones that users have access to.
-    -   Encrypt SMB3 Messages: Encrypt SMB messages between Clients and shares.
-    -   SMB Continuous Availability: Allows File share access during planned or unplanned outages.
-    -   Share Permissions: Setup access permissions for Users and Groups for the share
+    -   Enable Access Based Enumeration (ABE): จำกัดการเข้าถึง files และ folders ให้เห็นเฉพาะสิ่งที่ผู้ใช้มีสิทธิ์เข้าถึงเท่านั้น
+    -   Encrypt SMB3 Messages: เข้ารหัส (Encrypt) ข้อความ SMB ระหว่าง Clients และ shares
+    -   SMB Continuous Availability: อนุญาตให้เข้าถึง File share ได้ในระหว่างที่มี outage ทั้งแบบที่มีการวางแผนไว้และไม่ได้วางแผนไว้
+    -   Share Permissions: ตั้งค่าสิทธิ์การเข้าถึงสำหรับ Users และ Groups สำหรับ share
     
-    Note
+    !!! note
+        หากเราทำงานกับ file server แบบ 3-node หรือใหญ่กว่านั้น จะมีตัวเลือกในการกำหนด share ให้เป็นแบบ **Distributed** สิ่งนี้จะกระจาย top-level directories ไปยัง File Server VMs (FSVM) ทั้งหมด รวมถึงการทำ load balance ของ connections และ data ทั่วทั้ง Files cluster
     
-    If we were working with a 3-node or larger file server, there would also be the option to designate the share as **Distributed**. This would distribute top-level directories across all File Server VMs (FSVM), load balance connections and data across the Files cluster.
-    
-    In this case, we use a standard share, where the file server is serviced from a single FSVM.
+    ในกรณีนี้ เราใช้ standard share ซึ่ง file server จะให้บริการจาก FSVM เพียงตัวเดียว
     
     ![](/images/create-file-share3.95f8021f.png)
     
-7.  On the Summary page, Confirm the settings and click `Create`. The share will appear in a few moments, and is available for storing files.
+8.  ในหน้า Summary ตรวจสอบความถูกต้องของการตั้งค่าและคลิก `Create` share จะปรากฏขึ้นในไม่ช้า และพร้อมสำหรับจัดเก็บ files
     
     ![](/images/create-file-share4.74e50973.png)![](/images/create-file-share5.fbf0248d.png)
     
 
-## [#](#create-rest-api-user) Create REST API user
+## Create REST API user
 
-To perform share migration with Move, Move requires a REST API user to be created on Nutanix Files. Let's do that.
+ในการดำเนินการ share migration ด้วย Move ตัวของ Move จำเป็นต้องให้มีการสร้าง REST API user บน Nutanix Files มาเริ่มต้นทำกันเลย
 
-1.  Click `Configuration > Manage Roles` from the Nutanix Files top menu
+1.  คลิก `Configuration > Manage Roles` จาก top menu ของ Nutanix Files
 
-![](/images/new-api-user.7a9f9220.png)
+    ![](/images/new-api-user.7a9f9220.png)
 
-2.  In REST API access users, Click `+New User`
+2.  ในส่วนของ REST API access users ให้คลิก `+New User`
     
     ![](/images/new-api-user2.f39cdf32.png)
     
-3.  Create a New user with the following credentials and click the check mark. Remember this username and password for the next section. You're free to choose a different password, but you'll need this later.
-    
+3.  ทำการสร้าง New user โดยใช้ credentials ต่อไปนี้ แล้วคลิกที่เครื่องหมายถูก (check mark) โปรดจำ username และ password นี้ไว้ใช้สำหรับส่วนถัดไป คุณสามารถเลือกใช้ password อื่นได้ตามอิสระ แต่คุณจะต้องใช้มันในภายหลัง
 
--   **username** : `adminuser##`
--   **password** : `dotNext25!`
+    -   **username** : `adminuser##`
+    -   **password** : `dotNext25!`
 
-Note
+    !!! note
+        อย่าลืมคลิกที่เครื่องหมายถูก (check mark)
 
-Remember to click the check mark.
+    ![](/images/new-api-user3.8f91f596.png)
 
-![](/images/new-api-user3.8f91f596.png)
+4.  จาก App Switcher คุณสามารถกลับไปยังส่วนของ Infrastructure
 
-4.  From the App Switcher, you can go back to Infrastructure section.
-
-Now that we have the environment set up and configured, in the next section you will learn how to migrate file shares.
+ตอนนี้เราได้ทำการ set up และ configure ตัว environment เรียบร้อยแล้ว ในส่วนถัดไปคุณจะได้เรียนรู้วิธีการ migrate file shares

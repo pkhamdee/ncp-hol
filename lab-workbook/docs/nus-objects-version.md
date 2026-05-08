@@ -1,62 +1,60 @@
-# Nutanix Unified Storage
+# Versioning And Access Controls
 
-# [#](#objects-versioning-and-access-controls) Objects: Versioning And Access Controls
+## Accessing And Creating Buckets With Objects Browser
 
-## [#](#accessing-and-creating-buckets-with-objects-browser) Accessing And Creating Buckets With Objects Browser
+ในแบบฝึกหัดนี้ คุณจะได้ใช้ Objects Browser เพื่อสร้างและใช้งาน buckets ใน object store โดยใช้ access key ที่คุณสร้างขึ้น (generated)
 
-In this exercise, you will use Objects Browser to create and use buckets in the object store using your generated access key.
+### Download the Sample Images
 
-### [#](#download-the-sample-images) Download the Sample Images
-
-1.  Copy this link `http://10.42.194.11/hol/unified-storage/SampleData_Small.zip` and paste it within a new Chrome browser tab. This will download sample files to your Win-Tools VM.
+1.  คัดลอกลิงก์นี้ `http://10.42.194.11/hol/unified-storage/SampleData_Small.zip` และวางลงในแท็บเบราว์เซอร์ Chrome ใหม่ การทำเช่นนี้จะดาวน์โหลด sample files ลงใน Win-Tools VM ของคุณ
     
-2.  Open the Windows File Explorer. Within the _Downloads_ folder, right-click on **SampleData\_Small.zip**, and choose **Extract All**.
+2.  เปิด Windows File Explorer ภายในโฟลเดอร์ _Downloads_ ให้คลิกขวาที่ **SampleData\_Small.zip** และเลือก **Extract All**
     
-3.  Click **Browse**, select your **Downloads** folder, and click **Extract**.
+3.  คลิก **Browse** เลือกโฟลเดอร์ **Downloads** ของคุณ และคลิก **Extract**
     
 
-### [#](#use-object-browser-to-create-a-bucket) Use Object Browser To Create A Bucket
+### Use Object Browser To Create A Bucket
 
-1.  Return to your Objects Store browser tab. Click on **Launch Objects Browser**. The Objects Browser will open in a new tab.
+1.  กลับไปที่แท็บเบราว์เซอร์ Objects Store ของคุณ คลิกที่ **Launch Objects Browser** หน้าต่าง Objects Browser จะเปิดขึ้นในแท็บใหม่
     
-2.  Enter the **Access Key** and **Secret Key** information and click **Login**.
+2.  ป้อนข้อมูล **Access Key** และ **Secret Key** แล้วคลิก **Login**
     
-3.  Click **Create Bucket**.
+3.  คลิก **Create Bucket**
     
-4.  Enter the following name for your bucket, and click **Create**.
+4.  ป้อนชื่อต่อไปนี้สำหรับ bucket ของคุณ และคลิก **Create**
     
     -   **Bucket Name** - `user##`\-test-bucket
     -   **Enable versioning** - checked
     
-    ![](/unified-storage/assets/1.e9098eda.png)
+    ![](/images/1.e9098eda.png)
     
-    Creating a bucket in this fashion allows for self-service for entitled users. It is no different from a bucket created via the Prism Buckets UI.
+    การสร้าง bucket ด้วยวิธีนี้จะช่วยให้ผู้ใช้ที่มีสิทธิ์สามารถทำ self-service ได้ ซึ่งไม่มีความแตกต่างจาก bucket ที่ถูกสร้างผ่าน Prism Buckets UI
     
-5.  Click **`user##`\-test-bucket**.
+5.  คลิก **`user##`\-test-bucket**
     
-6.  Choose **Select Folder** from the _Upload Objects_ drop-down.
+6.  เลือก **Select Folder** จากเมนู drop-down ของ _Upload Objects_
     
-    ![](/unified-storage/assets/2.81578a16.png)
+    ![](/images/2.81578a16.png)
     
-7.  Navigate to your Downloads directory, and within the _Sample Data_ folder, select the **Pictures** folder. Once the uploads have been completed, click **Close**.
+7.  นำทางไปยัง directory Downloads ของคุณ และภายในโฟลเดอร์ _Sample Data_ ให้เลือกโฟลเดอร์ **Pictures** เมื่อการอัปโหลดเสร็จสมบูรณ์ ให้คลิก **Close**
     
 
-## [#](#object-versioning) Object Versioning
+## Object Versioning
 
-Object versioning allows the upload of new versions of the same object for required changes without losing the original data. Versioning can be used to preserve, retrieve and restore every version of every object stored within a bucket, allowing for easy recovery from unintended user actions and application failures.
+Object versioning อนุญาตให้อัปโหลด new versions ของ object เดิมเพื่อทำการเปลี่ยนแปลงที่จำเป็นโดยไม่สูญเสีย original data ไป Versioning สามารถนำมาใช้เพื่อรักษา (preserve), ดึงข้อมูล (retrieve) และกู้คืน (restore) ทุกๆ version ของแต่ละ object ที่จัดเก็บอยู่ภายใน bucket ซึ่งช่วยให้สามารถกู้คืน (recovery) ได้อย่างง่ายดายจากการกระทำของผู้ใช้ที่ไม่ได้ตั้งใจ (unintended user actions) และ application failures
 
-1.  Within your Remote Desktop session, open Notepad.
+1.  ภายใน Remote Desktop session ของคุณ ให้เปิดโปรแกรม Notepad
     
-2.  Type `version 1.0`. Save the file with **version.txt** as the name within your _Downloads_ folder.
+2.  พิมพ์ `version 1.0` บันทึกไฟล์โดยตั้งชื่อว่า **version.txt** ไว้ภายในโฟลเดอร์ _Downloads_ ของคุณ
     
-3.  Return to the Objects Browser tab. Upload the file. Once the uploads have been completed, click **Close**.
+3.  กลับไปที่แท็บ Objects Browser อัปโหลดไฟล์ดังกล่าว เมื่อการอัปโหลดเสร็จสมบูรณ์ ให้คลิก **Close**
     
-4.  Return to Notepad. Replace the text with `version 2.0`, and save it using the same file name and location.
+4.  กลับไปที่ Notepad แทนที่ข้อความด้วย `version 2.0` และบันทึกไฟล์โดยใช้ชื่อไฟล์และตำแหน่ง (location) เดิม
     
-5.  Within your Objects Browser tab, upload the modified file.
+5.  ภายในแท็บ Objects Browser ของคุณ ให้อัปโหลดไฟล์ที่ถูกแก้ไขไป
     
-6.  Select your **version.txt** file. Within the _Actions_ drop-down, select **Versions**.
+6.  เลือกไฟล์ **version.txt** ของคุณ ในเมนู drop-down ของ _Actions_ ให้เลือก **Versions**
     
-7.  Notice that both versions of the file were preserved, along with a _Latest_ tag to identify the latest version.
+7.  สังเกตว่าไฟล์ทั้งสองเวอร์ชันจะถูกเก็บรักษา (preserved) ไว้ พร้อมกับแท็ก _Latest_ เพื่อระบุว่าเป็น latest version
     
-8.  Click **Close**, and **Back to Object Store**.
+8.  คลิก **Close** และ < **Back to Object Store**

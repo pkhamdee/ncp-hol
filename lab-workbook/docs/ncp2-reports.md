@@ -24,17 +24,16 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
 3.  เลือก **Reports** จาก Intelligent Operations Dashboard
     
 4.  เราสามารถดูรายการ pre-defined system reports ตลอดจน custom reports ได้
-    
 
-![](/images/report1.61a9a0d1.png)
+    ![](/images/report1.61a9a0d1.png)
 
 5.  เราจะค้นหา Cluster Usage report ตาม use case ของเรา ป้อน "**Cluster Usage**" ในฟิลด์ filter by
 
-![](/images/report2.2d08c57d.png)
+    ![](/images/report2.2d08c57d.png)
 
 6.  เลือก **Cluster Usage Summary** และคลิก **Actions**
 
-![](/images/report3.c888522c.png)
+    ![](/images/report3.c888522c.png)
 
 7.  report นี้เป็น pre-defined system Report ตัว System report สามารถถูก run, scheduled, shared และ cloned เพื่อทำการเปลี่ยนแปลงได้ ตอนนี้ให้เลือก **Run**
     
@@ -48,8 +47,7 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
     
 12.  เลือก PDF เป็น Report Format
     
-
-![](/images/report4.68cbb778.png)
+    ![](/images/report4.68cbb778.png)
 
 13.  ป้อน Email Address ของคุณ หากคุณต้องการให้ส่ง report ไปให้คุณทางอีเมล
     
@@ -63,5 +61,4 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
     
 18.  นี่คือตัวอย่างลักษณะของ report ที่จะได้
     
-
-![](/images/report5.43db3977.png)
+    ![](/images/report5.43db3977.png)

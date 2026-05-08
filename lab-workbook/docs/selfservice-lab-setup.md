@@ -16,19 +16,18 @@
 
 1. เข้าสู่ระบบ Prism Central โดยใช้ `adminuser##` และรหัสผ่าน PC จากหน้า Connection Details
 
-TIP
+    !!! tip
+        ตรวจสอบให้แน่ใจว่ามีข้อความ **Login with your Company ID** แสดงอยู่บนหน้าจอเข้าสู่ระบบ
 
-ตรวจสอบให้แน่ใจว่ามีข้อความ **Login with your Company ID** แสดงอยู่บนหน้าจอเข้าสู่ระบบ
-
-1. เลือก drop-down **App Switcher** ที่ด้านบน แล้วเลือก **Admin Center**
+2. เลือก drop-down **App Switcher** ที่ด้านบน แล้วเลือก **Admin Center**
     
     ![](/images/Picture1.99d4d98d.png)
     
-2. คลิก **Projects** จากเมนูด้านซ้าย จากนั้นคลิกปุ่ม **Create Project**
+3. คลิก **Projects** จากเมนูด้านซ้าย จากนั้นคลิกปุ่ม **Create Project**
     
     ![](/images/Picture2.ab0bbbcb.png)
     
-3. ในช่อง **Project Name** ให้กรอก `User##`-Project จากนั้นคลิก Create
+34. ในช่อง **Project Name** ให้กรอก `User##`-Project จากนั้นคลิก Create
     
     ![](/images/Picture3.2c164cba.png)
     
@@ -51,7 +50,6 @@ TIP
     
     ![](/images/Picture4a-InfrastructureSummary.1767d57a.png)
     
-
 ### Configure an Environment
 
 Environment คืออะไร?
@@ -82,12 +80,12 @@ Environment คืออะไร?
             - เลื่อนลงมาที่ส่วน _Disks_ และเลือก **Rocky9.qcow2** จาก drop-down _Image_
             - เลื่อนลงมาที่ส่วน _Network Adapters (NICs)_ และคลิก
                 - เลือก **Primary** จาก drop-down _NIC 1_
-        - คลิก **Next > Add Credential** แล้วกรอกข้อมูลในช่องต่อไปนี้:
+        - คลิก **Next >+ Add Credential** แล้วกรอกข้อมูลในช่องต่อไปนี้:
             - **Name** - WINDOWS
             - **Username** - `administrator`
             - **Secret Type** - Password
             - **Password** - `nutanix/4u`
-        - คลิก **Add Credential**
+        - คลิก **+Add Credential**
             - **Name** - ROCKY
             - **Username** - `rocky`
             - **Secret Type** - Password
@@ -103,7 +101,7 @@ Environment คืออะไร?
 1. จากเมนูด้านบน เลือก **Users & Groups**
     - คลิก **Add/Edit Users & Groups**
         
-    - คลิก **Add User**
+    - คลิก **+Add User**
         
         - **Name** - Administrators (group)
         - **Role** - Project Admin
@@ -130,6 +128,6 @@ Snapshot policy ช่วยให้คุณสามารถกำหนด 
 
 คุณได้เสร็จสิ้นกระบวนการ setup แล้ว และสามารถไปยังส่วนใดส่วนหนึ่งหรือทั้งหมดของเนื้อหาเหล่านี้ได้เลย:
 
-- [Calm IaaS: Linux](/calm_iaas_linux.html)
-- [Calm IaaS: Windows](/calm_iaas_windows.html)
-- [Calm DSL](/calm_dsl.html)
+- [Calm IaaS: Linux](/selfservice-linux/index.html)
+- [Calm IaaS: Windows](/selfservice-windows/index.html)
+- [Calm DSL](/selfservice-dsl/index.html)

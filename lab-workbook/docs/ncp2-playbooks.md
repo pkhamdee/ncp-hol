@@ -71,7 +71,7 @@ IT Admin ต้องการรับ email notification เมื่อใด
 19. ในฟิลด์ Message ให้คลิก **Parameters** ตรวจสอบให้แน่ใจว่าได้เลือก parameters ด้านล่างนี้แล้ว:
     
     -   พิมพ์ **Playbook Run Time:** และเลือก Parameter **Playbook: Current Time**
-        
+
     -   พิมพ์ **Playbook Name:** และเลือก Parameter **Playbook: Playbook Name**
         
     -   พิมพ์ **VM Name:** และเลือก Parameter **Lookup VM Details: VM Name**
@@ -79,8 +79,7 @@ IT Admin ต้องการรับ email notification เมื่อใด
     -   พิมพ์ **VM Owner:** และเลือก Parameter **Lookup VM Details: VM Owner Name**
         
     -   พิมพ์ **VM IP Address:** และเลือก Parameter **Lookup VM Details: VM IP Address**
-        
-    
+
     ![](/images/aiops25.3cdc5e40.png)
     
 20. คลิก **Save & Close**

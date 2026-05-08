@@ -16,8 +16,7 @@
     
 3.  เลือก Clone operation ในแถบเมนูด้านบน
     
-
-![Name Security Policy](/images/create-dev-37.3434a2f6.png)
+    ![Name Security Policy](/images/create-dev-37.3434a2f6.png)
 
 4.  เปลี่ยนชื่อ policy โดยตั้งค่า Policy Name เป็น **User`##`\-`Prod`SecurityPolicy**
     
@@ -25,8 +24,7 @@
     
 6.  เลือก Next
     
-
-![Name Security Policy](/images/create-dev-38.a6e1c6be.png)
+    ![Name Security Policy](/images/create-dev-38.a6e1c6be.png)
 
 ## Update the Database Secured Entities
 
@@ -40,20 +38,19 @@
     
 2.  เลือก Edit
     
-
-![Name Security Policy](/images/create-dev-40.f316bb07.png)
+    ![Name Security Policy](/images/create-dev-40.f316bb07.png)
 
 3.  ลบ (Remove) category **Environment:User`##`Dev**
 
-![Name Security Policy](/images/create-dev-40b.482b32e1.png)
+    ![Name Security Policy](/images/create-dev-40b.482b32e1.png)
 
 4.  เพิ่ม category **Environment:User`##`Prod**
 
-![Name Security Policy](/images/create-dev-42.91ec1d3b.png)
+    ![Name Security Policy](/images/create-dev-42.91ec1d3b.png)
 
-ปล่อย categories อื่นๆ ไว้โดยไม่ต้องเปลี่ยนแปลง หน้าตาควรจะออกมาคล้ายๆ แบบนี้
+    ปล่อย categories อื่นๆ ไว้โดยไม่ต้องเปลี่ยนแปลง หน้าตาควรจะออกมาคล้ายๆ แบบนี้
 
-![Name Security Policy](/images/create-dev-43.5c157e7c.png)
+    ![Name Security Policy](/images/create-dev-43.5c157e7c.png)
 
 5.  เลือก Apply
 
@@ -65,20 +62,19 @@
     
 2.  เลือก Edit
     
-
-![Name Security Policy](/images/create-dev-44.f1d9fd87.png)
+    ![Name Security Policy](/images/create-dev-44.f1d9fd87.png)
 
 3.  ลบ (Remove) category **Environment:User`##`Dev**
 
-![Name Security Policy](/images/create-dev-45.b8a93b90.png)
+    ![Name Security Policy](/images/create-dev-45.b8a93b90.png)
 
 4.  เพิ่ม category **Environment:User`##`Prod**
 
-![Name Security Policy](/images/create-dev-46.3a567197.png)
+    ![Name Security Policy](/images/create-dev-46.3a567197.png)
 
-ปล่อย categories อื่นๆ ไว้โดยไม่ต้องเปลี่ยนแปลง หน้าตาควรจะออกมาคล้ายๆ แบบนี้
+    ปล่อย categories อื่นๆ ไว้โดยไม่ต้องเปลี่ยนแปลง หน้าตาควรจะออกมาคล้ายๆ แบบนี้
 
-![Name Security Policy](/images/create-dev-47.b4a4777d.png)
+    ![Name Security Policy](/images/create-dev-47.b4a4777d.png)
 
 5.  เลือก Apply
 
@@ -98,7 +94,7 @@
     -   **AppType:User`##`ToDo**
     -   **Environment:User`##`Dev** <-- ลบ (Delete) อันนี้
 
-![Name Security Policy](/images/create-dev-49.840ab70f.png)
+    ![Name Security Policy](/images/create-dev-49.840ab70f.png)
 
 4.  ตั้งค่า category สำหรับ inbound web source ด้วย values ต่อไปนี้:
     
@@ -106,7 +102,7 @@
     -   **AppType:User`##`ToDo**
     -   **Environment:User`##`Prod** <-- เพิ่ม (Add) อันนี้
 
-![Name Security Policy](/images/create-dev-50.f9122a38.png)
+    ![Name Security Policy](/images/create-dev-50.f9122a38.png)
 
 ## No Changes for Address Group Sources
 
@@ -118,14 +114,15 @@ inbound sources ที่เป็น address groups จะไม่มีกา
     
     -   **AppType:User`##`Desktop**
     -   **Environment:User`##`Dev** <-- ลบ (Delete) อันนี้
+
 2.  เป็น category values ต่อไปนี้:
     
     -   **AppTier:User`##`Desktop**
     -   **Environment:User`##`Prod** <-- เพิ่ม (Add) อันนี้
+
 3.  เลือก Apply
     
-
-![Name Security Policy](/images/create-dev-51.4b2445e2.png)
+    ![Name Security Policy](/images/create-dev-51.4b2445e2.png)
 
 ## Restrict Desktop Access with Rule Changes
 
@@ -135,25 +132,23 @@ inbound sources ที่เป็น address groups จะไม่มีกา
 
 1.  เลือก rule ที่ permitting ให้ **AppType:User`##`Desktop** สามารถสื่อสารกับ **AppTier:User`##`DB** ได้
 
-![Name Security Policy](/images/create-dev-52.56f7f168.png)
+    ![Name Security Policy](/images/create-dev-52.56f7f168.png)
 
 2.  คลิกเส้นสีน้ำเงินเชื่อมต่อที่แสดง allowed traffic
     
 3.  เลือก **Delete All** ที่ด้านซ้ายล่างของ pop-up Edit Inbound Rule
     
-
-![Name Security Policy](/images/create-dev-53.905337fb.png)
+    ![Name Security Policy](/images/create-dev-53.905337fb.png)
 
 4.  เมื่อเสร็จแล้ว เลือก **Next**
 
-![Name Security Policy](/images/create-dev-54.63bcbc83.png)
+    ![Name Security Policy](/images/create-dev-54.63bcbc83.png)
 
 5.  เลือก **Apply (Monitor)**
     
 6.  เลือก **Confirm**
     
-
-![Name Security Policy](/images/create-dev-55.b6260f0d.png)
+    ![Name Security Policy](/images/create-dev-55.b6260f0d.png)
 
 หลังจากการ save เสร็จสมบูรณ์ ให้รีวิว (review) production Security Policy ใหม่โดยคลิกที่ secured entities เพื่อให้แน่ใจว่า production VMs ของคุณแสดงขึ้นมาตามที่คาดหวัง
 

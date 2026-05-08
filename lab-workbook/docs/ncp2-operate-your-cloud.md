@@ -5,13 +5,10 @@ Nutanix มอบความสามารถในการ operate ตัว
 3 เสาหลักที่สำคัญสำหรับ IT organizations ในการ operate ตัว cloud platform ที่ scalable และใช้งานง่าย ได้แก่:
 
 -   **Visibility and Insights to Operate at Scale**
-    
     -   การมองเห็น (visibility) แบบ unified ใน infrastructure และ applications, configuration state, metrics และ alerts ทั่วทั้ง on-premises และ hybrid cloud environments ด้วย dashboards และ reporting
 -   **Proactive Detection of Performance and Security Issues**
-    
     -   เพิ่มประสิทธิภาพ (Streamline) ในการทำ root-cause analysis สำหรับ infrastructure และ application performance โดยใช้ประโยชน์จาก metrics, events และ alerts
 -   **Automated Remediation**
-    
     -   Automate งานประจำ (routine tasks) และเร่งการแก้ไขปัญหา (issue resolution) เพื่อปรับปรุง productivity
 
 มาเจาะลึก NCM Intelligent Operations กันเถอะ!

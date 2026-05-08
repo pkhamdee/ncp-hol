@@ -1,29 +1,27 @@
-# Nutanix Unified Storage
+# Getting Started
 
-# [#](#getting-started) Getting Started
+แล็บนี้จะสาธิตการจัดการ management tasks ในแต่ละวันโดยใช้ Nutanix Files, Nutanix File Analytics, และ Nutanix Objects แต่ละหัวข้อจะมีบทเรียนและแบบฝึกหัดเพื่อให้คุณได้รับประสบการณ์การปฏิบัติจริง (hands-on experience)
 
-This lab demonstrates everyday management tasks using Nutanix Files, Nutanix File Analytics, and Nutanix Objects. Each section has a lesson and an exercise to give you hands-on experience.
+แต่เดิมนั้น file storage มักจะเป็นอีกหนึ่ง silo ภายในแผนก IT ซึ่งนำมาซึ่งความซับซ้อน (complexity) ที่ไม่จำเป็น และประสบปัญหาเดียวกันในเรื่องของการ scale และการขาดนวัตกรรมอย่างต่อเนื่องแบบที่เห็นใน SAN storage ทาง Nutanix เชื่อว่าไม่ควรมีพื้นที่สำหรับ silos อีกต่อไป ด้วยการจัดการ file storage ให้เป็นเหมือน app ตัวหนึ่ง ซึ่งรันอยู่ในระดับซอฟต์แวร์บนแพลตฟอร์มที่ผ่านการพิสูจน์แล้ว จะช่วยส่งมอบประสิทธิภาพระดับสูง (high performance), ความสามารถในการขยายตัว (scalable), และนวัตกรรมที่รวดเร็วผ่าน management interface ที่ใช้งานง่าย
 
-Traditionally, file storage has been yet another silo within IT, introducing unnecessary complexity and suffering from the same issues of scale and lack of continuous innovation seen in SAN storage. Nutanix believes there is no room for silos. By approaching file storage as an app, running in software on top of a proven platform delivers high performance, scalable, and rapid innovation via a simple management interface.
+แล็บนี้จะให้ข้อมูลที่จำเป็นเกี่ยวกับการ deployment, configuration, และ use case considerations
 
-The lab will provide essential deployment, configuration, and use case considerations.
+# Agenda
 
-# [#](#agenda) Agenda
-
-### [#](#nutanix-files-labs) Nutanix Files Labs
+### Nutanix Files Labs
 
 -   Files: Create SMB Share
 -   Files: Create NFS Export
 -   Files: Selective File Blocking
 -   Files: Multiprotocol
 
-### [#](#nutanix-file-analytics-labs) Nutanix File Analytics Labs
+### Nutanix File Analytics Labs
 
 -   File Analytics: File System Scan
 -   File Analytics: Anomaly Rules
 -   File Analytics: Ransomware
 
-### [#](#nutanix-objects-labs) Nutanix Objects Labs
+### Nutanix Objects Labs
 
 -   Objects: Buckets, Users, and Access Control
 -   Objects: Versioning and Access Controls

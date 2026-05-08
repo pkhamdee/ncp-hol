@@ -8,6 +8,6 @@ Nutanix Life Cycle Manager (LCM) ช่วยทำให้ life cycle operatio
 
 คลิกที่ลิงก์นี้
 
-👀 [Guided walkthrough of Life Cycle Manager.open in new window](https://nutanix.storylane.io/share/yjfg9izufdvu) 👀
+👀 [Guided walkthrough of Life Cycle Manager.](https://nutanix.storylane.io/share/yjfg9izufdvu) 👀
 
-[Interactive Demoopen in new window](https://nutanix.storylane.io/share/yjfg9izufdvu)
+[Interactive Demo](https://nutanix.storylane.io/share/yjfg9izufdvu)

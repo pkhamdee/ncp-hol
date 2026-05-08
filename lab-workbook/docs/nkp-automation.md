@@ -11,7 +11,7 @@ The objective of this chapter is to explore the differences between a manual dep
 
 Note
 
-If you are not familiar with GitOps, you can take a look to the [CNCF glossaryopen in new window](https://glossary.cncf.io/gitops/).
+If you are not familiar with GitOps, you can take a look to the [CNCF glossary](https://glossary.cncf.io/gitops/).
 
 **What You’ll Do:**
 

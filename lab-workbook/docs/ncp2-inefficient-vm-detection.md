@@ -21,6 +21,6 @@
 
 คลิกที่ลิงก์นี้
 
-👀 [Guided walkthrough of VM right sizing.open in new window](https://nutanix.storylane.io/share/1cyx8cigr5qk) 👀
+👀 [Guided walkthrough of VM right sizing.](https://nutanix.storylane.io/share/1cyx8cigr5qk) 👀
 
-นี่คือ [linkopen in new window](https://nutanix.storylane.io/share/1cyx8cigr5qk) ไปยัง guided walkthrough เพื่อสาธิตการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through นี้เสร็จสิ้นแล้ว ให้กลับมาที่ lab manual
+นี่คือ [link](https://nutanix.storylane.io/share/1cyx8cigr5qk) ไปยัง guided walkthrough เพื่อสาธิตการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through นี้เสร็จสิ้นแล้ว ให้กลับมาที่ lab manual

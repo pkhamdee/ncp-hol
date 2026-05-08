@@ -38,18 +38,19 @@ nav:
   - Environment:
     - Environment Details: ncp1-environmentdetails.md
 
-  - Nutanix Cloud Platform - Part1:
-    - What is NCP: ncp1-whatisncp.md
-    - Technology Overview: ncp1-technologyoverview.md
-    - Storage Configuration: ncp1-storageconfiguration.md
-    - Network Configuration: ncp1-networkconfiguration.md
-  - Deploying and Managing Workloads:
-    - Deploying Workloads: ncp1-deployingworkloads.md
-    - Managing Workloads: ncp1-managingworkloads.md
-  - Protecting Workloads:
-    - Data Protection: ncp1-dataprotection.md
+  - Nutanix Cloud Platform Bootcamp- Part1:
+    - Nutanix Cloud Platform:
+      - What is NCP: ncp1-whatisncp.md
+      - Technology Overview: ncp1-technologyoverview.md
+      - Storage Configuration: ncp1-storageconfiguration.md
+      - Network Configuration: ncp1-networkconfiguration.md
+    - Deploying and Managing Workloads:
+      - Deploying Workloads: ncp1-deployingworkloads.md
+      - Managing Workloads: ncp1-managingworkloads.md
+    - Protecting Workloads:
+      - Data Protection: ncp1-dataprotection.md
 
-  - Nutanix Cloud Platform - Part2:
+  - Nutanix Cloud Platform Bootcamp - Part2:
     - Nutanix Cloud Management: ncp2-nutanix-cloud-platform.md
     - Nutanix Cloud Operating Model: ncp2-cloud-operating-model.md
     - Setting Up the Environment:
@@ -76,57 +77,86 @@ nav:
       - Security Central: ncp2-security-central.md
     - Conclusion: ncp2-cloud-operating-conclusion.md
 
-  - Nutanix Move:
-    - Overview: migrate-workloads-overview.md
-  - Setting up the Environment:
-    - Overview: migrate-environment-overview.md
-    - Category and Policy Management: migrate-environment-policies.md
-    - Playbooks: migrate-environment-playbooks.md
-    - Setup Takeaways: migrate-environment-setup-takeaways.md
-  - Migrating Workloads:
-    - Overview: migrate-workloads-overview.md
-    - Setup Move: migrate-workloads-setup-move.md
-    - Migrating VMs with Move: migrate-workloads-move-view-source-vm.md
-    - Advanced VM Migrations: migrate-workloads-move-advanced-migration.md
-    - Migrate at Scale: migrate-workloads-move-migrate-at-scale.md
-    - Migrating Shares with Move: migrate-workloads-move-share.md
-    - Migration Takeaways: migrate-workloads-migration-takeaways.md
-  - Day 2 Management:
-    - Overview: migrate-day2-overview.md
-    - Nutanix Guest Tools: migrate-day2-guest-tools.md
-    - IAM: migrate-day2-iam.md
-    - Reports: migrate-day2-reports.md
-    - Capacity Planning: migrate-day2-capacity-planning.md
-    - Inefficient VM Detection: migrate-day2-inefficient-vm.md
-    - Management Takeaways: migrate-day2-mgmt-takeaway.md
-  - Conclusion:
-    - Conclusion: migrate-conclusion.md
-  - Flow Network Security:
+  - Nutanix Move Bootcamp:
+    - Overview: migrate-nutanix-overview.md
+    - Setting up the Environment:
+      - Overview: migrate-environment-overview.md
+      - Category and Policy Management: migrate-environment-policies.md
+      - Playbooks: migrate-environment-playbooks.md
+      - Setup Takeaways: migrate-environment-setup-takeaways.md
+    - Migrating Workloads:
+      - Overview: migrate-workloads-overview.md
+      - Setup Move: migrate-workloads-setup-move.md
+      - Migrating VMs with Move: migrate-workloads-move-view-source-vm.md
+      - Create a Migration Plan: migrate-workloads-move-create-migration-plan.md
+      - Migrate the VM: migrate-workloads-move-migrate-vm.md
+      - Advanced VM Migrations: migrate-workloads-move-advanced-migration.md
+      - Migrate at Scale: migrate-workloads-move-migrate-at-scale.md
+      - Migrating Shares with Move: migrate-workloads-move-share.md
+      - Configuring Nutanix Files: migrate-workloads-move-share-config-file.md
+      - View Sopurce Share: migrate-workloads-move-share-view-share.md
+      - Create Migration Plan: migrate-workloads-move-share-create-plan.md
+      - Migrate share: migrate-workloads-move-share-migrate-share.md 
+      - Migration Takeaways: migrate-workloads-migration-takeaways.md
+    - Day 2 Management:
+      - Overview: migrate-day2-overview.md
+      - Nutanix Guest Tools: migrate-day2-guest-tools.md
+      - IAM: migrate-day2-iam.md
+      - Reports: migrate-day2-reports.md
+      - Capacity Planning: migrate-day2-capacity-planning.md
+      - Inefficient VM Detection: migrate-day2-inefficient-vm.md
+      - Management Takeaways: migrate-day2-mgmt-takeaway.md
+    - Conclusion:
+      - Conclusion: migrate-conclusion.md
+   
+  - Flow Network Security Bootcamp:
     - Overview: flow-overview.md
-  - Environment and App:
-    - Prism Central Overview: flow-env-pc-overview.md
-    - Flow Controller: flow-env-flow-controller.md
-    - Categories: flow-env-categories.md
-    - The Application: flow-env-application.md
-  - Basic Security Policies:
-    - Quarantine a VM: flow-basic-quarantine.md
-    - Isolation Policies: flow-basic-isolation.md
-  - Application Security Policies:
-    - Application Policies: flow-app-app-policies.md
-    - Monitor and Enforce the Policy: flow-app-monitor.md
-    - Clone the Policy: flow-app-clone.md
-    - Verify the Policy: flow-app-verify.md
-  - Cyber Resilience:
-    - Cyber Resilience: flow-cyber-resilience.md
-  - NCM Self Service:
+    - Environment and App:
+      - Prism Central Overview: flow-env-pc-overview.md
+      - Flow Controller: flow-env-flow-controller.md
+      - Categories: flow-env-categories.md
+      - The Application: flow-env-application.md
+    - Basic Security Policies:
+      - Quarantine a VM: flow-basic-quarantine.md
+      - Isolation Policies: flow-basic-isolation.md
+    - Application Security Policies:
+      - Application Policies: flow-app-app-policies.md
+      - Monitor and Enforce the Policy: flow-app-monitor.md
+      - Clone the Policy: flow-app-clone.md
+      - Verify the Policy: flow-app-verify.md
+    - Cyber Resilience:
+      - Cyber Resilience: flow-cyber-resilience.md
+
+  - NCM Self-Service Bootcamp:
     - Getting Started: selfservice-gettingstart.md
-  - Lab Setup:
-    - Self Service Lab Setup: selfservice-lab-setup.md
-  - IaaS Linux:
-    - Self Service IaaS Linux: selfservice-linux.md
-  - IaaS Windows:
-    - Self Service IaaS Windows: selfservice-windows.md
-  - DSL:
-    - Self Service DSL: selfservice-dsl.md
-  - Appendix:
-    - Glossary: selfservice-appendix.md
+    - Lab Setup:
+      - Self Service Lab Setup: selfservice-lab-setup.md
+    - IaaS Linux:
+      - Self Service IaaS Linux: selfservice-linux.md
+    - IaaS Windows:
+      - Self Service IaaS Windows: selfservice-windows.md
+    - DSL:
+      - Self Service DSL: selfservice-dsl.md
+    - Appendix:
+      - Glossary: selfservice-appendix.md
+
+  - Nutanix Unified Storage Bootcamp:
+    - Getting Started: nus-getting-start.md
+    - Lab Setup: nus-lab-setup.md
+    - Files:
+      - Create SMB Share: nus-files-smb.md
+      - Create NFS Export: nus-files-nfs.md
+      - File Blocking: nus-files-block.md
+      - Multi-Protocol: nus-files-multi-protocol.md
+    - File Analytics:
+      - File System Scan: nus-analytics-filesystem-scan.md
+      - Anomaly Rules: nus-analytics-anomaly.md
+      - Ransomware: nus-analytics-ransomware.md
+    - Objects:
+      - Bucket, Users, And Access Control: nus-objects-buckets.md
+      - Versioning and Access Control: nus-objects-version.md
+      - CLI and Scripting: nus-objects-cli.md
+      - Tiering: nus-objects-tiering.md
+      - Multi-Protocol: nus-objects-multi-protocol.md
+    - Bonus:
+      - Peer Global File Service: nus-bonus.md

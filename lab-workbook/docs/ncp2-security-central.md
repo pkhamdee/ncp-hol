@@ -8,6 +8,6 @@
 
 คลิกที่ลิงก์นี้
 
-👀 [Guided walkthrough of Security Central.open in new window](https://nutanix.storylane.io/share/xq2vd24w8c6x) 👀
+👀 [Guided walkthrough of Security Central.](https://nutanix.storylane.io/share/xq2vd24w8c6x) 👀
 
-[Interactive Demoopen in new window](https://nutanix.storylane.io/share/xq2vd24w8c6x)
+[Interactive Demo](https://nutanix.storylane.io/share/xq2vd24w8c6x)

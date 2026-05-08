@@ -38,35 +38,6 @@ Nutanix Bootcamp ได้รับการออกแบบให้รัน
 |SSP Custom.      |custom01-custom25        |`HPOC-PASSWORD` |
 |Bootcamp Users.  |user01-user25            |`HPOC-PASSWORD` |
 
-## Access Instructions
-
-สภาพแวดล้อม Nutanix Hosted POC สามารถเข้าถึงได้หลายวิธีรวมถึงการเชื่อมต่อ VPN หรือ VDI
-
-สำหรับรายละเอียดเพิ่มเติมเกี่ยวกับการใช้สภาพแวดล้อมเหล่านี้หรือการแก้ไขปัญหา กรุณาคลิกเข้าไปที่ [HPOC Help Center](https://help.oe.nutanix.com/hpoc/en/collections/6437443-connecting-to-the-nutanix-hpoc-environment)
-
-### Parallels VDI
-
--   PHX Based Clusters เข้าสู่ระบบที่: [https://phx-ras.hpoc.nutanix.com](https://phx-ras.hpoc.nutanix.com)
--   RTP Based Clusters เข้าสู่ระบบที่: [https://dm3-ras.hpoc.nutanix.com](https://dm3-ras.hpoc.nutanix.com)
--   BLR Based Clusters เข้าสู่ระบบที่: [https://blr-ras.hpoc.nutanix.com](https://blr-ras.hpoc.nutanix.com)
-
-### Ivanti Pulse Secure VPN
-
-#### Download the client
--   Ivanti Connect Secure - DM3: [https://dm3-vpn.xlabs.nutanix.com](https://dm3-vpn.xlabs.nutanix.com)
--   ​Ivanti Connect Secure - PHX: [https://phx-vpn.xlabs.nutanix.com](https://phx-vpn.xlabs.nutanix.com)
--   ​Ivanti Connect Secure - BLR: [https://blr-vpn.xlabs.nutanix.com](https://blr-vpn.xlabs.nutanix.com)
-
-#### Install the client
-
-ใน Pulse Secure Client **เพิ่ม** การเชื่อมต่อ:
-
-PHX Example:
-
--   **Type** - Policy Secure (UAC) or Connection Server
--   **Name** - X-Labs - PHX
--   **Server URL** - phx-vpn.xlabs.nutanix.com
-
 ---
 
 [← Back: Data Protection](dataprotection.md) | [Home](index.md)

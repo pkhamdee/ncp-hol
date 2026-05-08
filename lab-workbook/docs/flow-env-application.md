@@ -17,11 +17,11 @@
 3.  จดบันทึก IP address ของ prod-web server ที่ชื่อ **user`##`\-prod-web**.
     
     -   คุณจะต้องใช้สิ่งนี้ในภายหลัง ดังนั้นเราขอแนะนำให้จดบันทึกไว้เพื่อให้ง่ายต่อการ copy และ paste. คุณสามารถใช้ notepad ภายใน Parallels desktop ได้.
+
 4.  จดบันทึก database VM IP ของคุณด้วยเช่นกัน ที่ชื่อ **user`##`\-prod-db**.
     
 5.  ทำซ้ำขั้นตอนเหล่านี้สำหรับ **dev** VMs ด้วย. สิ่งนี้จะทำให้ขั้นตอนการ ping และ SSH ในภายหลังง่ายขึ้น.
     
-
 ### Examine the Web Application
 
 จากภายใน Parallels VDI desktop environment ของคุณ ให้ทำการ connect ไปยัง IP address ของ **user`##`\-prod-web** server.
@@ -30,12 +30,11 @@
     
 2.  ใส่ IP ลงใน URL navigation bar ของ Chrome.
     
+    คุณควรจะเห็น web front-end ซึ่งจะดึงรายการ tasks มาจาก database server.
 
-คุณควรจะเห็น web front-end ซึ่งจะดึงรายการ tasks มาจาก database server.
+    ![Production ToDo Server Web Interface](/images/app-prod-web.975a1266.png)
 
-![Production ToDo Server Web Interface](/images/app-prod-web.975a1266.png)
-
-ใช้ web interface เพื่อ add, complete และ delete บาง tasks.
+    ใช้ web interface เพื่อ add, complete และ delete บาง tasks.
 
 ### Verify Connectivity Exceeds Intended Policy
 
@@ -45,21 +44,21 @@
 
 1.  ใน Prism Central ให้เลือก checkbox ถัดจาก **user`##`\-enduser** หรือคลิกขวาที่ VM.
 
-![End User Desktop Console Launch](/images/launch-console.3038b831.png)
+    ![End User Desktop Console Launch](/images/launch-console.3038b831.png)
 
 2.  ไปที่ **Launch Console**.
     
 3.  Sign in เข้าสู่ desktop VM ด้วย username `nutanix` และ password ที่ได้รับจาก instructor ใน lab connection details.
     
     -   คุณยังไม่สามารถ paste ลงใน AHV VM console ได้ ดังนั้นคุณจะต้องพิมพ์ password นี้แบบ manually.
+
 4.  จากภายใน VM console ให้ launch ตัว **Terminal Session** โดยการคลิกขวาที่ Desktop แล้วเลือก Open in Terminal หรือคลิกที่ไอคอน $_ Terminal ที่ panel ด้านซ้ายล่าง.
     
 5.  ทำการ Ping ไปยัง web และ database server ด้วย command: `ping <server-ip>`. ใช้ `Ctrl + c` เพื่อหยุดการ ping.
     
 6.  พยายามทำ SSH ไปยัง web server ด้วย command `ssh <server-ip>`. ใช้ `Ctrl + c` เพื่อ disconnect ออกจาก SSH session โดยไม่ต้อง logging in.
     
-
-![Console Access](/images/console-verify-access.14551ff0.png)
+    ![Console Access](/images/console-verify-access.14551ff0.png)
 
 7.  ทำซ้ำความพยายามในการ SSH ไปยัง database server.
 

@@ -12,4 +12,4 @@ Nutanix Cloud Manager มาพร้อมกับ built-in machine learning (
 
 ## Walkthrough Demo
 
-นี่คือ [linkopen in new window](https://nutanix.storylane.io/share/scmtpldnvhqi) สำหรับ guided walkthrough เพื่อสาธิตให้เห็นการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through นี้เสร็จแล้ว ให้กลับมาที่ lab manual
+นี่คือ [link](https://nutanix.storylane.io/share/scmtpldnvhqi) สำหรับ guided walkthrough เพื่อสาธิตให้เห็นการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through นี้เสร็จแล้ว ให้กลับมาที่ lab manual

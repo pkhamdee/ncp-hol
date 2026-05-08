@@ -17,8 +17,8 @@
 
 ![](/images/inefficientvms1.fe062f9c.png)
 
-รายละเอียดเพิ่มเติมเกี่ยวกับวิธีการที่ VMs ถูก profiled สามารถอ่านได้ใน [documentationopen in new window](https://portal.nutanix.com/page/documents/details?targetId=Intelligent-Operations-Guide-vpc_2024_3:mul-behavioral-learning-pc-c.html)
+รายละเอียดเพิ่มเติมเกี่ยวกับวิธีการที่ VMs ถูก profiled สามารถอ่านได้ใน [documentation](https://portal.nutanix.com/page/documents/details?targetId=Intelligent-Operations-Guide-vpc_2024_3:mul-behavioral-learning-pc-c.html)
 
 ## Walkthrough
 
-นี่คือ [linkopen in new window](https://nutanix.storylane.io/share/1cyx8cigr5qk) สำหรับ guided walkthrough เพื่อสาธิตให้เห็นการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through เสร็จแล้ว ให้กลับมาที่ lab guide นี้
+นี่คือ [link](https://nutanix.storylane.io/share/1cyx8cigr5qk) สำหรับ guided walkthrough เพื่อสาธิตให้เห็นการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through เสร็จแล้ว ให้กลับมาที่ lab guide นี้

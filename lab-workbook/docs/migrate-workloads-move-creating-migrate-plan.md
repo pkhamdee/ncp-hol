@@ -53,7 +53,7 @@ Once the source and destination are set up, create the migration plan.
     !!! note 
         You only need to enter these credentials into the **Linux VMs** field and can leave the Windows credentials empty.
     
-7.  On the **VM Settings** page, keep the defaults and select `Next`. The fields allow for individual VM settings to be modified. This includes settings like enabling Memory Overcommit or applying categories that are present in Prism Central. You can learn more about categories in the advanced migration section. If you want to learn more about the different fields, refer to the [Move Guideopen in new window](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
+7.  On the **VM Settings** page, keep the defaults and select `Next`. The fields allow for individual VM settings to be modified. This includes settings like enabling Memory Overcommit or applying categories that are present in Prism Central. You can learn more about categories in the advanced migration section. If you want to learn more about the different fields, refer to the [Move Guide](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
     
     ![](/images/vm-migration-plan8.4d40f0d6.png)
     

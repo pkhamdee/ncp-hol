@@ -1,46 +1,43 @@
-# Nutanix Unified Storage
+# File System Scan
 
-# [#](#file-analytics-file-system-scan) File Analytics: File System Scan
-
-1.  Return to your **Prism Element** browser tab.
+1.  กลับไปที่ **Prism Element** browser tab ของคุณ
     
-2.  Within the drop-down menu, select **File Server**.
+2.  ภายใน drop-down menu ให้เลือก **File Server**
     
-3.  Click on **BootcampFS**, and then click **File Analytics**.
+3.  คลิกที่ **BootcampFS** แล้วจากนั้นคลิก **File Analytics**
     
-    ![](/unified-storage/assets/1.08142b61.png)
+    ![](/images/1.08142b61.png)
     
-4.  Log in using your Prism Element credentials.
+4.  ล็อกอินโดยใช้ Prism Element credentials ของคุณ
     
-5.  Click **\> Scan File System**.
+5.  คลิก **\> Scan File System**
     
-    ![](/unified-storage/assets/2.fa80fa65.png)
+    ![](/images/2.fa80fa65.png)
     
-6.  Check the **`User##`\-Marketing** entry, and click **Scan** to perform an initial scan of the existing shares, which will take <1 minute. Click once the scan status is **Completed**. You will now see the dashboard panels update.
+6.  เลือกช่อง **`User##`\-Marketing** และคลิก **Scan** เพื่อทำการสแกนเริ่มต้นของ shares ที่มีอยู่ ซึ่งจะใช้เวลา <1 นาที คลิกเมื่อสถานะการสแกนเป็น **Completed** ตอนนี้คุณจะเห็น dashboard panels ทำการอัปเดต
     
-    ![](/unified-storage/assets/3.d052733f.png)
+    ![](/images/3.d052733f.png)
     
-7.  Return to your **`User##`\-WinTools** Remote Desktop session.
+7.  กลับไปที่ **`User##`\-WinTools** Remote Desktop session ของคุณ
     
-8.  Open one of the Word files within **`User##`\-Marketing > Sample Data > Documents**.
+8.  เปิด Word files หนึ่งไฟล์ภายใน **`User##`\-Marketing > Sample Data > Documents**
     
-    Note
+    !!! note
+        หากคุณได้รับแจ้งให้ทำ wizard สำหรับ OpenOffice ให้เสร็จสิ้น ให้คลิก **Next > Finish**
     
-    If you are prompted to complete the wizard for OpenOffice, click **Next > Finish**.
+9.  กลับไปที่ Files Analytics browser tab รีเฟรช (Refresh) หน้า _Dashboard_ ตอนนี้ panel **Top 5 Active Users** และ **Top 5 Accessed Files** ได้รับการอัปเดตเพื่อรายงานกิจกรรมของคุณแล้ว
     
-9.  Return to the Files Analytics browser tab. Refresh the _Dashboard_ page. The **Top 5 Active Users** and **Top 5 Accessed Files** panels have now been updated to report your activity.
+    ![](/images/4.3eed217a.png)
     
-    ![](/unified-storage/assets/4.3eed217a.png)
+10.  ภายใน **Top 5 Active Users** ให้คลิกที่ username (เช่น adminuser20) ซึ่งจะนำคุณไปยัง audit trail ของ user
     
-10.  Within **Top 5 Active Users**, click on the username (ex., adminuser20), which will take you to the audit trail of the user.
+11.  คุณยังสามารถคลิกที่เมนู **\> Audit Trails** และค้นหากิจกรรมได้อีกด้วย สามารถใช้ Wildcards ภายในการค้นหาได้ (เช่น **`*.doc*`**)
     
-11.  You can also click on the **\> Audit Trails** menu and search for activity. Wildcards can be used within search (ex. **`*.doc*`**).
+    ![](/images/5.1251bd09.png)
     
-    ![](/unified-storage/assets/5.1251bd09.png)
-    
-12.  Click once you are finished viewing the activity.
+12.  คลิก X เมื่อคุณดู (viewing) เสร็จแล้ว
     
 
-## [#](#takeaways) Takeaways
+## Takeaways
 
-File Analytics helps you better understand how your organization utilizes data to help you meet your data auditing, data access minimization, and compliance requirements.
+File Analytics ช่วยให้คุณเข้าใจได้ดียิ่งขึ้นว่าองค์กรของคุณใช้ประโยชน์จากข้อมูล (data) อย่างไร เพื่อช่วยให้คุณปฏิบัติตามข้อกำหนดในด้านการตรวจสอบข้อมูล (data auditing), การจำกัดการเข้าถึงข้อมูล (data access minimization), และ compliance ของคุณ

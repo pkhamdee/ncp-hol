@@ -19,10 +19,10 @@
 
 ## [#](#additional-resources) Additional Resources
 
--   [NKP Test Driveopen in new window](https://nutanix.storylane.io/share/5yfq5fbwxu9s?utm_source=nkp-bootcamp&scale=true)
+-   [NKP Test Drive](https://nutanix.storylane.io/share/5yfq5fbwxu9s?utm_source=nkp-bootcamp&scale=true)
     
--   [NKP YouTube Playlistopen in new window](https://www.youtube.com/playlist?list=PLAHgaS9IrJefcZzuLgAYoidusiAGpFa-D)
+-   [NKP YouTube Playlist](https://www.youtube.com/playlist?list=PLAHgaS9IrJefcZzuLgAYoidusiAGpFa-D)
     
--   [Nutanix Data Services for Kubernetes (NDK) Test Driveopen in new window](https://nutanix.storylane.io/share/jj0h1itrebn1?utm_source=nkp-bootcamp&scale=true)
+-   [Nutanix Data Services for Kubernetes (NDK) Test Drive](https://nutanix.storylane.io/share/jj0h1itrebn1?utm_source=nkp-bootcamp&scale=true)
     
--   [Cloud Native Services on the Nutanix Cloud Bibleopen in new window](https://www.nutanixbible.com/18-book-of-cloud-native-services.html)
+-   [Cloud Native Services on the Nutanix Cloud Bible](https://www.nutanixbible.com/18-book-of-cloud-native-services.html)

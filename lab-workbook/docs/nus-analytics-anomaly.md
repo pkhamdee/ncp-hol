@@ -1,12 +1,10 @@
-# Nutanix Unified Storage
+# Anomaly Rules
 
-# [#](#file-analytics-anomaly-rules) File Analytics: Anomaly Rules
+## Define Anomaly Rules
 
-## [#](#define-anomaly-rules) Define Anomaly Rules
-
-1.  Within the menu, select **Define Anomaly Rules**.
+1.  ในเมนู ให้เลือก **Define Anomaly Rules**
     
-2.  Click **\> Define Anomaly Rules**. Fill in the following fields and click .
+2.  คลิก + **\> Define Anomaly Rules** กรอกข้อมูลในฟิลด์ต่อไปนี้และคลิก /
     
     -   **Events:** Delete
     -   **Minimum Operation %:** `1`
@@ -14,7 +12,8 @@
     -   **User:** All Users
     -   **Type:** Hourly
     -   **Interval:** `1`
-3.  Click **\> Configure new anomaly**. Fill in the following fields and click **\> Save**.
+
+3.  คลิก + **\> Configure new anomaly** กรอกข้อมูลในฟิลด์ต่อไปนี้และคลิก / **\> Save**
     
     -   **Events**: Create
     -   **Minimum Operation %**: `1`
@@ -23,54 +22,57 @@
     -   **Type**: Hourly
     -   **Interval**: `1`
     
-    ![](/unified-storage/assets/1.fe29b12d.png)
+    ![](/images/1.fe29b12d.png)
     
 
-## [#](#load-sample-data) Load Sample Data
+## Load Sample Data
 
-1.  Return to your **`User##`\-WinTools** Remote Desktop session.
+1.  กลับไปที่ **`User##`\-WinTools** Remote Desktop session ของคุณ
     
-2.  Within the _`User##`\-Marketing_ folder, click on **Sample Data**. Right-click on **Sample Data** and choose **Copy**. Right-click on any blank space below the files/folder, and choose **Paste**. You will now have an additional folder named **Sample Data - Copy**. 
+2.  ภายใน folder _`User##`\-Marketing_ ให้คลิกที่ **Sample Data** คลิกขวาที่ **Sample Data** แล้วเลือก **Copy** คลิกขวาบนพื้นที่ว่างด้านล่าง files/folder และเลือก **Paste** ตอนนี้คุณจะมี folder เพิ่มขึ้นมาอีกหนึ่งอันชื่อว่า **Sample Data - Copy**
     
-3.  Right-click on the **Sample Data** folder, and select **Delete**.
+3.  คลิกขวาที่ folder **Sample Data** และเลือก **Delete**
     
-    By default, the Anomaly engine runs every 30 minutes. While this setting is configurable from the File Analytics VM, modifying this variable is outside the scope of this lab. Therefore, it may take up to 30 minutes the _Anomalies Alerts_ section will update with the "anomalous" activity you just performed. If you'd prefer not to wait, we've provided an example of what you would see.
+    ตามค่าเริ่มต้น Anomaly engine จะทำงานทุกๆ 30 นาที แม้ว่าการตั้งค่านี้สามารถกำหนดค่า (configurable) ได้จาก File Analytics VM แต่การปรับเปลี่ยนตัวแปร (variable) นี้นอกเหนือจากขอบเขตของ lab นี้ ดังนั้นอาจใช้เวลาถึง 30 นาทีส่วน _Anomalies Alerts_ จึงจะอัปเดตกิจกรรม "anomalous" ที่คุณเพิ่งดำเนินการ หากคุณไม่ต้องการรอ เราได้เตรียมตัวอย่างสิ่งที่คุณจะเห็นเอาไว้ให้
     
-    ![](/unified-storage/assets/3.155f4f1c.png)
+    ![](/images/3.155f4f1c.png)
     
 
-## [#](#cause-error-condition) Cause Error Condition
+## Cause Error Condition
 
-1.  Return to your **`User##`\-WinTools** Remote Desktop session.
+1.  กลับไปที่ **`User##`\-WinTools** Remote Desktop session ของคุณ
     
-2.  Within _`User##`\-Marketing_ folder, create a new directory named `RO` (Read Only).
+2.  ภายใน folder _`User##`\-Marketing_ ให้สร้าง directory ใหม่ชื่อ `RO` (Read Only)
     
-3.  Within the **RO** directory, Create a new text file containing the text `hello world`. Save the file as **myfile.txt**.
+3.  ภายใน directory **RO** ให้สร้าง text file ใหม่ที่มีข้อความ `hello world` บันทึก file เป็น **myfile.txt**
     
-4.  Go to the _Properties_ of the _RO_ folder. Select the **Security** tab, and click **Advanced**.
+4.  ไปที่ _Properties_ ของ folder _RO_ เลือก tab **Security** และคลิก **Advanced**
     
-5.  Click **Disable inheritance** and select **Convert inherited permissions into explicit permissiong on this object.**.
+5.  คลิก **Disable inheritance** และเลือก **Convert inherited permissions into explicit permissiong on this object.**
     
-6.  Click **Add**. Click **Select a principal**. Within _Enter the object name to select_, enter `everyone` and click **OK**. The default rights are sufficient for our use. Click **OK > OK > OK**.
+6.  คลิก **Add** คลิก **Select a principal** ในส่วน _Enter the object name to select_ ให้พิมพ์ `everyone` แล้วคลิก **OK** สิทธิ์เริ่มต้น (default rights) ก็เพียงพอสำหรับการใช้งานของเราแล้ว คลิก **OK > OK > OK**
     
-7.  Right-click on the **Powershell** icon in the taskbar. Hold down **Shift** and right-click on the **Windows Powershell** list item, and choose **Run as a different user**.
+7.  คลิกขวาที่ icon **Powershell** ใน taskbar กดปุ่ม **Shift** ค้างไว้แล้วคลิกขวาที่ list item **Windows Powershell** แล้วเลือก **Run as a different user**
     
-8.  Enter the following:
+8.  ป้อนข้อมูลต่อไปนี้:
     
     -   **User name**: `devuser##`
     -   **Password**: `nutanix/4u`
-9.  Execute the `cd \\BootcampFS.ntnxlab.local\User##-Marketing\RO` command to change directory into the **RO** directory within the **`User##`\-Marketing** share.
     
-10.  Execute the `more myfile.txt` command. As this command attempts to read and display the contents of the file, it will succeed since we have the _Read_ permission on this folder.
+9.  ดำเนินการ (Execute) command `cd \\BootcampFS.ntnxlab.local\User##-Marketing\RO` เพื่อ change directory ไปยัง directory **RO** ภายใน share **`User##`\-Marketing**
     
-11.  Execute the `rm myfile.txt` command. As this command attempts to delete the file, it will fail since this user doesn't not have the _Delete_ permission on this folder.
+10.  ดำเนินการ (Execute) command `more myfile.txt` เนื่องจาก command นี้พยายามอ่านและแสดงเนื้อหาของ file มันจะสำเร็จเนื่องจากเรามี permission _Read_ บน folder นี้
     
-    ![](/unified-storage/assets/6.2942fbcf.png)
+11.  ดำเนินการ (Execute) command `rm myfile.txt` เนื่องจาก command นี้พยายามลบ file มันจะล้มเหลวเนื่องจาก user คนนี้ไม่มี permission _Delete_ บน folder นี้
     
-12.  Close _Powershell_, and return to your _Files Analytics_ tab.
+    ![](/images/6.2942fbcf.png)
     
-13.  After a few moments, your activity will be displayed within the _Top 5 Active Users_ section. Click on **`devuser##`**. The _Audit Details_ for _`devuser##`_ will open. Observe your activity within the _Total Result(s)_ section.
+12.  ปิด _Powershell_ และกลับไปที่ tab _Files Analytics_ ของคุณ
     
-    ![](/unified-storage/assets/7.c1d53c59.png)![](/unified-storage/assets/8.9db6f1ae.png)
+13.  หลังจากนั้นไม่นาน กิจกรรมของคุณจะแสดงขึ้นในส่วน _Top 5 Active Users_ คลิกที่ **`devuser##`** ส่วนของ _Audit Details_ สำหรับ _`devuser##`_ จะเปิดขึ้น สังเกตกิจกรรมของคุณภายในส่วน _Total Result(s)_
     
-14.  Once you are through, click the in the top right corner.
+    ![](/images/7.c1d53c59.png)
+    
+    ![](/images/8.9db6f1ae.png)
+    
+14.  เมื่อคุณทำเสร็จแล้ว ให้คลิก x ที่มุมขวาบน

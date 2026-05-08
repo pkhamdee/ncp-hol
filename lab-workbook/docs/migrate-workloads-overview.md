@@ -6,7 +6,7 @@
 
 ## Move Architecture
 
-ด้านล่างนี้คุณจะพบกับ distributed architecture ของ Move คุณสามารถอ่านเพิ่มเติมเกี่ยวกับ architecture และ components ทั้งหมดได้บน [Nutanix Bibleopen in new window](https://www.nutanixbible.com/21b-vm-migration-arch.html)
+ด้านล่างนี้คุณจะพบกับ distributed architecture ของ Move คุณสามารถอ่านเพิ่มเติมเกี่ยวกับ architecture และ components ทั้งหมดได้บน [Nutanix Bible](https://www.nutanixbible.com/21b-vm-migration-arch.html)
 
 ![](/images/move-architecture.eb84cac6.png)
 

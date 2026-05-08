@@ -16,12 +16,11 @@ IAM จะถูกจัดการผ่าน Admin Center ของ Prism C
     
 2.  ไปที่ส่วน App Switcher ที่มุมบนซ้ายของ Prism Central คลิก **Admin Center** ใน App Switcher
     
-
-![App Switcher](/images/IAM1.ab9305ef.png)
+    ![App Switcher](/images/IAM1.ab9305ef.png)
 
 3.  คลิก **IAM** ใน Admin Center Dashboard
 
-![IAM Menu](/images/IAM2.ab00e124.png)
+    ![IAM Menu](/images/IAM2.ab00e124.png)
 
 ## Overview of the Interface
 

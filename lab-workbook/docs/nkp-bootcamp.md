@@ -19,13 +19,13 @@ Minimum knowledge
 
 The person taking this bootcamp must have a prior understanding of:
 
--   [Nutanixopen in new window](https://www.youtube.com/watch?v=q4wBewXfDs8) (navigate Prism Central)
--   [Basic Linux administrationopen in new window](https://www.youtube.com/watch?v=gd7BXuUQ91w) (SSH, environment variables, editors, navigate directories, etc.)
--   [Kubernetes basicsopen in new window](https://www.youtube.com/watch?v=s_o8dwzRlu4)
+-   [Nutanix](https://www.youtube.com/watch?v=q4wBewXfDs8) (navigate Prism Central)
+-   [Basic Linux administration](https://www.youtube.com/watch?v=gd7BXuUQ91w) (SSH, environment variables, editors, navigate directories, etc.)
+-   [Kubernetes basics](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 -   Networking basics (subnet, VLAN, VPC, IP address, load balancer, Virtual IP Address (VIP), firewall, network policy, ...)
 
 Looking for an older version of this lab?
 
 This lab guide is based on NKP 2.17. If your deployment is using NKP 2.13, use the legacy guide:
 
--   [https://bootcamps.nutanix.com/legacy/cloudnativeopen in new window](https://bootcamps.nutanix.com/legacy/cloudnative)
+-   [https://bootcamps.nutanix.com/legacy/cloudnative](https://bootcamps.nutanix.com/legacy/cloudnative)

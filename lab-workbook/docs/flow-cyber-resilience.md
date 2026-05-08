@@ -8,6 +8,6 @@
 
 คลิกลิงก์นี้
 
-👀 [Guided walkthrough ของ Cyber Resilience.open in new window](https://nutanix.storylane.io/share/pbwogpuaodeg) 👀
+👀 [Guided walkthrough ของ Cyber Resilience.](https://nutanix.storylane.io/share/pbwogpuaodeg) 👀
 
-[Interactive Demoopen in new window](https://nutanix.storylane.io/share/pbwogpuaodeg)
+[Interactive Demo](https://nutanix.storylane.io/share/pbwogpuaodeg)

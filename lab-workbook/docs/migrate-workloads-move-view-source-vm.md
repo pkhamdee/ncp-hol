@@ -24,17 +24,16 @@ Nutanix Move ทำให้การย้าย VMs และ workloads ไป
     
 4.  เราจะใช้ IP address เพื่อเชื่อมต่อกับ code-server ผ่านเบราว์เซอร์ภายใน Parallels VDI desktop
     
+    -   **link** - `http://your-XXX-VM-IP:8080`
 
--   **link** - `http://your-XXX-VM-IP:8080`
-
-![](/images/vm-migration-code-servera.f19336eb.png)
+    ![](/images/vm-migration-code-servera.f19336eb.png)
 
 5.  จากนั้นคุณจะสามารถ log in เข้าสู่ code-server บน VM นั้นได้ด้วยข้อมูลดังต่อไปนี้:
     
     -   **password** - `nutanix/4u`
     
     !!! note
-    ผู้ใช้ทุกคนจะใช้ `nutanix/4u` เป็น password โดยไม่คำนึงว่าก่อนหน้านี้คุณจะเคยใช้ password อะไรมาบ้าง
+        ผู้ใช้ทุกคนจะใช้ `nutanix/4u` เป็น password โดยไม่คำนึงว่าก่อนหน้านี้คุณจะเคยใช้ password อะไรมาบ้าง
     
     จากนั้นคุณจะสามารถเข้าถึง terminal ได้
     

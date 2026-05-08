@@ -22,4 +22,4 @@ lab เวอร์ชันนี้แสดงให้เห็นถึง 
 
 ## Pre-requisites
 
-ไม่มี pre-requisites บังคับสำหรับ bootcamp นี้ แต่ [Nutanix Cloud Platform (NCP) Part 1open in new window](https://bootcamps.nutanix.com/ncp-pt1/) จะเป็นการแนะนำเชิงลึกเกี่ยวกับ capabilities ด้าน storage, networking, และ virtualization ที่ใช้ใน bootcamp นี้ ลองพิจารณาทำ NCP Part 1 ให้เสร็จก่อนที่จะเริ่มต้นที่นี่ หากคุณไม่คุ้นเคยกับ Prism Central, AHV, และ AOS
+ไม่มี pre-requisites บังคับสำหรับ bootcamp นี้ แต่ Nutanix Cloud Platform (NCP) Part 1 จะเป็นการแนะนำเชิงลึกเกี่ยวกับ capabilities ด้าน storage, networking, และ virtualization ที่ใช้ใน bootcamp นี้ ลองพิจารณาทำ NCP Part 1 ให้เสร็จก่อนที่จะเริ่มต้นที่นี่ หากคุณไม่คุ้นเคยกับ Prism Central, AHV, และ AOS

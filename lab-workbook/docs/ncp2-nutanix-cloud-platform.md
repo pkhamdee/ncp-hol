@@ -12,20 +12,4 @@
 - การใช้ประโยชน์จาก X-Play (cross play) สำหรับ automation ในงานประจำ (routine task)
 - การตรวจสอบการใช้งานผ่าน Reporting, Capacity Planning และการระบุ Inefficient VMs
 
-เมื่อสิ้นสุด bootcamp นี้และควบคู่ไปกับ NCP Part1 ผู้เข้าร่วมควรเข้าใจ core concepts และเทคโนโลยีที่ประกอบกันเป็น Nutanix Cloud Platform และมีความพร้อมเป็นอย่างดีสำหรับการทำ proof-of-concept (POC) ทั้งในรูปแบบ hosted หรือ onsite
-
-## Agenda
-
-_**(อัปเดตล่าสุด 2026-02-19)**_
-
-- Introductions
-- Nutanix Cloud Operating Model สำหรับ Hybrid Multicloud
-- การตั้งค่า Environment
-- วิธี Build คลาวด์ของคุณ
-- วิธี Operate คลาวด์ของคุณ
-- วิธี Govern คลาวด์ของคุณ
-
-## Introductions
-
-- ชื่อ
-- ความคุ้นเคยกับ Nutanix
+เมื่อสิ้นสุด bootcamp นี้และควบคู่ไปกับ NCP Part1 ผู้เข้าร่วมจะเข้าใจ core concepts และเทคโนโลยีที่ประกอบกันเป็น Nutanix Cloud Platform

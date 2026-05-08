@@ -46,7 +46,7 @@ existing service (ที่ไม่ได้ provisioned โดย Calm) ซึ
 
 #### Kubernetes
 
-ระบบ container management และ hosting, ดู [https://kubernetes.ioopen in new window](https://kubernetes.io)
+ระบบ container management และ hosting, ดู [https://kubernetes.io](https://kubernetes.io)
 
 #### Macro
 
@@ -100,25 +100,25 @@ infrastructure [provider](#provider) instance, ซึ่ง [blueprint](#bluepri
 
 #### Calm
 
-Self-service application-centric automation และ management, ดู [Calm](#calm) และ [https://www.nutanix.com/products/calmopen in new window](https://www.nutanix.com/products/calm). ในปัจจุบัน Calm ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
+Self-service application-centric automation และ management, ดู [Calm](#calm) และ [https://www.nutanix.com/products/calm](https://www.nutanix.com/products/calm). ในปัจจุบัน Calm ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
 
 #### Era
 
-Database-as-a-Service (DBaaS) automation และ data management, ดู [https://www.nutanix.com/products/eraopen in new window](https://www.nutanix.com/products/era).
+Database-as-a-Service (DBaaS) automation และ data management, ดู [https://www.nutanix.com/products/era](https://www.nutanix.com/products/era).
 
 #### Flow
 
-Microsegmentation (distributed firewall) security และ management สำหรับ Nutanix cluster services, ดู [https://www.nutanix.com/products/flowopen in new window](https://www.nutanix.com/products/flow). Flow ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
+Microsegmentation (distributed firewall) security และ management สำหรับ Nutanix cluster services, ดู [https://www.nutanix.com/products/flow](https://www.nutanix.com/products/flow). Flow ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
 
 #### Karbon
 
-Platform-as-a-service (PaaS), managed container offering สำหรับ [Kubernetes](#kubernetes), ดู [https://www.nutanix.com/products/karbonopen in new window](https://www.nutanix.com/products/karbon). ในปัจจุบัน Karbon ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
+Platform-as-a-service (PaaS), managed container offering สำหรับ [Kubernetes](#kubernetes), ดู [https://www.nutanix.com/products/karbon](https://www.nutanix.com/products/karbon). ในปัจจุบัน Karbon ถูกส่งมอบใน Nutanix [Prism Central](#prism-central) และสามารถเปิดใช้งานได้ด้วย one-click.
 
 #### Prism Central
 
-ดู [Prism Central](#prism-central) และ [https://www.nutanix.com/products/prismopen in new window](https://www.nutanix.com/products/prism).
+ดู [Prism Central](#prism-central) และ [https://www.nutanix.com/products/prism](https://www.nutanix.com/products/prism).
 
 ## Additional Resources
 
-1.  \[Blog\] [Calm Terminologyopen in new window](https://next.nutanix.com/blog-40/calm-terminology-actions-and-dependencies-33852)[\[Source\]open in new window](https://github.com/MichaelHaigh/calm-blueprints/blob/master/DependencyTaskExample/README.md)
-2.  [Nutanix Calm Admin Operations Guide: Major Componentsopen in new window](https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v297:nuc-nucalm-major-components-c.html)
+1.  \[Blog\] [Calm Terminology](https://next.nutanix.com/blog-40/calm-terminology-actions-and-dependencies-33852)[\[Source\]](https://github.com/MichaelHaigh/calm-blueprints/blob/master/DependencyTaskExample/README.md)
+2.  [Nutanix Calm Admin Operations Guide: Major Components](https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v297:nuc-nucalm-major-components-c.html)

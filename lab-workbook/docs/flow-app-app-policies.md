@@ -1,340 +1,336 @@
 # Application Policies
 
-Application Policies are the primary method for controlling network access with Flow Network Security. They're flexible because they allow specification of the exact incoming and outgoing allowed traffic.
+Application Policies เป็นวิธีหลักในการควบคุมการเข้าถึง network ด้วย Flow Network Security มันมีความยืดหยุ่นเนื่องจากอนุญาตให้ระบุ incoming และ outgoing traffic ที่อนุญาตได้อย่างแม่นยำ
 
-Application policies are evaluated after Quarantine, Isolation, and Shared Service policies.
+Application policies จะถูกประเมิน (evaluated) หลังจาก Quarantine, Isolation, และ Shared Service policies
 
 ## The Development Application
 
-These instructions will help us protect our development application. Let's revisit the security requirements and get started allowing the required traffic.
+คำแนะนำเหล่านี้จะช่วยเราในการปกป้อง development application ของเรา มาทบทวน security requirements และเริ่มต้นอนุญาตให้ traffic ที่จำเป็นผ่านกันเลย
 
-1.  In this application, we need to allow inbound access to our dev web VMs from the Parallels client and the Internet on TCP port 80.
+1.  ใน application นี้ เราจำเป็นต้องอนุญาต inbound access ไปยัง dev web VMs ของเราจาก Parallels client และ Internet บน TCP port 80
     
-2.  Our end-user developer VM should only be able to access the Development web server via TCP port 80.
+2.  end-user developer VM ของเราควรสามารถเข้าถึง Development web server ได้ผ่าน TCP port 80 เท่านั้น
     
-3.  The developer VM should also be able to access the Database via TCP 22 and TCP 5432.
+3.  developer VM ควรจะสามารถเข้าถึง Database ได้ผ่าน TCP 22 และ TCP 5432 ด้วยเช่นกัน
     
-4.  Within our application, we need to allow our Web VMs to communicate to the Database VMs via port 5432.
+4.  ภายใน application ของเรา เราจำเป็นต้องอนุญาตให้ Web VMs สื่อสารกับ Database VMs ผ่าน port 5432
     
-
-Our developer web VM has the following three categories assigned
+developer web VM ของเรามีการกำหนด categories 3 อย่างดังต่อไปนี้
 
 -   **AppTier: User`##`Web**
 -   **AppType: User`##`ToDo**
 -   **Environment: User`##`Dev**
 
-No other sources are permitted to communicate with our database tier.
+ไม่มี sources อื่นใดที่ได้รับอนุญาตให้สื่อสารกับ database tier ของเรา
 
-There are no requirements to restrict outbound access. That's handled by a physical firewall at the corporate perimeter.
+ไม่มี requirements ในการจำกัด outbound access ส่วนนี้ถูกจัดการโดย physical firewall ที่ขอบเขตระดับองค์กร (corporate perimeter)
 
 ### Creating the Development Security Policy
 
 #### Process Overview
 
-A security policy consists of the following items:
+security policy ประกอบด้วยรายการดังต่อไปนี้:
 
-1.  Secured Entity - This is the item at the center of the application policy. This is what we're protecting.
-2.  Inound Sources - Items on the left side of the policy. This is what we allow in.
-3.  Outbound Destinations - Items on the right side of the policy. This is what we allow out.
-4.  Rules - These are the allowed ports and protocols between entities.
+1.  Secured Entity - นี่คือรายการที่อยู่ตรงกลางของ application policy สิ่งนี้คือสิ่งที่เรากำลังปกป้อง
 
-Our process below is to
+2.  Inbound Sources - รายการที่อยู่ทางด้านซ้ายของ policy นี่คือสิ่งที่เราอนุญาตให้เข้ามา (allow in)
 
-1.  Create all the Secured Entities
-2.  Create all the Inbound Sources
-3.  Create all the Rules between Inbound Sources and Secured Entities
+3.  Outbound Destinations - รายการที่อยู่ทางด้านขวาของ policy นี่คือสิ่งที่เราอนุญาตให้ออกไป (allow out)
 
-It's possible to do this differently by creating the Secured Entities, then a single inbound, and then the rules from that inbound to the secured entity. In the end, the outcome is the same.
+4.  Rules - สิ่งเหล่านี้คือ ports และ protocols ที่อนุญาตระหว่าง entities
+
+กระบวนการของเราด้านล่างคือ
+
+1.  สร้าง Secured Entities ทั้งหมด
+
+2.  สร้าง Inbound Sources ทั้งหมด
+
+3.  สร้าง Rules ทั้งหมดระหว่าง Inbound Sources และ Secured Entities
+
+เป็นไปได้ที่จะทำสิ่งนี้ในรูปแบบที่ต่างออกไปโดยการสร้าง Secured Entities จากนั้นสร้าง inbound แบบ single แล้วตามด้วย rules จาก inbound นั้นไปยัง secured entity ในท้ายที่สุด ผลลัพธ์ก็จะเหมือนกัน
 
 #### Create the Policy
 
-1.  In Prism Central, make sure you're in **Infrastructure** and navigate to **Network & Security** > **Security Policies**.
+1.  ใน Prism Central ตรวจสอบให้แน่ใจว่าคุณอยู่ใน **Infrastructure** แล้วนำทางไปที่ **Network & Security** > **Security Policies**
 
-![Create Security Policy](/images/create-dev-1.242f3297.png)
+    ![Create Security Policy](/images/create-dev-1.242f3297.png)
 
-2.  Select **\+ Create Security Policy**.
+2.  เลือก **\+ Create Security Policy**
     
-    -   Name your security policy **User`##`\-DevSecurityPolicy**
-    -   Provide a description for this development security policy
-    -   Your policy type is Application : Secure Entities
+    -   ตั้งชื่อ security policy ของคุณเป็น **User`##`\-DevSecurityPolicy**
+    -   ระบุคำอธิบาย (description) สำหรับ development security policy นี้
+    -   policy type ของคุณคือ Application : Secure Entities
 
-![Name Security Policy](/images/create-dev-2.9677137c.png)
+    ![Name Security Policy](/images/create-dev-2.9677137c.png)
 
-3.  Before we proceed, note the additional settings for policy hit logs and IPv6. Leave these at the default values.
+3.  ก่อนที่เราจะดำเนินการต่อ โปรดสังเกต additional settings สำหรับ policy hit logs และ IPv6 ให้คงค่าเหล่านี้ไว้ที่ default values
     
-    -   Hit logs are enabled on a per-policy basis and generate Syslog messages for allowed and denied connections.
-    -   The IPv6 policy is new in Flow Network Security 7.5 and allows creation of IPv6 rules.
-4.  Select Next in the lower right corner to proceed.
+    -   Hit logs จะเปิดใช้งานตามแต่ละ policy (per-policy basis) และสร้าง Syslog messages สำหรับ connections ที่ allowed และ denied
+    -   IPv6 policy เป็นของใหม่ใน Flow Network Security 7.5 และอนุญาตให้สร้าง IPv6 rules
+
+4.  เลือก Next ที่มุมขวาล่างเพื่อดำเนินการต่อ
     
 
 #### Secured Entity Definition - Web
 
-Next, we'll define the secured entities at the center of our application security policy. This is what we're protecting with the policy.
+ต่อไป เราจะกำหนด secured entities ที่อยู่ตรงกลางของ application security policy ของเรา สิ่งนี้คือสิ่งที่เรากำลังปกป้องด้วย policy
 
-1.  Select **\+ Add Secured Entity**.
+1.  เลือก **\+ Add Secured Entity**
 
-![Name Security Policy](/images/create-dev-3.81fedcec.png)
+    ![Name Security Policy](/images/create-dev-3.81fedcec.png)
 
-We are using multiple categories to define our secured entity.
+    เรากำลังใช้ categories หลายอัน (multiple categories) เพื่อกำหนด secured entity ของเรา
+    มาเริ่มต้นด้วยการกำหนด web tier สำหรับ **User`##`Dev** ToDo application
 
-Let's start by defining the web tier for the **User`##`Dev** ToDo application.
+2.  ในช่อง category drop down (สามารถค้นหาได้) ให้เลือก categories เหล่านี้สำหรับ Web Tier ของ secured entity:
 
-2.  In the category drop down (this is searchable), select these categories for the Web Tier of the secured entity:
+    !!! note
+        เมื่อค้นหา categories ให้ใช้ autocomplete เพื่อลดการพิมพ์
 
-Note:
+    พิมพ์ user number ของคุณตามด้วยตัวอักษรตัวต่อไปของ category เช่น `01w` จะทำ autocomplete เป็น `AppTier: User01Web`
 
-When searching for categories, use autocomplete to save key strokes.
+    -   **AppTier: User`##`Web**
+    -   **AppType: User`##`ToDo**
+    -   **Environment: User`##`Dev**
 
-Type your user number followed by the next letter of the category. For example `01w` would autocomplete to `AppTier: User01Web`.
+    ![Name Security Policy](/images/create-dev-4.a6be5e2c.png)
 
--   **AppTier: User`##`Web**
--   **AppType: User`##`ToDo**
--   **Environment: User`##`Dev**
-
-![Name Security Policy](/images/create-dev-4.a6be5e2c.png)
-
-3.  After adding all three categories to the same VM entity, select **Apply**
+3.  หลังจากเพิ่ม categories ทั้งสามเข้าไปใน VM entity เดียวกัน ให้เลือก **Apply**
     
-4.  Hover over the Secured Entity to view all of the assigned category values.
+4.  เลื่อนเมาส์ไปเหนือ (Hover over) Secured Entity เพื่อดู category values ทั้งหมดที่ได้รับมอบหมาย
     
 
 #### Secured Entity Definition - Database
 
-Next, we will define our **Database Tier**.
+ต่อไป เราจะกำหนด **Database Tier** ของเรา
 
-1.  Select **\+ Add Secured Entity**
+1.  เลือก **\+ Add Secured Entity**
 
-![Name Security Policy](/images/create-dev-5.b0bb2a2d.png)
+    ![Name Security Policy](/images/create-dev-5.b0bb2a2d.png)
 
-2.  In the category drop down, select all three of these categories to define the database tier
+2.  ใน category drop down ให้เลือก categories ทั้งสามเหล่านี้เพื่อกำหนด database tier
 
--   **AppTier: User`##`DB**
--   **AppType: User`##`ToDo**
--   **Environment: User`##`Dev**
+    -   **AppTier: User`##`DB**
+    -   **AppType: User`##`ToDo**
+    -   **Environment: User`##`Dev**
 
-![Name Security Policy](/images/create-dev-6.dde2cc5e.png)
+    ![Name Security Policy](/images/create-dev-6.dde2cc5e.png)
 
-3.  Select **Apply**
+3.  เลือก **Apply**
 
 #### Inbound Source Requirements
 
-Now, we will define the inbound sources and the unique traffic, via TCP port, that will be permitted to communicate with out ToDo application.
+ตอนนี้ เราจะกำหนด inbound sources และ unique traffic ผ่านทาง TCP port ที่จะได้รับอนุญาตให้สื่อสารกับ ToDo application ของเรา
 
-Inbound sources can be Categories, Subnets, VPCs, Address Groups, Specific Network Addresses, or Entity Groups.
+Inbound sources สามารถเป็น Categories, Subnets, VPCs, Address Groups, Specific Network Addresses, หรือ Entity Groups
 
-In our policy, we have the following inbound requirements:
+ใน policy ของเรา เรามี inbound requirements ดังต่อไปนี้:
 
--   The **Web Tier** must be able to communicate to the **DB Tier** via **TCP port 5432**.
+-   **Web Tier** จะต้องสามารถสื่อสารไปยัง **DB Tier** ผ่านทาง **TCP port 5432**
 
-![Name Security Policy](/images/create-dev-7.05992657.png)
+    ![Name Security Policy](/images/create-dev-7.05992657.png)
 
--   The **User##-developer** desktop needs to be able to access the **Web Tier** via **TCP port 80**. This desktop also needs to access the **DB Tier** via **TCP port 22** and **TCP port 5432**.
+-   **User##-developer** desktop จำเป็นต้องสามารถเข้าถึง **Web Tier** ผ่านทาง **TCP port 80** นอกจากนี้ desktop นี้ยังจำเป็นต้องเข้าถึง **DB Tier** ผ่านทาง **TCP port 22** และ **TCP port 5432**
 
-![Name Security Policy](/images/create-dev-8.410ff0e5.png)
+    ![Name Security Policy](/images/create-dev-8.410ff0e5.png)
 
--   In addition, we need to allow traffic from the **Internet** and the **Parallels subnet** to the **Environment:Dev** ToDo app **Web Tier**.
+-   นอกจากนี้ เราจำเป็นต้องอนุญาต traffic จาก **Internet** และ **Parallels subnet** ไปยัง **Environment:Dev** ToDo app **Web Tier**
     
-    -   This traffic must be **restricted to TCP port 80**.
+    -   traffic นี้จะต้องถูกจำกัด (**restricted**) ไว้ที่ **TCP port 80** เท่านั้น
 
-![Name Security Policy](/images/create-dev-9.19b47ec3.png)
+    ![Name Security Policy](/images/create-dev-9.19b47ec3.png)
 
 #### Add the Web Source for Connections to DB
 
-1.  On the Inbound side of the policy on the left, select **\+ Add Source**.
+1.  ในฝั่ง Inbound ของ policy ทางด้านซ้าย ให้เลือก **\+ Add Source**
 
-![Name Security Policy](/images/create-dev-10.1d339e97.png)
+    ![Name Security Policy](/images/create-dev-10.1d339e97.png)
 
-2.  In the **Add Entity**, Entity dropdown, select **VM**.
+2.  ใน **Add Entity** ตรง Entity dropdown ให้เลือก **VM**
     
-3.  In the Category section, select the following categories:
+3.  ในส่วนของ Category ให้เลือก categories ดังต่อไปนี้:
     
+    -   **AppTier:User`##`Web**
+    -   **AppType:User`##`ToDo**
+    -   **Environment: User`##`Dev**
 
--   **AppTier:User`##`Web**
--   **AppType:User`##`ToDo**
--   **Environment: User`##`Dev**
+    ![Name Security Policy](/images/create-dev-11.84527c49.png)
 
-![Name Security Policy](/images/create-dev-11.84527c49.png)
-
-4.  Select **Apply**
+4.  เลือก **Apply**
 
 #### Add The Internet Source
 
-1.  On the Inbound side of the policy on the left, select **\+ Add Source**.
+1.  ในฝั่ง Inbound ของ policy ทางด้านซ้าย ให้เลือก **\+ Add Source**
     
-2.  In the **Add Entity**, Entity dropdown, select **Address Group**.
+2.  ใน **Add Entity** ตรง Entity dropdown ให้เลือก **Address Group**
     
-3.  In the **Address Group** dropdown, select the address group **Public-Internet-Addresses**.
+3.  ใน **Address Group** dropdown ให้เลือก address group ที่ชื่อ **Public-Internet-Addresses**
     
+    ![Name Security Policy](/images/create-dev-12.feadd88d.png)
 
-![Name Security Policy](/images/create-dev-12.feadd88d.png)
-
-4.  Select **Apply**
+4.  เลือก **Apply**
 
 #### Add The Parallels Source
 
-Now we will add the Parallel Sessions address group as another Inbound source
+ตอนนี้เราจะเพิ่ม Parallel Sessions address group ให้เป็น Inbound source อีกอัน
 
-1.  On the Inbound side of the policy on the left, select **\+ Add Source**.
+1.  ในฝั่ง Inbound ของ policy ทางด้านซ้าย ให้เลือก **\+ Add Source**
     
-2.  In the **Add Entity**, Entity dropdown, select **Address Group**.
+2.  ใน **Add Entity** ตรง Entity dropdown ให้เลือก **Address Group**
     
-3.  In the **Address Group** dropdown, select the address group **Parallel-Sessions**.
+3.  ใน **Address Group** dropdown ให้เลือก address group ที่ชื่อ **Parallel-Sessions**
     
+    ![Name Security Policy](/images/create-dev-13.f8e2ea3b.png)
 
-![Name Security Policy](/images/create-dev-13.f8e2ea3b.png)
-
-4.  Select **Apply**.
+4.  เลือก **Apply**
 
 #### Add The Dev Desktop Source
 
-Finally, we will add our developer desktop as an inbound source
+สุดท้าย เราจะเพิ่ม developer desktop ของเราให้เป็น inbound source
 
-1.  On the Inbound side of the policy on the left, select **\+ Add Source**.
+1.  ในฝั่ง Inbound ของ policy ทางด้านซ้าย ให้เลือก **\+ Add Source**
     
-2.  In the **Add Entity**, Entity dropdown, select **VM**.
+2.  ใน **Add Entity** ตรง Entity dropdown ให้เลือก **VM**
     
-3.  In the **Category** dropdown, select the following categories:
+3.  ใน **Category** dropdown ให้เลือก categories ดังต่อไปนี้:
     
+    -   **AppType:User`##`Desktop**
+    -   **Environment: User`##`Dev**
 
--   **AppType:User`##`Desktop**
--   **Environment: User`##`Dev**
+    ![Name Security Policy](/images/create-dev-14.8cfa2075.png)
 
-![Name Security Policy](/images/create-dev-14.8cfa2075.png)
-
-4.  Select **Apply**.
+4.  เลือก **Apply**
 
 #### Add Rules From Internet to Web
 
-Now that we have added our inbound sources, it is time to configure the unique traffic ports allowed to our ToDo application.
+ตอนนี้เราได้เพิ่ม inbound sources ของเราแล้ว ถึงเวลากำหนด (configure) unique traffic ports ที่อนุญาตไปยัง ToDo application ของเรา
 
-1.  On the left side of the policy, select the Inbound source: **Network Address Group Public-Internet-Addresses** by clicking on it once to select it.
+1.  ทางด้านซ้ายของ policy เลือก Inbound source: **Network Address Group Public-Internet-Addresses** โดยการคลิกหนึ่งครั้งเพื่อเลือกมัน
 
-![Name Security Policy](/images/create-dev-15.5d66611f.png)
+    ![Name Security Policy](/images/create-dev-15.5d66611f.png)
 
-2.  Next, without clicking anywhere else, click the **plus sign +** of the Secured Entity **AppTier:User`##`Web**.
+2.  ถัดไป โดยไม่ต้องคลิกที่ใดเพิ่มเติม ให้คลิกที่ **เครื่องหมายบวก +** (plus sign) ของ Secured Entity **AppTier:User`##`Web**
 
-![Name Security Policy](/images/create-dev-16.843d9784.png)
+    ![Name Security Policy](/images/create-dev-16.843d9784.png)
 
-3.  In the Configuration Traffic Filtering Section select **Allow Specific Traffic**.
+3.  ในส่วนของ Configuration Traffic Filtering Section เลือก **Allow Specific Traffic**
 
-Note:
+    !!! note
+        การเพิ่มคำอธิบาย (description) เข้าไปใน rule จะช่วยให้เห็นจุดประสงค์ของ rule นี้ได้ง่ายขึ้นเมื่อดู policy หรือตอนแก้ไขในภายหลัง
 
-Adding a description to the rule makes it easier to see the purpose of this rule when viewing the policy or editing it later.
-
-4.  In the Protocol-Ports / Services area select:
+4.  ในส่วนของ Protocol-Ports / Services area ให้เลือก:
     
     -   **Add New Protocol-Port / Service**
-    -   Select **TCP**
-    -   Enter port **80**
+    -   เลือก **TCP**
+    -   ใส่ port **80**
 
-![Name Security Policy](/images/create-dev-17.e59a4b9b.png)
+    ![Name Security Policy](/images/create-dev-17.e59a4b9b.png)
 
-5.  Select **Save** to save this inbound rule.
+5.  เลือก **Save** เพื่อบันทึก inbound rule นี้
 
 #### Add Rules from Parallels to Web
 
-Repeat those steps for the Inbound source Network Address Group Parallels-Sessions
+ทำซ้ำขั้นตอนเหล่านั้นสำหรับ Inbound source ประเภท Network Address Group สำหรับ Parallels-Sessions
 
 #### Add Rules from Developer Desktop to Web
 
-Next we will configure the rules for access from our our **developer desktop**.
+ถัดไปเราจะ configure rules สำหรับการเข้าถึงจาก **developer desktop** ของเรา
 
-1.  On the left side of the policy, click the Inbound source to select:
+1.  ทางด้านซ้ายของ policy คลิกที่ Inbound source เพื่อเลือก:
 
--   **AppType: User`##`Desktop**
--   **Environment: User`##`Dev**
+    -   **AppType: User`##`Desktop**
+    -   **Environment: User`##`Dev**
 
-2.  Select the plus sign **+** of the **Secured Entity** **AppTier: User`##`Web** to add a rule.
+2.  เลือกเครื่องหมายบวก **+** (plus sign) ของ **Secured Entity** **AppTier: User`##`Web** เพื่อเพิ่ม rule
     
-3.  In the Traffic Filtering Section select:
+3.  ในส่วน Traffic Filtering Section ให้เลือก:
     
     -   **Allow Specific Traffic**
-4.  In Protocol-Ports / Services area select:
+4.  ในส่วน Protocol-Ports / Services area ให้เลือก:
     
     -   **Add New Protocol-Port / Service**
-    -   Select **TCP**
-    -   Enter port **80**
+    -   เลือก **TCP**
+    -   ใส่ port **80**
 
-![Name Security Policy](/images/create-dev-18.336bc202.png)
+    ![Name Security Policy](/images/create-dev-18.336bc202.png)
 
-5.  Select **Save**
+5.  เลือก **Save**
 
 #### Add Rules from Developer Desktop to DB
 
-1.  On the left side of the policy, click the Inbound source to select:
+1.  ทางด้านซ้ายของ policy คลิกที่ Inbound source เพื่อเลือก:
 
--   **AppType: User`##`Desktop**
--   **Environment: User`##`Dev**
+    -   **AppType: User`##`Desktop**
+    -   **Environment: User`##`Dev**
 
-2.  Select the **plus sign** **+** of the Secured Entity **AppTier:User`##`DB**.
+2.  เลือก **เครื่องหมายบวก** **+** (plus sign) ของ Secured Entity **AppTier:User`##`DB**
     
-3.  In the Traffic Filtering Section select **Allow Specific Traffic**
+3.  ในส่วน Traffic Filtering Section ให้เลือก **Allow Specific Traffic**
     
-4.  In Protocol-Ports / Services select:
+4.  ใน Protocol-Ports / Services ให้เลือก:
     
     -   **Add New Protocol-Port / Service**
-    -   Select **TCP**
-    -   Enter port **22**
-5.  Press the return key to add an additional TCP port.
+    -   เลือก **TCP**
+    -   ใส่ port **22**
+5.  กดปุ่ม return (หรือ Enter) เพื่อเพิ่ม TCP port เพิ่มเติม
     
-    -   Enter **port 5432**
+    -   ใส่ **port 5432**
 
-![Name Security Policy](/images/create-dev-19.f0663b50.png)
+    ![Name Security Policy](/images/create-dev-19.f0663b50.png)
 
-6.  Select **Save**.
+6.  เลือก **Save**
 
 #### Add Rule from Web to DB
 
-Finally, we need to allow our **Web tier** to communicate with our **database tier** on **TCP port 5432**.
+สุดท้าย เราจำเป็นต้องอนุญาตให้ **Web tier** ของเราสื่อสารกับ **database tier** ของเราบน **TCP port 5432**
 
-1.  On the left side of the policy, click the Inbound source to select:
+1.  ทางด้านซ้ายของ policy คลิกที่ Inbound source เพื่อเลือก:
     
     -   **AppTier:User`##`Web**
     -   **AppType: User`##`ToDo**
     -   **Environment: User`##`Dev**
-2.  Select the **plus sign +** of the Secured Entity **AppTier:User`##`DB**.
+2.  เลือก **เครื่องหมายบวก +** ของ Secured Entity **AppTier:User`##`DB**
     
-3.  In the Traffic Filtering Section select **Allow Specific Traffic**.
+3.  ในส่วน Traffic Filtering Section ให้เลือก **Allow Specific Traffic**
     
-4.  In Protocol-Ports / Services select:
+4.  ใน Protocol-Ports / Services ให้เลือก:
     
     -   **Add New Protocol-Port / Service**
-    -   Select **TCP**
-    -   Enter port **5432**
+    -   เลือก **TCP**
+    -   ใส่ port **5432**
 
-![Name Security Policy](/images/create-dev-20.c0b45b15.png)
+    ![Name Security Policy](/images/create-dev-20.c0b45b15.png)
 
-5.  Select **Save**.
+5.  เลือก **Save**
 
-!!! note
-
-We could also create traffic rules using pre-built services such as http or ssh instead of directly specifying the TCP port numbers.
+    !!! note
+        เรายังสามารถสร้าง traffic rules ได้โดยใช้ pre-built services อย่างเช่น http หรือ ssh แทนที่จะระบุหมายเลข TCP port โดยตรง
 
 #### Check the List or Table View
 
-So far, we've built all of our rules in the visual view. Flow Network Security also offers a list view for creating and viewing application security policies.
+จนถึงตอนนี้ เราได้สร้าง rules ทั้งหมดของเราในแบบ visual view ทาง Flow Network Security ยังมี list view สำหรับการสร้างและดู application security policies อีกด้วย
 
-1.  In the upper right, navigate to the list view by clicking **List** to see the policy you've just created in table form.
+1.  ที่มุมขวาบน ให้นำทางไปยัง list view โดยคลิกที่ **List** เพื่อดู policy ที่คุณเพิ่งสร้างขึ้นในรูปแบบ table
 
-![Tabular FNS View](/images/create-dev-20a.fd00310a.png)
+    ![Tabular FNS View](/images/create-dev-20a.fd00310a.png)
 
-2.  Navigate back to the visual view by clicking **Visual**
+2.  นำทางกลับไปยัง visual view โดยคลิก **Visual**
 
 #### Review and Save The Policy in Monitor Mode
 
-Once all of the inbound rules have been created, select **Next** in the lower right corner.
+เมื่อ inbound rules ทั้งหมดได้ถูกสร้างขึ้นเรียบร้อยแล้ว ให้เลือก **Next** ที่มุมขวาล่าง
 
-You will see the ways in which this policy can be stored. We are going to place our policy in monitor mode.
+คุณจะเห็นวิธีการที่ policy นี้สามารถถูกจัดเก็บได้ เรากำลังจะวาง policy ของเราใน monitor mode
 
-1.  Select the **Apply (Monitor)** radio button.
+1.  เลือก radio button **Apply (Monitor)**
     
-2.  Select **Confirm** in the lower right corner.
+2.  เลือก **Confirm** ที่มุมขวาล่าง
     
-
-![Name Security Policy](/images/create-dev-21.d6cd1499.png)
+    ![Name Security Policy](/images/create-dev-21.d6cd1499.png)
 
 ## Takeaways
 
-The application policy allows in specific traffic. Anything that isn't allowed is dropped. We have saved this particular policy in a monitor mode, so it will still allow traffic and any exceptions to the policy will be visualized.
+application policy อนุญาตเฉพาะ traffic ที่เฉพาะเจาะจงให้เข้ามาได้ สิ่งใดที่ไม่ได้รับอนุญาตจะถูก drop ทิ้ง เราได้ทำการบันทึก policy เฉพาะนี้ในรูปแบบ monitor mode ดังนั้นมันยังคงอนุญาตให้มี traffic อยู่ และ exceptions ใดๆ ที่เกิดกับ policy นี้จะถูกแสดงให้เห็น (visualized)
 
-This is a great policy mode for building new policies without impacting your applications.
+นี่คือ policy mode ที่ยอดเยี่ยมสำหรับการสร้าง new policies โดยไม่กระทบต่อ applications ของคุณ

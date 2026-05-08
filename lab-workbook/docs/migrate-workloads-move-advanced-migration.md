@@ -18,7 +18,7 @@
         
     -   บ่อยครั้งองค์กรที่นำ strict security practices มาใช้ จะมี tool เพื่อรัน scripts จากระยะไกล (remotely execute) ด้วย unique credentials และสิ่งนี้น่าจะสามารถนำมาใช้งานร่วมกับ manual preparation scripts เหล่านี้ได้
         
-3.  เพื่อยกตัวอย่าง scenarios เหล่านี้ เราได้สร้าง guided click-through demo สำหรับ lab ในส่วนนี้ คลิกที่นี่เพื่อเปิด [Advanced VM Migrations Demoopen in new window](https://nutanix.storylane.io/share/r2ltquglgfpl?utm=holmigrate) กลับมาที่ lab guide นี้เมื่อคุณทำ demo เสร็จแล้ว
+3.  เพื่อยกตัวอย่าง scenarios เหล่านี้ เราได้สร้าง guided click-through demo สำหรับ lab ในส่วนนี้ คลิกที่นี่เพื่อเปิด [Advanced VM Migrations Demo](https://nutanix.storylane.io/share/r2ltquglgfpl?utm=holmigrate) กลับมาที่ lab guide นี้เมื่อคุณทำ demo เสร็จแล้ว
     
 
 ## When You're Done

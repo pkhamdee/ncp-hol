@@ -1,41 +1,39 @@
-# Nutanix Unified Storage
+# File Blocking
 
-# [#](#files-file-blocking) Files: File Blocking
+## Selective File Blocking
 
-## [#](#selective-file-blocking) Selective File Blocking
+ในแบบฝึกหัดนี้ คุณจะได้กำหนดค่า Files เพื่อบล็อก file extensions เฉพาะสำหรับ file server และ Marketing share
 
-In this exercise, you will configure Files to block specific file extensions for the file server and the Marketing share.
-
-1.  Within your Nutanix Files browser tab, navigate to **Configuration > Blocked File Types**.
+1.  ในแท็บเบราว์เซอร์ Nutanix Files ของคุณ ให้นำทางไปยัง **Configuration > Blocked File Types**
     
-2.  Within the _Blocked File Types_ field, enter the comma-separated list of extensions `.flv, .mov`, and click **Save**.
+2.  ในช่อง _Blocked File Types_ ให้ป้อนรายชื่อ extensions ที่คั่นด้วยเครื่องหมายจุลภาค (comma) ว่า `.flv, .mov` แล้วคลิก **Save**
     
-    ![](/unified-storage/assets/1.44c3e313.png)
+    ![](/images/1.44c3e313.png)
     
-3.  In your Windows Tools VM, open a PowerShell window by clicking the **PowerShell icon** on the taskbar. Enter the following command. Ensure you modify `User##` to match yours.
+3.  ใน Windows Tools VM ของคุณ ให้เปิดหน้าต่าง PowerShell โดยคลิกที่ **ไอคอน PowerShell** บนทาสก์บาร์ ป้อนคำสั่งต่อไปนี้ ตรวจสอบให้แน่ใจว่าคุณได้แก้ไข `User##` ให้ตรงกับของคุณ
     
     ```
     new-item \\BootcampFS.ntnxlab.local\`User##`-marketing\MyMovie.flv -ItemType file
     ```
     
-    This image illustrates before and after the blocked file extensions are specified.
+    รูปภาพนี้แสดงให้เห็นก่อนและหลังจากการระบุ blocked file extensions
     
-    ![](/unified-storage/assets/2.615ea45d.png)
+    ![](/images/2.615ea45d.png)
     
-4.  Return to your Files browser tab, and navigate to **Shares > `User##`\-Marketing**.
+4.  กลับไปที่แท็บเบราว์เซอร์ Files ของคุณ และนำทางไปยัง **Shares > `User##`\-Marketing**
     
-5.  Click **Update > Next**.
+5.  คลิก **Update > Next**
     
-6.  Check **Blocked File Types** and enter `.none` as the extension.
+6.  ทำเครื่องหมายที่ **Blocked File Types** และป้อน `.none` เป็น extension
     
-    ![](/unified-storage/assets/3.5a338186.png)
+    ![](/images/3.5a338186.png)
     
-7.  Click **Next > Update** to complete the update.
+7.  คลิก **Next > Update** เพื่อเสร็จสิ้นการอัปเดต
     
-8.  Return to PowerShell, and execute the command from step 3 once again. The command will now complete successfully.
+8.  กลับไปที่ PowerShell และดำเนินการคำสั่งจากขั้นตอนที่ 3 อีกครั้ง ตอนนี้คำสั่งจะทำงานสำเร็จ
     
-    ![](/unified-storage/assets/4.5daf96ad.png)
+    ![](/images/4.5daf96ad.png)
     
-    Blocked file type settings specified at the share level will override settings specified at the server level.
+    การตั้งค่า Blocked file type ที่ระบุในระดับ share จะเขียนทับ (override) การตั้งค่าที่ระบุในระดับ server
     
-9.  Click the at the top left corner once you are ready to proceed to the next section.
+9.  คลิก < ที่มุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนถัดไป

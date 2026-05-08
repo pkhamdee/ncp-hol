@@ -30,7 +30,7 @@
     
     Note
     
-    The script is not officially supported. It just captures the steps explained in the [official documentationopen in new window](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Platform-v2_16:top-download-nkp-t.html) for installing the NKP CLI.
+    The script is not officially supported. It just captures the steps explained in the [official documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Platform-v2_16:top-download-nkp-t.html) for installing the NKP CLI.
     
 3.  When prompted, enter the following URL
     
@@ -40,7 +40,7 @@
     
     (Optional) Where to find the NKP CLI when not in a bootcamp
     
-    You can find the NKP CLI download link on the [Nutanix portalopen in new window](https://portal.nutanix.com/page/downloads?product=nkp).
+    You can find the NKP CLI download link on the [Nutanix portal](https://portal.nutanix.com/page/downloads?product=nkp).
     
     ![NKP CLI Portal](/cloudnative/assets/nkp_cli_portal_link.9095dade.png)
     

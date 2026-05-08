@@ -8,4 +8,4 @@
 
 ## Resources
 
--   [NGTopen in new window](https://portal.nutanix.com/page/documents/details?targetId=Prism-Central-Guide-vpc_2024_3:mul-ngt-pc-introduction-c.html)
+-   [NGT](https://portal.nutanix.com/page/documents/details?targetId=Prism-Central-Guide-vpc_2024_3:mul-ngt-pc-introduction-c.html)

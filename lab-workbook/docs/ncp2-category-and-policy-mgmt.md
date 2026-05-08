@@ -1,7 +1,6 @@
-# Nutanix Cloud Platform
+# Categories
 
 ## Overview of Categories
-
 Categories เป็นรากฐานของการจัดการ cloud operating model สิ่งเหล่านี้คือระบบ labeling ที่ช่วยให้คุณสามารถ tag resources (เช่น VMs, images, subnets และ clusters) ด้วย metadata โดย category จะช่วยจัดกลุ่มและจัดระเบียบ infrastructure เพื่อให้การทำ filtering, policy enforcement และ automation ง่ายขึ้น
 
 Category จะจัดกลุ่ม entities เป็น key-value pairs ทำให้สามารถทำ assignment ตามเกณฑ์ที่ระบุได้ Policies สามารถถูกนำไปใช้กับ entities ที่ถูกจัดกลุ่มตาม category value
@@ -36,17 +35,12 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
 6.  กำหนด parameters ของ category
     
     -   Name: **User`##`** โดยที่ `##` คือ `User #` ที่คุณได้รับมอบหมายจาก Connection Details
-        
     -   Purpose: ให้ข้อมูล purpose (ทางเลือก) สำหรับ category ของคุณ
-        
     -   Values: **Production**
-        
     -   คลิก **Save**
-        
     
     ![Category Key and Values](/images/category2.5c3357a0.png)
     
-
 ## Assign Category to VMs
 
 เมื่อกำหนด category ของเราแล้ว มาลองนำไปใช้กับ virtual machines กัน การทำเช่นนี้จะเป็นการตั้งค่า category ให้เป็น metadata สำหรับ VMs ที่ถูก assigned
@@ -79,7 +73,7 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
 !!! note
     คุณสามารถประหยัดเวลาได้โดยการพิมพ์ตัวอักษรเฉพาะไม่กี่ตัวใน query ของคุณเพื่อใช้ประโยชน์จากการทำ auto-populate
 
-![Find Category](/images/categorytovm4.9652c95a.png)
+    ![Find Category](/images/categorytovm4.9652c95a.png)
 
 1.  คลิก **Save** เพื่อใช้ category นี้กับสอง VMs ของคุณ
 

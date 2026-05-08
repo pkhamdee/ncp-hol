@@ -28,7 +28,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 1.  ภายใน Prism Central, คลิกที่ **App switcher** และเลือก **Self Service**
 
-![](/images/Picture13.9efcae30.png)
+    ![](/images/Picture13.9efcae30.png)
 
 2.  เลือก **Blueprints** จากเมนูด้านซ้ายและคลิก **Upload Blueprint**. เลือก **DevWorkStation.json**.
     
@@ -36,8 +36,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 4.  จากเมนูแบบเลื่อนลงของ _Project_, ให้เลือก `User##`\-Project และคลิก **Continue**.
     
-
-![](/images/Marketplace1.7bb6c6d5.png)
+    ![](/images/Marketplace1.7bb6c6d5.png)
 
 5.  ภายในหน้า Blueprint Settings, ทำการอัปเดตชื่อและ Environment ของ Blueprint ให้ตรงกับ User## ของคุณ และคลิกที่ **VM Details**. ![](/images/Marketplace2.ef84803e.png)
     
@@ -46,50 +45,49 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 7.  คลิกที่ **Clone from environment** และเลื่อนลงไปที่ **Guest Customization**. ที่นั่นคุณจะพบ script ต่อไปนี้ (วางลงไปหากไม่มีอยู่):
     
 
-```
- #cloud-config
-hostname: Calm-DSL-@@{calm_unique}@@
-manage_etc_hosts: true
-ssh_pwauth: True
+    ```
+    #cloud-config
+    hostname: Calm-DSL-@@{calm_unique}@@
+    manage_etc_hosts: true
+    ssh_pwauth: True
 
-users:
-  - name: @@{ROCKY.username}@@
-    sudo: ['ALL=(ALL) NOPASSWD:ALL']
-    shell: /bin/bash
-chpasswd:
-  list: |
-    @@{ROCKY.username}@@:@@{ROCKY.secret}@@
-  expire: False
+    users:
+    - name: @@{ROCKY.username}@@
+        sudo: ['ALL=(ALL) NOPASSWD:ALL']
+        shell: /bin/bash
+    chpasswd:
+    list: |
+        @@{ROCKY.username}@@:@@{ROCKY.secret}@@
+    expire: False
 
-runcmd:
-  - exec > /var/log/calm_dsl_install.log 2>&1
+    runcmd:
+    - exec > /var/log/calm_dsl_install.log 2>&1
 
-  # Update and install dependencies
-  - sudo dnf -y update
-  - sudo dnf -y install git gcc openssl-devel python3 python3-pip python3-devel jq make
+    # Update and install dependencies
+    - sudo dnf -y update
+    - sudo dnf -y install git gcc openssl-devel python3 python3-pip python3-devel jq make
 
-  # Clone Calm DSL (latest stable release)
-  - cd /home/@@{ROCKY.username}@@ && git clone --branch v4.1.0 https://github.com/nutanix/calm-dsl.git
-  - sudo chown -R @@{ROCKY.username}@@:@@{ROCKY.username}@@ /home/@@{ROCKY.username}@@/calm-dsl
+    # Clone Calm DSL (latest stable release)
+    - cd /home/@@{ROCKY.username}@@ && git clone --branch v4.1.0 https://github.com/nutanix/calm-dsl.git
+    - sudo chown -R @@{ROCKY.username}@@:@@{ROCKY.username}@@ /home/@@{ROCKY.username}@@/calm-dsl
 
-  # Build Calm DSL
-  - cd /home/@@{ROCKY.username}@@/calm-dsl && sudo -u @@{ROCKY.username}@@ bash -c "make dev"
+    # Build Calm DSL
+    - cd /home/@@{ROCKY.username}@@/calm-dsl && sudo -u @@{ROCKY.username}@@ bash -c "make dev"
 
-  # Optional: Initialize Calm DSL (safe quoting for password)
-  - sudo -u @@{ROCKY.username}@@ bash -c "
-      source /home/@@{ROCKY.username}@@/calm-dsl/venv/bin/activate &&
-      calm init dsl -i @@{prism_central_ip}@@ -P @@{prism_central_port}@@ \
-        -u @@{prism_central_user}@@ -p '@@{prism_central_password}@@' \
-        -pj @@{calm_project_name}@@ &&
-      calm init bp
-    "
-```
+    # Optional: Initialize Calm DSL (safe quoting for password)
+    - sudo -u @@{ROCKY.username}@@ bash -c "
+        source /home/@@{ROCKY.username}@@/calm-dsl/venv/bin/activate &&
+        calm init dsl -i @@{prism_central_ip}@@ -P @@{prism_central_port}@@ \
+            -u @@{prism_central_user}@@ -p '@@{prism_central_password}@@' \
+            -pj @@{calm_project_name}@@ &&
+        calm init bp
+        "
+    ```
 
 8.  เลื่อนลงไปยังส่วนของ _DISKS (1)_. จากเมนูแบบเลื่อนลงของ _Image_, ตรวจสอบให้แน่ใจว่าเลือกภาพ **Rocky9.qcow2** แล้ว. โปรดทราบว่าการตั้งค่า VM เหล่านี้ได้รับการสืบทอด (inherited) มาจากสิ่งที่เราตั้งไว้ในการตั้งค่า Environment สำหรับ Linux VM.
     
-    Warning
-    
-    อาจมีหลาย images บนคลัสเตอร์ ดังนั้นการเผลอเลือก image อื่นจึงเกิดขึ้นได้ง่าย. โปรดตรวจสอบให้แน่ใจว่าคุณได้เลือก image **Rocky9.qcow2**.
+    !!! warning
+        อาจมีหลาย images บนคลัสเตอร์ ดังนั้นการเผลอเลือก image อื่นจึงเกิดขึ้นได้ง่าย. โปรดตรวจสอบให้แน่ใจว่าคุณได้เลือก image **Rocky9.qcow2**.
     
 9.  คลิก **Save** จากนั้นคลิก **Advanced Options** เพื่อกำหนดค่า credentials. ![](/images/Marketplace4.9b00280f.png)![](/images/Marketplace5.6b158667.png)
     
@@ -99,7 +97,10 @@ runcmd:
     -   **Type** - **Static**
     -   **Username** - **rocky**
     -   **Secret Type** - **Password**
-    -   **Password** - **nutanix/4u**![](/images/Marketplace6.86205342.png)
+    -   **Password** - **nutanix/4u**
+    
+    ![Marketplace6](/images/Marketplace6.86205342.png)
+
 11.  เลื่อนลงมาและคลิก **Save** ภายใน _Advanced Options (Optional)_.
     
 
@@ -114,8 +115,7 @@ runcmd:
     -   **Change Image** - คลิก **Change > Upload from computer** เลือก _software-developer.png_ และคลิก **Open**. ป้อน **Workstation** เป็นชื่อไอคอน. คลิกและคลิก **Select & continue**.
 2.  คลิก **Submit for Approval**.
     
-
-![](/images/Marketplace7.4b3c030a.png)
+    ![](/images/Marketplace7.4b3c030a.png)
 
 ### Approving Blueprints
 
@@ -138,19 +138,19 @@ runcmd:
 
 1.  ภายใน Prism Central, คลิกที่ **App switcher** และเลือก **Self Service** (หากยังไม่ได้อยู่ในหน้านี้)
 
-![](/images/Picture13.9efcae30.png)
+    ![](/images/Picture13.9efcae30.png)
 
 2.  เลือก **Marketplace** จากเมนูด้านซ้าย
 
-![](/images/Picture14.20d9e32e.png)
+    ![](/images/Picture14.20d9e32e.png)
 
 3.  เลื่อนดูในหน้า Marketplace เพื่อค้นหา Dev Workstation catalog item และเลือก **Get**.
 
-![](/images/Picture15.83e0fe3e.png)
+    ![](/images/Picture15.83e0fe3e.png)
 
 4.  ตอนนี้ให้เลือก **Deploy**
 
-![](/images/Picture16.4068b654.png)
+    ![](/images/Picture16.4068b654.png)
 
 5.  กรอกข้อมูลในฟิลด์บนฟอร์มตามลำดับ:
     
@@ -160,50 +160,48 @@ runcmd:
     -   ป้อน **Prism Central IP** สำหรับ lab ของคุณในส่วนของ variables
     -   ป้อน **Prism Central Pasword** สำหรับ lab ของคุณในส่วนของ variables
 
-![](/images/Picture17.bd9798ae.png)![](/images/Marketplace11.27485fbb.png)
+    ![](/images/Picture17.bd9798ae.png)![](/images/Marketplace11.27485fbb.png)
 
 6.  คลิก **Deploy**
     
 7.  คุณสามารถคลิก **View in Applications** จากกล่องโต้ตอบ (dialog box) **Deploying App** เพื่อมอนิเตอร์การ deploy ของ `DevWorkstation`.
     
 
-![](/images/Picture19.4f6e4ab3.png)
+    ![](/images/Picture19.4f6e4ab3.png)
 
-```
-::: tip Note
-ขอแนะนำให้ตรวจสอบ audit log เพื่อดู packages ที่กำลังทำการ deploy. การ deploy จะใช้เวลาประมาณห้านาที.
-:::
-```
+    ```
+    ::: tip Note
+    ขอแนะนำให้ตรวจสอบ audit log เพื่อดู packages ที่กำลังทำการ deploy. การ deploy จะใช้เวลาประมาณห้านาที.
+    :::
+    ```
 
 8.  เมื่อ application (deployment) เสร็จสิ้น, สถานะจะเปลี่ยนจาก **Provisioning** เป็น **Running**
 
-![](/images/Marketplace12.305d7c71.png)
+    ![](/images/Marketplace12.305d7c71.png)
 
 ## Using Self Service DSL
 
 1.  จากมุมมอง **Application** ปัจจุบัน, ให้คลิกที่ **Open Terminal** จากบานหน้าต่างด้านขวา. Application อาจจะแสดงผลเป็น running แล้ว, แต่ cloud-init script อาจจะยังรันอยู่, ดังนั้นไฟล์ Calm DSL จึงอาจยังไม่ปรากฏขึ้น. เพื่อตรวจสอบ คุณสามารถรันคำสั่ง **sudo cloud-init status** ภายใน terminal เพื่อดูสถานะ.
 
-![](/images/Marketplace14.6bacb72a.png)
+    ![](/images/Marketplace14.6bacb72a.png)
 
-```
-::: tip Note
+    ```
+    ::: tip Note
 
-หากคุณต้องการใช้ SSH, เมื่อ application อยู่ในสถานะ *Running* แล้วให้จด IP address ไว้. มันจะถูกระบุอยู่ใน application overview. จากนั้นคุณสามารถ SSH ไปที่ IP นั้นโดยใช้ username `centos` และ password `nutanix/4u`.
+    หากคุณต้องการใช้ SSH, เมื่อ application อยู่ในสถานะ *Running* แล้วให้จด IP address ไว้. มันจะถูกระบุอยู่ใน application overview. จากนั้นคุณสามารถ SSH ไปที่ IP นั้นโดยใช้ username `centos` และ password `nutanix/4u`.
 
-:::
-```
+    :::
+    ```
 
 2.  เปลี่ยน directories โดยการพิมพ์ `cd calm-dsl` แล้วกด `enter`.
     
-    Note
-    
-    หากคุณยังไม่เห็น directory สำหรับ calm-dsl, ให้รอหนึ่งหรือสองนาทีเนื่องจากการติดตั้งอาจยังดำเนินการอยู่.
+    !!! note
+        หากคุณยังไม่เห็น directory สำหรับ calm-dsl, ให้รอหนึ่งหรือสองนาทีเนื่องจากการติดตั้งอาจยังดำเนินการอยู่.
     
 3.  รัน `source venv/bin/activate` เพื่อสลับไปยัง virtual environment ภายใน Self Service DSL.
     
-    Note
-    
-    แม้จะดำเนินการผ่าน Blueprint ไปแล้ว, คุณสามารถตั้งค่าการเชื่อมต่อไปยัง Prism Central ผ่านคำสั่ง `calm init dsl` ได้.
+    !!! note
+        แม้จะดำเนินการผ่าน Blueprint ไปแล้ว, คุณสามารถตั้งค่าการเชื่อมต่อไปยัง Prism Central ผ่านคำสั่ง `calm init dsl` ได้.
     
 4.  ตอนนี้เราจะเชื่อมต่อ Dev Workstation เข้ากับ Self Service instance ใน lab.
     
@@ -213,10 +211,10 @@ runcmd:
     -   Username: `adminuser##`@ntnxlab.local
     -   Password: **provided password**
     -   Project: `User##`\-Project
+
 5.  ตรวจสอบการตั้งค่า config ปัจจุบันโดยรัน `calm show config`.
     
-
-![](/images/Picture9.15c2e857.png)
+    ![](/images/Picture9.15c2e857.png)
 
 ### List the current Blueprints in Self Service
 
@@ -243,16 +241,14 @@ runcmd:
     
 3.  Directory _HelloBlueprint_ มีไฟล์ที่เรียกว่า _blueprint.py_, ซึ่งเป็น Python Blueprint. นอกจากนี้ยังมี directory _scripts_ ที่เก็บ scripts ที่ถูกอ้างอิงภายใน Blueprint.
     
-
-![](/images/Marketplace13.24439e83.png)
+    ![](/images/Marketplace13.24439e83.png)
 
 #### Modify blueprint.py
 
 1.  ก่อนที่เราจะแก้ไข (modify), มาทำการคัดลอกไฟล์ _blueprint.py_ โดยใช้คำสั่ง `cp blueprint.py blueprint.py.bak` กัน.
     
-    Note
-    
-    หากคุณแก้ไขผิดพลาด, คุณสามารถออกจากไฟล์ได้ตลอดเวลาโดยไม่ต้องบันทึก (save). กด **ESC** เพื่อให้แน่ใจว่าคุณไม่ได้อยู่ในโหมด _Insert_, แล้วพิมพ์ `:q!`. คำสั่งนี้จะเป็นการบังคับออกโดยไม่บันทึก. ยิ่งรู้ยิ่งดี!
+    !!! note
+        หากคุณแก้ไขผิดพลาด, คุณสามารถออกจากไฟล์ได้ตลอดเวลาโดยไม่ต้องบันทึก (save). กด **ESC** เพื่อให้แน่ใจว่าคุณไม่ได้อยู่ในโหมด _Insert_, แล้วพิมพ์ `:q!`. คำสั่งนี้จะเป็นการบังคับออกโดยไม่บันทึก. ยิ่งรู้ยิ่งดี!
     
 2.  รันคำสั่ง `vi blueprint.py` เพื่อแก้ไขไฟล์ blueprint.py.
     
@@ -265,6 +261,7 @@ runcmd:
     -   ภายใต้คลาส (class) HelloPackage(Package) คุณจะเห็นการอ้างอิงถึง script `pkg_install_task.sh` ใน directory ของ scripts (บรรทัด 150)
     -   ข้อมูล Basic VM spec (vCPU/memory/disks/nics) (บรรทัด 164-170)
     -   Guest Customization ที่ประกอบด้วย cloud-init (บรรทัด 174-184)
+
 4.  กดปุ่ม **Insert** เพื่อเข้าสู่โหมด _Insert_. ในบรรทัดที่ 165 ให้แก้ไขจำนวน vCPU จาก **2** เป็น **4**.
     
     ![](/images/vcpu.6911cf97.png)
@@ -273,7 +270,7 @@ runcmd:
     
     -   `provider_spec.name = "User##-@@{calm_unique}@@"` (เช่น User01-@@{calm\_unique}@@)
         
-        ![](/images/vmname.b12ac73c.png)
+    ![](/images/vmname.b12ac73c.png)
         
 6.  กด **ESC** เพื่อออกจากโหมด _Insert_. บันทึก (write) ไฟล์ blueprint.py แล้วออกโดยการพิมพ์คำสั่ง `:wq`.
     
@@ -291,97 +288,97 @@ runcmd:
 4.  รันคำสั่ง `cat pkg_install_task.sh` อีกครั้งเพื่อดู script ที่ถูกแทนที่. ตอนนี้ script ทำหน้าที่อะไร?
     
 
-```
-#!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+    ```
+    #!/bin/bash
+    set -euo pipefail
+    IFS=$'\n\t'
 
-# --- sanity checks ---
-if ! command -v dnf >/dev/null 2>&1; then
-  echo "This script is for Rocky Linux (dnf-based)." >&2
-  exit 1
-fi
+    # --- sanity checks ---
+    if ! command -v dnf >/dev/null 2>&1; then
+    echo "This script is for Rocky Linux (dnf-based)." >&2
+    exit 1
+    fi
 
-# --- repos: EPEL + Remi for modern PHP ---
-sudo dnf -y install epel-release
-sudo dnf -y install "https://rpms.remirepo.net/enterprise/remi-release-$(rpm -E %rhel).rpm"
+    # --- repos: EPEL + Remi for modern PHP ---
+    sudo dnf -y install epel-release
+    sudo dnf -y install "https://rpms.remirepo.net/enterprise/remi-release-$(rpm -E %rhel).rpm"
 
-# Use PHP 8.2 from Remi (adjust if you prefer 8.1/8.3)
-sudo dnf -y module reset php
-sudo dnf -y module enable php:remi-8.2
+    # Use PHP 8.2 from Remi (adjust if you prefer 8.1/8.3)
+    sudo dnf -y module reset php
+    sudo dnf -y module enable php:remi-8.2
 
-# --- install packages ---
-sudo dnf -y install nginx php-fpm php-cli php-mysqlnd php-mbstring php-xml php-opcache php-gd git unzip wget policycoreutils-python-utils
+    # --- install packages ---
+    sudo dnf -y install nginx php-fpm php-cli php-mysqlnd php-mbstring php-xml php-opcache php-gd git unzip wget policycoreutils-python-utils
 
-# --- configure php-fpm (socket is default) ---
-# default pool is 'www' and listens on /run/php-fpm/www.sock in Rocky; nothing to change
-sudo systemctl enable php-fpm
+    # --- configure php-fpm (socket is default) ---
+    # default pool is 'www' and listens on /run/php-fpm/www.sock in Rocky; nothing to change
+    sudo systemctl enable php-fpm
 
-# --- nginx vhost for a Laravel-style app ---
-sudo install -d -m 0755 /var/www/laravel/public
-sudo tee /etc/nginx/conf.d/laravel.conf >/dev/null <<'NGINX'
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name _;
-    root /var/www/laravel/public;
-    index index.php index.html;
+    # --- nginx vhost for a Laravel-style app ---
+    sudo install -d -m 0755 /var/www/laravel/public
+    sudo tee /etc/nginx/conf.d/laravel.conf >/dev/null <<'NGINX'
+    server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        server_name _;
+        root /var/www/laravel/public;
+        index index.php index.html;
 
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_pass unix:/run/php-fpm/www.sock;
+            fastcgi_index index.php;
+        }
+
+        location ~* \.(?:css|js|jpg|jpeg|gif|png|svg|ico|woff2?)$ {
+            try_files $uri =404;
+            access_log off;
+            expires 30d;
+        }
     }
+    NGINX
 
-    location ~ \.php$ {
-        include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_pass unix:/run/php-fpm/www.sock;
-        fastcgi_index index.php;
-    }
+    # ensure the default server block in /etc/nginx/nginx.conf doesn't conflict
+    sudo sed -i 's|^ *#\? *include /etc/nginx/conf\.d/\*\.conf;|    include /etc/nginx/conf.d/*.conf;|' /etc/nginx/nginx.conf
 
-    location ~* \.(?:css|js|jpg|jpeg|gif|png|svg|ico|woff2?)$ {
-        try_files $uri =404;
-        access_log off;
-        expires 30d;
-    }
-}
-NGINX
+    # --- selinux: allow nginx/php-fpm to read/write your app as needed ---
+    # minimal read perms:
+    sudo chcon -R -t httpd_sys_content_t /var/www/laravel
+    # if your app writes to storage/, uncomment the next two lines:
+    sudo install -d -m 0775 /var/www/laravel/storage /var/www/laravel/bootstrap/cache
+    sudo chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage /var/www/laravel/bootstrap/cache
 
-# ensure the default server block in /etc/nginx/nginx.conf doesn't conflict
-sudo sed -i 's|^ *#\? *include /etc/nginx/conf\.d/\*\.conf;|    include /etc/nginx/conf.d/*.conf;|' /etc/nginx/nginx.conf
+    # allow outbound network (e.g., if PHP needs to call APIs)
+    sudo setsebool -P httpd_can_network_connect on
 
-# --- selinux: allow nginx/php-fpm to read/write your app as needed ---
-# minimal read perms:
-sudo chcon -R -t httpd_sys_content_t /var/www/laravel
-# if your app writes to storage/, uncomment the next two lines:
-sudo install -d -m 0775 /var/www/laravel/storage /var/www/laravel/bootstrap/cache
-sudo chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage /var/www/laravel/bootstrap/cache
+    # --- firewall: open http ---
+    if systemctl is-active --quiet firewalld; then
+    sudo firewall-cmd --add-service=http --permanent
+    sudo firewall-cmd --reload
+    fi
 
-# allow outbound network (e.g., if PHP needs to call APIs)
-sudo setsebool -P httpd_can_network_connect on
+    # --- sample index page ---
+    sudo wget -qO /var/www/laravel/public/index.html \
+    https://raw.githubusercontent.com/bmp-ntnx/prep/master/index.html || \
+    echo "<h1>Laravel-style NGINX/PHP test</h1>" | sudo tee /var/www/laravel/public/index.html >/dev/null
 
-# --- firewall: open http ---
-if systemctl is-active --quiet firewalld; then
-  sudo firewall-cmd --add-service=http --permanent
-  sudo firewall-cmd --reload
-fi
+    # --- permissions: owned by nginx group, readable; write dirs already handled above ---
+    sudo chgrp -R nginx /var/www/laravel
+    sudo find /var/www/laravel -type d -exec chmod 0755 {} \;
+    sudo find /var/www/laravel -type f -exec chmod 0644 {} \;
 
-# --- sample index page ---
-sudo wget -qO /var/www/laravel/public/index.html \
-  https://raw.githubusercontent.com/bmp-ntnx/prep/master/index.html || \
-  echo "<h1>Laravel-style NGINX/PHP test</h1>" | sudo tee /var/www/laravel/public/index.html >/dev/null
+    # --- start services ---
+    sudo systemctl enable --now nginx
+    sudo systemctl restart php-fpm
+    sudo systemctl reload nginx
 
-# --- permissions: owned by nginx group, readable; write dirs already handled above ---
-sudo chgrp -R nginx /var/www/laravel
-sudo find /var/www/laravel -type d -exec chmod 0755 {} \;
-sudo find /var/www/laravel -type f -exec chmod 0644 {} \;
-
-# --- start services ---
-sudo systemctl enable --now nginx
-sudo systemctl restart php-fpm
-sudo systemctl reload nginx
-
-echo "NGINX + PHP-FPM installed and configured on Rocky. Visit http://<server-ip>/"
-```
+    echo "NGINX + PHP-FPM installed and configured on Rocky. Visit http://<server-ip>/"
+    ```
 
 ### Upload The Modified Blueprint To Self Service
 
@@ -418,7 +415,6 @@ echo "NGINX + PHP-FPM installed and configured on Rocky. Visit http://<server-ip
     
     ![](/images/welcome2.f8a8fcbf.png)
     
-
 คุณประสบความสำเร็จในการแก้ไข (modify) Blueprint ที่มีอยู่แล้ว
 
 ## Takeaways

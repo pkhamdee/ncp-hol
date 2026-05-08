@@ -75,7 +75,7 @@ As a Database administrator (DBA), you will need to create new database servers.
     Note
     
     -   The option to choose a maintenance policy during provisioning is another way the NDB helps keep your database VMs up to date and secure.
-    -   PostgreSQL and MongoDB support database encryption. You can learn more in the [NDB documentationopen in new window](https://portal.nutanix.com/page/documents/list?type=software&filterKey=software&filterVal=Nutanix%20Database%20Service) on the Nutanix Portal.
+    -   PostgreSQL and MongoDB support database encryption. You can learn more in the [NDB documentation](https://portal.nutanix.com/page/documents/list?type=software&filterKey=software&filterVal=Nutanix%20Database%20Service) on the Nutanix Portal.
     
 7.  Select **\> Operations** from the drop-down menu to monitor the provisioning. This process will take <20 minutes.
     

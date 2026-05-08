@@ -1,6 +1,4 @@
-# Nutanix Cloud Platform
-
-## Setting Up the Environment
+# Setting Up the Environment
 
 ส่วนนี้เกี่ยวกับการเตรียมความพร้อมสำหรับ hybrid multicloud operations ที่เป็นแบบ automated และมีประสิทธิภาพ สิ่งเหล่านี้ล้วนเป็นองค์ประกอบสำคัญของ cloud operating model
 

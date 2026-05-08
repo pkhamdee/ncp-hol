@@ -1,92 +1,91 @@
-# Nutanix Unified Storage
+# Create SMB Share
 
-# [#](#files-create-smb-share) Files: Create SMB Share
+## Overview
 
-## [#](#overview) Overview
+ในแบบฝึกหัดนี้ คุณจะได้สร้างและทดสอบ SMB share ที่ใช้สำหรับรองรับ home directories, user profiles และ unstructured file data อื่นๆ เช่น departmental shares ซึ่งมักจะถูกเข้าถึงโดย Windows clients
 
-In this exercise, you will create and test an SMB share used to support home directories, user profiles, and other unstructured file data, such as departmental shares commonly accessed by Windows clients.
+## Using SMB Shares
 
-## [#](#using-smb-shares) Using SMB Shares
+### Creating The Share
 
-### [#](#creating-the-share) Creating The Share
-
-1.  Open Chrome, enter your Prism Central IP address, and log into **Prism Central** using the provided credentials.
+1.  เปิด Chrome, ป้อน IP address ของ Prism Central ของคุณ และเข้าสู่ระบบ **Prism Central** โดยใช้ credentials ที่ระบุไว้ให้
     
-2.  Navigate to **Services > Files**, and click directly on **BootcampFS**.
+2.  ไปที่ **Services > Files** และคลิกโดยตรงที่ **BootcampFS**
     
-3.  Select **Shares & Exports** and then **New Share or Export**.
+3.  เลือก **Shares & Exports** จากนั้นเลือก **New Share or Export**
     
-    ![](/unified-storage/assets/1.1a90ed6b.png)
+    ![](/images/1.1a90ed6b.png)
     
-4.  Fill out the following fields, and click **Next**.
+4.  กรอกข้อมูลในช่องต่อไปนี้ แล้วคลิก **Next**
     
-    -   **Name** - `User##`\-Marketing (ex. User01-Marketing)
-    -   **Description (Optional)** - Departmental share for marketing team
-    -   **Share Path (Optional)** - This field allows you to specify an existing path to create the nested share. Leave blank.
-    -   **Max Size (Optional)** - This field allows you to set a hard quota for the individual share. Leave blank.
+    -   **Name** - `User##`\-Marketing (เช่น User01-Marketing)
+    -   **Description (Optional)** - Departmental share สำหรับ marketing team
+    -   **Share Path (Optional)** - ช่องนี้ให้คุณระบุพาธที่มีอยู่เพื่อสร้าง nested share ปล่อยว่างไว้
+    -   **Max Size (Optional)** - ช่องนี้ให้คุณตั้งค่า hard quota สำหรับแต่ละ share แยกกัน ปล่อยว่างไว้
     -   **Primary Protocol Access** - SMB
     
-    ![](/unified-storage/assets/2.dc793f21.png)
+    ![](/images/2.dc793f21.png)
     
-5.  Select the following options, and click **Next**.
+5.  เลือกตัวเลือกต่อไปนี้ แล้วคลิก **Next**
     
     -   **Enable Self Service Restore**
     -   **Enable Compression**
     
-    ![](/unified-storage/assets/3.28d1c5bb.png)
+    ![](/images/3.28d1c5bb.png)
     
-    Enable Access Based Enumeration and click **Next**.
+    เปิดใช้งาน Access Based Enumeration แล้วคลิก **Next**
     
-    ![](/unified-storage/assets/3a.0d1d5393.png)
+    ![](/images/3a.0d1d5393.png)
     
-    **Standard** shares are most appropriate for our example, as you create a single departmental share, meaning that all top-level directories and files within the share and connections to the share are served from a single File Server VM (FSVM).
+    **Standard** shares เหมาะสมที่สุดสำหรับตัวอย่างของเรา เนื่องจากคุณกำลังสร้าง departmental share เดี่ยว หมายความว่า top-level directories และไฟล์ทั้งหมดภายใน share รวมถึงการเชื่อมต่อไปยัง share จะถูกจัดการโดย File Server VM (FSVM) เดียว
     
-    **Distributed** shares are appropriate for home directories, user profiles, and application folders. This type of share distributes top-level directories across all File Server VMs (FSVM) and load balances connections across all FSVMs within the Files cluster.
+    **Distributed** shares เหมาะสมสำหรับ home directories, user profiles และ application folders ประเภท share นี้จะกระจาย top-level directories ไปยังทุก File Server VMs (FSVM) และทำการ load balance การเชื่อมต่อข้าม FSVMs ทั้งหมดภายใน Files cluster
     
-    **Access Based Enumeration (ABE)** ensures that only files and folders a given user has read access to are visible to that user, commonly enabled for Windows file shares.
+    **Access Based Enumeration (ABE)** ทำให้มั่นใจว่าผู้ใช้จะมองเห็นเฉพาะไฟล์และโฟลเดอร์ที่ผู้ใช้นั้นมีสิทธิ์ (read access) ในการเข้าถึง มักถูกเปิดใช้งานสำหรับ Windows file shares
     
-    **Self Service Restore** allows users to leverage Windows Previous Version to quickly restore individual files to previous revisions based on Nutanix snapshots.
+    **Self Service Restore** อนุญาตให้ผู้ใช้ใช้ประโยชน์จาก Windows Previous Version เพื่อกู้คืน (restore) ไฟล์แต่ละไฟล์กลับไปยังเวอร์ชันก่อนหน้าได้อย่างรวดเร็ว โดยอิงจาก Nutanix snapshots
     
-6.  Review the **Summary** and click **Create**.
+6.  ตรวจสอบข้อมูลในหน้า **Summary** แล้วคลิก **Create**
     
-    ![](/unified-storage/assets/4.4ea31b24.png)
+    ![](/images/4.4ea31b24.png)
     
-7.  Leave this tab open, as we will be returning to it.
+7.  เปิดแท็บนี้ทิ้งไว้ เนื่องจากเราจะกลับมาใช้ในภายหลัง
     
+### Testing The Share
 
-### [#](#testing-the-share) Testing The Share
-
-1.  Return to your `User##`\-WinTools VM Remote Desktop session and log in with the following credentials:
+1.  กลับไปที่ Remote Desktop session ของ `User##`\-WinTools VM ของคุณและเข้าสู่ระบบด้วย credentials ต่อไปนี้:
     
     -   Username **administrator@ntnxlab.local**
     -   Password: **cluster password**
-2.  Open the Windows File Explorer. Right-click the **SampleData\_Small.zip** within the _Downloads_ folder, and choose **Extract All**.
+
+2.  เปิด Windows File Explorer คลิกขวาที่ **SampleData\_Small.zip** ภายในโฟลเดอร์ _Downloads_ และเลือก **Extract All**
     
-    ![](/unified-storage/assets/6.3c67cd16.png)
+    ![](/images/6.3c67cd16.png)
     
-    -   The `NTNXLAB\Administrator` user was specified as a Files Administrator during the deployment of the Files cluster, giving it read/write access to all shares by default.
-    -   Managing access for other users is no different from any other SMB share.
-3.  Enter `\\BootcampFS.ntnxlab.local\User##-Marketing` (ex. \\\\BootcampFS.ntnxlab.local\\User01-Marketing) within the _Files will be extracted to this folder_ field, and click **Extract**. A new Windows File Explorer window will open.
+    -   ผู้ใช้ `NTNXLAB\Administrator` ถูกระบุให้เป็น Files Administrator ระหว่างการติดตั้ง (deployment) Files cluster ทำให้มีสิทธิ์ read/write การเข้าถึง shares ทั้งหมดโดยค่าเริ่มต้น
+    -   การจัดการสิทธิ์การเข้าถึงสำหรับผู้ใช้อื่นนั้นไม่แตกต่างจาก SMB share อื่นๆ ทั่วไป
+
+3.  ป้อน `\\BootcampFS.ntnxlab.local\User##-Marketing` (เช่น \\BootcampFS.ntnxlab.local\User01-Marketing) ในช่อง _Files will be extracted to this folder_ แล้วคลิก **Extract** หน้าต่าง Windows File Explorer ใหม่จะเปิดขึ้น
     
-    ![](/unified-storage/assets/7.58b105b7.png)
+    ![](/images/7.58b105b7.png)
     
-4.  Right-click **`User##`Marketing > Properties**.
+4.  คลิกขวาที่ **`User##`Marketing > Properties**
     
-5.  Select the **Security** tab and click **Advanced**.
+5.  เลือกแท็บ **Security** และคลิก **Advanced**
     
-    ![](/unified-storage/assets/8.87acbf50.png)
+    ![](/images/8.87acbf50.png)
     
-6.  Select **Users (BootcampFS\\Users)** and click **Remove**.
+6.  เลือก **Users (BootcampFS\Users)** และคลิก **Remove**
     
-    ![](/unified-storage/assets/8a.007e813b.png)
+    ![](/images/8a.007e813b.png)
     
-7.  Click **Add**.
+7.  คลิก **Add**
     
-8.  Click **Select a principal** and specify **Everyone** in the _Enter the object name to select_ field. Click **OK**.
+8.  คลิก **Select a principal** และระบุ **Everyone** ในช่อง _Enter the object name to select_ คลิก **OK**
     
-    ![](/unified-storage/assets/9.09dff69d.png)
+    ![](/images/9.09dff69d.png)
     
-9.  Fill out the following fields and click **OK**:
+9.  กรอกข้อมูลในช่องต่อไปนี้และคลิก **OK**:
     
     -   **Type** - Allow
     -   **Applies to** - This folder only
@@ -95,40 +94,40 @@ In this exercise, you will create and test an SMB share used to support home dir
     -   Select **Read**
     -   Select **Write**
     
-    ![](/unified-storage/assets/10.dfcc1bc3.png)
+    ![](/images/10.dfcc1bc3.png)
     
-10.  Click **OK > OK > OK** to save the permission changes.
+10.  คลิก **OK > OK > OK** เพื่อบันทึกการเปลี่ยนแปลง permission
     
-    All users can now create folders and files within the Marketing share.
+    ตอนนี้ผู้ใช้ทุกคนสามารถสร้างโฟลเดอร์และไฟล์ภายใน Marketing share ได้แล้ว
     
-    It is typical for shares utilized by many people to leverage quotas to ensure fair use of resources. Files offers the ability to set either soft or hard quotas on a per share basis for individual users within Active Directory or specific Active Directory Security Groups.
+    โดยปกติ shares ที่มีผู้ใช้งานหลายคน มักจะใช้ quotas เพื่อให้มั่นใจถึงการใช้ resource อย่างเป็นธรรม Files มีความสามารถในการตั้งค่าทั้ง soft หรือ hard quotas ต่อ share ให้กับผู้ใช้แต่ละรายใน Active Directory หรือ Active Directory Security Groups เฉพาะ
     
 
-### [#](#adding-share-level-quota) Adding Share Level Quota
+### Adding Share Level Quota
 
-1.  Return to the **Nutanix Files** browser tab.
+1.  กลับไปที่แท็บเบราว์เซอร์ **Nutanix Files**
     
-2.  Click on the `User##`**\-Marketing** share to open the share details.
+2.  คลิกที่ `User##`**\-Marketing** share เพื่อเปิดดูรายละเอียด share
     
-    ![](/unified-storage/assets/11.10d6479a.png)
+    ![](/images/11.10d6479a.png)
     
-3.  Within the _Actions_ menu, select **Add Quota Policy**.
+3.  ในเมนู _Actions_ เลือก **Add Quota Policy**
     
-    ![](/unified-storage/assets/13.de2438e0.png)
+    ![](/images/13.de2438e0.png)
     
-4.  Fill out the following fields and click **Add**.
+4.  กรอกข้อมูลในช่องต่อไปนี้และคลิก **Add**
     
     -   Select **User Group**
     -   **User or Group** - SSP Developers
     -   **Quota** - 10 GiB
     -   **Enforcement Type** - Hard Limit
     
-    ![](/unified-storage/assets/14.054f5570.png)
+    ![](/images/14.054f5570.png)
     
-    These steps will enforce quota limits on the shares for the Microsoft Active Directory (AD) user group **SSP Developers**. If anyone within this group exceeds 10 GB of storage, they cannot add any more storage. A **Soft** limit would issue a warning but not limit the user's behavior in any way.
+    ขั้นตอนเหล่านี้จะบังคับใช้ (enforce) ขีดจำกัด quota บน shares สำหรับ Microsoft Active Directory (AD) user group ที่ชื่อ **SSP Developers** หากใครในกลุ่มนี้ใช้ storage เกิน 10 GB จะไม่สามารถเพิ่มข้อมูลลงใน storage ได้อีก การกำหนด **Soft** limit จะแสดงคำเตือนแต่ไม่มีการจำกัดพฤติกรรมของผู้ใช้แต่อย่างใด
     
-5.  Review the **Capacity Summary**, **Performance Summary**, **Share Properties**, and **Features** sections to understand the available on a per share basis, including the number of files & connections, storage utilization over time, latency, throughput, and IOPS.
+5.  ตรวจสอบหัวข้อ **Capacity Summary**, **Performance Summary**, **Share Properties** และ **Features** เพื่อทำความเข้าใจถึงรายละเอียดที่มีอยู่ในแต่ละ share ซึ่งรวมถึง จำนวนไฟล์และการเชื่อมต่อ, storage utilization ในช่วงเวลาต่างๆ, latency, throughput และ IOPS
     
-    ![](/unified-storage/assets/15.6a15bba2.png)
+    ![](/images/15.6a15bba2.png)
     
-6.  Click the in the top left corner once you are ready to proceed to the next section.
+6.  คลิก < ที่มุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนต่อไป

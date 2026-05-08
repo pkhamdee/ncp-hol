@@ -1,80 +1,76 @@
-# Nutanix Unified Storage
+# Buckets, Users, And Access Control
 
-# [#](#objects-buckets-users-and-access-control) Objects: Buckets, Users, And Access Control
+## Create Bucket In Prism
 
-## [#](#create-bucket-in-prism) Create Bucket In Prism
+bucket จะอยู่ภายใน object store ซึ่งสามารถนำ policies มาประยุกต์ใช้ได้ เช่น versioning และ WORM โดยค่าเริ่มต้น bucket ที่สร้างขึ้นใหม่จะเป็น private resource สำหรับผู้สร้าง โดยค่าเริ่มต้น ผู้สร้าง bucket จะมีสิทธิ์ (permissions) แบบ read/write สิทธิ์การเข้าถึง (Access permission) ยังสามารถมอบให้กับผู้ใช้อื่นได้ด้วย
 
-A bucket resides within an object store which can have policies applied to it, such as versioning and WORM. A newly created bucket is a private resource to the creator by default. By default, the bucket's creator has read/write permissions. Access permission can also be granted to other users.
-
-1.  Within _Prism Central_, navigate to **\> Services > Objects**.
+1.  ใน _Prism Central_ ไปที่ **> Services > Objects**
     
-2.  Click on the **ntnx-objects** Objects Store. The Objects Store management will open in a new browser tab.
+2.  คลิกที่ **ntnx-objects** Objects Store หน้าต่างการจัดการ Objects Store จะเปิดขึ้นในแท็บเบราว์เซอร์ใหม่
     
-3.  Click **Create Bucket**. Fill out the following fields, and click **Create**.
+3.  คลิก **Create Bucket** กรอกข้อมูลในช่องต่อไปนี้ แล้วคลิก **Create**
     
-    -   **Name** - `user##`\-bucket (lower case)
-    -   **Enable Versioning** - Checked
+    -   **Name** - `user##`\-bucket (ตัวพิมพ์เล็ก)
+    -   **Enable Versioning** - ทำเครื่องหมายเลือก (Checked)
     
-    ![](/unified-storage/assets/1.8ed30024.png)
+    ![](/images/1.8ed30024.png)
     
-    Bucket names must be lowercase and only contain letters, numbers, periods, and hyphens.
+    ชื่อของ bucket ต้องเป็นตัวพิมพ์เล็กและประกอบด้วยตัวอักษร, ตัวเลข, จุด (periods), และยัติภังค์ (hyphens) เท่านั้น
     
-    Additionally, all bucket names must be unique within a given Object Store.
+    นอกจากนี้ ชื่อ bucket ทั้งหมดจะต้องไม่ซ้ำกัน (unique) ภายใน Object Store นั้นๆ
     
-    If versioning is enabled, new versions of the same object can be uploaded for required changes without losing the original data. Lifecycle policies define how long to keep data in the system.
+    หากเปิดใช้งาน versioning คุณจะสามารถอัปโหลดเวอร์ชันใหม่ของ object เดิมเพื่อทำการเปลี่ยนแปลงที่จำเป็นได้โดยที่ original data ไม่สูญหาย Lifecycle policies กำหนดระยะเวลาในการเก็บรักษา data ไว้ในระบบ
     
-    Once the bucket is created, it can be configured with WORM (Write Once, Read Many). WORM prevents editing, overwriting, renaming, and deleting data, which is crucial in heavily regulated industries (finance, healthcare, public agencies, etc.) where sensitive data is collected and stored. Examples include e-mails, account information, voice mails, and more.
+    เมื่อสร้าง bucket เสร็จแล้ว จะสามารถกำหนดค่า (configured) ด้วย WORM (Write Once, Read Many) ได้ WORM ช่วยป้องกันการแก้ไข, การเขียนทับ (overwriting), การเปลี่ยนชื่อ, และการลบ data ซึ่งเป็นสิ่งสำคัญมากในอุตสาหกรรมที่มีการควบคุมอย่างเข้มงวด (การเงิน, การดูแลสุขภาพ, หน่วยงานรัฐ ฯลฯ) ซึ่งมีการรวบรวมและจัดเก็บ sensitive data ตัวอย่างเช่น e-mails, ข้อมูลบัญชี, voice mails และอื่นๆ
     
-    Note
+    !!! note    
+        หากเปิดใช้งาน WORM บน bucket มันจะแทนที่ (supersede) lifecycle policy ใดๆ
     
-    If WORM is enabled on a bucket, it will supersede any lifecycle policy.
+4.  ทำเครื่องหมายที่ช่องถัดจาก **`user##`\-bucket** ในเมนู drop-down ของ _Actions_ ให้เลือก **Configure WORM**
     
-4.  Check the box next to **`user##`\-bucket**. Within the _Actions_ drop-down, choose **Configure WORM**
+    ![](/images/2.bcfd3c20.png)
     
-    ![](/unified-storage/assets/2.bcfd3c20.png)
+5.  ทำเครื่องหมายที่ช่องถัดจาก **Enable WORM**
     
-5.  Check the box next to **Enable WORM**.
+6.  ในช่อง _Retention Period_ ให้ป้อน **1** เลือก **months** จากเมนู drop-down ที่อยู่ติดกัน คลิก **Enable WORM**
     
-6.  Within the _Retention Period_ field, enter **1**. Select **months** from the adjacent drop-down. Click **Enable WORM**.
+    !!! note
+        คุณสามารถกำหนด data retention period ของ WORM สำหรับแต่ละ bucket แยกกันได้
     
-    Note
-    
-    You can define a WORM data retention period on a per-bucket basis.
-    
-    ![](/unified-storage/assets/2a.0ae277b7.png)
+    ![](/images/2a.0ae277b7.png)
     
 
-## [#](#objects-user-management) Objects User Management
+## Objects User Management
 
-In this exercise, you will generate access and secret keys to access the object store used throughout the lab.
+ในแบบฝึกหัดนี้ คุณจะได้สร้าง (generate) access keys และ secret keys เพื่อเข้าถึง object store ที่ใช้ตลอดทั้งแล็บ
 
-1.  Return to your _Prism Central_ browser tab.
+1.  กลับไปที่แท็บเบราว์เซอร์ _Prism Central_ ของคุณ
     
-2.  Click on **Access Keys** from the top menu, and click **Add People**.
+2.  คลิกที่ **Access Keys** จากเมนูด้านบน และคลิก **Add People**
     
-    ![](/unified-storage/assets/3.98c7c525.png)
+    ![](/images/3.98c7c525.png)
     
-3.  Select **Add people not in a directory service**. Enter your e-mail address and name. Click **Next > Generate Keys**.
+3.  เลือก **Add people not in a directory service** ป้อน e-mail address และชื่อของคุณ คลิก **Next > Generate Keys**
     
-    ![](/unified-storage/assets/4.061d21c2.png)
+    ![](/images/4.061d21c2.png)
     
-4.  Click **Download Keys** to download a .txt file containing the **Access Key** and **Secret Key**. Click **Close**.
+4.  คลิก **Download Keys** เพื่อดาวน์โหลดไฟล์ .txt ซึ่งประกอบด้วย **Access Key** และ **Secret Key** คลิก **Close**
     
-5.  Open the file by clicking on the file name in the lower left corner of Chrome.
+5.  เปิดไฟล์โดยคลิกที่ชื่อไฟล์ตรงมุมซ้ายล่างของ Chrome
     
-    ![](/unified-storage/assets/5.f814312b.png)
+    ![](/images/5.f814312b.png)
     
 
-## [#](#adding-users-to-buckets-share) Adding Users To Buckets Share
+## Adding Users To Buckets Share
 
-1.  Return to your Objects Store browser tab.
+1.  กลับไปที่แท็บเบราว์เซอร์ Objects Store ของคุณ
     
-2.  Click **`user##`\-bucket**, and select **User Access** from the left menu.
+2.  คลิก **`user##`\-bucket** และเลือก **User Access** จากเมนูด้านซ้าย
     
-3.  Click **Edit User Access** to share your bucket. You can configure read access (GET), write access (PUT), or both on a per-user basis.
+3.  คลิก **Edit User Access** เพื่อแชร์ bucket ของคุณ คุณสามารถกำหนดค่า read access (GET), write access (PUT) หรือทั้งสองอย่างสำหรับผู้ใช้แต่ละราย (per-user) ได้
     
-4.  Add your e-mail address. Select it, and within the _Permissions_ drop-down, select both **Read** and **Write** permissions. Click **Save**.
+4.  เพิ่ม e-mail address ของคุณ เลือก e-mail นั้น และในเมนู drop-down ของ _Permissions_ ให้เลือก permissions ทั้ง **Read** และ **Write** คลิก **Save**
     
-    ![](/unified-storage/assets/6.feaa5714.png)
+    ![](/images/6.feaa5714.png)
     
-5.  Click **Back** in the top left corner.
+5.  คลิก < **Back** ที่มุมซ้ายบน

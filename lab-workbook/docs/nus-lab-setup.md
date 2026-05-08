@@ -1,25 +1,22 @@
-# Nutanix Unified Storage
+# Lab Setup
 
-# [#](#lab-setup) Lab Setup
-
-1.  Open Chrome, enter your Prism Element IP address, and log in using the provided credentials.
+1.  เปิด Chrome, ป้อน IP address ของ Prism Element ของคุณ และเข้าสู่ระบบด้วย credentials ที่ระบุไว้ให้
     
-2.  Within the drop-down, select **VM** and click on **Table**.
+2.  ในเมนู drop-down ให้เลือก **VM** แล้วคลิกที่ **Table**
     
-3.  Locate both your **`User##`\-WinTools** and **`User##`\-LinuxTools** VMs. Note their IP addresses, using the **IP Addresses** column.
+3.  ค้นหาทั้ง **`User##`\-WinTools** และ **`User##`\-LinuxTools** VMs ของคุณ จดบันทึก IP addresses ของพวกมันไว้ โดยใช้คอลัมน์ **IP Addresses**
     
+    ![](/images/ip_addresses.63dcc6c9.png)
 
-![](/unified-storage/assets/ip_addresses.63dcc6c9.png)
-
-4.  Connect to your **`User##`\-WinTools** VM via Remote Desktop using the following credentials:
+4.  เชื่อมต่อไปยัง **`User##`\-WinTools** VM ของคุณผ่าน Remote Desktop โดยใช้ credentials ต่อไปนี้:
     
     -   Username **administrator@ntnxlab.local**
     -   Password: **cluster password**
 
-More detailed instructions can be found [here](/unified-storage/appendix/remote_desktop.html).
+สามารถดูคำแนะนำโดยละเอียดเพิ่มเติมได้ [ที่นี่](/unified-storage/appendix/remote_desktop.html)
 
-5.  Within your **`User##`\-WinTools** VM, download the following sample data file by copying and pasting this URL into Chrome.
+5.  ภายใน **`User##`\-WinTools** VM ของคุณ ให้ดาวน์โหลดไฟล์ sample data ต่อไปนี้โดยคัดลอกและวาง URL นี้ลงใน Chrome
 
-```
-http://10.42.194.11/hol/unified-storage/SampleData_Small.zip
-```
+    ```
+    http://10.42.194.11/hol/unified-storage/SampleData_Small.zip
+    ```

@@ -14,21 +14,20 @@
     
 5.  ป้อนข้อมูลต่อไปนี้ และคลิก **Deploy**
     
-
 -   Application Name - **User`##`-CentOS-IaaS**
 -   vm_name_prefix - **User`##`**
 
 6.  คลิก **View in Admin Center** เพื่อ monitor การ provisioning ของ blueprint
 
-![](/images/selfservice13.8970f6dd.png)
+    ![](/images/selfservice13.8970f6dd.png)
 
 7.  คลิก **Audit**
 
-![](/images/selfservice14.09de287c.png)
+    ![](/images/selfservice14.09de287c.png)
 
 8.  ขยาย (Expand) **Create** คลิก **Policy Execute - Approval** คุณควรเห็นข้อความ **Waiting for approval from users/groups belonging to the policy**
 
-![](/images/selfservice15.1f7100cf.png)
+    ![](/images/selfservice15.1f7100cf.png)
 
 9.  administrator ต้องทำ approve ตัว request นี้เพื่อให้การ provisioning เสร็จสมบูรณ์
 
@@ -42,22 +41,19 @@
     
 4.  คลิก **Approval Requests**
     
-
-![](/images/selfservice16.3a9717b1.png)
+    ![](/images/selfservice16.3a9717b1.png)
 
 5.  คลิกที่ Request **Launch App User`##`..**
     
 6.  คลิก **Approve**
-    
 
-![](/images/selfservice17.a867fef1.png)
+    ![](/images/selfservice17.a867fef1.png)
 
 7.  คลิก Yes เมื่อได้รับ prompt ถามว่า **Are you sure you want to approve this request?**
     
 8.  application ได้รับการ approved อย่างสำเร็จโดย **adminuser`##`**
-    
 
-![](/images/selfservice18.3d4a1389.png)
+    ![](/images/selfservice18.3d4a1389.png)
 
 9.  กลับไปที่ Prism Central และ login เป็น **operator`##`@ntnxlab.local** ด้วย PC password จากหน้า Connection Details
     
@@ -69,16 +65,13 @@
     
 13.  คุณควรสังเกตเห็นว่า App ได้รับการ provisioned และกำลัง running อย่างสำเร็จ
     
+    ![](/images/selfservice19.8247840c.png)
 
-![](/images/selfservice19.8247840c.png)
-
-!!! note
-    ตรวจสอบ inbox ของคุณ 💻 📧 เพื่อดูว่าคุณได้รับ notifications เกี่ยวกับ VM creation event นี้หรือไม่
+    !!! note
+        ตรวจสอบ inbox ของคุณ 💻 📧 เพื่อดูว่าคุณได้รับ notifications เกี่ยวกับ VM creation event นี้หรือไม่
 
 ## Takeaways
 
-software engineer ของเราสามารถ request ตัว VM ใหม่ได้อย่างรวดเร็วจาก template
-
+software engineer ของเราสามารถ request ตัว VM ใหม่ได้อย่างรวดเร็วจาก template\
 VM นั้นได้รับการ approved และ acknowledged โดยทีม IT administrator
-
 มีการสร้าง record ของการ approval และรวมถึงอีเมลด้วย (were generated)!

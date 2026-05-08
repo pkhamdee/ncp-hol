@@ -1,6 +1,4 @@
-# Untitled Page
-
-# [#](#migrate-vm) Migrate VM
+# Migrate VM
 
 Once the Migration plan is started, it will first be validated.
 
@@ -12,7 +10,7 @@ Once the Migration plan is started, it will first be validated.
     
 3.  You can monitor the **Migration Status** and **Details** on this page. This should take about 5-10 minutes. A perfect time to get a cup of ☕.
     
-    For curious minds, during this step, Move is preparing the source VM for transfer by doing tasks like installing Nutanix VirtIO drivers and doing data seeding on the target cluster. For a detailed list of tasks done refer to the [Move Guideopen in new window](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
+    For curious minds, during this step, Move is preparing the source VM for transfer by doing tasks like installing Nutanix VirtIO drivers and doing data seeding on the target cluster. For a detailed list of tasks done refer to the [Move Guide](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
     
     ![](/images/vm-migration-plan12.d3eef821.png)
     
@@ -66,9 +64,8 @@ Once the Migration plan is started, it will first be validated.
     
     -   **password** - `adminuser01`
     
-    Note:
-    
-    All users will use `adminuser01` as the password regardless of what other passwords you've previously used.
+    !!! note    
+        All users will use `adminuser01` as the password regardless of what other passwords you've previously used.
     
     You will then be able to access the terminal.
     

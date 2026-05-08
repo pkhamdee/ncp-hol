@@ -8,13 +8,13 @@ Nutanix Files และ Nutanix Objects ช่วย customers ในการ c
 
 1.  Native Client Tools
 
--   Robocopy (SMB): Robocopy เป็น command-line tool สำหรับ Windows ที่อนุญาตให้ users สามารถ copy ตัว files, directories และแม้กระทั่ง entire drives จาก location หนึ่งไปยังอีกที่หนึ่งได้ มันถูกออกแบบมาให้มีความเสถียรและมีประสิทธิภาพ (robust and efficient) และสามารถจัดการกับ data ปริมาณมากได้อย่างรวดเร็ว
--   Rsync (NFS): rsync เป็น command-line utility สำหรับ Unix-like operating systems ที่ใช้ในการ synchronize ตัว files และ directories ระหว่างสอง locations มันสามารถใช้เพื่อ copy ตัว files จาก location หนึ่งไปยังอีกที่หนึ่ง เพื่อสร้าง backups และเพื่อ synchronize ตัว data ระหว่าง devices
+    -   Robocopy (SMB): Robocopy เป็น command-line tool สำหรับ Windows ที่อนุญาตให้ users สามารถ copy ตัว files, directories และแม้กระทั่ง entire drives จาก location หนึ่งไปยังอีกที่หนึ่งได้ มันถูกออกแบบมาให้มีความเสถียรและมีประสิทธิภาพ (robust and efficient) และสามารถจัดการกับ data ปริมาณมากได้อย่างรวดเร็ว
+    -   Rsync (NFS): rsync เป็น command-line utility สำหรับ Unix-like operating systems ที่ใช้ในการ synchronize ตัว files และ directories ระหว่างสอง locations มันสามารถใช้เพื่อ copy ตัว files จาก location หนึ่งไปยังอีกที่หนึ่ง เพื่อสร้าง backups และเพื่อ synchronize ตัว data ระหว่าง devices
 
 2.  Third Party Tools
 
--   Peer Software (SMB)
--   Atempo Miria (SMB and NFS)
+    -   Peer Software (SMB)
+    -   Atempo Miria (SMB and NFS)
 
 3.  Native Nutanix Tool
     

@@ -69,9 +69,7 @@ Projects ยังสามารถควบคุม default VM specifications
 14. กรอกข้อมูลในช่องต่อไปนี้:
     
     -   ป้อน **Initials-Environment** โดยที่ Initials คือชื่อย่อของคุณ แล้วคลิก **Next**
-        
     -   คลิกที่ drop-down Select Infrastructure และเลือก **NTNX_LOCAL_AZ**
-        
     -   คลิกที่ใดก็ได้ในกล่อง **VM Configuration** เพื่อขยาย (expand) มัน
         
 15. ป้อนข้อมูลต่อไปนี้สำหรับส่วน **Windows**
@@ -85,6 +83,7 @@ Projects ยังสามารถควบคุม default VM specifications
     -   เลื่อนลงไปที่ส่วน Categories และเลือก **User`##`:Production** category จาก drop-down โดย `##` คือหมายเลขที่คุณได้รับมอบหมาย และควรเป็น category ที่คุณสร้างไว้ในแบบฝึกหัด Categories ก่อนหน้านี้
     -   เลื่อนลงไปที่ส่วน Network Adapters (NICs) และเลือก aux-1 จาก drop-down NIC 1
     -   ![](/images/projects10.be9610bc.png)
+
 16. ป้อนข้อมูลต่อไปนี้ในส่วน **Linux**
     
     -   ใน drop-down **Cluster** ให้เลือก cluster ของคุณ
@@ -117,6 +116,7 @@ Projects ยังสามารถควบคุม default VM specifications
     
     -   Name - Administrators (group)
     -   Role - Project Admin
+
 22. คลิก **Add User** เพิ่ม user ด้านล่าง โดยแทนที่ `##` ด้วยหมายเลข user operator ของคุณที่สร้างไว้ก่อนหน้านี้
     
     -   Name - **operator`##`@ntnxlab.local** (person)

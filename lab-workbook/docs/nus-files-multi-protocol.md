@@ -1,40 +1,38 @@
-# Nutanix Unified Storage
+# Multi-Protocol
 
-# [#](#files-multi-protocol) Files: Multi-Protocol
+Nutanix Files share มีแนวคิดเกี่ยวกับ native และ non-native protocol สิทธิ์การเข้าถึง (permissions) ทั้งหมดจะถูกนำไปใช้ผ่าน native protocol คำขอเข้าถึงใดๆ ที่ใช้ non-native protocol จำเป็นต้องมีการทำ user หรือ group mapping ไปยัง permission ที่ถูกกำหนดไว้จากฝั่ง native มีหลายวิธีในการกำหนด user และ group mappings ได้แก่ rule-based, explicit, และ default ตอนนี้คุณจะต้องกำหนดค่า default mapping เป็นอันดับแรก
 
-A Nutanix Files share has the concept of a native and non-native protocol. All permissions are applied using the native protocol. Any access requests using the non-native protocol require a user or group mapping to the permission applied from the native side. There are several ways to apply user and group mappings, including rule-based, explicit, and default ones. You will first configure a default mapping.
-
-1.  Navigate to **Configuration > Authentication**
+1.  ไปที่ **Configuration > Authentication**
     
-2.  Select the **User Mapping** tab.
+2.  เลือกแท็บ **User Mapping**
     
-3.  Within the _Default Mapping_ section, click on **Edit**
+3.  ในส่วนของ _Default Mapping_ ให้คลิกที่ **Edit**
     
-    ![](/unified-storage/assets/1.952502e6.png)
+    ![](/images/1.952502e6.png)
     
-4.  Select **Deny access to NFS export** and **Deny access to SMB share** as the defaults for when no mapping is found. Click **Save**.
+4.  เลือก **Deny access to NFS export** และ **Deny access to SMB share** เป็นค่าเริ่มต้นสำหรับกรณีที่ไม่พบ mapping แล้วคลิก **Save**
     
-    ![](/unified-storage/assets/2.ca9ce8e1.png)
+    ![](/images/2.ca9ce8e1.png)
     
-5.  Click on **Shares > `User##`\-Marketing**.
+5.  คลิกที่ **Shares > `User##`\-Marketing**
     
-6.  Click **Update**.
+6.  คลิก **Update**
     
-7.  Check **Enable multiprotocol access for NFS**, and click **Next**.
+7.  ทำเครื่องหมายที่ **Enable multiprotocol access for NFS** แล้วคลิก **Next**
     
-    ![](/unified-storage/assets/3.9449c398.png)
+    ![](/images/3.9449c398.png)
     
-8.  Within the _Multi Protocol Access_ section, check **Allow simultaneous read access to the same files**, and click **Next**.
+8.  ในส่วนของ _Multi Protocol Access_ ให้ทำเครื่องหมายที่ **Allow simultaneous read access to the same files** แล้วคลิก **Next**
     
-    ![](/unified-storage/assets/4.05d7fff3.png)
+    ![](/images/4.05d7fff3.png)
     
-9.  Click **Update**.
+9.  คลิก **Update**
     
-    The multiprotocol configuration for your `User##`\-Marketing share is complete. Now we will try accessing the share to test multiprotocol configuration.
+    การกำหนดค่า multiprotocol สำหรับ `User##`\-Marketing share ของคุณเสร็จสมบูรณ์แล้ว ตอนนี้เราจะมาลองเข้าถึง share เพื่อทดสอบการกำหนดค่า multiprotocol กัน
     
-10.  Return to your `User##`\-LinuxTools VM Putty session.
+10.  กลับไปที่ `User##`\-LinuxTools VM Putty session ของคุณ
     
-11.  Execute the following. Be sure to modify `User##` with your own.
+11.  รันคำสั่งต่อไปนี้ (อย่าลืมเปลี่ยน `User##` เป็นของคุณเอง)
     
     ```
     sudo mkdir /filesmulti
@@ -42,29 +40,29 @@ A Nutanix Files share has the concept of a native and non-native protocol. All p
     dir /filesmulti
     ```
     
-    You will now add an explicit mapping to allow access to the non-native NFS protocol user. We must get the user ID (UID) to create the explicit mapping. Because the default mapping is to deny access, so the **Permission denied** error is expected.
+    ตอนนี้คุณจะต้องเพิ่ม explicit mapping เพื่ออนุญาตการเข้าถึงให้กับ non-native NFS protocol user เราต้องดึง user ID (UID) มาเพื่อสร้าง explicit mapping เนื่องจาก default mapping ถูกตั้งค่าเป็นการปฏิเสธการเข้าถึง ดังนั้นการเกิดข้อผิดพลาด **Permission denied** จึงเป็นสิ่งที่คาดไว้อยู่แล้ว
     
-12.  Execute the `id` command, and take note of the UID.
+12.  รันคำสั่ง `id` และจดบันทึก UID ไว้
     
-13.  Return to your **Nutanix Files** browser tab, click the at the top left corner.
+13.  กลับไปที่แท็บเบราว์เซอร์ **Nutanix Files** ของคุณ แล้วคลิกที่มุมซ้ายบน
     
-14.  Click on **Configuration > Authentication**, and select the **User Mapping** tab.
+14.  คลิกที่ **Configuration > Authentication** และเลือกแท็บ **User Mapping**
     
-15.  Within the _Explicit Mapping_ section, click on **Configure**.
+15.  ในส่วนของ _Explicit Mapping_ ให้คลิกที่ **Configure**
     
-16.  Click on **Add one-to-one mapping**.
+16.  คลิกที่ **Add one-to-one mapping**
     
-17.  Fill out the following fields, click , and click **Save**.
+17.  กรอกข้อมูลในช่องต่อไปนี้ คลิก และคลิก **Save**
     
     -   **SMB Name** - `ntnxlab\administrator`
-    -   **NFS ID** - UID from step 12 (ex. 1000)
+    -   **NFS ID** - UID จากขั้นตอนที่ 12 (เช่น 1000)
     -   **User/Group** - User
     
-    ![](/unified-storage/assets/5.1ab601f3.png)
+    ![](/images/5.1ab601f3.png)
     
-18.  Return to your `User##`\-LinuxTools VM Putty session. Execute the `dir /filesmulti` command, which will now complete.
+18.  กลับไปที่ `User##`\-LinuxTools VM Putty session ของคุณ รันคำสั่ง `dir /filesmulti` ซึ่งคราวนี้จะสามารถทำงานได้สำเร็จ
     
-    ![](/unified-storage/assets/6.b7c87879.png)
+    ![](/images/6.b7c87879.png)
     
 
-You have successfully configured multiprotocol access for your `User##`\-Marketing share.
+คุณได้ทำการกำหนดค่า multiprotocol access สำหรับ `User##`\-Marketing share ของคุณสำเร็จแล้ว

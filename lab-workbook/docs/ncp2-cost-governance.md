@@ -10,6 +10,6 @@ Categories จะถูกใช้เพื่อ map resources เข้าก
 
 คลิกที่ลิงก์นี้
 
-👀 [Guided walkthrough of Cost Governance.open in new window](https://nutanix.storylane.io/share/m4xyy9kiqpbi) 👀
+👀 [Guided walkthrough of Cost Governance.](https://nutanix.storylane.io/share/m4xyy9kiqpbi) 👀
 
-[Interactive Demoopen in new window](https://nutanix.storylane.io/share/m4xyy9kiqpbi)
+[Interactive Demo](https://nutanix.storylane.io/share/m4xyy9kiqpbi)

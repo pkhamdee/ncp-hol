@@ -1,26 +1,22 @@
-# Nutanix Unified Storage
+# Ransomware
 
-# [#](#file-analytics-ransomware) File Analytics: Ransomware
+ในแบบฝึกหัดนี้ คุณจะทำการเปิดใช้งาน File Analytics ransomware protection และจำลองให้เกิดเหตุการณ์ ransomware
 
-In this exercise, you will enable File Analytics ransomware protection and trigger a ransomware event.
+1.  นำทางไปยัง **\> Ransomware**
+    
+2.  คลิก **Enable Ransomware Protection > Enable**
+    
+3.  กลับไปที่ **`User##`\-WinTools** Remote Desktop session ของคุณ
+    
+4.  เปิดหน้าต่าง PowerShell โดยคลิกที่ icon **PowerShell** บน taskbar
+    
+5.  ดำเนินการ (Execute) command `new-item \\BootcampFS.ntnxlab.local\user##-marketing\ransomware.aaa -ItemType file` คุณจะได้รับข้อความแสดงข้อผิดพลาด (error message) ว่า access denied
+    
+6.  ภายใน **File Analytics** ให้ตรวจสอบ (review) ตาราง **Vulnerabilities** เพื่อดู operation ที่ถูกบล็อก (blocked) โปรดทราบว่าคุณอาจต้องทำการรีเฟรชหน้า **Ransomware**
+    
+    ![](/images/ransomware_attempts.a5ec6763.png)
+    
+    !!! note
+        คุณยังสามารถดูเหตุการณ์ _permission denied_ ใน **Audit Trails** ได้อีกด้วย
 
-1.  Navigate to **\> Ransomware**.
-    
-2.  Click **Enable Ransomware Protection > Enable**.
-    
-3.  Return to your **`User##`\-WinTools** Remote Desktop session.
-    
-4.  Open a PowerShell window by clicking the **PowerShell** icon on the taskbar.
-    
-5.  Execute the `new-item \\BootcampFS.ntnxlab.local\user##-marketing\ransomware.aaa -ItemType file` command. You will receive an access denied error message.
-    
-6.  Within **File Analytics** review the **Vulnerabilities** table to see the blocked operation. Note that you may need to refresh the **Ransomware** page.
-    
-    ![](/unified-storage/assets/ransomware_attempts.a5ec6763.png)
-    
-    Note
-    
-    You can also view the _permission denied_ event in the **Audit Trails**.
-    
-
-Nutanix Data Lens provides advanced analytics and ransomware protection above and beyond File Analytics, including over 5,000 ransomware signatures and detecting unknown variants based on access patterns.
+Nutanix Data Lens ให้ advanced analytics และ ransomware protection ที่เหนือกว่าและล้ำหน้ากว่า File Analytics รวมถึงมี ransomware signatures มากกว่า 5,000 รายการ และการตรวจจับ (detecting) ตัวแปรที่ไม่รู้จัก (unknown variants) โดยอิงจากรูปแบบการเข้าถึง (access patterns)

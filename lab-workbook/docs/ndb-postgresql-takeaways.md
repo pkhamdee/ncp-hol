@@ -16,10 +16,10 @@
 
 ## [#](#additional-resources) Additional Resources
 
--   [NDB Test Driveopen in new window](https://cloud.nutanixtestdrive.com/login?source=one-platform&type=ndb&lpurl=one-platform-ndb?utm_source=nutanixbible&utm_medium=referral)
+-   [NDB Test Drive](https://cloud.nutanixtestdrive.com/login?source=one-platform&type=ndb&lpurl=one-platform-ndb?utm_source=nutanixbible&utm_medium=referral)
     
--   [NDB YouTube Playlistopen in new window](https://youtube.com/playlist?list=PLAHgaS9IrJeeaY9GizEOtREfbyVIYUCKg&si=mDfKvKZ8qKg0Lnxt)
+-   [NDB YouTube Playlist](https://youtube.com/playlist?list=PLAHgaS9IrJeeaY9GizEOtREfbyVIYUCKg&si=mDfKvKZ8qKg0Lnxt)
     
--   [Database on Nutanix Validated Designopen in new window](https://portal.nutanix.com/page/documents/solutions/details?targetId=NVD-2155-Nutanix-Databases:NVD-2155-Nutanix-Databases)
+-   [Database on Nutanix Validated Design](https://portal.nutanix.com/page/documents/solutions/details?targetId=NVD-2155-Nutanix-Databases:NVD-2155-Nutanix-Databases)
     
--   [NDB on the Nutanix Cloud Bibleopen in new window](https://www.nutanixbible.com/22-book-of-ndb.html)
+-   [NDB on the Nutanix Cloud Bible](https://www.nutanixbible.com/22-book-of-ndb.html)
