@@ -24,6 +24,18 @@ NCP Fundamentals
 
 [Lab Guide](/ncp2-nutanix-cloud-platform/index.html)
 
+## Disaster Recovery Bootcamp
+
+NCP Fundamentals
+
+- AOS 6.5.2.5
+- AHV el7.nutanix.20220304.342
+- Prism Central - pc.2022.6.0.3
+
+Bootcamp นี้มีแบบฝึกหัดสำหรับทั้ง failover scenarios แบบ Unplanned และ Planned คุณจะใช้ VMs, Protection Policy, และ Recovery Plan
+
+[Lab Guide](/dr-getting-started/index.html)
+
 ## Migrate to Nutanix on Prem
 
 NCP Fundamentals
