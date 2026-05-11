@@ -1,41 +1,38 @@
-# Nutanix Database Service (NDB) Lab
+# Database Provisioning and Patching
 
-# [#](#database-provisioning-and-patching) Database Provisioning and Patching
+การทำ database VM deployment แบบดั้งเดิมมีลักษณะคล้ายกับแผนภาพด้านล่าง กระบวนการนี้มักจะเริ่มต้นด้วย IT ticket สำหรับ database (จาก Dev, Test, QA, Analytics, ฯลฯ) จากนั้น ทีมจะต้อง deploy ตัว storage resources และ VM(s) ที่จำเป็น เมื่อ infrastructure พร้อมใช้งาน Database Administrator (DBA) จะต้องทำการ provision และ configure ตัว database software เมื่อทำการ provision เสร็จแล้ว จะต้องปรับใช้ best practices ซึ่งรวมถึง data protection และ backup policies ในท้ายที่สุด database จะสามารถส่งมอบให้กับ end user ได้ ซึ่งมีขั้นตอนการส่งมอบมากมายและอาจก่อให้เกิดปัญหาตามมาได้
 
-Traditional database VM deployment resembles the diagram below. The process generally starts with an IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next, teams must deploy the required storage resources and VM(s). Once the infrastructure is ready, a Database Administrator (DBA) must provision and configure the database software. Once provisioned, best practices, including data protection and backup policies, must be applied. Finally, the database can be handed over to the end user. That's a lot of handoffs and the potential for friction.
+![](/images/n00.4edf9d4c.png)
 
-![](/ndb/assets/n00.4edf9d4c.png)
+การทำ Provisioning และ protecting ให้กับ databases จะใช้เวลาและแรงลดลงอย่างมากเมื่อใช้ NDB ในขณะที่ดำเนินการตามขั้นตอนใน labs ให้พิจารณาว่าคุณจะดำเนินการ tasks เหล่านี้ใน existing environment ของคุณในปัจจุบันอย่างไรแล้วนำมาเปรียบเทียบกัน
 
-Provisioning and protecting databases require significantly less time and effort using NDB. While performing the steps in the labs, consider how you would perform these tasks in your existing environment today and compare them.
+## Provision PostgreSQL Database
 
-## [#](#provision-postgresql-database) Provision PostgreSQL Database
+ในฐานะ Database administrator (DBA) คุณจะต้องสร้าง database servers ใหม่ NDB ทำให้กระบวนการนั้นง่ายดายด้วย customized predefined profiles มาลองทำขั้นตอน provisioning สำหรับ PostgreSQL database กัน ไม่ต้องกังวลหากคุณไม่คุ้นเคยกับ PostgreSQL; NDB ทำให้กระบวนการนี้ง่ายขึ้น ขั้นตอนที่ทำในระหว่าง provisioning workflow นี้จะคล้ายคลึงกันสำหรับ databases ทั้งหมดที่รองรับโดย NDB
 
-As a Database administrator (DBA), you will need to create new database servers. NDB makes that process painless with its customized predefined profiles. Let's walk through provisioning a PostgreSQL database. Do not worry if you are unfamiliar with PostgreSQL; NDB simplifies this process. These steps taken during this provisioning workflow are similar for all of the databases supported by NDB.
-
-1.  Within **NDB**, select **\> Databases** from the menu, and then **Sources** from the top menu.
+1.  ภายใน **NDB** ให้เลือก **\> Databases** จากเมนู จากนั้นเลือก **Sources** จากเมนูด้านบน
     
-2.  Click **Provision > PostgreSQL > Instance**.
+2.  คลิก **Provision > PostgreSQL > Instance**
     
-3.  Fill out the following fields on the Database Server VM page, and click **Next**.
+3.  กรอกข้อมูลในช่องต่อไปนี้ในหน้า Database Server VM จากนั้นคลิก **Next**
     
     -   **Database Server VM** - Create New Server
     -   **Database Server VM Name** - `User##-mypsql`
     -   **Software Profile** - POSTGRES\_15.6\_ROCKY\_LINUX\_8\_OOB
     -   **Compute Profile** - CUSTOM\_EXTRA\_SMALL
     -   **Network Profile** - DEFAULT\_OOB\_POSTGRESQL\_NETWORK
-    -   **SSH Public Key for Node Access** - Select **Text**, then copy/paste the below into the text field.
+    -   **SSH Public Key for Node Access** - เลือก **Text** จากนั้น copy/paste คีย์ด้านล่างลงใน text field
     
     ```
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoQRdEfm8ZJNGlYLQ2iw08eVk/Wyj0zl3M5KyqKmBTpUaS1uxj0K05HMHaUNP+AeJ63Qa2hI1RJHBJOnV7Dx28/yN7ymQpvO1jWejv/AT/yasC9ayiIT1rCrpHvEDXH9ee0NZ3Dtv91R+8kDEQaUfJLYa5X97+jPMVFC7fWK5PqZRzx+N0bh1izSf8PW0snk3t13DYovHFtlTpzVaYRec/XfgHF9j0032vQDK3svfQqCVzT02NXeEyksLbRfGJwl3UsA1ujQdPgalil0RyyWzCMIabVofz+Czq4zFDFjX+ZPQKZr94/h/6RMBRyWFY5CsUVvw8f+Rq6kW+VTYMvvkv
     ```
     
-    ![](/ndb/assets/n01a.39cf26d5.png)![](/ndb/assets/n01b.0312fc1c.png)
+    ![](/images/n01a.39cf26d5.png)![](/images/n01b.0312fc1c.png)
     
-    Note
+    !!! note 
+        SSH public key ด้านบนมีไว้เป็นตัวอย่างและถูกตั้งค่าให้เป็น authorized key สำหรับ operating system ที่ถูก provisioned โดย NDB ในสภาพแวดล้อมที่ไม่ใช่ lab คุณจะต้องสร้าง SSH private/public key pair ของคุณเอง และใช้ public key ในระหว่างขั้นตอนนี้
     
-    The above SSH public key is provided as an example and is configured as an authorized key for the operating system provisioned by NDB. In a non-lab setting you would create your own SSH private/public key pair, and provide the public key during this step.
-    
-4.  Fill out the following fields within the _Instance_ page, then click **Next**.
+4.  กรอกข้อมูลในช่องต่อไปนี้ภายในหน้า _Instance_ จากนั้นคลิก **Next**
     
     -   **PostgreSQL Instance Name** - `User##-LabDB`
     -   **Database Parameter Profile** - DEFAULT\_POSTGRES\_PARAMS
@@ -44,111 +41,107 @@ As a Database administrator (DBA), you will need to create new database servers.
     -   **Name of Initial Database** - `User##initialdb`
     -   **Database user password** - `nutanix/4u`
     
-    ![](/ndb/assets/n04.3be8877f.png)
+    ![](/images/n04.3be8877f.png)
     
-    Note
+    !!! note    
+        NDB ยังให้ความสามารถในการรัน scripts หรือ commands ทั้งก่อนและหลังการทำ database creation ซึ่งสามารถใช้เพื่อปรับแต่ง (customize) ตัว environment เพิ่มเติมตามความต้องการเฉพาะขององค์กรได้
     
-    NDB also offers to ability to run scripts or commands both before and after database creation. These can be used to further customize an environment based on specific enterprise needs.
-    
-5.  Fill out the following fields within the _Time Machine_ page, then click **Next**.
+5.  กรอกข้อมูลในช่องต่อไปนี้ภายในหน้า _Time Machine_ จากนั้นคลิก **Next**
     
     -   **Name** - `User##`\-LabDB\_TM (default)
     -   **SLA** - DEFAULT\_OOB\_GOLD\_SLA
     -   **Schedule** - (default)
     
-    ![](/ndb/assets/4f2.612bbe7a.png)
+    ![](/images/4f2.612bbe7a.png)
     
-    Note
+    !!! note    
+        -   ส่วนของ Time Machine จะตั้งเวลาที่คุณต้องการทำ full snapshots ให้กับ database, วิธีการทำงานในหนึ่งวัน, และความถี่ที่คุณต้องการให้ log backups ทำงาน
+        -   NDB time machines จะบันทึกและเก็บรักษา snapshots และ transaction logs ของ source databases ของคุณตามที่กำหนดไว้ใน Data Access Management policies (DAM policies) และ SLA schedules
     
-    -   The Time Machine section sets the time you want full snapshots of the database to be taken, how to be taken in a day, and how often you want your log backups to run.
-    -   NDB time machines capture and maintain snapshots and transaction logs of your source databases as defined in the Data Access Management policies (DAM policies) and SLA schedules.
+6.  กรอกข้อมูลในช่องต่อไปนี้ภายในหน้า **Additional Configurations** จากนั้นคลิก **Provision**
     
-6.  Fill out the following fields within theds within the **Additional Configurations** page, then click **Provision**.
-    
-    -   Under **Opt in/out for repeated automated scheduling**
-        -   Check **Operating System Pathching**
-        -   Check **Database Patching**
+    -   ภายใต้ **Opt in/out for repeated automated scheduling**
+        -   ทำเครื่องหมายที่ **Operating System Patching**
+        -   ทำเครื่องหมายที่ **Database Patching**
     -   **Maintenance Windows** - `user##-maintenance-policy`
     
-    ![](/ndb/assets/9.60703453.png)
+    ![](/images/9.60703453.png)
     
-    Note
+    !!! note    
+        -   ตัวเลือกในการเลือก maintenance policy ระหว่างการทำ provisioning เป็นอีกวิธีหนึ่งที่ NDB ช่วยให้ database VMs ของคุณได้รับการอัปเดตและปลอดภัย
+        -   PostgreSQL และ MongoDB รองรับการทำ database encryption คุณสามารถศึกษาเพิ่มเติมได้ใน [NDB documentation](https://portal.nutanix.com/page/documents/list?type=software&filterKey=software&filterVal=Nutanix%20Database%20Service) บน Nutanix Portal
     
-    -   The option to choose a maintenance policy during provisioning is another way the NDB helps keep your database VMs up to date and secure.
-    -   PostgreSQL and MongoDB support database encryption. You can learn more in the [NDB documentation](https://portal.nutanix.com/page/documents/list?type=software&filterKey=software&filterVal=Nutanix%20Database%20Service) on the Nutanix Portal.
+7.  เลือก **\> Operations** จาก drop-down menu เพื่อ monitor การทำ provisioning กระบวนการนี้จะใช้เวลา <20 นาที
     
-7.  Select **\> Operations** from the drop-down menu to monitor the provisioning. This process will take <20 minutes.
-    
-    Note
-    
-    All operations within NDB have unique IDs are fully visible for logging/auditing.
+    !!! note    
+        operations ทั้งหมดภายใน NDB จะมี unique IDs และสามารถมองเห็นได้อย่างครบถ้วนสำหรับการทำ logging/auditing
     
 
-While your database vm in provisioning, lets move on to the [On Demand OS Patching](#on-demand-os-patching) section.
+ในขณะที่ database vm ของคุณกำลังอยู่ในช่วง provisioning เราไปต่อกันที่ส่วน [On Demand OS Patching](#on-demand-os-patching) กันเลย
 
-## [#](#on-demand-os-patching) On Demand OS Patching
+## On Demand OS Patching
 
-As a DBA, you may be responsible for patching the operating system when you manage multiple database servers. You were just alerted about a critical security flaw in your database VMs. The patch has been pushed to the repository, so you must update the affected VMS database quickly. Let's get started
+ในฐานะ DBA คุณอาจต้องรับผิดชอบในการทำ patching ตัว operating system เมื่อคุณจัดการ database servers จำนวนมาก คุณเพิ่งได้รับการแจ้งเตือนเกี่ยวกับ critical security flaw ใน database VMs ของคุณ ตัว patch ถูกพุชไปยัง repository แล้ว ดังนั้นคุณจะต้องอัปเดต affected VMs database อย่างรวดเร็ว มาเริ่มกันเลย
 
-1.  Select **\> Database Server VMs** then select **list** From the top menu.
+1.  เลือก **\> Database Server VMs** จากนั้นเลือก **list** จากเมนูด้านบน
     
-    ![](/ndb/assets/20.4255e03b.png)
+    ![](/images/20.4255e03b.png)
     
-2.  Click on your `User##`\-postgres from the list of VMs, this shold take you to the database servers details page as show below.
+2.  คลิกที่ `User##`\-postgres ของคุณจากรายการ VMs ซึ่งควรจะนำคุณไปยังหน้า database servers details ตามที่แสดงด้านล่าง
     
-    ![](/ndb/assets/21.d8923698.png)
+    ![](/images/21.d8923698.png)
     
-3.  Select **\>Actions > Patch OS Now**
+3.  เลือก **\>Actions > Patch OS Now**
     
-4.  On the **Patch OS Now** screen do the following then click **Update**.
+4.  บนหน้าจอ **Patch OS Now** ให้ดำเนินการดังต่อไปนี้แล้วคลิก **Update**
     
-    -   Expand **Custom Commands > Operating System Patching Command** : enter `sudo dnf update -y --security`
-    -   Under **Reboot Needed** : Select Yes
+    -   ขยายส่วน **Custom Commands > Operating System Patching Command** : ป้อน `sudo dnf update -y --security`
+    -   ภายใต้ **Reboot Needed** : เลือก Yes
     
-    ![](/ndb/assets/22.e7d1968a.png)
+    ![](/images/22.e7d1968a.png)
     
-    Note
+    !!! note    
+        -   เราเลือกที่จะ reboot yes ในกรณีนี้ แต่คุณจะได้รับตัวเลือกให้ reboot ภายหลังได้หากจำเป็น
+        -   เนื่องจากเป็น security flaw เราจึงเลือกตัวเลือก --security สำหรับ RHEL based VMs
+        -   คุณสามารถใช้ yum แทนใน RHEL 9 based และ distribution รุ่นก่อนหน้าได้
+        -   สำหรับ Ubuntu (Debian) based distributions คุณสามารถตั้งค่า unattended-upgrade package เพื่อทำ security updates เท่านั้น สำหรับข้อมูลเพิ่มเติม โปรดดู distribution's documentation ของคุณ ซึ่งสามารถรันได้โดยใส่ sudo apt-get `package_name` ลงใน custom command
     
-    -   We choose to reboot yes in this case, but you are given the option to reboot later if needed-
-    -   Since this was a security flaw we chose to --security option for RHEL based VMs.
-    -   You can substitute yum in RHEL 9 based and earlier distribution.
-    -   For Ubuntu (Debian)based distributions, you can set up the unattended-upgrade package to perform security updates only. For more information, see your distribution's documentation. That can be run by putting sudo apt-get `package_name` in the custom command
+5.  คลิกที่แถบสีเขียวเพื่อตรวจสอบ progress ของ patching operation
     
-5.  Click on the green bar to check the progress of the patching operation.
-    
-    ![](/ndb/assets/23.f98533e1.png)
+    ![](/images/23.f98533e1.png)
     
 
-That's how quickly you can patch a day-zero vulnerability on a database VM operating system with NDB. You would need to repeat this on any of the other affected VMs in your environment. NDB will use the patch repository that is set up on the database VM to pull patches from. However, that only patches the database operating system.
+นี่คือความรวดเร็วที่คุณสามารถทำ patch ให้กับ day-zero vulnerability บน database VM operating system ด้วย NDB คุณจะต้องทำซ้ำขั้นตอนนี้กับ affected VMs อื่นๆ ใน environment ของคุณ NDB จะใช้ patch repository ที่ตั้งค่าไว้บน database VM เพื่อดึง patches มา อย่างไรก็ตาม สิ่งนี้จะทำการ patch ตัว database operating system เท่านั้น
 
-NDB can patch your database servers in bulk using the Maintenance Window we set up at the beginning of the lab. While your database OS is patching, let's see how to set up scheduled bulk patching.
+NDB สามารถทำ patch ให้กับ database servers ของคุณเป็นจำนวนมาก (in bulk) โดยใช้ Maintenance Window ที่เราได้ตั้งค่าไว้เมื่อเริ่ม lab ในขณะที่ database OS ของคุณกำลังทำ patching เรามาดูวิธีตั้งค่า scheduled bulk patching กัน
 
-## [#](#scheduled-database-patching) Scheduled Database Patching
+## Scheduled Database Patching
 
-1.  Select **\>Database Server VMs**, then click **List** on the top menu.
+1.  เลือก **\>Database Server VMs** จากนั้นคลิก **List** บนเมนูด้านบน
     
-    ![](/ndb/assets/24.be216d06.png)
+    ![](/images/24.be216d06.png)
     
-2.  Select your `user##-postgres` VM from the list.
+2.  เลือก `user##-postgres` VM ของคุณจากรายการ
     
-    ![](/ndb/assets/25.99dd16e3.png)
+    ![](/images/25.99dd16e3.png)
     
-3.  Select the Actions Dropdown then Maintenance
+3.  เลือก Actions Dropdown จากนั้นเลือก Maintenance
     
-    ![](/ndb/assets/26.e4d8b16b.png)
+    ![](/images/26.e4d8b16b.png)
     
-4.  Select the following options:
+4.  เลือกตัวเลือกต่อไปนี้:
     
     -   **Operating System Patching** - Check
     -   **Database Patching** - Check
-    -   **Maintenance Window** - Select `user##-maintenance-policy`![](/ndb/assets/27.d1bce96a.png)
+    -   **Maintenance Window** - เลือก `user##-maintenance-policy`
     
-    You can choose to schedule OS Patching or Database patching only or both. You can also select multiple VMs at a time to associate with a maintenance window policy. Once you have made the selections, click **Associate**
+    ![](/images/27.d1bce96a.png)
     
-    Note
+    คุณสามารถเลือกที่จะ schedule ตัว OS Patching หรือ Database patching อย่างใดอย่างหนึ่งหรือทั้งสองอย่างก็ได้ นอกจากนี้ คุณยังสามารถเลือก multiple VMs พร้อมกันเพื่อเชื่อมโยง (associate) กับ maintenance window policy ได้ เมื่อคุณเลือกเสร็จแล้ว ให้คลิก **Associate**
     
-    -   PostgreSQL, MongoDB, and Oracle are currently supported for bulk patching with Maintenance Window Policies for database software updates and operating systems.
-    -   Microsoft SQL server is currently supported for only database software updates using the Maintenance Window Policy feature.
+    !!! note    
+        -   ปัจจุบัน PostgreSQL, MongoDB, และ Oracle รองรับการทำ bulk patching ด้วย Maintenance Window Policies สำหรับ database software updates และ operating systems
+        -   ปัจจุบัน Microsoft SQL server รองรับเฉพาะ database software updates โดยใช้ฟีเจอร์ Maintenance Window Policy เท่านั้น
     
 
-Now that we have setup patching for our database VM, let’s move on to [clone creation and management](/ndb/clone_postgresql/clone_postgresql.html).
+ตอนนี้เราได้ตั้งค่า patching สำหรับ database VM ของเราเรียบร้อยแล้ว เราไปต่อกันที่ส่วนของ [clone creation and management](/ndb-postgresql-create-manage/index.html) กันเลย

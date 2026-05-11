@@ -1,121 +1,113 @@
-# Nutanix Database Service (NDB) Lab
+# Database Recovery
 
-# [#](#database-recovery) Database Recovery
+การทำ recovering a database อย่างรวดเร็วและมีประสิทธิภาพสามารถช่วยบริษัทของคุณประหยัดชั่วโมงทำงานและค่าใช้จ่ายได้ NDB ใช้ฟังก์ชัน snapshot แบบ built-in ของ Nutanix Cloud Platforms เพื่อให้บริการ quick recovery ของ databases รวมถึง datasets ที่มีขนาดใหญ่มาก
 
-Recovering a database quickly and efficiently can save your company man-hours and dollars. NDB uses the Nutanix Cloud Platforms' built-in snapshot function to provide quick recovery of databases, including very large datasets.
+## Recovering the Source Database
 
-## [#](#recovering-the-source-database) Recovering the Source Database
+ในฐานะ Database administrator (DBA) คุณได้รับแจ้งว่ามี database เกิดความเสียหาย (corrupted) และอยู่ในสถานะ offline เนื่องจากจำนวนของความเสียหาย คุณจะต้องทำการ recover แบบ whole database เรามาเริ่มกันเลยและดูว่า NDB จะสามารถช่วยคุณทำงานนี้ให้สำเร็จได้อย่างรวดเร็วแค่ไหน
 
-As a Database administrator (DBA), you have been informed that a database has been corrupted and is offline. Due to the amount of corruption, you will need to recover the whole database. Let's get started and see how quickly NDB can help you accomplish that task.
-
-1.  Within NDB, select **\> Data Protection > Time Machines**
+1.  ภายใน NDB เลือก **\> Data Protection > Time Machines**
     
-    This is the **Time Machine** dashboard page, in the first panel you can see the health of your Time Machines and how many of your databaseS are protected.
+    นี่คือหน้า dashboard ของ **Time Machine** ใน panel แรกคุณสามารถดู health ของ Time Machines ของคุณและจำนวนของ databases ของคุณที่ได้รับการปกป้อง (protected) ไว้
     
-    ![](/ndb/assets/10.b0c62cbb.png)
+    ![](/images/10.b0c62cbb.png)
     
-    Note
+    !!! note
+        **Time Machine สามารถมีสถานะ (statuses) ดังต่อไปนี้**
+        
+        -   **Critical:** หาก backups กำลังล้มเหลว (failing) ในปัจจุบัน
+        -   **Warning:** หาก Backups เคยล้มเหลวในอดีต แต่มี recent recovery พร้อมใช้งาน
+        -   **Healthy:** หาก Backups ทั้งหมดมีสถานะ healthy
+        -   **Paused:** หาก Time machine ถูก paused โดยลูกค้า, ถูก paused โดยระบบหลังจากที่เกิด log backup failures ติดต่อกัน 500 ครั้ง หรือหาก database ถูกลบไปแล้วแต่ตัว time machine ยังคงถูกเก็บรักษาไว้ (retained)
     
-    **Time Machine can have the following statues.**
+2.  ตอนนี้เลือก **List** จากเมนูด้านบน
     
-    -   **Critical:** If backups are failing currently
-    -   **Warning:** If Backups have failed in the past but recent recovery available
-    -   **Healthy:** If all Backups are healthy
-    -   **Paused:** If Time machine has been paused by the customer, paused by the system after 500 consecutive log backup failures or if the database is deleted and the time machine is retained.
+    ![](/images/09.7692af78.png)
     
-2.  Now select **List** fom the top menu
+3.  เลือกรายการ `User##`\-fiestadb\_tm
     
-    ![](/ndb/assets/09.7692af78.png)
+    ![](/images/01.57ac5cd0.png)
     
-3.  Select the `User##`\-fiestadb\_tm entry.
+4.  คลิก **\> Actions > Restore Source Instance**
     
-    ![](/ndb/assets/01.57ac5cd0.png)
+    นี่คือหน้าจอ Time Machine recovery คุณสามารถทำการ recover ตัว database จาก point in time ใดก็ได้ที่ NDB มี snapshot เก็บไว้ เลื่อนลงมาที่ **Restore Data To** จากนั้นเลือก snapshot จาก dropdown แล้วคลิก **Restore**
     
-4.  Click **\> Actions > Restore Source Instance**
+    ![](/images/02.30cfc7ea.png)
     
-    This is the Time Machine recovery screen. You can recover a database from any point in time the NDB has a snapshot for. Scroll down to **Restore Data To** then choose snapshot from the dropdown, and click **Restore**.
+    !!! note
+        -   นอกเหนือจากใน lab environment คุณจะสามารถเลือกวันที่และนาทีที่แตกต่างกันเพื่อ restore ได้ ขึ้นอยู่กับ SLA ที่ตั้งค่าไว้สำหรับ database นั้น ซึ่งช่วยให้คุณสามารถ recover กลับไปก่อนที่ database จะเกิดความเสียหายได้
+        -   คุณสามารถเลือกที่จะ back up ตัว logs ก่อนทำการ restore ได้ (tail log backup) แต่เราข้ามขั้นตอนนี้ไปเพื่อประหยัดเวลา
     
-    ![](/ndb/assets/02.30cfc7ea.png)
+5.  ป้อนชื่อ database เพื่อยืนยันว่าคุณต้องการ overwrite สิ่งนี้ด้วย database อื่น จากนั้นคลิก **Restore** อีกครั้ง
     
-    Note
+    ![](/images/03.e64f8d3f.png)
     
-    -   Outside of a lab environment, you would be able to choose different days and minutes to restore from depending on the SLA set for that database, allowing you to recover before the database was corrupted.
-    -   You can choose to back up the logs before restoring (tail log backup), we skipped that for time considerations.
+6.  คลิกที่แถบสีน้ำเงินที่ด้านบนของหน้าจอเพื่อดูว่าการ restore ได้เริ่มต้นขึ้นแล้ว
     
-5.  Enter the database name to confirm that you want to overwrite this with another database, then click **Restore** again.
+    ![](/images/04.07c646ca.png)
     
-    ![](/ndb/assets/03.e64f8d3f.png)
+    เมื่อคุณได้ยืนยันแล้วว่า recovery เริ่มต้นขึ้น ให้ดำเนินการต่อในส่วนของ [Recovering Data](#recovering-data)
     
-6.  Click the blue bar at the top of the screen to see the the restore has started.
-    
-    ![](/ndb/assets/04.07c646ca.png)
-    
-    Once you have confirmed the recovery started continue to the [Recovering Data](#recovering-data) section.
-    
-    Note
-    
-    Since we chose to skip the log catch-up before the recovery, you may receive an alert indicating that the Time Machine for your user database is unhealthy. To resolve this issue, navigate to **Data Protection > Time Machines**, then select **List**. Choose your **\`User##-fiestadb\_tm** and go to **Actions > Snapshot**. This action will restore the Time Machine to a healthy state, as it is necessary to create a new full snapshot or perform a log catchup following a complete recovery, especially if you did not conduct a tail log backup.
+    !!! note
+        เนื่องจากเราเลือกที่จะข้ามการทำ log catch-up ก่อนเริ่ม recovery คุณอาจได้รับ alert ที่ระบุว่า Time Machine สำหรับ user database ของคุณนั้น unhealthy เพื่อแก้ไขปัญหานี้ ให้ไปที่ **Data Protection > Time Machines** แล้วเลือก **List** เลือก **`User##`-fiestadb_tm** ของคุณแล้วไปที่ **Actions > Snapshot** การดำเนินการนี้จะทำการ restore ตัว Time Machine ให้กลับมาอยู่ในสถานะ healthy เนื่องจากจำเป็นต้องสร้าง full snapshot ใหม่หรือทำการ log catchup ตามหลัง complete recovery โดยเฉพาะอย่างยิ่งหากคุณไม่ได้ดำเนินการทำ tail log backup
     
 
-## [#](#recovering-data) Recovering Data
+## Recovering Data
 
-In your job as a DBA, you have now received a request to recover a table and some database rows. As we did above, a recovery of the source database will not work here because they do not want to lose any other data already entered. We need to recover the database using a different database VM. Let's see how NDB can handle a recovery situation like this.
+ในงานของคุณในฐานะ DBA ตอนนี้คุณได้รับคำขอให้ทำการ recover ตัว table และ database rows บางส่วน เช่นเดียวกับที่เราทำด้านบน การ recovery แบบ source database จะไม่สามารถใช้ได้ที่นี่ เนื่องจากพวกเขาไม่ต้องการสูญเสียข้อมูลอื่นๆ ที่ได้ป้อนไปแล้ว เราจำเป็นต้องทำการ recover ตัว database โดยใช้ database VM ตัวอื่น มาดูกันว่า NDB สามารถจัดการกับสถานการณ์ recovery เช่นนี้ได้อย่างไร
 
-1.  Within NDB, select **\> Data Protection > Time Machines** from the drop-down, then click **List** from the top menu.
+1.  ภายใน NDB เลือก **\> Data Protection > Time Machines** จาก drop-down จากนั้นคลิก **List** จากเมนูด้านบน
     
-    ![](/ndb/assets/09.7692af78.png)
+    ![](/images/09.7692af78.png)
     
-2.  Next select the `User##`\-fiestadb\_TM entry, as you did above.
+2.  ต่อไป เลือกรายการ `User##`\-fiestadb\_TM เช่นเดียวกับที่คุณทำด้านบน
     
-    ![](/ndb/assets/01.57ac5cd0.png)
+    ![](/images/01.57ac5cd0.png)
     
-3.  Click **\> Actions > Create a Clone of the PostgreSQL Instance**
+3.  คลิก **\> Actions > Create a Clone of the PostgreSQL Instance**
     
-    At the bottom of the screen select a snapshot from the dropdown, then click **Next**.
+    ที่ด้านล่างของหน้าจอ ให้เลือก snapshot จาก dropdown จากนั้นคลิก **Next**
     
-    ![](/ndb/assets/05.506f8713.png)
+    ![](/images/05.506f8713.png)
     
-    Note
+    !!! note
+        การ Recovering ไปยัง cloned copy จะช่วยให้คุณสามารถ recover ตัว tables หรือ rows ที่หายไป และ import พวกมันไปยัง affected database ได้
     
-    Recovering to a cloned copy will allow you to recover the tables or rows that are missing and import them into the affected database.
-    
-4.  Within the _Database Server VM_ section, fill out the following fields, and click **Next**.
+4.  ภายในส่วน _Database Server VM_ ให้กรอกข้อมูลในช่องดังต่อไปนี้ แล้วคลิก **Next**
     
     -   **Database Server VM** - Create New Server
     -   **Database Server VM Name** - `User##`\-postgres\_clone
     -   **Compute Profile** - CUSTOM\_EXTRA\_SMALL
     -   **Network Profile** - DEFAULT\_OOB\_POSTGRESQL\_NETWORK
-    -   **SSH Public Key** - Select **Text**, and then copy/paste the below into the text field.
+    -   **SSH Public Key** - เลือก **Text** จากนั้นให้ copy/paste คีย์ด้านล่างลงใน text field
     
     ```
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoQRdEfm8ZJNGlYLQ2iw08eVk/Wyj0zl3M5KyqKmBTpUaS1uxj0K05HMHaUNP+AeJ63Qa2hI1RJHBJOnV7Dx28/yN7ymQpvO1jWejv/AT/yasC9ayiIT1rCrpHvEDXH9ee0NZ3Dtv91R+8kDEQaUfJLYa5X97+jPMVFC7fWK5PqZRzx+N0bh1izSf8PW0snk3t13DYovHFtlTpzVaYRec/XfgHF9j0032vQDK3svfQqCVzT02NXeEyksLbRfGJwl3UsA1ujQdPgalil0RyyWzCMIabVofz+Czq4zFDFjX+ZPQKZr94/h/6RMBRyWFY5CsUVvw8f+Rq6kW+VTYMvvkv
     ```
     
-    ![](/ndb/assets/06.22766092.png)
+    ![](/images/06.22766092.png)
     
-    Note
+    !!! note    
+        คุณสามารถทำ recovery ไปยัง authorized database vm ที่มีอยู่ได้ คุณไม่จำเป็นต้องสร้างขึ้นใหม่เสมอไป
     
-    You could recover to an existing authorized database vm, you are not required to create a new one.
-    
-5.  Within the _Instance_ section, fill out the following fields, and click **Clone**.
+5.  ภายในส่วน _Instance_ ให้กรอกข้อมูลในช่องดังต่อไปนี้ แล้วคลิก **Clone**
     
     -   **Name** - `User##`\-fiestadb\_clone
     -   **POSTGRES Password** - `nutanix/4u`
     -   **Database Parameter Profile** - DEFAULT\_POSTGRES\_PARAMS
     
-    ![](/ndb/assets/07.0c313407.png)
+    ![](/images/07.0c313407.png)
     
-    Note
+    !!! note
+        NDB ยังมอบความสามารถในการรัน scripts หรือ commands ทั้งก่อนและหลังทำ database creation สิ่งเหล่านี้สามารถนำมาใช้เพื่อปรับแต่ง (customize) ตัว environment เพิ่มเติมตามความต้องการเฉพาะขององค์กรได้ เช่น การสร้าง sanitized clone จาก snapshot
     
-    NDB also offers to ability to run scripts or commands both before and after database creation. These can be used to further customize an environment based on specific enterprise needs. Such as creating a sanitized clone from a snapshot.
+6.  คลิกที่แถบสีน้ำเงินที่ด้านบนของหน้าจอเพื่อดูว่าการ restore ได้เริ่มต้นขึ้นแล้ว
     
-6.  Click the blue bar at the top of the screen to see the the restore has started.
+    ![](/images/08.3d5a9409.png)
     
-    ![](/ndb/assets/08.3d5a9409.png)
+7.  จากหน้า operations page คุณสามารถดูความคืบหน้าของ clone creation และเวลาที่ใช้ไปในการ recover ตัว source database ใน task แรกของเรา
     
-7.  From the operations page, you can see the progress of the clone creation and the time that it took to recover the source database in our first task.
-    
-    ![](/ndb/assets/11.54cc82d0.png)
+    ![](/images/11.54cc82d0.png)
     
 
-So that is a look at some of the options you have for database recovery with NDB. While those operations are finishing, let's move on to [Database Provisioning and Patching](/ndb/provision_postgresql/provision_postgresql.html).
+และนี่คือภาพรวมของตัวเลือกบางส่วนที่คุณมีสำหรับทำ database recovery ด้วย NDB ในขณะที่ operations เหล่านั้นกำลังดำเนินการจนเสร็จสมบูรณ์ เราไปต่อที่ส่วน [Database Provisioning and Patching](/ndb-postgresql-provision/index.html) กันเลย

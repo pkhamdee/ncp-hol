@@ -1,20 +1,18 @@
-# Nutanix Database Service (NDB) Lab
+# Takeaways
 
-# [#](#takeaways) Takeaways
+🎉 ขอแสดงความยินดีที่คุณสำเร็จหลักสูตร bootcamp นี้! คุณได้สัมผัสกับ database lifecycle management และได้เห็นความสามารถบางส่วนของ NDB เช่น:
 
-🎉 Congratulations on completing this bootcamp! You have experienced database lifecycle management and seen some of the capabilities of NDB such as:
-
--   Recovering databases quickly
+-   การกู้คืน databases อย่างรวดเร็ว (Recovering databases quickly)
     
-    -   NDB utilizes the built-in snapshot capability of the Nutanix Cloud Platform to enable database recovery with minimal downtime.
--   On Demand and Scheduled Patching
+    -   NDB ใช้ประโยชน์จากความสามารถในการทำ snapshot ที่มีมาให้ใน Nutanix Cloud Platform เพื่อเปิดใช้การกู้คืน database โดยใช้เวลาหยุดทำงาน (downtime) น้อยที่สุด
+-   การทำ On Demand และ Scheduled Patching
     
-    -   NDB patching processes assist you in keeping your databases up to date, making them more secure and less vulnerable to attacks.
--   Copy Database Managment
+    -   กระบวนการ patching ของ NDB จะช่วยให้คุณรักษา databases ของคุณให้ทันสมัย (up to date) อยู่เสมอ ซึ่งทำให้มีความปลอดภัยมากขึ้นและมีความเสี่ยงต่อการถูกโจมตีน้อยลง
+-   การทำ Copy Database Managment
     
-    -   NDB's clones are thin and space-efficient, meaning a 20TB database will not take up another 20TB; it will only track the differences from the source database. This allows for quick creation and refreshing of clones.
+    -   clones ของ NDB มีความบาง (thin) และประหยัดพื้นที่ (space-efficient) ซึ่งหมายความว่า database ขนาด 20TB จะไม่กินพื้นที่เพิ่มอีก 20TB; โดยมันจะติดตาม (track) เฉพาะความแตกต่างที่เกิดจาก source database เท่านั้น สิ่งนี้ช่วยให้สามารถสร้างและรีเฟรช (refreshing) ตัว clones ได้อย่างรวดเร็ว
 
-## [#](#additional-resources) Additional Resources
+## Additional Resources
 
 -   [NDB Test Drive](https://cloud.nutanixtestdrive.com/login?source=one-platform&type=ndb&lpurl=one-platform-ndb?utm_source=nutanixbible&utm_medium=referral)
     

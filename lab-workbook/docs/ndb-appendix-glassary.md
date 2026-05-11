@@ -1,82 +1,80 @@
-# Nutanix Database Service (NDB) Lab
+# Glossary
 
-# [#](#glossary) Glossary
+## Nutanix Core
 
-## [#](#nutanix-core) Nutanix Core
+### AOS
 
-### [#](#aos) AOS
+AOS ย่อมาจาก Acropolis Operating System และเป็น OS ที่รันบน Controller VMs (CVMs)
 
-AOS stands for Acropolis Operating System, and it is the OS running on the Controller VMs (CVMs).
+### Pulse
 
-### [#](#pulse) Pulse
+Pulse ให้ข้อมูลการวินิจฉัยระบบ (diagnostic system data) แก่ทีมสนับสนุนลูกค้าของ Nutanix เพื่อให้พวกเขาสามารถให้การสนับสนุนเชิงรุกและรับรู้บริบทสำหรับ Nutanix solutions ได้
 
-Pulse provides diagnostic system data to Nutanix customer support teams so that they can deliver proactive, context-aware support for Nutanix solutions.
+### Prism Element
 
-### [#](#prism-element) Prism Element
+Prism Element คือ native management plane สำหรับ Nutanix เนื่องจากการออกแบบนั้นอิงจาก consumer product interfaces จึงใช้งานได้ง่ายและเข้าใจได้เป็นธรรมชาติมากกว่า enterprise application interfaces หลายๆ ตัว
 
-Prism Element is the native management plane for Nutanix. Because its design is based on consumer product interfaces, it is more intuitive and easier to use than many enterprise application interfaces.
+### Prism Central
 
-### [#](#prism-central) Prism Central
+Prism Central คืออินเทอร์เฟซสำหรับการควบคุมและจัดการแบบ multi-cloud สำหรับ Nutanix โดย Prism Central สามารถจัดการ Nutanix clusters หลายคลัสเตอร์และทำหน้าที่เป็นจุดรวบรวมสำหรับการติดตามและการวิเคราะห์ (monitoring and analytics)
 
-Prism Central is the multi-cloud control and management interface for Nutanix. Prism Central can manage multiple Nutanix clusters and serves as an aggregation point for monitoring and analytics.
+### Node
 
-### [#](#node) Node
+x86 server มาตรฐานอุตสาหกรรมที่มี SSD ที่ติดมากับเซิร์ฟเวอร์และ HDD เสริม (ตัวเลือก All-Flash & Hybrid)
 
-An industry-standard x86 server with server-attached SSD and optional HDD (All-Flash & Hybrid Options).
+### Block
 
-### [#](#block) Block
+ตัวถัง (chassis) แบบ 2U rackmount ประกอบด้วย 1, 2, หรือ 4 nodes ที่ใช้พลังงานและพัดลมร่วมกัน โดยไม่มีแผงวงจรด้านหลัง (shared backplane) ร่วมกัน
 
-2U rackmount chassis contains 1, 2, or 4 nodes with shared power and fans and no shared backplane.
+### Storage Pool
 
-### [#](#storage-pool) Storage Pool
+Storage pool คือกลุ่มของอุปกรณ์จัดเก็บข้อมูลทางกายภาพ รวมถึงอุปกรณ์ PCIe SSD, SSD, และ HDD สำหรับ cluster
 
-A storage pool is a group of physical storage devices, including PCIe SSD, SSD, and HDD devices for the cluster.
+### Storage Container
 
-### [#](#storage-container) Storage Container
+Container คือส่วนย่อยของ storage ที่มีอยู่ซึ่งถูกนำมาใช้เพื่อปรับใช้ (implement) storage policies
 
-A container is a subset of available storage used to implement storage policies.
-
-### [#](#anatomy-of-a-read-i-o) Anatomy of a Read I/O
+### Anatomy of a Read I/O
 
 Performance and Availability
 
--   Data is read locally
--   Remote access only if data is not locally present
+-   ข้อมูลถูกอ่านแบบ locally
+-   การเข้าถึงจากระยะไกล (Remote access) จะเกิดขึ้นก็ต่อเมื่อไม่มีข้อมูลอยู่ในระดับ local
 
-### [#](#anatomy-of-a-write-i-o) Anatomy of a Write I/O
+### Anatomy of a Write I/O
 
 Performance and Availability
 
--   Data is written locally
--   Replicated on other nodes for high availability
--   Replicas are spread across the cluster for high performance
+-   ข้อมูลถูกเขียนแบบ locally
+-   มีการทำ Replicate ไปยัง nodes อื่นๆ เพื่อความพร้อมใช้งานสูง (high availability)
+-   Replicas จะกระจายอยู่ทั่วคลัสเตอร์เพื่อประสิทธิภาพสูง (high performance)
 
-## [#](#nutanix-flow) Nutanix Flow
+## Nutanix Flow
 
-### [#](#application-security-policy) Application Security Policy
+### Application Security Policy
 
-Use an application security policy to secure an application by specifying allowed traffic sources and destinations.
+ใช้ application security policy เพื่อรักษาความปลอดภัยให้กับแอปพลิเคชันโดยระบุแหล่งที่มาและปลายทางของ traffic ที่อนุญาต
 
-### [#](#isolation-environment-policy) Isolation Environment Policy
+### Isolation Environment Policy
 
-Use an isolation environment policy when you want to block all traffic, regardless of direction, between two groups of VMs identified by their category. VMs within a group can communicate with each other.
+ใช้ isolation environment policy เมื่อคุณต้องการบล็อก traffic ทั้งหมด ไม่ว่าจะทิศทางใดก็ตาม ระหว่างสองกลุ่มของ VMs ที่ถูกระบุโดย category ของพวกมัน ซึ่ง VMs ภายในกลุ่มยังคงสามารถสื่อสารกันได้
 
-### [#](#quarantine-policy) Quarantine Policy
+### Quarantine Policy
 
-Use a quarantine policy when you want to isolate a compromised or infected VM and optionally wish to subject it to forensics. You cannot modify this policy, and the two modes to quarantine a VM are Strict or Forensic.
+ใช้ quarantine policy เมื่อคุณต้องการแยก (isolate) VM ที่ถูกเจาะระบบหรือติดไวรัส และอาจต้องการนำไปตรวจสอบทางนิติวิทยาศาสตร์ (forensics) คุณไม่สามารถแก้ไข policy นี้ได้ และสองโหมดในการ quarantine VM คือ Strict หรือ Forensic
 
-Strict: Use this value when you want to block all inbound and outbound traffic.
+Strict: ใช้ค่านี้เมื่อคุณต้องการบล็อก inbound และ outbound traffic ทั้งหมด
 
-Forensic: Use this value when you want to block all inbound and outbound traffic except the traffic to and from categories that contain forensic tools.
+Forensic: ใช้ค่านี้เมื่อคุณต้องการบล็อก inbound และ outbound traffic ทั้งหมดยกเว้น traffic ที่เข้าและออกจาก categories ที่มี forensic tools
 
-#### [#](#apptier) AppTier
+#### AppTier
 
-Add values for the tiers in your application (ex. web, application\_logic, and database) to this category and use the values to divide the application into tiers when configuring a security policy.
+เพิ่มค่าสำหรับ tiers ในแอปพลิเคชันของคุณ (เช่น web, application_logic, และ database) ลงใน category นี้และใช้ค่าเหล่านั้นเพื่อแบ่งแอปพลิเคชันออกเป็น tiers เมื่อทำการกำหนดค่า security policy
 
-#### [#](#apptype) AppType
+#### AppType
 
-Associate the VMs in your application with the appropriate built-in application type such as Exchange and Apache\_Spark. You can also update the category to add values for applications not listed in this category.
+เชื่อมโยง VMs ในแอปพลิเคชันของคุณเข้ากับ built-in application type ที่เหมาะสม เช่น Exchange และ Apache_Spark คุณยังสามารถอัปเดต category เพื่อเพิ่มค่าสำหรับแอปพลิเคชันที่ไม่ได้อยู่ในรายการใน category นี้ได้
 
-#### [#](#environment) Environment
+#### Environment
 
-Add values for environments that you want to isolate from each other and then associate VMs with the values.
+เพิ่มค่าสำหรับ environments ที่คุณต้องการแยกออกจากกัน จากนั้นเชื่อมโยง VMs เข้ากับค่าเหล่านั้น

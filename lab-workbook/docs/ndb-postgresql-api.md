@@ -1,31 +1,29 @@
-# Nutanix Database Service (NDB) Lab
+# NDB REST API Explorer
 
-# [#](#ndb-rest-api-explorer) NDB REST API Explorer
+## Overview
 
-## [#](#overview) Overview
+ใน lab นี้ คุณจะได้สำรวจ NDB REST API Explorer
 
-In this lab, you will explore the NDB REST API Explorer.
+## Using the NDB REST API Explorer
 
-## [#](#using-the-ndb-rest-api-explorer) Using the NDB REST API Explorer
+NDB มี _API-first_ architecture ที่ได้รับการจัดทำเอกสารอย่างครบถ้วน (fully documented) เพื่อให้สามารถทำงานร่วมกัน (integration) กับ automation และ orchestration ของฟังก์ชันต่างๆ ผ่านเครื่องมือภายนอก (external tools) ได้ เช่นเดียวกับ Prism ทาง NDB ก็มี Rest API Explorer เพื่อให้ค้นพบ (discover) และทดสอบ API functions ได้อย่างรวดเร็ว
 
-NDB provides a fully documented _API-first_ architecture to allow integration with automation and orchestration of its functions through external tools. Similar to Prism, NDB also provides a Rest API Explorer to discover and test API functions quickly.
-
-1.  From the menu bar, select **Admin > REST API Explorer** from the top right.
+1.  จากแถบเมนู (menu bar) เลือก **Admin > REST API Explorer** จากมุมบนขวา
     
-    ![](/ndb/assets/29.210e9762.png)
+    ![](/images/29.210e9762.png)
     
-2.  Expand the different categories to view the available operations, including registering Nutanix clusters, registering and provisioning databases, cloning, refreshing databases, updating profiles and SLAs, and getting the operation and alert information.
+2.  ขยาย (Expand) categories ต่างๆ เพื่อดู operations ที่มีให้ใช้งาน รวมถึงการลงทะเบียน Nutanix clusters, การลงทะเบียนและการ provisioning databases, การทำ cloning, การ refreshing databases, การอัปเดต profiles และ SLAs, และการดึงข้อมูล operation และ alert
     
-3.  As a simple test, expand **Databases > GET /databases**.
+3.  สำหรับการทดสอบง่ายๆ ให้ขยาย **Databases > GET /databases**
     
-    This function returns JSON containing details regarding all registered and provisioned databases and requires no additional parameters.
+    function นี้จะส่งคืน (return) JSON ที่มีรายละเอียดเกี่ยวกับ databases ที่ลงทะเบียน (registered) และ provisioned ทั้งหมด และไม่จำเป็นต้องระบุ parameters เพิ่มเติม
     
-4.  Click **Try it out > Execute**.
+4.  คลิก **Try it out > Execute**
     
-    ![](/ndb/assets/30.ae0edb4c.png)
+    ![](/images/30.ae0edb4c.png)
     
-    You should receive a JSON response body similar to the image below.
+    คุณควรได้รับ JSON response body คล้ายกับภาพด้านล่าง
     
-    ![](/ndb/assets/32.888a26de.png)
+    ![](/images/32.888a26de.png)
     
-    This API can create powerful workflows using tools like Nutanix Calm, ServiceNow, Ansible, or others. For example, you could provision a Calm blueprint containing the web tier of an application and use a Calm eScript to invoke NDB to clone an existing database and return the IP of the newly provisioned database to Calm.
+    API นี้สามารถสร้าง workflows ที่ทรงพลังโดยใช้เครื่องมืออย่าง Nutanix Calm, ServiceNow, Ansible, หรืออื่นๆ ตัวอย่างเช่น คุณสามารถ provision ตัว Calm blueprint ที่ประกอบด้วย web tier ของแอปพลิเคชัน และใช้ Calm eScript เพื่อเรียกใช้ (invoke) NDB ให้ทำ clone ตัว database ที่มีอยู่ และส่งคืน (return) ค่า IP ของ database ที่เพิ่ง provision ใหม่นั้นกลับไปยัง Calm

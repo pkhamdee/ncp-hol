@@ -1,127 +1,121 @@
----
-description: >-
-  The following labs are to help students practice for the Nutanix Cloud Platfrom
----
+# Nutanix Bootcamps
 
-# Nutanix Cloud Platform Bootcamp
+## Nutanix Cloud Platform Fundamentals
 
-ยินดีต้อนรับสู่ Nutanix Cloud Platform (NCP) Bootcamp คุณจะได้สัมผัสประสบการณ์การใช้งาน Prism Central (PC) และทำความคุ้นเคยกับฟีเจอร์ต่างๆ รวมถึงการใช้งานเมนูนำทาง โดยคุณจะได้ใช้ PC ในการทำงานด้านการบริหารจัดการ Cluster พื้นฐาน ซึ่งรวมถึงด้าน storage และ networking นอกจากนี้ คุณจะได้เรียนรู้ขั้นตอนพื้นฐานในการ deploy และบริหารจัดการ VM ผ่าน Prism และ AHV
+## NCP Pt. 1 - Build Your Cloud
 
-เมื่อจบ Bootcamp นี้ คุณจะเข้าใจแนวคิดและหลักการ รวมถึงเทคโนโลยีต่างๆ ที่ประกอบกันขึ้นเป็น Nutanix Cloud Platform (NCP)
+NCP Fundamentals
 
-## Nutanix Cloud Platform
+- AOS 7.3
+- pc.7.3.0.5
 
-### Introduction
+ทำความคุ้นเคยกับพื้นฐานการสร้าง Nutanix Cluster แรกของคุณ ซึ่งรวมถึงการ deploy VM, การจัดการ, และการทำ network configuration
 
-[What is NCP](ncp1-whatisncp.md)  
-[Technology Overview](ncp1-technologyoverview.md)  
-[Storage Configuration](ncp1-storageconfiguration.md)  
-[Network Configuration](ncp1-networkconfiguration.md)  
+[Lab Guide](/ncp1-whatisncp/index.html)
 
-### Deploying and Managing Workloads
+## NCP Pt. 2 - Manage Your Cloud
 
-[Deploying Workloads](ncp1-deployingworkloads.md)  
-[Managing Workloads](ncp1-managingworkloads.md)  
+NCP Fundamentals
 
-### Protecting Workloads
+- AOS 7.3
+- pc.7.3.0.5
 
-[Data Protection](ncp1-dataprotection.md)  
+ทำความคุ้นเคยกับวิธีการสร้าง, ใช้งาน, และกำกับดูแล Nutanix cloud operating model เรียนรู้เพิ่มเติมเกี่ยวกับ RBAC, Categories, Policies, และ Self-Service
 
-### [Nutanix Cloud Management](ncp2-nutanix-cloud-platform.md)
-### [Nutanix Cloud Operating Model](ncp2-cloud-operating-model.md)
-### [Setting Up the Environment](ncp2-setting-up-environment.md)
-[Category and Policy Management](ncp2-category-and-policy-mgmt.md)
-[Identity and Access Management](ncp2-identity-and-access-mgmt.md)
-[Projects](ncp2-projects.md)
+[Lab Guide](/ncp2-nutanix-cloud-platform/index.html)
 
-### [Build Your Cloud](ncp2-build-your-cloud.md)
-[Self Service](ncp2-self-service.md)
+## Migrate to Nutanix on Prem
 
-### [Operate Your Cloud](ncp2-operate-your-cloud.md)
-[Reports](ncp2-reports.md)
-[Capacity Planning](ncp2-capacity-planning.md)
-[Inefficient VM Detection](ncp2-inefficient-vm-detection.md)
-[Entity Browser, Search and Analysis](ncp2-entity-browser-search-analysis.md)
-[Life Cycle Manager](ncp2-life-cycle-management.md)
+NCP Fundamentals
 
-### [Govern Your Cloud](ncp2-govern-your-cloud.md)
-[Playbooks](ncp2-playbooks.md)
-[Setting Up an Approval Policy](ncp2-setting-up-approval-policy.md)
-[Launch an App from Marketplace](ncp2-launch-app-from-marketplace.md)
-[Cost Governance](ncp2-cost-governance.md)
-[Security Central](ncp2-security-central.md)
+- AOS 7.3
+- pc.7.3.0.5
 
-### [Conclusion](ncp2-cloud-operating-conclusion.md)
+เรียนรู้วิธีการ migrate VM ไปยัง AHV on prem โดยใช้ Move ซึ่งรวมถึงฟีเจอร์ Advanced Migration ที่เพิ่งเพิ่มเข้ามา นอกจากนี้ เรียนรู้การ migrate shares ไปยัง Nutanix Files และการทำ day 2 management บน Nutanix ซึ่งรวมถึงการใช้ประโยชน์จาก Categories และ Policies เพื่อเป็นส่วนหนึ่งของกระบวนการ migration
 
-### Appendix
+[Lab Guide](/migrate-nutanix-overview/index.html)
 
-[Environment Details](ncp1-environmentdetails.md)  
+## Modern Applications
 
+## NKP Advanced
 
-## Nutanix Move
+NKP Advanced
 
-### Migrate to Nutanix
-[Overview](migrate-workload-overview.md)
+- AOS 7.3
+- pc.7.3.1.3
+- NKP 2.17
 
-### Setting up the Environment
-[Overview](migrate-environment-overview.md)
-[Category and Policy Management](migrate-environment-policies.md)
-[Playbooks](migrate-environment-playbooks.md)
-[Setup Takeaways](migrate-environment-setup-takeaways.md)
+เจาะลึกไปกับ hands-on lab ซีรีส์ 4 ชั่วโมงที่ออกแบบมาเพื่อช่วยคุณสำรวจฟีเจอร์อันทรงพลังของ Nutanix Kubernetes Platform คุณจะได้ deploy NKP cluster ของคุณเองและครอบคลุมเนื้อหาทั้งหมดใน lab ของ NKP Fundamentals
 
-### Migrating Workloads
-[Overview](migrate-workloads-overview.md)
-[Setup Move](migrate-workloads-setup-move.md)
-[Migrating VMs with Move](migrate-workloads-move-view-source-vm.md)
-[Advanced VM Migrations](migrate-workloads-move-advanced-migration.md)
-[Migrate at Scale](migrate-workloads-move-migrate-at-scale.md)
-[Migrating Shares with Move](migrate-workloads-move-share.md)
-[Migration Takeaways](migrate-workloads-migration-takeaways.md)
+[Lab Guide](/cloudnative/)
 
-### Day 2 Management
-[Overview](migrate-day2-overview.md)
-[Nutanix Guest Tools](migrate-day2-guest-tools.md)
-[IAM](migrate-day2-iam.md)
-[Reports](migrate-day2-reports.md)
-[Capacity Planning](migrate-day2-capacity-planning.md)
-[Inefficient VM Detection](migrate-day2-inefficient-vm.md)
-[Management Takeaways](migrate-day2-mgmt-takeaway.md)
+## Nutanix Enterprise AI
 
-### Conclusion
-[Conclusion](migrate-conclusion.md)
+Nutanix Enterprise AI
+
+- AOS 7.3
+- pc.7.3.1.2
+
+เรียนรู้ว่า Nutanix Enterprise AI (NAI) สามารถช่วยคุณสร้าง, deploy, และจัดการ AI applications บน Nutanix Cloud Platform ได้อย่างไร lab นี้จะแนะนำคุณเกี่ยวกับการใช้ NAI เพื่อจัดการและ deploy model, รัน inference บน model นั้น, และสร้าง RAG pipeline ของคุณเอง
+
+[Lab Guide](/nai/)
+
+## Additional Nutanix Portfolio Labs
 
 ## Flow Network Security
 
-### Flow Network Security
-[Overview](flow-overview.md)
+Flow Network Security
 
-### Environment and App
-[Prism Central Overview](flow-env-pc-overview.md)
-[Flow Controller](flow-env-flow-controller.md)
-[Categories](flow-env-categories.md)
-[The Application](flow-env-application.md)
-### Basic Security Policies
-[Quarantine a VM](flow-basic-quarantine.md)
-[Isolation Policies](flow-basic-isolation.md)
-### Application Security Policies
-[Application Policies](flow-app-app-policies.md)
-[Monitor and Enforce the Policy](flow-app-monitor.md)
-[Clone the Policy](flow-app-clone.md)
-[Verify the Policy](flow-app-verify.md)
-### Cyber Resilience
-[Cyber Resilience](flow-cyber-resilience.md)
+- AOS 7.5
+- pc.7.5
 
-## NCM Self Service
+เรียนรู้การใช้ประโยชน์จาก Flow Network Security Next-Gen เพื่อทำ microsegmentation ให้กับ VM workloads ในขณะที่ใช้ประโยชน์จาก policies, visualization, และ automation
 
-### NCM Self Service
-[Getting Started](selfservice-gettingstart.md)
-### Lab Setup
-[Self Service Lab Setup](selfservice-lab-setup.md)
-### IaaS: Linux
-[Self Service IaaS: Linux](selfservice-linux.md)
-### IaaS: Windows
-[Self Service IaaS: Windows](selfservice-windows.md)
-### DSL
-[Self Service DSL](selfservice-dsl.md)
-### Appendix
-[Glossary](selfservice-appendix.md)
+[Lab Guide](/flow-overview/index.html)
+
+## Self-Service IaaS
+
+Self-Service IaaS Bootcamp
+
+- AOS 7.3.1
+- pc.7.3.1
+- Self Service 4.2.1
+- Policy Engine 4.2.1
+
+แนะนำ Self Service Fundamentals และวิธีการใช้ประโยชน์จากมันเพื่อเป็นส่วนหนึ่งใน automation journey ของคุณ
+
+[Lab Guide](/selfservice-gettingstart/index.html)
+
+## Nutanix Unified Storage (NUS)
+
+Unified Storage (NUS) Bootcamp
+
+- AOS 7.0.0.5
+- pc.2024.3.1
+- Files 5.1.1
+
+เรียนรู้การ deploy และจัดการ File shares, Analytics, และ Objects ทั้งหมดภายใต้ stack เดียว ผู้ใช้จะสามารถ block files, เรียนรู้การจัดการ files, และเรียนรู้วิธีรักษาความปลอดภัยของ storage อย่างมีประสิทธิภาพและสามารถมองเห็นแนวโน้มการเติบโตได้ผ่าน analytics
+
+[Lab Guide](/nus-getting-start/index.html)
+
+## Nutanix Database Service (NDB)
+
+Nutanix Database Service (NDB) Bootcamp
+
+- AOS 7.0.0.5
+- pc.2024.3
+- NDB 2.8
+
+เรียนรู้การทำ configure NDB สำหรับ PostgreSQL เรียนรู้การทำ configure snapshots และ clone tables ผ่าน NDB
+
+[Lab Guide](/ndb)
+
+## Extending NCP from Core to Edge to Cloud
+
+- Extend to Edge
+- AOS 6.7.1.5
+- pc.2023.4
+
+ทำความเข้าใจพื้นฐานของ Nutanix Disaster Recovery และใช้ประโยชน์จาก built-in capabilities เพื่อขยายไปสู่ public cloud
+
+[Lab Guide](/xxxx/)

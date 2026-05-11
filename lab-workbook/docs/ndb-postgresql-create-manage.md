@@ -1,103 +1,98 @@
-# Nutanix Database Service (NDB) Lab
+# Create and Manage Clones
 
-# [#](#create-and-manage-clones) Create and Manage Clones
+คุณสามารถสร้าง clone ได้อย่างง่ายดายภายใน NDB โดยใช้ Time Machine ซึ่ง Database clones นั้นมีประโยชน์สำหรับวัตถุประสงค์ในการ development และ testing ช่วยให้ environment ที่ไม่ใช่ production สามารถใช้ข้อมูล production ได้โดยไม่ส่งผลกระทบต่อการทำงานของ production โดย NDB clones ใช้เทคโนโลยีการทำ clone แบบ Nutanix-native copy-on-write ซึ่งทำให้สามารถสร้าง zero-byte database clones ได้ ประสิทธิภาพด้านพื้นที่นี้ช่วยลดต้นทุน storage สำหรับ environment ที่รองรับ database clones ขนาดใหญ่ได้อย่างมาก โดยการลดความจุของ storage ที่ต้องการลงอย่างมหาศาล
 
-You can easily clone within NDB using the Time Machine. Database clones are helpful for development and testing purposes, allowing non-production environments to utilize production data without impacting production operations. NDB clones utilize Nutanix-native copy-on-write cloning technology, allowing for zero-byte database clones. This space efficiency can significantly lower storage costs for environments supporting large database clones by vastly reducing the required storage capacity.
+## Clone the Fiesta Database
 
-## [#](#clone-the-fiesta-database) Clone the Fiesta Database
+ในฐานะ DBA คุณได้รับมอบหมายให้สร้าง clone ของ Production inventory database เพื่อนำไปใช้โดยทีม development โดยจะต้องมีการ refresh ทุกสัปดาห์ภายในเวลา 6:00 น. ของวันปัจจุบัน มาดูขั้นตอนในการสร้าง clone นั้นกัน
 
-As a DBA, you have been tasked with creating a clone of the Production inventory database to be used by development. This will need to be refreshed weekly by 6:00 a.m. on today's date. Let's walk through the process of creating that clone.
-
-1.  Within NDB, select **\> Data Protection > Time Machines** Time Machines from the drop-down menu, then select **List** from the top menu. Next, click the dot next to your `User##`\-fiestadb\_TM entry.
+1.  ภายใน NDB ให้เลือก **\> Data Protection > Time Machines** จากเมนู drop-down จากนั้นเลือก **List** จากเมนูด้านบน ต่อมาให้คลิกที่จุดข้างๆ รายการ `User##`\-fiestadb\_TM ของคุณ
     
-    ![](/ndb/assets/n01.76184e9b.png)
+    ![](/images/n01.76184e9b.png)
     
-2.  Click **Actions > Create a Clone of the PostgreSQL Instance**.
+2.  คลิก **Actions > Create a Clone of the PostgreSQL Instance**
     
-3.  Within the _Time/Snapshot_ section, select **Snapshot** the pick an existing snapshot.
+3.  ในส่วนของ _Time/Snapshot_ ให้เลือก **Snapshot** จากนั้นเลือก snapshot ที่มีอยู่
     
-    ![](/ndb/assets/n02.ec5c4ccc.png)
+    ![](/images/n02.ec5c4ccc.png)
     
-    Note
+    !!! note
+        -   แม้จะไม่ได้สร้าง manual snapshots ทาง NDB ก็ยังมีความสามารถในการ clone database ตาม increments แบบ point-in-time ซึ่งรวมถึง Continuous (ทุกวินาที), Daily, Weekly, Monthly, หรือ Quarterly โดยที่ SLA จะควบคุม availability
+        -   คุณอาจเห็นสีแดงบน schedule graph หาก database ของคุณยังคงอยู่ในช่วง recovering จากแบบฝึกหัดก่อนหน้านี้
     
-    -   Without creating manual snapshots, NDB also offers the ability to clone a database based on point-in-time increments, including Continuous (every second), Daily, Weekly, Monthly, or Quarterly. The SLA controls availability.
-    -   You may see red on the schedule graph if your database is still recovering from the previous exercise.
+4.  คลิก **Next**
     
-4.  Click **Next**.
-    
-5.  Within the _Database Server VM_ section, fill out the following fields and click **Next**.
+5.  ในส่วนของ _Database Server VM_ ให้กรอกข้อมูลในช่องต่อไปนี้ แล้วคลิก **Next**
     
     -   **Database Server VM** - Create New Server
     -   **Database Server VM Name** - `User##`\-postgres\_dev
     -   **Compute Profile** - CUSTOM\_EXTRA\_SMALL
     -   **Network Profile** - DEFAULT\_OOB\_POSTGRESQL\_NETWORK
-    -   **SSH Public Key** - Select **Text**, and then copy/paste the below into the text field
+    -   **SSH Public Key** - เลือก **Text** จากนั้น copy/paste โค้ดด้านล่างลงใน text field
     
     ```
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoQRdEfm8ZJNGlYLQ2iw08eVk/Wyj0zl3M5KyqKmBTpUaS1uxj0K05HMHaUNP+AeJ63Qa2hI1RJHBJOnV7Dx28/yN7ymQpvO1jWejv/AT/yasC9ayiIT1rCrpHvEDXH9ee0NZ3Dtv91R+8kDEQaUfJLYa5X97+jPMVFC7fWK5PqZRzx+N0bh1izSf8PW0snk3t13DYovHFtlTpzVaYRec/XfgHF9j0032vQDK3svfQqCVzT02NXeEyksLbRfGJwl3UsA1ujQdPgalil0RyyWzCMIabVofz+Czq4zFDFjX+ZPQKZr94/h/6RMBRyWFY5CsUVvw8f+Rq6kW+VTYMvvkv
     ```
     
-    ![](/ndb/assets/n03.042e2942.png)
+    ![](/images/n03.042e2942.png)
     
-6.  Within the _Instance_ section, fill out the following fields
+6.  ในส่วนของ _Instance_ ให้กรอกข้อมูลในช่องต่อไปนี้
     
     -   **Name** - `User##`\-fiestadb\_dev
     -   **POSTGRES Password** - `nutanix/4u`
     -   **Database Parameter Profile** - DEFAULT\_POSTGRES\_PARAMS
     
-    ![](/ndb/assets/n04.24ba1b38.png)
+    ![](/images/n04.24ba1b38.png)
     
-7.  Since it was requested that this clone be refreshed from production weekly starting today, check **Schedule Data Refresh** and fill out the following fields.
+7.  เนื่องจากมีการร้องขอให้ clone นี้ทำการ refreshed จาก production ทุกสัปดาห์โดยเริ่มตั้งแต่วันนี้ ให้ทำเครื่องหมายเลือกที่ **Schedule Data Refresh** และกรอกข้อมูลในช่องต่อไปนี้
     
     -   **Refresh Every (days)** 7
     -   **Refresh Time** 00:06:00
     
-    ![](/ndb/assets/n05.4d000795.png)
+    ![](/images/n05.4d000795.png)
     
-    Once the above fields are filled out, click **Clone**.
+    เมื่อกรอกข้อมูลในช่องด้านบนเรียบร้อยแล้ว ให้คลิก **Clone**
     
-    Note
+    !!! note
+        -   หาก database clone นี้จำเป็นสำหรับช่วงเวลาใดเวลาหนึ่งเท่านั้น คุณสามารถเลือก Removal Schedule เพื่อตั้งวันที่ให้ทำการลบ database clone ออกโดยอัตโนมัติได้
+        -   คุณสามารถตั้งค่าหรือเปลี่ยนแปลง Schedule Data Refresh หรือ Removal Schedule ใน Time Machine ของ database ได้ หากไม่ได้เลือกไว้ในขั้นตอน clone creation
+        -   ส่วนของ Pre-Post Commands สามารถใช้ในการรัน scripts เพื่อเพิ่มหรือลบ users และ/หรือทำการ sanitize ตัว database ได้
     
-    -   If this database clone was only needed for a specific period of time, you could choose Removal Schedule and automatically set a date for the database clone to be removed.
-    -   You can set or change the Schedule Data Refresh,\\ or Removal Schedule in the Time Machine of the database if it was not selected on clone creation.
-    -   The Pre-Post Commands section can be used to run scripts that can be used to add or remove users and/or sanitize the database.
+8.  คุณสามารถตรวจสอบความคืบหน้าของ clone creation ได้โดยคลิกที่กล่องสีน้ำเงินที่มีคำว่า **click here**
     
-8.  You can check on the progress of your clone creation by clicking on the blue box that says **click here**.
-    
-    ![](/ndb/assets/n06.504c38b1.png)
-    
-
-Once you have verified that the Clone creation has started, we can proceed to the [Refresh Cloned Database](#refresh-cloned-database) section.
-
-## [#](#refresh-cloned-database) Refresh Cloned Database
-
-The ability to easily refresh a cloned database using the most up-to-date data from the source database improves development, testing, and other use cases by ensuring these individuals have access to the latest data. You have received a request to refresh a database from the source; let’s get that request completed.
-
-1.  Select **\> Databases** then chose **Clones** from the top menu.
-    
-2.  Select your `User##-fiestadb_clone` and click **Refresh**.
-    
-    ![](/ndb/assets/n07.dac95e65.png)
-    
-3.  The latest available _Point in Time_ is selected by default. Click **Refresh**.
-    
-    TIP
-    
-    If a point in time snapshot is not available, select snapshot and pick a snapshot from the drop down. (This could be due to when the lab environment was created.)
-    
-    ![](/ndb/assets/n08.533f2e3b.png)
-    
-4.  Select **\> Operations** from the menu to monitor the _Refresh Clone_ process.
+    ![](/images/n06.504c38b1.png)
     
 
-On the operations page, you should see the status of the clone-creation task from above and the refresh clone task. These tasks will be completed quickly as NDB uses the Nutanix Cloud Platforms' built-in snapshots, which are thin and space-efficient. This allows for quick creation and refreshing of clones.
+เมื่อคุณตรวจสอบแล้วว่าขั้นตอน Clone creation ได้เริ่มต้นขึ้น เราสามารถดำเนินการต่อในส่วนของ [Refresh Cloned Database](#refresh-cloned-database) ได้เลย
 
-## [#](#takeaways) Takeaways
+## Refresh Cloned Database
+
+ความสามารถในการ refresh สิ่งที่เรียกกันว่า cloned database อย่างง่ายดาย โดยใช้ข้อมูลที่อัปเดตล่าสุดจาก source database ช่วยปรับปรุงกระบวนการ development, testing, และ use cases อื่นๆ ได้อย่างมาก โดยช่วยให้มั่นใจได้ว่าบุคคลเหล่านี้จะสามารถเข้าถึงข้อมูลล่าสุด คุณได้รับคำขอให้ refresh database จาก source; เรามาดำเนินการคำขอนั้นให้เสร็จสมบูรณ์กันเถอะ
+
+1.  เลือก **\> Databases** จากนั้นเลือก **Clones** จากเมนูด้านบน
+    
+2.  เลือก `User##-fiestadb_clone` ของคุณ และคลิก **Refresh**
+    
+    ![](/images/n07.dac95e65.png)
+    
+3.  _Point in Time_ ล่าสุดที่มีอยู่จะถูกเลือกไว้เป็นค่าเริ่มต้น (default) คลิก **Refresh**
+    
+    !!! tip
+        หาก point in time snapshot ไม่มีให้ใช้งาน ให้เลือก snapshot แล้วเลือก snapshot จาก drop down (ซึ่งอาจเกิดจากช่วงเวลาที่ lab environment ถูกสร้างขึ้น)
+    
+    ![](/images/n08.533f2e3b.png)
+    
+4.  เลือก **\> Operations** จากเมนูเพื่อทำการ monitor กระบวนการ _Refresh Clone_
+    
+
+ในหน้า operations page คุณควรจะเห็นสถานะของ clone-creation task จากด้านบนและ refresh clone task โดย tasks เหล่านี้จะเสร็จสมบูรณ์อย่างรวดเร็ว เนื่องจาก NDB ใช้ built-in snapshots ของ Nutanix Cloud Platforms ซึ่งเป็นแบบ thin และ space-efficient สิ่งนี้ช่วยให้สามารถทำ creation และ refreshing ของ clones ได้อย่างรวดเร็ว
+
+## Takeaways
 
 NDB:
 
--   Supports one-click operations for registering, provisioning, cloning, and refreshing supported databases.
--   Enables the same type of simplicity and operating efficiency that you would expect from a public cloud provider while allowing DBAs to maintain control.
--   Automates complex database operations, slashing the time required by a DBA and the cost of managing databases with traditional technologies (Opex savings).
--   Empowers DBAs to standardize their database deployments across database engines while automatically incorporating each database's best practices.
--   Allows DBAs to clone their environments to the latest application-consistent transaction.
+-   รองรับ one-click operations สำหรับ registering, provisioning, cloning, และ refreshing ของ supported databases
+-   ทำให้เกิดความเรียบง่ายและ operating efficiency ในรูปแบบเดียวกับที่คุณคาดหวังจาก public cloud provider ในขณะที่ยังคงให้ DBAs สามารถรักษาการควบคุม (maintain control) เอาไว้ได้
+-   ทำ automate ให้กับ complex database operations ซึ่งช่วยลดเวลาที่ DBA ต้องใช้ รวมไปถึงลดค่าใช้จ่ายในการจัดการ databases ด้วย traditional technologies (Opex savings)
+-   ให้อำนาจแก่ DBAs ในการสร้าง standardize ให้กับการทำ database deployments ของพวกเขาในหลากหลาย database engines ในขณะที่ผสมผสาน best practices ของแต่ละ database เข้าด้วยกันโดยอัตโนมัติ
+-   ช่วยให้ DBAs สามารถ clone environments ของตนเองไปยัง application-consistent transaction ล่าสุดได้

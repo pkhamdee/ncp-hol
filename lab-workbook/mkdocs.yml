@@ -160,3 +160,15 @@ nav:
       - Multi-Protocol: nus-objects-multi-protocol.md
     - Bonus:
       - Peer Global File Service: nus-bonus.md
+
+  - Nutanix Database Services (NDB) Bootcamp:
+    - Getting Started: ndb-getting-started.md
+    - PostgreSQL:
+      - Database Recovery: ndb-postgresql-dr.md
+      - Database Provisioning and Patching: ndb-postgresql-provision.md
+      - Create and Manage Clones: ndb-postgresql-create-manage.md
+      - Takeaways: ndb-postgresql-takeaways.md
+    - Optional Labs:
+      - NDB REST API Explorer: ndb-postgresql-api.md
+    - Appendix:
+      - Glossary: ndb-appendix-glassary.md 
