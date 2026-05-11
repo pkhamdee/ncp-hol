@@ -70,7 +70,7 @@ Nutanix Enterprise AI
 
 เรียนรู้ว่า Nutanix Enterprise AI (NAI) สามารถช่วยคุณสร้าง, deploy, และจัดการ AI applications บน Nutanix Cloud Platform ได้อย่างไร lab นี้จะแนะนำคุณเกี่ยวกับการใช้ NAI เพื่อจัดการและ deploy model, รัน inference บน model นั้น, และสร้าง RAG pipeline ของคุณเอง
 
-[Lab Guide](/nai/)
+[Lab Guide](/xxx/)
 
 ## Additional Nutanix Portfolio Labs
 
@@ -120,7 +120,7 @@ Nutanix Database Service (NDB) Bootcamp
 
 เรียนรู้การทำ configure NDB สำหรับ PostgreSQL เรียนรู้การทำ configure snapshots และ clone tables ผ่าน NDB
 
-[Lab Guide](/ndb)
+[Lab Guide](/ndb-getting-started/index.html)
 
 ## Extending NCP from Core to Edge to Cloud
 
