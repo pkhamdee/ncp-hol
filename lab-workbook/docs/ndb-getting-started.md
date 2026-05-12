@@ -79,3 +79,8 @@ maintenance window policy ช่วยให้คุณสามารถตั
         - Database VMs ที่รัน Oracle, MongoDB, และ PostgreSQL จะได้รับการรองรับใน maintenance windows สำหรับการทำ patching ทั้งบน Operating System และ Database; ส่วน MSSQL Database VMs สามารถใช้ maintenance windows สำหรับ database patching ได้
 
 **เริ่มต้นด้วยการมาดูกันว่า NDB ทำให้ [Database Recovery](/ndb-postgresql-dr/index.html) นั้นรวดเร็วและมีประสิทธิภาพเพียงใด**
+
+
+---
+
+[Next: Database Recovery →](ndb-postgresql-dr.md)

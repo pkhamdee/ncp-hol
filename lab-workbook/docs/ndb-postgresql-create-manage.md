@@ -96,3 +96,8 @@ NDB:
 -   ทำ automate ให้กับ complex database operations ซึ่งช่วยลดเวลาที่ DBA ต้องใช้ รวมไปถึงลดค่าใช้จ่ายในการจัดการ databases ด้วย traditional technologies (Opex savings)
 -   ให้อำนาจแก่ DBAs ในการสร้าง standardize ให้กับการทำ database deployments ของพวกเขาในหลากหลาย database engines ในขณะที่ผสมผสาน best practices ของแต่ละ database เข้าด้วยกันโดยอัตโนมัติ
 -   ช่วยให้ DBAs สามารถ clone environments ของตนเองไปยัง application-consistent transaction ล่าสุดได้
+
+
+---
+
+[← Back: Database Provisioning and Patching](ndb-postgresql-provision.md) | [Home](ndb-getting-started.md) | [Next: Takeaways →](ndb-postgresql-takeaways.md)

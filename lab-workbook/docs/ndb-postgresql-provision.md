@@ -145,3 +145,8 @@ NDB สามารถทำ patch ให้กับ database servers ของ
     
 
 ตอนนี้เราได้ตั้งค่า patching สำหรับ database VM ของเราเรียบร้อยแล้ว เราไปต่อกันที่ส่วนของ [clone creation and management](/ndb-postgresql-create-manage/index.html) กันเลย
+
+
+---
+
+[← Back: Database Recovery](ndb-postgresql-dr.md) | [Home](ndb-getting-started.md) | [Next: Create and Manage Clones →](ndb-postgresql-create-manage.md)

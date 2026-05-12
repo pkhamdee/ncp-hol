@@ -10,6 +10,3 @@
 -   เรียนรู้เกี่ยวกับ IAM และ user roles
 -   เรียนรู้วิธีการทำ automate สำหรับ routine tasks ด้วย playbooks
 -   เรียนรู้วิธีการ monitor ตัว environment อย่างต่อเนื่องและเชิงรุก (proactively) ด้วย reports, capacity planning และ inefficient VM detection
-
-!!! note
-    Expected Module Duration: 25 นาที

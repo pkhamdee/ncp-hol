@@ -111,3 +111,8 @@
     
 
 และนี่คือภาพรวมของตัวเลือกบางส่วนที่คุณมีสำหรับทำ database recovery ด้วย NDB ในขณะที่ operations เหล่านั้นกำลังดำเนินการจนเสร็จสมบูรณ์ เราไปต่อที่ส่วน [Database Provisioning and Patching](/ndb-postgresql-provision/index.html) กันเลย
+
+
+---
+
+[← Back: Getting Started](ndb-getting-started.md) | [Home](ndb-getting-started.md) | [Next: Database Provisioning and Patching →](ndb-postgresql-provision.md)
