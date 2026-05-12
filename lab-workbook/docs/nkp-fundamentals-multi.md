@@ -1,39 +1,35 @@
-# NKP Advanced Hands-on Lab
+# Multi-tenancy Lab
 
-Note
+มีหลายวิธีในการออกแบบและสร้าง multi-tenant solutions ด้วย Kubernetes แต่ละวิธีเหล่านี้มาพร้อมกับ tradeoffs ของตัวเองที่ส่งผลต่อ isolation level, implementation effort, operational complexity และ cost of service
 
--   Expected lab duration: 10 minutes
+โดยสรุปแล้ว เราสามารถจับคู่ multi-tenancy models เหล่านี้กับ 2 scenarios ได้ดังนี้:
 
-# [#](#multi-tenancy) Multi-tenancy Lab
-
-There are several ways to design and build multi-tenant solutions with Kubernetes. Each of these methods comes with its own set of tradeoffs that impact the isolation level, implementation effort, operational complexity, and cost of service.
-
-In summary, we could map these multi-tenancy models to two scenarios:
-
--   **Multiple teams ("soft")**. A common form of multi-tenancy is to share a cluster between multiple teams within an organization, each of whom may operate one or more workloads. This model is based on Kubernetes Namespace resources which maps to NKP Projects.
+-   **Multiple teams ("soft")**. รูปแบบทั่วไปของ multi-tenancy คือการ share ตัว cluster ระหว่างหลายๆ teams ภายในองค์กร ซึ่งแต่ละทีมอาจจะ operate ตัว workloads หนึ่งตัวหรือมากกว่านั้น โมเดลนี้จะอิงตาม Kubernetes Namespace resources ซึ่งสอดคล้องกับ NKP Projects
     
--   **Multiple customers ("hard")**. The other major form of multi-tenancy frequently involves a Managed Service Provider (MSP). The customers workloads run on dedicated clusters for each tenant (customer). This model maps to NKP Workspaces.
+-   **Multiple customers ("hard")**. อีกรูปแบบหลักของ multi-tenancy มักจะเกี่ยวข้องกับ Managed Service Provider (MSP) ตัว workloads ของลูกค้าจะรันบน dedicated clusters สำหรับแต่ละ tenant (ลูกค้า) โมเดลนี้จะสอดคล้องกับ NKP Workspaces
     
 
-## [#](#multi-tenancy-in-nkp) Multi-Tenancy in NKP
+## Multi-Tenancy in NKP
 
-Multi-tenancy in NKP is an architecture model where a single NKP Ultimate instance serves multiple organization’s divisions, customers or tenants. In NKP, each tenant system is represented by a workspace. Each workspace and its resources can be isolated from other workspaces (by using separate Identity Providers), even though they all fall under a single Ultimate license.
+Multi-tenancy ใน NKP เป็น architecture model ที่ NKP Ultimate instance เพียงชุดเดียวให้บริการกับ divisions, customers หรือ tenants หลายๆ รายขององค์กร ใน NKP แต่ละ tenant system จะถูกแสดงแทนด้วย workspace แต่ละ workspace และ resources ของมันสามารถถูก isolated ออกจาก workspaces อื่นๆ ได้ (โดยใช้ Identity Providers แยกต่างหาก) แม้ว่าทั้งหมดจะอยู่ภายใต้ Ultimate license เดียวกันก็ตาม
 
-#### [#](#global-or-workspace-ui) Global or Workspace UI
+#### Global or Workspace UI
 
-The UI is designed to be accessible for different roles at different levels:
+UI ถูกออกแบบมาให้สามารถเข้าถึงได้สำหรับ roles ต่างๆ ในระดับต่างๆ กัน:
 
--   _Global_: At the top level, platform engineers or MSP admins manage all clusters across all workspaces
+-   _Global_: ที่ระดับบนสุด platform engineers หรือ MSP admins จะเป็นผู้ manage ตัว clusters ทั้งหมดในทุกๆ workspaces
     
--   _Workspace_: platform engineers or tenant admins manage multiple clusters within a workspace
+-   _Workspace_: platform engineers หรือ tenant admins จะเป็นผู้ manage ตัว clusters หลายๆ ตัวภายใน workspace
     
--   _Projects_: platform engineers or tenant developers manage workloads configuration and services across multiple clusters
+-   _Projects_: platform engineers หรือ tenant developers จะเป็นผู้ manage ตัว workloads configuration และ services ข้าม clusters หลายๆ ตัว
     
 
-![Multitenancy diagram](/cloudnative/assets/multitenancy_diagram.2923c533.png)
+![Multitenancy diagram](images/multitenancy_diagram.2923c533.png)
 
-In this lab we'll take a high level look at NKP Workspaces and NKP Projects.
+ใน lab นี้เราจะมาดูภาพรวมระดับสูง (high level) ของ NKP Workspaces และ NKP Projects กัน
 
-Did You Know?
+!!! info
 
-**Multi-tenancy** requires NKP Ultimate
+    รู้หรือไม่?
+
+    **Multi-tenancy** จำเป็นต้องใช้ NKP Ultimate

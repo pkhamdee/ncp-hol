@@ -1,14 +1,8 @@
-# NKP Advanced Hands-on Lab
+# Expose app on production Lab
 
-Note
+ตอนนี้ application ของเรายังไม่ถูก expose ในวิธีที่ reliable และ scalable ตัว Worker nodes ถือว่าเป็นสิ่งชั่วคราว (ephemeral) หาก node ถูก redeploy และ address เปลี่ยนไป ตัว application จะไม่สามารถเข้าถึงได้ผ่าน node นั้น
 
--   Expected lab duration: 10 minutes
+ใน lab นี้ คุณจะได้:
 
-# [#](#expose-app-on-production) Expose app on production Lab
-
-Right now our application is not exposed on a reliable and scalable way. Worker nodes are considered ephemeral, if the node is redeployed and the address changes, the application becomes inaccessible through that node.
-
-In this lab you will:
-
--   Migrate your application service to `LoadBalancer` with **MetalLB**
--   Expose HTTP applications using `Ingress` with **Traefik**
+-   Migrate ตัว application service ของคุณเป็น `LoadBalancer` ด้วย **MetalLB**
+-   Expose ตัว HTTP applications โดยใช้ `Ingress` ด้วย **Traefik**

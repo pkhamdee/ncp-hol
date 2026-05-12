@@ -14,7 +14,7 @@
     
 3.  เลือก **Shares & Exports** จากนั้นเลือก **New Share or Export**
     
-    ![](/images/1.1a90ed6b.png)
+    ![](images/1.1a90ed6b.png)
     
 4.  กรอกข้อมูลในช่องต่อไปนี้ แล้วคลิก **Next**
     
@@ -24,18 +24,18 @@
     -   **Max Size (Optional)** - ช่องนี้ให้คุณตั้งค่า hard quota สำหรับแต่ละ share แยกกัน ปล่อยว่างไว้
     -   **Primary Protocol Access** - SMB
     
-    ![](/images/2.dc793f21.png)
+    ![](images/2.dc793f21.png)
     
 5.  เลือกตัวเลือกต่อไปนี้ แล้วคลิก **Next**
     
     -   **Enable Self Service Restore**
     -   **Enable Compression**
     
-    ![](/images/3.28d1c5bb.png)
+    ![](images/3.28d1c5bb.png)
     
     เปิดใช้งาน Access Based Enumeration แล้วคลิก **Next**
     
-    ![](/images/3a.0d1d5393.png)
+    ![](images/3a.0d1d5393.png)
     
     **Standard** shares เหมาะสมที่สุดสำหรับตัวอย่างของเรา เนื่องจากคุณกำลังสร้าง departmental share เดี่ยว หมายความว่า top-level directories และไฟล์ทั้งหมดภายใน share รวมถึงการเชื่อมต่อไปยัง share จะถูกจัดการโดย File Server VM (FSVM) เดียว
     
@@ -47,7 +47,7 @@
     
 6.  ตรวจสอบข้อมูลในหน้า **Summary** แล้วคลิก **Create**
     
-    ![](/images/4.4ea31b24.png)
+    ![](images/4.4ea31b24.png)
     
 7.  เปิดแท็บนี้ทิ้งไว้ เนื่องจากเราจะกลับมาใช้ในภายหลัง
     
@@ -60,30 +60,30 @@
 
 2.  เปิด Windows File Explorer คลิกขวาที่ **SampleData\_Small.zip** ภายในโฟลเดอร์ _Downloads_ และเลือก **Extract All**
     
-    ![](/images/6.3c67cd16.png)
+    ![](images/6.3c67cd16.png)
     
     -   ผู้ใช้ `NTNXLAB\Administrator` ถูกระบุให้เป็น Files Administrator ระหว่างการติดตั้ง (deployment) Files cluster ทำให้มีสิทธิ์ read/write การเข้าถึง shares ทั้งหมดโดยค่าเริ่มต้น
     -   การจัดการสิทธิ์การเข้าถึงสำหรับผู้ใช้อื่นนั้นไม่แตกต่างจาก SMB share อื่นๆ ทั่วไป
 
 3.  ป้อน `\\BootcampFS.ntnxlab.local\User##-Marketing` (เช่น \\BootcampFS.ntnxlab.local\User01-Marketing) ในช่อง _Files will be extracted to this folder_ แล้วคลิก **Extract** หน้าต่าง Windows File Explorer ใหม่จะเปิดขึ้น
     
-    ![](/images/7.58b105b7.png)
+    ![](images/7.58b105b7.png)
     
 4.  คลิกขวาที่ **`User##`Marketing > Properties**
     
 5.  เลือกแท็บ **Security** และคลิก **Advanced**
     
-    ![](/images/8.87acbf50.png)
+    ![](images/8.87acbf50.png)
     
 6.  เลือก **Users (BootcampFS\Users)** และคลิก **Remove**
     
-    ![](/images/8a.007e813b.png)
+    ![](images/8a.007e813b.png)
     
 7.  คลิก **Add**
     
 8.  คลิก **Select a principal** และระบุ **Everyone** ในช่อง _Enter the object name to select_ คลิก **OK**
     
-    ![](/images/9.09dff69d.png)
+    ![](images/9.09dff69d.png)
     
 9.  กรอกข้อมูลในช่องต่อไปนี้และคลิก **OK**:
     
@@ -94,7 +94,7 @@
     -   Select **Read**
     -   Select **Write**
     
-    ![](/images/10.dfcc1bc3.png)
+    ![](images/10.dfcc1bc3.png)
     
 10.  คลิก **OK > OK > OK** เพื่อบันทึกการเปลี่ยนแปลง permission
     
@@ -109,11 +109,11 @@
     
 2.  คลิกที่ `User##`**\-Marketing** share เพื่อเปิดดูรายละเอียด share
     
-    ![](/images/11.10d6479a.png)
+    ![](images/11.10d6479a.png)
     
 3.  ในเมนู _Actions_ เลือก **Add Quota Policy**
     
-    ![](/images/13.de2438e0.png)
+    ![](images/13.de2438e0.png)
     
 4.  กรอกข้อมูลในช่องต่อไปนี้และคลิก **Add**
     
@@ -122,12 +122,12 @@
     -   **Quota** - 10 GiB
     -   **Enforcement Type** - Hard Limit
     
-    ![](/images/14.054f5570.png)
+    ![](images/14.054f5570.png)
     
     ขั้นตอนเหล่านี้จะบังคับใช้ (enforce) ขีดจำกัด quota บน shares สำหรับ Microsoft Active Directory (AD) user group ที่ชื่อ **SSP Developers** หากใครในกลุ่มนี้ใช้ storage เกิน 10 GB จะไม่สามารถเพิ่มข้อมูลลงใน storage ได้อีก การกำหนด **Soft** limit จะแสดงคำเตือนแต่ไม่มีการจำกัดพฤติกรรมของผู้ใช้แต่อย่างใด
     
 5.  ตรวจสอบหัวข้อ **Capacity Summary**, **Performance Summary**, **Share Properties** และ **Features** เพื่อทำความเข้าใจถึงรายละเอียดที่มีอยู่ในแต่ละ share ซึ่งรวมถึง จำนวนไฟล์และการเชื่อมต่อ, storage utilization ในช่วงเวลาต่างๆ, latency, throughput และ IOPS
     
-    ![](/images/15.6a15bba2.png)
+    ![](images/15.6a15bba2.png)
     
 6.  คลิก < ที่มุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนต่อไป

@@ -14,7 +14,7 @@
     
 6.  ภายใน **File Analytics** ให้ตรวจสอบ (review) ตาราง **Vulnerabilities** เพื่อดู operation ที่ถูกบล็อก (blocked) โปรดทราบว่าคุณอาจต้องทำการรีเฟรชหน้า **Ransomware**
     
-    ![](/images/ransomware_attempts.a5ec6763.png)
+    ![](images/ransomware_attempts.a5ec6763.png)
     
     !!! note
         คุณยังสามารถดูเหตุการณ์ _permission denied_ ใน **Audit Trails** ได้อีกด้วย

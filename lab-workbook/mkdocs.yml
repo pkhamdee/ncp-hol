@@ -177,3 +177,57 @@ nav:
       - NDB REST API Explorer: ndb-postgresql-api.md
     - Appendix:
       - Glossary: ndb-appendix-glassary.md 
+
+  - NKP Bootcamp:
+    - Overview: nkp-bootcamp.md
+    - Introduction:
+      - Overview: nkp-intro.md
+      - Setup: nkp-intro-setup.md
+      - Navigating the labs: nkp-intro-navigating.md
+      - Deploy Admin VM (LAB):
+        - Overview: nkp-intro-deploy-admin-vm.md
+        - VM Creation: nkp-intro-deploy-vm-creation.md
+        - Connect to Web IDE: nkp-intro-connect-ide.md
+      - Deploy NKP (Optional):
+        - Overview: nkp-intro-deploy-nkp.md
+        - Install NKP CLI: nkp-intro-deploy-nkp-cli.md
+        - Create NKP Cluster: nkp-intro-deploy-nkp-cluster.md
+        - Argument-based CLI installation: nkp-intro-deploy-nkp-cluster-cli.md
+      - Takeaways: nkp-intro-takeaways.md
+    - Fundamentals:
+      - Overview: nkp-fundamentals.md
+      - NKP Quick Tour: nkp-fundamentals-tour.md
+      - Deploy and expose an app (LAB):
+        - Overview: nkp-fundamentals-deploy.md
+        - Accessing the shared NKP environment: nkp-fundamentals-deploy-access.md
+        - Using kubectl to Create a Deployment: nkp-fundamentals-deploy-create-dp.md
+        - Using a Service to Expose Your App: nkp-fundamentals-deploy-expose.md
+      - Expose app on production (LAB):
+        - Overview: nkp-fundamentals-expose.md
+        - Load Balancer: nkp-fundamentals-expose-lb.md
+        - Ingress: nkp-fundamentals-expose-ingress.md
+      - Preparing for multi-tenancy:
+        - Overview: nkp-fundamentals-multi.md
+        - NKP Workspaces: nkp-fundamentals-multi-ws.md
+        - NKP Projects: nkp-fundamentals-multi-proj.md
+      - Persistent storage (LAB):
+        - Overview: nkp-fundamentals-storage.md
+        - StorageClass with Nutanix CSI: nkp-fundamentals-storage-csi.md
+        - Block storage with Nutanix Volumes: nkp-fundamentals-storage-block.md
+        - File storage with Nutanix Files: nkp-fundamentals-storage-file.md
+      - Takeaways: nkp-fundamentals-takeaways.md
+    - Observability:
+      - Overview: nkp-observ.md
+      - Visualizing platform metrics (LAB): nkp-observ-metrics.md
+      - Platform analytics (LAB): nkp-observ-analytics.md
+      - Cost visibility (LAB): nkp-observ-cost.md
+      - Takeaways: nkp-observ-takeaways.md
+    - Automation:
+      - Overview: nkp-automation.md
+      - Set up GitOps Deployment (LAB): nkp-automation-gitops.md
+      - Access the Application: nkp-automation-gitops-access.md
+      - Automate Multicluster App Deployments (LAB): nkp-automation-multicluster.md
+    - Conclusion:
+      - Conclusion: nkp-conclusion.md
+    - Optional Labs:
+      - Business Continuity and Disaster Recovery with NDK: nkp-option-ndk.md             

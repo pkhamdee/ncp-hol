@@ -1,69 +1,67 @@
-# NKP Advanced Hands-on Lab
+# Ingress
 
-# [#](#ingress) Ingress
+Kubernetes Ingress เป็น resource ที่ใช้จัดการการเข้าถึง services ภายในคลัสเตอร์จากภายนอกหรือภายใน โดยทั่วไปจะเป็น HTTP และ HTTPS traffic ประโยชน์บางประการของ integration นี้ได้แก่:
 
-Kubernetes Ingress is a resource that manages external or internal access to services within the cluster, typically HTTP and HTTPS traffic. Some of the benefits of this integration are:
-
--   **Simplified Traffic Management**. Centralizes and simplifies routing configuration compared to managing multiple individual services with LoadBalancer or NodePort types
+-   **Simplified Traffic Management**. รวมศูนย์ (Centralize) และลดความซับซ้อนของ routing configuration เมื่อเทียบกับการจัดการ services เดี่ยวๆ หลายๆ ตัวด้วย LoadBalancer หรือ NodePort types
     
--   **TLS Termination**. Ingress can handle SSL/TLS termination
+-   **TLS Termination**. Ingress สามารถจัดการ SSL/TLS termination ได้
     
--   **Advanced Routing**. Supports host-based (e.g., `app.example.com`) and path-based (e.g., `/api/`) routing
+-   **Advanced Routing**. รองรับ routing แบบ host-based (เช่น `app.example.com`) และ path-based (เช่น `/api/`)
     
 
-Like it happens with the load balancing service, Kubernetes only provides the Kubernetes Ingress resource API, but not an Ingress controller.
+เช่นเดียวกับ load balancing service ทั่วไป Kubernetes นั้นจัดเตรียมไว้แค่ Kubernetes Ingress resource API แต่ไม่ได้มี Ingress controller มาให้
 
-Did You Know?
+!!! info
 
-**Traefik** is included with all tiers of NKP
+    รู้หรือไม่?
+    
+    **Traefik** มีรวมอยู่ใน NKP ทุก tiers
 
-**Traefik** is a modern, open-source, cloud-native **edge router** and **reverse proxy** designed to simplify managing and deploying microservices. In NKP, Traefik acts as an **Ingress Controller**, dynamically managing Ingress resources and routing traffic to backend services.
+**Traefik** เป็น **edge router** และ **reverse proxy** แบบ open-source และ cloud-native ที่ทันสมัย ซึ่งออกแบบมาเพื่อลดความซับซ้อนในการจัดการและ deploy ตัว microservices ใน NKP นั้น Traefik จะทำหน้าที่เป็น **Ingress Controller** จัดการ Ingress resources และ routing traffic ไปยัง backend services แบบไดนามิก
 
-#### [#](#looking-at-existing-ingress-resources) Looking at existing Ingress resources
+#### Looking at existing Ingress resources
 
-1.  Before creating our Ingress resource for our simple application, let's check all the Ingress resources existing in the cluster
+1.  ก่อนที่จะสร้าง Ingress resource สำหรับ simple application ของเรา มาตรวจสอบ Ingress resources ทั้งหมดที่มีอยู่ในคลัสเตอร์กันก่อน
     
     -   command
-    -   output (example)
-    
+
     ```
     kubectl get ingresses --all-namespaces
     ```
     
+    -   output (example)
+
     ```
     NAMESPACE             NAME                        CLASS               HOSTS   ADDRESS         PORTS   AGE
-    git-operator-system   git-operator-git            kommander-traefik   *       10.38.30.16   80      42h
-    kommander             dex                         <none>              *       10.38.30.16   80      42h
-    kommander             dex-k8s-authenticator       <none>              *       10.38.30.16   80      42h
-    kommander             kommander-kommander-ui      <none>              *       10.38.30.16   80      42h
-    kommander             kube-oidc-proxy             <none>              *       10.38.30.16   80      42h
-    kommander             traefik-dashboard           <none>              *       10.38.30.16   80      42h
-    kommander             traefik-forward-auth-mgmt   <none>              *       10.38.30.16   80      42h
+    git-operator-system   git-operator-git            kommander-traefik   * 10.38.30.16   80      42h
+    kommander             dex                         <none>              * 10.38.30.16   80      42h
+    kommander             dex-k8s-authenticator       <none>              * 10.38.30.16   80      42h
+    kommander             kommander-kommander-ui      <none>              * 10.38.30.16   80      42h
+    kommander             kube-oidc-proxy             <none>              * 10.38.30.16   80      42h
+    kommander             traefik-dashboard           <none>              * 10.38.30.16   80      42h
+    kommander             traefik-forward-auth-mgmt   <none>              * 10.38.30.16   80      42h
     ```
     
-    From the previous command you can identify services with an ingress resource, and what's the load balancing IP assigned to the Traefik Ingress controller, In this example, `10.38.30.16`.
+    จากคำสั่งก่อนหน้านี้ คุณสามารถระบุได้ว่า services ใดที่มี ingress resource และ load balancing IP ใดที่ถูก assign ให้กับ Traefik Ingress controller ในตัวอย่างนี้คือ `10.38.30.16`
     
 
-#### [#](#create-ingress-resource-for-our-simple-app) Create Ingress resource for our simple app
+#### Create Ingress resource for our simple app
 
-1.  Using VS Code, create a new file called `simple-app-ingress.yaml`
+1.  ใน VS Code ให้สร้างไฟล์ใหม่ชื่อ `simple-app-ingress.yaml`
     
-    Note
+    !!! note
+
+        ตรวจสอบให้แน่ใจว่าเมื่อคุณคลิกไอคอนสร้างไฟล์ใหม่ คุณอยู่ใน directory _NUTANIX_ และไม่ได้อยู่ในโฟลเดอร์ใดๆ ย่อย
     
-    Ensure when you click the new file icon, you are under _NUTANIX_ directory and not inside of any of the folders.
+    ![Create ingress manifest](images/ingress_manifest.3e7c3a16.gif)
     
-    ![Create ingress manifest](/cloudnative/assets/ingress_manifest.3e7c3a16.gif)
+2.  วาง (paste) ข้อมูลต่อไปนี้และอัปเดตบรรทัดที่ `highlighted` ด้วย:
     
-2.  Paste the following and update the `highlighted` lines with:
-    
-    -   **4, 15** - Your user number. Ex: user`01`\-nkp-simple-app
-    -   **8** - Your user number followed by the Ingress IP from the previous step. Ex: user`01`.`10.38.30`.16.sslip.io  
-          
-        
-    
+    -   **4, 15** - หมายเลข user ของคุณ ตัวอย่างเช่น: user`01`\-nkp-simple-app
+    -   **8** - หมายเลข user ของคุณตามด้วย Ingress IP จากขั้นตอนก่อนหน้า ตัวอย่างเช่น: user`01`.`10.38.30`.16.sslip.io  
+
     -    manifest
-    -   example
-    
+
     ```
     apiVersion: networking.k8s.io/v1
     kind: Ingress
@@ -83,24 +81,8 @@ Did You Know?
                     port:
                       number: 80
     ```
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-      
-      
-      
-    
-      
-      
+
+    -   example   
     
     ```
     apiVersion: networking.k8s.io/v1
@@ -122,32 +104,35 @@ Did You Know?
                       number: 80
     ```
     
-3.  Apply the manifest with the following command:
+3.  Apply ตัว manifest ด้วยคำสั่งต่อไปนี้:
     
     -   command
-    -   output
-    
+
     ```
     kubectl apply -f simple-app-ingress.yaml
     ```
     
+    -   output
+
     ```
     ingress.networking.k8s.io/user18-nkp-simple-app created
     ```
     
-    Pro tip
+    !!! tip
+
+        Ingress Controller ใน Kubernetes โดยทั่วไปจะเป็น **cluster-scoped** ซึ่งหมายความว่ามันจะคอยฟัง request ใดๆ ที่มาจาก namespace ใดๆ ที่ร้องขอ Ingress ซึ่งตรงกับ `ingressClassName`
     
-    An Ingress Controller in Kubernetes is typically **cluster-scoped**, meaning that it will listen for any request coming from any namespace requesting an Ingress that matches the `ingressClassName`.
+    คุณสามารถ install Ingress Controllers ได้หลายตัว หากคุณกำลังมองหาการแทนที่ Traefik ขอแนะนำให้ปล่อย Traefik ไว้สำหรับ NKP platform services และใช้ deployment ของคุณสำหรับ applications ของคุณเอง
     
-    You can have multiple Ingress Controllers installed. If you are looking on replacing Traefik, the recommendation is to leave Traefik for the NKP platform services and use your deployment for your applications.
+4.  เปิดแท็บใหม่ในเบราว์เซอร์ของคุณ เปิดแอปพลิเคชันของคุณโดยเชื่อมต่อไปยัง FQDN ที่คุณกำหนดไว้ในบรรทัดที่ 8 ของไฟล์ yaml ผ่าน https ตัวอย่างเช่น: https://user**01**.10.38.30.16.sslip.io
     
-4.  Using a new tab in your browser, open your app by connecting to the FQDN you gave it on line 8 of your yaml file over https. Ex: https://user**01**.10.38.30.16.sslip.io
+    !!! info
+
+        กดยอมรับ self-signed certificate
     
-    accept the self-signed certificate.
-    
-    ![Nginx Chrome](/cloudnative/assets/nginx_chrome_ingress.45cfa666.png)
+    ![Nginx Chrome](images/nginx_chrome_ingress.45cfa666.png)
     
 
-(Optional) Diagram representing of what you just did
+**(Optional)** แผนภาพแสดงสิ่งที่คุณเพิ่งทำไป
 
-![Ingress diagram](/cloudnative/assets/ingress_diagram.0206ce42.png)
+![Ingress diagram](images/ingress_diagram.0206ce42.png)

@@ -26,7 +26,7 @@
     -   **Bucket Name** - `user##`\-test-bucket
     -   **Enable versioning** - checked
     
-    ![](/images/1.e9098eda.png)
+    ![](images/1.e9098eda.png)
     
     การสร้าง bucket ด้วยวิธีนี้จะช่วยให้ผู้ใช้ที่มีสิทธิ์สามารถทำ self-service ได้ ซึ่งไม่มีความแตกต่างจาก bucket ที่ถูกสร้างผ่าน Prism Buckets UI
     
@@ -34,7 +34,7 @@
     
 6.  เลือก **Select Folder** จากเมนู drop-down ของ _Upload Objects_
     
-    ![](/images/2.81578a16.png)
+    ![](images/2.81578a16.png)
     
 7.  นำทางไปยัง directory Downloads ของคุณ และภายในโฟลเดอร์ _Sample Data_ ให้เลือกโฟลเดอร์ **Pictures** เมื่อการอัปโหลดเสร็จสมบูรณ์ ให้คลิก **Close**
     

@@ -1,15 +1,14 @@
-# NKP Advanced Hands-on Lab
+# Connect to Web IDE
 
-# [#](#connect-to-web-ide) Connect to Web IDE
+ในส่วนหนึ่งของกระบวนการ Admin VM bootstrap คุณได้ทำการ install ตัว web IDE ซึ่งทำงานบนพื้นฐานของ VS Code เพื่อโต้ตอบกับ NKP CLI และ manifests อาจใช้เวลาสองสามนาทีสำหรับ cloud-init script ในการดาวน์โหลดและ install ตัว web IDE
 
-As part of the Admin VM bootstrap process you have installed a web IDE, based on VS Code, to interact with NKP CLI and manifests. It could take a couple of minutes for the cloud-init script to download and install the web IDE.
-
-1.  Open your Admin VM address using `HTTPS` to access VS Code. Ex.: https://10.38.30.116
+1.  เปิด Admin VM address ของคุณโดยใช้ `HTTPS` เพื่อเข้าถึง VS Code ตัวอย่างเช่น: https://10.38.30.116
     
-    accept the self-signed certificate.
+    !!! info
+        กดยอมรับ self-signed certificate
     
-    ![VS Code url](/cloudnative/assets/ide-url.f040ea05.png)
+    ![VS Code url](images/ide-url.f040ea05.png)
     
-2.  Next is to open a terminal. Click the menu icon followed by _Terminal_ and _New Terminal_
+2.  ขั้นตอนต่อไปคือการเปิด terminal คลิกที่ไอคอนเมนูตามด้วย _Terminal_ และ _New Terminal_
     
-    ![VS Code terminal](/cloudnative/assets/ide-open-terminal.429243f9.png)
+    ![VS Code terminal](images/ide-open-terminal.429243f9.png)

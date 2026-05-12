@@ -1,22 +1,21 @@
-# NKP Advanced Hands-on Lab
+# Block storage with Nutanix Volumes
 
-# [#](#block-storage-with-nutanix-volumes) Block storage with Nutanix Volumes
+Block storage รองรับ ReadWriteOnce (RWO) และ ReadOnlyMany (ROX) ตัว persistent volume สามารถถูก mount แบบ read-write โดย node เดี่ยวได้
 
-Block storage allows ReadWriteOnce (RWO) and ReadOnlyMany (ROX). The persistent volume can be mounted as read-write by a single node.
+คุณจะได้ใช้ block storage จาก Nutanix Volumes สำหรับ MySQL database ของคุณ
 
-You'll use block storage from Nutanix Volumes for your MySQL database.
+#### Create a MySQL database in Kubernetes
 
-#### [#](#create-a-mysql-database-in-kubernetes) Create a MySQL database in Kubernetes
+!!! info
+    Reminder
 
-Reminder
+    เรากำลัง deploy ตัว WordPress application บนคลัสเตอร์ **workload01**
 
-We are deploying the WordPress application on the **workload01** cluster.
-
-1.  On your Kubernetes dashboard, click the plus button at the top right, paste the manifest below, and click _Upload_
+1.  บน Kubernetes dashboard ของคุณ ให้คลิกปุ่มบวก (plus button) ที่ด้านขวาบน วาง (paste) manifest ด้านล่าง แล้วคลิก _Upload_
     
-    ![Create MySQL](/cloudnative/assets/k8s_dashboard_mysql.666d915b.png)
+    ![Create MySQL](images/k8s_dashboard_mysql.666d915b.png)
     
-    Apply the manifest as it is
+    Apply ตัว manifest ตามค่านี้เลย
     
     ```
     apiVersion: v1
@@ -103,26 +102,26 @@ We are deploying the WordPress application on the **workload01** cluster.
                 claimName: mysql-pv-claim
     ```
     
-2.  Wait for a minute until your MySQL components in _Workload Status_ are green. In the meantime you can read the explanation of the previous manifest
+2.  รอสักครู่จนกว่า MySQL components ของคุณใน _Workload Status_ จะเป็นสีเขียว ในระหว่างนี้คุณสามารถอ่านคำอธิบายของ manifest ก่อนหน้านี้ได้
     
-    (Optional) Explanation of the MySQL manifest
+    **(Optional)** คำอธิบายเกี่ยวกับ MySQL manifest
     
-    -   **1-7** Creates a secret for MySQL with the password `nutanix/4u`
-    -   **9-21** Creates a headless service (_clusterIP: None_) to expose MySQL on port 3306 internally in the Kubernetes cluster
-    -   **23-34** Creates a persistent volume of 20Gi to store the database (the _default_ StorageClass will catch the request)
-    -   **36-82** Deploys MySQL version 8.0 using the persistent storage created and passing the password as an environment variable from the secret
+    -   **1-7** สร้าง secret สำหรับ MySQL โดยมี password เป็น `nutanix/4u`
+    -   **9-21** สร้าง headless service (_clusterIP: None_) เพื่อ expose ตัว MySQL บน port 3306 ภายใน Kubernetes cluster
+    -   **23-34** สร้าง persistent volume ขนาด 20Gi เพื่อเก็บ database (ตัว _default_ StorageClass จะเป็นตัวรับ request นี้)
+    -   **36-82** Deploy ตัว MySQL เวอร์ชัน 8.0 โดยใช้ persistent storage ที่สร้างขึ้นและส่งผ่าน password เป็น environment variable จาก secret
     
-    ![MySQL status](/cloudnative/assets/k8s_dashboard_mysql_status.2470fe92.png)
+    ![MySQL status](images/k8s_dashboard_mysql_status.2470fe92.png)
     
-3.  Click the _Persistent Volume Claims_ option on the sidebar menu to see the persistent volume created for MySQL
+3.  คลิกที่ตัวเลือก _Persistent Volume Claims_ บนเมนู sidebar เพื่อดู persistent volume ที่ถูกสร้างขึ้นสำหรับ MySQL
     
-    ![MySQL PVC](/cloudnative/assets/k8s_dashboard_mysql_pvc.9b901e30.gif)
+    ![MySQL PVC](images/k8s_dashboard_mysql_pvc.9b901e30.gif)
     
-    Pro tip
-    
-    A block storage PVC is a Volume Group in Nutanix.
-    
-    ![Block PVCs in PC](/cloudnative/assets/pc_pvcs.477b0625.png)
+    !!! tip
+        
+        ตัว block storage PVC คือ Volume Group ใน Nutanix
+        
+        ![Block PVCs in PC](images/pc_pvcs.477b0625.png)
     
 
-🎉 Congratulations! You have deployed your first stateful application, a MySQL database.
+🎉 ขอแสดงความยินดีด้วย! คุณเพิ่งจะ deploy ตัว stateful application แรกของคุณ ซึ่งก็คือ MySQL database

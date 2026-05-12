@@ -1,13 +1,7 @@
-# NKP Advanced Hands-on Lab
+# Deploy Admin VM Lab
 
-Note
+ส่วนนี้จะแนะนำคุณในเรื่องต่อไปนี้:
 
--   Expected lab duration: 5 minutes
-
-# [#](#deploy-admin-vm) Deploy Admin VM Lab
-
-This section guides you through:
-
-1.  Deploying an Admin VM using the NKP Rocky image and installing Docker Engine
+1.  การ deploy ตัว Admin VM โดยใช้ NKP Rocky image และ install ตัว Docker Engine
     
-2.  Connect to VS Code in the Admin VM
+2.  เชื่อมต่อกับ VS Code ใน Admin VM

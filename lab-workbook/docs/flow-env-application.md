@@ -2,7 +2,7 @@
 
 สภาพแวดล้อม lab มี application ที่รันอยู่แล้ว โดยมี virtual machines ทั้งหมด 6 เครื่องสำหรับแต่ละ user. สามเครื่องสำหรับ production และสามเครื่องสำหรับ development. เรามี web และ database application แบบง่ายๆ พร้อมกับ client. ตอนนี้เรามาโฟกัสแค่ 3 VMs ในส่วน production ของ application กันก่อน.
 
-![Production App Requirements](/images/create-dev-51b.2b84559c.png)
+![Production App Requirements](images/create-dev-51b.2b84559c.png)
 
 เป้าหมายของคุณคือการทำความคุ้นเคยกับ application และทำการ apply ชุดของ security rules เพื่อให้ตรงตาม business requirements ของเรา.
 
@@ -32,7 +32,7 @@
     
     คุณควรจะเห็น web front-end ซึ่งจะดึงรายการ tasks มาจาก database server.
 
-    ![Production ToDo Server Web Interface](/images/app-prod-web.975a1266.png)
+    ![Production ToDo Server Web Interface](images/app-prod-web.975a1266.png)
 
     ใช้ web interface เพื่อ add, complete และ delete บาง tasks.
 
@@ -44,7 +44,7 @@
 
 1.  ใน Prism Central ให้เลือก checkbox ถัดจาก **user`##`\-enduser** หรือคลิกขวาที่ VM.
 
-    ![End User Desktop Console Launch](/images/launch-console.3038b831.png)
+    ![End User Desktop Console Launch](images/launch-console.3038b831.png)
 
 2.  ไปที่ **Launch Console**.
     
@@ -58,7 +58,7 @@
     
 6.  พยายามทำ SSH ไปยัง web server ด้วย command `ssh <server-ip>`. ใช้ `Ctrl + c` เพื่อ disconnect ออกจาก SSH session โดยไม่ต้อง logging in.
     
-    ![Console Access](/images/console-verify-access.14551ff0.png)
+    ![Console Access](images/console-verify-access.14551ff0.png)
 
 7.  ทำซ้ำความพยายามในการ SSH ไปยัง database server.
 
@@ -80,13 +80,13 @@
 
 ไม่มี requirements ในการจำกัด (restrict) outbound access. สิ่งนั้นจะถูก handled โดย physical firewall ที่ corporate perimeter.
 
-![Production Application Requirements](/images/create-dev-51b.2b84559c.png)
+![Production Application Requirements](images/create-dev-51b.2b84559c.png)
 
 ### Development Web Access
 
 requirements สำหรับ development ของเรานั้นคล้ายคลึงกัน แต่เรา ALSO (ยัง) ต้องการการเข้าถึง (access) จาก developer workstation ไปยัง database ด้วย.
 
-![Development Application Requirements](/images/app-dev-reqs.63587fce.png)
+![Development Application Requirements](images/app-dev-reqs.63587fce.png)
 
 ### Separating Production from Development
 
@@ -94,7 +94,7 @@ requirements สำหรับ development ของเรานั้นคล
 
 เราจะทำสิ่งนี้ไปอีกขั้นและทำการ block ทุกๆ VM ภายใน development จากการเข้าถึง (reaching) production VM ใดๆ ก็ตามอย่างง่ายดาย.
 
-![Separate Development and Production](/images/prod-dev-reqs.f5f9fbfd.png)
+![Separate Development and Production](images/prod-dev-reqs.f5f9fbfd.png)
 
 ## Takeaways
 

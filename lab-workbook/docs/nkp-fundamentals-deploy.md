@@ -1,15 +1,9 @@
-# NKP Advanced Hands-on Lab
+# Deploy and Expose an App Lab
 
-Note
+ใน lab นี้ คุณจะได้เรียนรู้เกี่ยวกับ:
 
--   Expected lab duration: 20 minutes
-
-# [#](#deploy-and-expose-an-app) Deploy and Expose an App Lab
-
-In this lab you'll go through:
-
--   **Accessing the shared NKP environment**. Learn how to get and install the Kubernetes token in your Admin VM to use the kubectl CLI
+-   **Accessing the shared NKP environment**. เรียนรู้วิธีรับและ install ตัว Kubernetes token ใน Admin VM ของคุณเพื่อใช้ kubectl CLI
     
--   **Using kubectl to create a deployment**. Learn how to deploy your first workload
+-   **Using kubectl to create a deployment**. เรียนรู้วิธี deploy ตัว workload แรกของคุณ
     
--   **Using a service to expose your app**. Learn how to expose an application outside a Kubernetes cluster for testing
+-   **Using a service to expose your app**. เรียนรู้วิธี expose ตัว application ออกสู่ภายนอก Kubernetes cluster สำหรับการ testing

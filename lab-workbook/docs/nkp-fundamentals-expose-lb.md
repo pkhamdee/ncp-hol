@@ -1,129 +1,133 @@
-# NKP Advanced Hands-on Lab
+# Load Balancer
 
-# [#](#load-balancer) Load Balancer
+**MetalLB** คือ implementation ของ Kubernetes load-balancer (L4 ของ OSI model) สำหรับ self-hosted environments ประโยชน์บางประการของ integration นี้ได้แก่:
 
-**MetalLB** is a Kubernetes load-balancer (L4 of the OSI model) implementation for self-hosted environments. Some of the benefits of this integration are:
-
--   **Automatic External IP Allocation**. MetalLB assigns external IPs to LoadBalancer Services automatically, eliminating the need for manual IP assignment
+-   **Automatic External IP Allocation**. MetalLB จะ assign external IPs ให้กับ LoadBalancer Services โดยอัตโนมัติ ช่วยขจัดความจำเป็นในการ assign IP แบบ manual
     
--   **High Availability**. Supports multiple nodes for load balancing
+-   **High Availability**. รองรับ multiple nodes สำหรับ load balancing
     
--   **Seamless Kubernetes Integration**. Doesn't require changes to application manifests or workflows
+-   **Seamless Kubernetes Integration**. ไม่จำเป็นต้องทำการเปลี่ยนแปลงใดๆ กับ application manifests หรือ workflows
     
+!!! note
+    รู้หรือไม่?
+    **MetalLB** มีรวมอยู่ใน NKP ทุก tiers
 
-Did You Know?
+#### Looking at MetalLB configuration
 
-**MetalLB** is included with all tiers of NKP
-
-#### [#](#looking-at-metallb-configuration) Looking at MetalLB configuration
-
-1.  Let's check what IP address pool is configured. These are the IPs that MetalLB can use to dynamically assign for service requests of type _LoadBalancer_
+1.  มาตรวจสอบกันว่า IP address pool ใดที่ถูก configure ไว้ นี่คือ IPs ที่ MetalLB สามารถนำมาใช้ assign แบบไดนามิกสำหรับ service requests ที่เป็น type _LoadBalancer_
     
     -   command
-    -   output (example)
     
     ```
     kubectl --namespace metallb-system get ipaddresspool
     ```
     
+    -   output (example)
+
     ```
     NAME      AUTO ASSIGN   AVOID BUGGY IPS   ADDRESSES
     metallb   true          false              ["10.38.30.16-10.38.30.16","10.38.30.39-10.38.30.58"]
     ```
     
-    -   The first "range" with a single IP ending on _.16_ was provided during cluster creation and gets assigned to the Traefik Ingress controller
-    -   The second range was staged after cluster creation. It supports your next task with exposing the NGINX web server
+    -   "range" แรกที่มี IP เดียวที่ลงท้ายด้วย _.16_ นั้นถูกเตรียมไว้ในระหว่างการสร้าง cluster และจะถูก assign ให้กับ Traefik Ingress controller
+    -   range ที่สองถูก stage ไว้หลังจากสร้าง cluster เสร็จ มันจะสนับสนุนงานถัดไปของคุณในการ expose ตัว NGINX web server
 
-#### [#](#updating-our-service-to-loadbalancer) Updating our Service to LoadBalancer
+#### Updating our Service to LoadBalancer
 
-Our simple application service is of type _NodePort_. We want to migrate this to type `LoadBalancer`. There are different ways to accomplish this, but the best option is to update the existing service to avoid disruptions or extra configurations.
+service ของ simple application ของเรานั้นเป็น type _NodePort_ เราต้องการที่จะ migrate สิ่งนี้ไปเป็น type `LoadBalancer` มีหลายวิธีในการทำเช่นนี้ แต่ option ที่ดีที่สุดคือการอัปเดต service ที่มีอยู่เพื่อหลีกเลี่ยง disruptions หรือการทำ configurations เพิ่มเติม
 
-(Optional) Explanation different migration options
+!!! note 
+    คำอธิบายเกี่ยวกับ migration options แบบต่างๆ
 
--   Creating a new service of type `LoadBalancer` in addition to the previously created. The downside is that you'll be consuming an additional dynamic port in the nodes
+    -   การสร้าง service ใหม่ที่เป็น type `LoadBalancer` เพิ่มเติมจากที่สร้างไว้ก่อนหน้านี้ ข้อเสียคือคุณจะใช้ dynamic port เพิ่มเติมใน nodes
+
+    -   การลบแล้ว re-creating ตัว service ใหม่ แต่คราวนี้ให้ตั้งค่า type เป็น `LoadBalancer` ใน production นั้น approach นี้จะทำให้เกิด downtime
+
+    -   การอัปเดต service ที่มีอยู่ให้เป็น type `LoadBalancer` ตัว dynamic port ที่ allocate ให้กับ `NodePort` จะยังคงเหมือนเดิม และจะมีการ assign IP จาก load balancing pool เพิ่มเติม วิธีนี้จะช่วยหลีกเลี่ยง disruptions ใน production และเป็นวิธีที่คุณกำลังจะดำเนินการ
     
--   Deleting and re-creating the service but this time setting the type to `LoadBalancer`. In production this approach would have downtime
-    
--   Updating the existing service to type `LoadBalancer`. The dynamic port allocated to `NodePort` will remain the same, and in addition an IP from the load balancing pool will be assigned. This method avoids disruptions in production and it is the one you'll be performing
-    
 
-1.  List your existing service. Make sure you update `##` with your user number
+1.  List รายการ service ที่มีอยู่ของคุณ ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` ด้วยหมายเลข user ของคุณ
     
     -   command
-    -   example
-    -   output (example)
-    
+
     ```
     kubectl get service user##-nkp-simple-app
     ```
     
+    -   example
+
     ```
     kubectl get service user01-nkp-simple-app
     ```
     
+    -   output (example)
+
     ```
     NAME                                                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
     user01-nkp-simple-app                                     NodePort    10.99.58.51     <none>        80:31347/TCP   112m
     ```
     
-    In the example, the service `user##-nkp-simple-app` is listening on port `31347` across all the nodes. There isn't an `EXTERNAL-IP` assigned.
+    ในตัวอย่าง service `user##-nkp-simple-app` กำลัง listening บน port `31347` ในทุกๆ nodes โดยที่ยังไม่มี `EXTERNAL-IP` ถูก assign
     
-2.  Let's go ahead and update our service using `PATCH` to change the type to `LoadBalancer`. Make sure you update `##` with your user number
+2.  ดำเนินการต่อและอัปเดต service ของเราโดยใช้ `PATCH` เพื่อเปลี่ยน type เป็น `LoadBalancer` ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` ด้วยหมายเลข user ของคุณ
     
     -   command
+
+    ```
+    kubectl patch service user##-nkp-simple-app         -p '{"spec": {"type": "LoadBalancer"}}'
+    ```
+
     -   example
+    
+    ```
+    kubectl patch service user01-nkp-simple-app         -p '{"spec": {"type": "LoadBalancer"}}'
+    ```
+
     -   example (output)
-    
-    ```
-    kubectl patch service user##-nkp-simple-app \
-        -p '{"spec": {"type": "LoadBalancer"}}'
-    ```
-    
-    ```
-    kubectl patch service user01-nkp-simple-app \
-        -p '{"spec": {"type": "LoadBalancer"}}'
-    ```
     
     ```
     service/user01-nkp-simple-app patched
     ```
     
-3.  Let see what IP address from the pool has been assigned in the `EXTERNAL-IP` column. Make sure you update `##` with your user number
+3.  มาดูกันว่า IP address ใดจาก pool ที่ถูก assign ไว้ในคอลัมน์ `EXTERNAL-IP` ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` ด้วยหมายเลข user ของคุณ
     
     -   command
-    -   example
-    -   output (example)
-    
+
     ```
     kubectl get service user##-nkp-simple-app
     ```
+
+    -   example
     
     ```
     kubectl get service user01-nkp-simple-app
     ```
+
+    -   output (example)
     
     ```
     NAME                    TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
     user01-nkp-simple-app   LoadBalancer   10.99.58.51   10.38.30.39   80:31347/TCP   161m
     ```
     
-    Pro tip
+    !!! tip
+        Load Balancer Controller ใน Kubernetes โดยทั่วไปจะเป็น **cluster-scoped** ซึ่งหมายความว่ามันจะคอยฟัง request ใดๆ ที่มาจาก namespace ใดๆ ที่ร้องขอ Service ที่เป็น type `LoadBalancer`
     
-    A Load Balancer Controller in Kubernetes is typically **cluster-scoped**, meaning that it will listen for any request coming from any namespace requesting a Service of type `LoadBalancer`.
-    
-4.  Using _curl_ on your terminal or your web browser, open the page using the load balancer IP address, and the original backend container port `80`
+4.  ใช้ _curl_ บน terminal ของคุณหรือเว็บบราวเซอร์ เปิดหน้าเว็บโดยใช้ load balancer IP address และ backend container port `80` เดิม
     
     -   command
-    -   example
-    -   output (example)
-    
+
     ```
     curl http://<EXTERNAL-IP>:<CONTAINER_PORT>
     ```
+
+    -   example
     
     ```
     curl http://10.38.30.39
     ```
+
+    -   output (example)
     
     ```
     <!DOCTYPE html>
@@ -151,9 +155,9 @@ Our simple application service is of type _NodePort_. We want to migrate this to
     </html>
     ```
     
-    ![Nginx Chrome](/cloudnative/assets/nginx_chrome.2cddfb3c.png)
+    ![Nginx Chrome](images/nginx_chrome.2cddfb3c.png)
     
 
-(Optional) Diagram representing of what you just did
+**(Optional)** แผนภาพแสดงสิ่งที่คุณเพิ่งทำไป
 
-![LoadBalancer diagram](/cloudnative/assets/loadbalancer_diagram.ddf76924.png)
+![LoadBalancer diagram](images/loadbalancer_diagram.ddf76924.png)

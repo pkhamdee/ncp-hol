@@ -12,13 +12,13 @@
     
 3.  คลิกขวาที่ **user`##`\-prod-db** และเลือก **Quarantine VMs**
     
-    ![Quarantine Selection Menu](/images/quarantine1.d289093a.png)
+    ![Quarantine Selection Menu](images/quarantine1.d289093a.png)
 
     สิ่งนี้จะแสดงตัวเลือกของ Quarantine Strict หรือ Quarantine Forensic. Forensic จะอนุญาตให้เปิด specific sources และ destinations สำหรับการตรวจสอบ ดังนั้นเราจะเลือกสิ่งนั้น
 
 4.  เลือก **Forensic** และเลือก **Quarantine**
 
-    ![Forensic Quarantine Selection](/images/quarantine2.ed5bd14d.png)
+    ![Forensic Quarantine Selection](images/quarantine2.ed5bd14d.png)
 
 ## Verify Application Operation
 
@@ -30,7 +30,7 @@
     
     คุณควรจะเห็นข้อผิดพลาด (failure) ที่มุมขวาบนของ ToDo app
 
-    ![Cannot Connect to Database](/images/quarantine-db-failed.c0298c8f.png)
+    ![Cannot Connect to Database](images/quarantine-db-failed.c0298c8f.png)
 
 ## View Security Policy
 
@@ -38,7 +38,7 @@
 
 1.  ไปที่ Prism Central **Infrastructure** > **Network & Security** > **Security Policies**
 
-    ![Security Policies Navigation](/images/quarantine3.5822bec5.png)
+    ![Security Policies Navigation](images/quarantine3.5822bec5.png)
 
     !!! note
         คุณอาจเห็น guided tutorial pop-up หากนี่เป็นครั้งแรกที่คุณเข้ามาที่หน้านี้ สามารถอ่านและจากนั้นปิด pop-up นี้ได้เลย
@@ -47,11 +47,11 @@
 
 2.  เลือก **Quarantine Forensic Policy**
 
-    ![Forensic Policy](/images/quarantine4.0b3dce00.png)
+    ![Forensic Policy](images/quarantine4.0b3dce00.png)
 
 3.  สังเกตว่า web server แสดงขึ้นมาเป็น blocked source ทางด้านซ้ายมือ
 
-    ![Web Server Blocked](/images/quarantine5.d910f399.png)
+    ![Web Server Blocked](images/quarantine5.d910f399.png)
 
 4.  เลื่อนเมาส์ (Hover) เหนือเส้นประสีแดงของ blocked traffic ระหว่าง source ทางด้านซ้ายและ Quarantine secured entity ตรงกลาง
     
@@ -59,7 +59,7 @@
 
 5.  คลิกที่ **VM #** ตรงกลางของ policy. สิ่งนี้จะแสดง Forensic quarantined VMs ทั้งหมดและรายละเอียดของพวกมัน สังเกตว่า quarantine process เพียงแค่ทำการ apply ตัว category **Quarantine: Forensics** ไปยัง VMs เหล่านี้
     
-    ![Quarantine Details](/images/quarantine6.a9e5baa7.png)
+    ![Quarantine Details](images/quarantine6.a9e5baa7.png)
 
 6.  คลิก **Close** ด้วยเครื่องหมาย **X** ที่มุมขวาบนของ security policy
     

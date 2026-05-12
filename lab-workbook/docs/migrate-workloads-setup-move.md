@@ -19,7 +19,7 @@ destination environment ของเราก็คือ AHV เช่นกั
     -   **password** - `<PC password>` จาก Connection Details
 2.  ไปที่ **Compute** > **VMs**
     
-    ![](/images/vm-migration1.dcec209e.png)
+    ![](images/vm-migration1.dcec209e.png)
     
 3.  Move VM สำหรับแต่ละ user ที่ชื่อ `User##-Move` ได้ถูกสร้างไว้เรียบร้อยแล้ว ให้มองหา VM นั้นในหน้าหลัก หรือคุณสามารถค้นหาใน search bar ก็ได้ ให้จดบันทึก IP address ของมันไว้
     
@@ -35,21 +35,21 @@ destination environment ของเราก็คือ AHV เช่นกั
     
     และเป็นเช่นนี้ต่อไปเรื่อยๆ
     
-    ![](/images/vm-migration2.7eea2299.png)
+    ![](images/vm-migration2.7eea2299.png)
     
 4.  เปิด tab ใหม่ในเบราว์เซอร์ภายใน VDI session และไปยัง IP address นั้นเพื่อเปิด Move หากมีข้อความว่า "Your connection is not private" ให้คลิก `Advanced` แล้วคลิก `Proceed to x.x.x.x (unsafe)`
     
 5.  ยอมรับ Terms and Conditions และคลิก `Continue` คลิก `Ok` ในหน้าถัดไป
     
-    ![](/images/vm-migration3.1849879a.png)
+    ![](images/vm-migration3.1849879a.png)
     
 6.  ขั้นแรก ระบบจะขอให้คุณตั้ง password ให้ตั้งค่า `nutanix/4u` เป็น password คุณสามารถเลือก password อื่นใดก็ได้ที่คุณต้องการ แต่คุณต้องจำให้ได้เพื่อใช้ในภายหลัง
     
-    ![](/images/vm-migration4.97b115bc.png)
+    ![](images/vm-migration4.97b115bc.png)
     
 7.  Login โดยใช้ password เดียวกัน
     
-    ![](/images/vm-migration5.0e1d722a.png)
+    ![](images/vm-migration5.0e1d722a.png)
     
 8.  คลิก `Do it later` บน splash screen จากนั้นคลิก `Okay` บน splash screen ที่สอง
     
@@ -58,15 +58,15 @@ destination environment ของเราก็คือ AHV เช่นกั
 
 1.  เลือก Migration Type เป็น `VM` แล้วคลิก `Continue`
     
-    ![](/images/vm-migration6.dec5a205.png)
+    ![](images/vm-migration6.dec5a205.png)
     
 2.  เราจำเป็นต้องเพิ่ม Source และ Destination Environments สำหรับ Move ก่อนอื่นให้เพิ่ม source environment คลิก `Add Environment`
     
-    ![](/images/vm-migration7.987a726b.png)
+    ![](images/vm-migration7.987a726b.png)
     
 3.  ใน Select Environment Type ให้เลือก `Nutanix AOS`
     
-    ![](/images/vm-migration8b.e93dac52.png)
+    ![](images/vm-migration8b.e93dac52.png)
     
 
 !!! note
@@ -79,14 +79,14 @@ destination environment ของเราก็คือ AHV เช่นกั
     -   **username** - `admin` **username เป็น case sensitive (ตัวพิมพ์เล็ก-ใหญ่มีผล)**
     -   **password** - `nx2Tech787!`
     
-    ![](/images/vm-migration9a.e6fc33bb.png)
+    ![](images/vm-migration9a.e6fc33bb.png)
     
 
 ## Add the Destination AHV Environment
 
 1.  เมื่อ AHV Source environment ถูก validate และเพิ่มเรียบร้อยแล้ว ต่อไปให้เพิ่ม destination Nutanix AHV cluster ของเรา คลิก `Add Environment`
     
-    ![](/images/vm-migration10.a0257490.png)
+    ![](images/vm-migration10.a0257490.png)
     
 2.  ใน Select Environment Type ให้เลือก `Nutanix AOS` จากนั้นระบุรายละเอียดสำหรับ environment คลิก `Add`
     
@@ -95,7 +95,7 @@ destination environment ของเราก็คือ AHV เช่นกั
     -   **username** - `<PC login> adminuser##`
     -   **password** - `<PC password>`
     
-    ![](/images/vm-migration11a.6cadd87c.png)
+    ![](images/vm-migration11a.6cadd87c.png)
     
 3.  ตอนนี้เป็นเวลาที่ดีที่จะหยุดพักสักครู่ ในขณะที่ Prism Central ถูกเพิ่มเข้าไปยัง Move instance และมันกำลังดึงข้อมูล inventory
     

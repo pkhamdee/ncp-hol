@@ -1,26 +1,23 @@
-# NKP Advanced Hands-on Lab
+# Introduction: Deploying Your First NKP Cluster
 
-Expected chapter duration
-
-30 minutes
-
-# [#](#introduction-deploying-your-first-nkp-cluster) Introduction: Deploying Your First NKP Cluster
-
-**Objective:** This chapter provides and overview of the bootcamp environment you'll be working on, and hands-on experience in setting up your first NKP cluster.
+**Objective:** บทนี้จะให้ภาพรวมของสภาพแวดล้อม bootcamp ที่คุณจะใช้งาน และประสบการณ์การลงมือปฏิบัติจริงในการตั้งค่า NKP cluster แรกของคุณ
 
 **What You’ll Do:**
 
 1.  **Bootcamp environment setup**
     
-    -   Learn about your bootcamp environment architecture
-    -   Get familiar on how to navigate the labs for a better user experience
+    -   เรียนรู้เกี่ยวกับ architecture ของสภาพแวดล้อม bootcamp ของคุณ
+    -   ทำความคุ้นเคยกับวิธีการนำทาง labs เพื่อ user experience ที่ดีขึ้น
+
 2.  **Set up your NKP environment**
     
-    -   **Prerequisites:** Ensure the environment is ready to install the tools to create a NKP cluster
-    -   **Install tools:** To prepare your environment, install the necessary tools
+    -   **Prerequisites:** ตรวจสอบให้แน่ใจว่าสภาพแวดล้อมพร้อมสำหรับการติดตั้ง tools เพื่อสร้าง NKP cluster
+    -   **Install tools:** เพื่อเตรียมสภาพแวดล้อมของคุณ ให้ทำการติดตั้ง tools ที่จำเป็น
+
 3.  **Initialize your first cluster**
     
-    -   Once your environment is​​ ready, you’ll initialize your first cluster using NKP CLI
+    -   เมื่อสภาพแวดล้อมของคุณพร้อมแล้ว คุณจะทำการ initialize ตัว cluster แรกของคุณโดยใช้ NKP CLI
+    
 4.  **Recap and next steps**
     
-    -   After this chapter you’ll be ready to dive into NKP core features in the next part of the bootcamp!
+    -   หลังจากจบบทนี้ คุณจะพร้อมเข้าสู่การเจาะลึก NKP core features ในส่วนถัดไปของ bootcamp!

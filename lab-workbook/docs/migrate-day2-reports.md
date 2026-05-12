@@ -11,7 +11,7 @@
 -   18 Predefined Out-of-the-Box Reports ที่มีมาให้พร้อมใช้งาน
 -   การทำ Import และ Export สำหรับ Reporting Configuration ข้ามไปยัง PCs ต่างๆ
 
-![](/images/report6.aa64f8ea.png)
+![](images/report6.aa64f8ea.png)
 
 ## Create a Report
 
@@ -25,15 +25,15 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
     
 4.  เราสามารถดูรายการของ pre-defined system reports รวมถึง custom reports ได้
     
-    ![](/images/report1.61a9a0d1.png)
+    ![](images/report1.61a9a0d1.png)
 
 5.  เราจะค้นหา Cluster Usage report ตาม use case ของเรา ให้พิมพ์ "**Cluster Usage**" ลงในฟิลด์ filter by
 
-    ![](/images/report2.2d08c57d.png)
+    ![](images/report2.2d08c57d.png)
 
 6.  เลือก **Cluster Usage Summary** และคลิก **Actions**
 
-    ![](/images/report3.c888522c.png)
+    ![](images/report3.c888522c.png)
 
 7.  report นี้คือ pre-defined system Report โดย System report จะสามารถทำการ run, scheduled, shared และ cloned เพื่อแก้ไขเปลี่ยนแปลงได้ ตอนนี้ ให้เลือก **Run**
     
@@ -47,7 +47,7 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
     
 12.  เลือก PDF เป็น Report Format
     
-    ![](/images/report4.68cbb778.png)
+    ![](images/report4.68cbb778.png)
 
 13.  ระบุ Email Address ของคุณ หากคุณต้องการให้ส่ง report ไปยังอีเมลของคุณ
     
@@ -61,4 +61,4 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
     
 18.  นี่คือตัวอย่างหน้าตาของ report
     
-    ![](/images/report5.43db3977.png)
+    ![](images/report5.43db3977.png)

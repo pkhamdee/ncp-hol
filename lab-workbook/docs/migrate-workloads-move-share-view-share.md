@@ -8,7 +8,7 @@
     -   **password** - `<PC Password>` จาก Connection Details
 2.  ไปที่ **Compute & Storage** > **VMs** ภายในส่วน Infrastructure ของ App Switcher
     
-    ![](/images/vm-migration1.dcec209e.png)
+    ![](images/vm-migration1.dcec209e.png)
     
 3.  Windows VM จะถูกสร้างขึ้นสำหรับทุก user โดยใช้ชื่อว่า `Desktop##` ให้ค้นหา Desktop ที่ตรงกับคุณแล้วดึง IP address มา
     
@@ -24,11 +24,11 @@
     
     และต่อไปเรื่อยๆ
     
-    ![](/images/files-migration-source1.5d910e0d.png)
+    ![](images/files-migration-source1.5d910e0d.png)
     
 4.  ต่อไปให้ค้นหา `nextfiles` ซึ่งเป็น Nutanix Files instance ที่กำลัง running บน cluster และจะทำหน้าที่เป็น target ให้ Copy ตัว IP address ของมันไว้ เพราะจะจำเป็นต้องใช้ในภายหลัง
     
-    ![](/images/files-migration-target1.6789c8d3.png)
+    ![](images/files-migration-target1.6789c8d3.png)
     
 5.  ก่อนที่จะทำขั้นตอนถัดไป คุณต้อง log into ตัว desktop ของคุณโดยใช้ Remote Desktop หากจำเป็น โปรดอ้างอิงคำแนะนำใน [the appendix](/migrate/appendix/remote_desktop.html) คุณสามารถค้นหา desktop ของคุณบน Prism Central ได้ด้วย naming convention `Desktop##` และใช้ IP Address เพื่อทำ remote desktop เข้าไป
     
@@ -36,8 +36,8 @@
     -   **password** - `<adminuser-password>`
 6.  พิมพ์ `\\winfs-next\nextlab` ภายในฟิลด์ **Search** แล้วกด **Enter** หรือคลิกที่รายการ `\\winfs-next\nextlab` ที่ตามมาเพื่อเปิด source share
     
-    ![](/images/files_source1next.1116e95d.png)
+    ![](images/files_source1next.1116e95d.png)
     
     ตรวจสอบ (Verify) ว่า source share มีไฟล์ขนาด 100MB อยู่ข้างใน นี่คือสิ่งที่เราจะทำการ migrate
     
-    ![](/images/files_source2next.0a288822.png)
+    ![](images/files_source2next.0a288822.png)

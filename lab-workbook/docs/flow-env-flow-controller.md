@@ -25,7 +25,7 @@ Nutanix อ้างอิงถึง network entity ว่าเป็น **Su
     
 2.  ตรวจสอบว่า **primary** subnet มีแท็ก **Basic** และ **Secondary** subnet ไม่มีแท็ก
     
-    ![Subnet Types](/images/net-controller1.0333a7f4.png)
+    ![Subnet Types](images/net-controller1.0333a7f4.png)
 
 ## Flow Controller Status
 
@@ -35,7 +35,7 @@ Nutanix อ้างอิงถึง network entity ว่าเป็น **Su
     
 2.  ตรวจสอบว่า Flow Controller ถูก enabled, อยู่ใน healthy state, และรองรับ connected cluster สิ่งสำคัญคือต้องอ่าน resiliency recommendations ด้วย
     
-    ![Flow Controller Status](/images/net-controller2.33dc8357.png)
+    ![Flow Controller Status](images/net-controller2.33dc8357.png)
 
 3.  เราปล่อยให้ **Manage Default VLAN Settings** unchecked ไว้ ซึ่งหมายความว่า new subnets ทั้งหมดจะเป็น **Basic** subnets เว้นแต่ว่าจะมีการติ๊กช่องเพิ่มเติมเมื่อสร้างแต่ละ new subnet สำหรับการ deployments ของคุณเองใน production ให้พิจารณาติ๊กช่องนี้เพื่อประหยัดจำนวนคลิกในอนาคตหากคุณกำลังสร้าง new subnets แต่ให้ปล่อยเป็น unchecked ไว้ใน lab นี้
 

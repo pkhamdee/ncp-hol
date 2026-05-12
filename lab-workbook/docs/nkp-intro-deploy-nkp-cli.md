@@ -1,58 +1,57 @@
-# NKP Advanced Hands-on Lab
+# Install NKP CLI
 
-# [#](#install-nkp-cli) Install NKP CLI
-
-1.  In your VS Code terminal, check Docker is running
+1.  ใน VS Code terminal ของคุณ ให้ตรวจสอบว่า Docker กำลังทำงานอยู่หรือไม่
     
     -   command
-    -   output
     
     ```
     docker ps
     ```
-    
+    -   output
+
     ```
     CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
     ```
     
-2.  Execute the following command. It is a script wrapper for installing the CLI (URL is available in the step after)
+2.  รัน command ต่อไปนี้ ซึ่งเป็น script wrapper สำหรับการติดตั้ง CLI (URL จะมีให้ในขั้นตอนถัดไป)
     
     -   command
+    
+    ```
+    curl -fsSL [https://raw.githubusercontent.com/nutanixdev/nkp-quickstart/main/get-nkp-cli](https://raw.githubusercontent.com/nutanixdev/nkp-quickstart/main/get-nkp-cli) | bash
+    ```
+    
     -   output
-    
-    ```
-    curl -fsSL https://raw.githubusercontent.com/nutanixdev/nkp-quickstart/main/get-nkp-cli | bash
-    ```
-    
+
     ```
     Enter 'NKP for Linux' download link:
     ```
     
-    Note
+    !!! note    
+        script นี้ไม่ได้รับการสนับสนุนอย่างเป็นทางการ เป็นเพียงการรวบรวมขั้นตอนที่อธิบายไว้ใน [official documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Platform-v2_16:top-download-nkp-t.html) สำหรับการติดตั้ง NKP CLI
     
-    The script is not officially supported. It just captures the steps explained in the [official documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Platform-v2_16:top-download-nkp-t.html) for installing the NKP CLI.
-    
-3.  When prompted, enter the following URL
+3.  เมื่อได้รับการแจ้งเตือน ให้ใส่ URL ต่อไปนี้
     
     ```
-    http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz
+    [http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz](http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz)
     ```
     
-    (Optional) Where to find the NKP CLI when not in a bootcamp
+    (Optional) จะหา NKP CLI ได้จากที่ไหนเมื่อไม่ได้อยู่ใน bootcamp
     
-    You can find the NKP CLI download link on the [Nutanix portal](https://portal.nutanix.com/page/downloads?product=nkp).
+    คุณสามารถหา link สำหรับ download NKP CLI ได้ที่ [Nutanix portal](https://portal.nutanix.com/page/downloads?product=nkp)
     
-    ![NKP CLI Portal](/cloudnative/assets/nkp_cli_portal_link.9095dade.png)
+    ![NKP CLI Portal](images/nkp_cli_portal_link.9095dade.png)
     
-4.  Confirm the NKP CLI was installed
+4.  ตรวจสอบว่า NKP CLI ได้รับการติดตั้งเรียบร้อยแล้ว
     
     -   command
+    
+    ```
+    nkp version    
+    ```
+
     -   output
-    
-    ```
-    nkp version
-    ```
-    
+
     ```
     catalog: v0.8.1
     diagnose: v0.12.0

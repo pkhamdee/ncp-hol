@@ -1,35 +1,32 @@
-# NKP Advanced Hands-on Lab
+# NKP Workspaces
 
-# [#](#nkp-workspaces) NKP Workspaces
+Workspaces สอดคล้องกับ "hard" multi-tenancy โดยการอนุญาตให้ teams หรือ tenants สามารถจัดการ clusters ของพวกเขาเองได้ Workspaces คือการจัดกลุ่มทางตรรกะ (logical grouping) ของ clusters ที่รักษา configuration ที่คล้ายคลึงกัน โดยมี configurations บางส่วนถูก federated ไปยัง clusters เหล่านั้นโดยอัตโนมัติ
 
-Workspaces align with "hard" multi-tenancy by allowing teams or tenants to manage their own clusters. Workspaces are a logical grouping of clusters that maintain a similar configuration, with certain configurations automatically federated to those clusters.
+#### Dedicated login URL for each tenant
 
-#### [#](#dedicated-login-url-for-each-tenant) Dedicated login URL for each tenant
+NKP จัดเตรียม workspaces พร้อมด้วย dedicated login page ซึ่ง users ใน NKP UI สามารถกรอก SSO credentials เพื่อเข้าถึง workspace ของพวกเขา หรือสร้าง token เพื่อเข้าถึง kubectl API ของ cluster ผู้เช่า (tenants) รายอื่นๆ และ SSO configurations ของพวกเขาจะไม่สามารถมองเห็นได้
 
-NKP provides workspaces with a dedicated login page, where users in the NKP UI can enter their SSO credentials to access their workspace or create a token to access a cluster’s kubectl API. Other tenants and their SSO configurations are not visible.
+รูปแบบ URL คือ https://`<DOMAIN>`/token/landing/`<WORKSPACE_NAME>`
 
-The URL format is https://`<DOMAIN>`/token/landing/`<WORKSPACE_NAME>`
+#### Default Workspace
 
-#### [#](#default-workspace) Default Workspace
+เพื่อให้เริ่มใช้งานได้ทันที NKP จะ deploy ตัว default workspace ให้เมื่อมีการ apply ตัว NKP Ultimate license อย่างไรก็ตาม โปรดคำนึงไว้ด้วยว่าคุณจะไม่สามารถย้าย clusters จาก workspace หนึ่งไปยังอีก workspace หนึ่งได้หลังจากทำการสร้าง/พ่วง (creating/attaching) ไปแล้ว
 
-To get started immediately, NKP deploys a default workspace when applying an NKP Ultimate license. However, take into account that you cannot move clusters from one workspace to another after creating/attaching them.
+ใน lab นี้คุณจะไม่ได้ทำการสร้าง workspaces แต่จะทำการตรวจสอบ default workspace และ managed clusters ที่ถูก stage ไว้สำหรับ labs ถัดไปของคุณแทน
 
-In this lab you won't be creating workspaces, but instead check the default workspace and the managed clusters staged for your upcoming labs.
-
-1.  Go back to the NKP management UI. If you closed the tab, you can open it using https://#.#.#.**16**/dkp/kommander/dashboard (replace #.#.# with your subnet - available in the initial connection details page)
+1.  กลับไปที่ NKP management UI หากคุณปิดแท็บไปแล้ว คุณสามารถเปิดมันขึ้นมาใหม่ได้โดยใช้ https://#.#.#.**16**/dkp/kommander/dashboard (แทนที่ #.#.# ด้วย subnet ของคุณ - ซึ่งมีอยู่ในหน้า initial connection details)
     
-2.  Go to the NKP **Global** scope, select workspaces on the sidebar menu, and take a look to the information provided on the page
+2.  ไปที่ NKP **Global** scope เลือก workspaces ที่เมนู sidebar และดูข้อมูลที่มีให้บนหน้าเพจ
     
-    ![List of workspaces](/cloudnative/assets/workspaces_list.328f3ace.png)
+    ![List of workspaces](images/workspaces_list.328f3ace.png)
     
-3.  Click on the `Default Workspace` to change the scope
+3.  คลิกที่ `Default Workspace` เพื่อเปลี่ยน scope
     
-    Pro tip
+    !!! tip    
+        คุณสามารถใช้ navigation bar ได้เช่นกัน
     
-    You can also use the navigation bar.
+    ![Workspace menu](images/workspace_menu.21405c4c.png)
     
-    ![Workspace menu](/cloudnative/assets/workspace_menu.21405c4c.png)
+4.  ในหน้า workspace คุณสามารถระบุจำนวนของ clusters และ cost ของมัน, projects, หรือ aggregated analytics ของ workspace clusters ของคุณที่รายงานโดย NKP Insights ได้อย่างง่ายดาย
     
-4.  On the workspace page, you can easily identify the number of clusters and their cost, projects, or the aggregated analytics of your workspace clusters reported by NKP Insights
-    
-    ![Workspace dashboard](/cloudnative/assets/workspace_dashboard.a5f37201.png)
+    ![Workspace dashboard](images/workspace_dashboard.a5f37201.png)

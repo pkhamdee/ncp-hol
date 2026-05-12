@@ -1,41 +1,36 @@
-# NKP Advanced Hands-on Lab
+# NKP Insights Lab
 
-Note
+NKP Insights คือ unified platform ที่ออกแบบมาเพื่อตรวจจับและป้องกัน cluster anomalies ทั่วทั้ง hybrid cloud environments โดยใช้ Insights engine เพื่อรวบรวม critical events และ metrics ซึ่งจากนั้นจะถูกประมวลผลโดย NKP Management Cluster
 
--   Expected lab duration: 5 minutes
+NKP Insight alert ประกอบด้วย:
 
-# [#](#nkp-insights) NKP Insights Lab
-
-NKP Insights is a unified platform designed to detect and prevent cluster anomalies across hybrid cloud environments. It employs an Insights engine to gather critical events and metrics, which are then processed by the NKP Management Cluster.
-
-An NKP Insight alert consists of:
-
--   Anomaly description
+-   คำอธิบาย anomaly
 -   Root cause analysis
 -   Solution
--   Best practices to avoid similar issues in the future
+-   Best practices เพื่อหลีกเลี่ยงปัญหาที่คล้ายกันในอนาคต
 
-Did You Know?
+!!! info
+    รู้หรือไม่?
 
-**NKP Insights** is available exclusively with NKP Ultimate.
+    **NKP Insights** มีให้บริการเฉพาะกับ NKP Ultimate เท่านั้น
 
-#### [#](#analyse-an-nkp-insight-alert) Analyse an NKP Insight Alert
+#### Analyse an NKP Insight Alert
 
-1.  Start by opening the Insights dashboard for the _Default_ workspace and explore the various types of anomalies.
+1.  เริ่มต้นด้วยการเปิด Insights dashboard สำหรับ _Default_ workspace และสำรวจ anomalies ประเภทต่างๆ
     
-    ![NKP Insights](/cloudnative/assets/insights_1.6721dd38.png)
+    ![NKP Insights](images/insights_1.6721dd38.png)
     
-2.  Filter out by _Configuration_ issues and select a configuration anomaly related to _CPU throttling_, or if you find something interesting, choose one of the alerts to get more details.
+2.  กรองโดยใช้ _Configuration_ issues และเลือก configuration anomaly ที่เกี่ยวข้องกับ _CPU throttling_ หรือหากคุณพบสิ่งที่น่าสนใจ ให้เลือกหนึ่งใน alerts เพื่อดูรายละเอียดเพิ่มเติม
     
-    ![CPU throttling alert for insights](/cloudnative/assets/insights_4.95c8633c.png)
+    ![CPU throttling alert for insights](images/insights_4.95c8633c.png)
     
-3.  Review the root cause analysis, solution, and best practices for this specific alert. If you selected a CPU throttling anomaly, you can also check the Prometheus monitoring dashboard and the Kubernetes-specific dashboard related to this alert for a deeper understanding.
+3.  ตรวจสอบ root cause analysis, solution, และ best practices สำหรับ alert เฉพาะนี้ หากคุณเลือก CPU throttling anomaly คุณยังสามารถตรวจสอบ Prometheus monitoring dashboard และ Kubernetes-specific dashboard ที่เกี่ยวข้องกับ alert นี้เพื่อความเข้าใจที่ลึกซึ้งยิ่งขึ้น
     
-    Note
-    
-    We are using Prometheus as an example on how NKP Insights integrates with the different tools included in NKP. There is not additional task for you once you open Prometheus or any other NKP dashboard.
-    
-    ![NKP Insights](/cloudnative/assets/Insights_7.0bcfac6e.gif)
+    !!! note
+        
+        เรากำลังใช้ Prometheus เป็นตัวอย่างของวิธีการที่ NKP Insights ทำงานร่วมกับ tools ต่างๆ ที่รวมอยู่ใน NKP จะไม่มีงาน (task) เพิ่มเติมสำหรับคุณเมื่อคุณเปิด Prometheus หรือ NKP dashboard อื่นๆ
+        
+    ![NKP Insights](images/Insights_7.0bcfac6e.gif)
     
 
-In summary, NKP Insights is an essential tool for enhancing the security and efficiency of Kubernetes environments. It enables organizations to address issues before they escalate, ensuring compliance with best practices and improving operational performance. By leveraging Insights, platform teams can reduce downtime and achieve cost savings while focusing on delivering value to users.
+โดยสรุป NKP Insights เป็น tool ที่จำเป็นสำหรับการเพิ่ม security และ efficiency ของ Kubernetes environments ช่วยให้องค์กรสามารถจัดการกับปัญหาก่อนที่จะบานปลาย มั่นใจได้ถึง compliance กับ best practices และปรับปรุง operational performance ด้วยการใช้ประโยชน์จาก Insights ทีม platform สามารถลด downtime และบรรลุ cost savings ในขณะที่มุ่งเน้นไปที่การส่งมอบ value ให้กับผู้ใช้

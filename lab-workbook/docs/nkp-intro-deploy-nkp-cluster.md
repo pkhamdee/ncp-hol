@@ -1,7 +1,5 @@
-# NKP Advanced Hands-on Lab
+# Create NKP cluster
 
-# [#](#create-nkp-cluster) Create NKP cluster
+ส่วนนี้จะนำคุณเข้าสู่ขั้นตอนการติดตั้ง self-managed NKP cluster แรกของคุณบน Nutanix
 
-This section will take you through installing your first self-managed NKP cluster on Nutanix.
-
-At this time, the NKP CLI is the only option available for creating the management cluster.
+ในขณะนี้ NKP CLI เป็นเพียงตัวเลือกเดียวที่มีสำหรับการสร้าง management cluster

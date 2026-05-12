@@ -6,7 +6,7 @@
     
 3.  ค้นหาทั้ง **`User##`\-WinTools** และ **`User##`\-LinuxTools** VMs ของคุณ จดบันทึก IP addresses ของพวกมันไว้ โดยใช้คอลัมน์ **IP Addresses**
     
-    ![](/images/ip_addresses.63dcc6c9.png)
+    ![](images/ip_addresses.63dcc6c9.png)
 
 4.  เชื่อมต่อไปยัง **`User##`\-WinTools** VM ของคุณผ่าน Remote Desktop โดยใช้ credentials ต่อไปนี้:
     

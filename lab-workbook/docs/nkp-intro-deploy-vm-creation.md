@@ -1,37 +1,37 @@
-# NKP Advanced Hands-on Lab
+# VM Creation
 
-# [#](#vm-creation) VM Creation
-
-1.  Access Prism Central using _Company ID_ and your lab user _adminuser`##`_. Replace `##` with your user number
+1.  เข้าถึง Prism Central โดยใช้ _Company ID_ และผู้ใช้แล็บของคุณ _adminuser`##`_ แทนที่ `##` ด้วยหมายเลขผู้ใช้ของคุณ
     
-    ![Prism Central login](/cloudnative/assets/pc_login.35dd78fb.png)
+    ![Prism Central login](images/pc_login.35dd78fb.png)
     
-2.  Go to the VMs page
+2.  ไปที่หน้า VMs
     
-    ![Prism Central VM page](/cloudnative/assets/vm-menu.159be0ad.png)
+    ![Prism Central VM page](images/vm-menu.159be0ad.png)
     
-3.  Click **Create VM**, use the following configuration, and click **Next**
+3.  คลิก **Create VM** ใช้การกำหนดค่าต่อไปนี้ และคลิก **Next**
     
-    Input required
-    
-    Replace `##` with your user number
+    !!! info
+        ต้องป้อนข้อมูล
+        
+        แทนที่ `##` ด้วยหมายเลขผู้ใช้ของคุณ
     
     -    name
-    -   example
     
     ```
     user##-adminvm
     ```
     
+    -   example
+
     ```
     user01-adminvm
     ```
     
     -   CPU: **4** | Cores: **1** | Memory: **8**
     
-    ![Create VM](/cloudnative/assets/1-create-vm-configuration.8d687dca.png)
+    ![Create VM](images/1-create-vm-configuration.8d687dca.png)
     
-4.  Click **Attach Disk**, select the NKP Rocky image, and set the _Capacity_. Click **Save** when finished
+4.  คลิก **Attach Disk** เลือกอิมเมจ NKP Rocky และตั้งค่า _Capacity_ คลิก **Save** เมื่อเสร็จสิ้น
     
     -   Operation: **Clone from Image**
         
@@ -40,32 +40,33 @@
     -   Capacity: **128**
         
     
-    ![Attach disk](/cloudnative/assets/2-create-vm-resources-disk.5e71e0b7.png)
+    ![Attach disk](images/2-create-vm-resources-disk.5e71e0b7.png)
     
-5.  Click **Attach to Subnet** and select the IPAM-enabled subnet. Click **Save** when finished
+5.  คลิก **Attach to Subnet** และเลือก subnet ที่เปิดใช้งาน IPAM คลิก **Save** เมื่อเสร็จสิ้น
     
-    Subnet: secondary
+    !!! info
+        Subnet: secondary
     
-    ![Attach subnet](/cloudnative/assets/2-create-vm-resources-subnet.53b5a64d.png)
+    ![Attach subnet](images/2-create-vm-resources-subnet.53b5a64d.png)
     
-6.  Confirm the settings and click **Next**
+6.  ยืนยันการตั้งค่าและคลิก **Next**
     
-    ![Resources summary](/cloudnative/assets/2-create-vm-resources-summary.14fcfbb1.png)
+    ![Resources summary](images/2-create-vm-resources-summary.14fcfbb1.png)
     
-7.  Use the Guest Customization feature to inject a cloud-init script for automating dependency installation for the NKP CLI and bootstrapping cluster. Update the `fqdn` value with your username before proceeding. Click **Next** when finished
+7.  ใช้ฟีเจอร์ Guest Customization เพื่อ inject สคริปต์ cloud-init สำหรับการติดตั้ง dependency แบบอัตโนมัติสำหรับ NKP CLI และ bootstrapping cluster อัปเดตค่า `fqdn` ด้วยชื่อผู้ใช้ของคุณก่อนดำเนินการต่อ คลิก **Next** เมื่อเสร็จสิ้น
     
     -   Script Type: Cloud-init (Linux)
         
-        Input required
-        
-        Replace `##` with your user number
+        !!! info
+            ต้องป้อนข้อมูล
+            
+            แทนที่ `##` ด้วยหมายเลขผู้ใช้ของคุณ
         
         -   config
-        -   example
-        
+
         ```
         #cloud-config
-        fqdn: user## # <-- Update with your user number
+        fqdn: user## # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
         ssh_pwauth: true
         users:
           - name: nutanix
@@ -82,48 +83,22 @@
             type: text
         runcmd:
         - '[ ! -f "/etc/yum.repos.d/nutanix_rocky9.repo" ] || mv -f /etc/yum.repos.d/nutanix_rocky9.repo /etc/yum.repos.d/nutanix_rocky9.repo.disabled'
-        - dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+        - dnf config-manager --add-repo [https://download.docker.com/linux/rhel/docker-ce.repo](https://download.docker.com/linux/rhel/docker-ce.repo)
         - dnf -y install git docker-ce docker-ce-cli containerd.io
         - systemctl --now enable docker
         - usermod -aG docker nutanix
-        - 'curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
+        - 'curl -Lo /usr/local/bin/kubectl [https://storage.googleapis.com/kubernetes-release/release/$](https://storage.googleapis.com/kubernetes-release/release/$)(curl -s [https://storage.googleapis.com/kubernetes-release/release/stable.txt](https://storage.googleapis.com/kubernetes-release/release/stable.txt))/bin/linux/amd64/kubectl'
         - chmod +x /usr/local/bin/kubectl
-        - 'curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash'
-        - 'su - nutanix -c "curl -fsSL http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh | bash"'
+        - 'curl [https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3](https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3) | bash'
+        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
         - eject
         ```
         
-          
-        
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+        -   example  
         
         ```
         #cloud-config
-        fqdn: user01 # <-- Update with your user number
+        fqdn: user01 # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
         ssh_pwauth: true
         users:
           - name: nutanix
@@ -140,57 +115,29 @@
             type: text
         runcmd:
         - '[ ! -f "/etc/yum.repos.d/nutanix_rocky9.repo" ] || mv -f /etc/yum.repos.d/nutanix_rocky9.repo /etc/yum.repos.d/nutanix_rocky9.repo.disabled'
-        - dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+        - dnf config-manager --add-repo [https://download.docker.com/linux/rhel/docker-ce.repo](https://download.docker.com/linux/rhel/docker-ce.repo)
         - dnf -y install git docker-ce docker-ce-cli containerd.io
         - systemctl --now enable docker
         - usermod -aG docker nutanix
-        - 'curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
+        - 'curl -Lo /usr/local/bin/kubectl [https://storage.googleapis.com/kubernetes-release/release/$](https://storage.googleapis.com/kubernetes-release/release/$)(curl -s [https://storage.googleapis.com/kubernetes-release/release/stable.txt](https://storage.googleapis.com/kubernetes-release/release/stable.txt))/bin/linux/amd64/kubectl'
         - chmod +x /usr/local/bin/kubectl
-        - 'curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash'
-        - 'su - nutanix -c "curl -fsSL http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh | bash"'
+        - 'curl [https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3](https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3) | bash'
+        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
         - eject
         ```
         
-          
+        คำอธิบาย Cloud-config
         
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+        -   **2** อัปเดตค่าด้วยผู้ใช้ของคุณ ตัวอย่าง: user**01**
+        -   **3-16** สร้างผู้ใช้ใหม่ `nutanix` และเปิดใช้งานการรองรับรหัสผ่าน เป็นเรื่องปกติที่ cloud images จะไม่มีรหัสผ่านมาให้ตั้งแต่ต้น
+        -   **15** รหัสผ่านเริ่มต้นที่ตั้งไว้คือ `nutanix/4u` ในระดับ production คุณควรใช้ SSH public key และไม่ใช้การตรวจสอบสิทธิ์ด้วยรหัสผ่าน
+        -   **19-22** เพิ่ม repository สำหรับแพ็กเกจ Docker, ติดตั้ง Docker Engine และ CLI ของมัน, และติดตั้ง containerd
+        -   **23-24** ติดตั้ง kubectl CLI และตั้งให้เป็น executable
+        -   **25** ติดตั้ง Helm CLI
+        -   **26** จำเป็นสำหรับ bootcamp เท่านั้น สิ่งนี้จะติดตั้ง VS Code เวอร์ชันเว็บ
         
-        Cloud-config explanation
+        ![Cloud-init](images/3-create-vm-management.de2d3a3b.png)
         
-        -   **2** Update the value with your user. Ex: user**01**
-        -   **3-16** Create a new user `nutanix` and enable password support. It is standard for cloud images not to include a password out-of-the-box
-        -   **15** The set default password is `nutanix/4u`. In production, you should use SSH public key and not password-based authentication
-        -   **19-22** Add the Docker package repository, install Docker Engine and its CLI, and install containerd
-        -   **23-24** Install the kubectl CLI and make it executable
-        -   **25** Install the Helm CLI
-        -   **26** Only required for the bootcamp. This installs a web-version of VS Code
-        
-        ![Cloud-init](/cloudnative/assets/3-create-vm-management.de2d3a3b.png)
-        
-8.  Review the configuration and click **Create VM**
+8.  ตรวจสอบการกำหนดค่าและคลิก **Create VM**
     
-9.  **Power On** your VM
+9.  **Power On** VM ของคุณ

@@ -36,7 +36,7 @@ The resulting infrastructure (which is referred to as an application), can then 
     
 9.  Click **Clone from environment**. Since you've previously specified the details for your Linux VM within your Project, there's no need to enter that same information again.
     
-    ![](/images/selfservice11.77b42afc.png)
+    ![](images/selfservice11.77b42afc.png)
     
     Note:
     
@@ -83,7 +83,7 @@ ssh_pwauth:   true
     -   Max Value - 6
     -   Click **Done**
     
-    ![](/images/selfservice3.2e702ef6.png)
+    ![](images/selfservice3.2e702ef6.png)
     
 18.  **(Optional)** Click on **Add Snapshot/Restore Config** within the Snapshot/Restore section
     
@@ -92,7 +92,7 @@ ssh_pwauth:   true
     -   Snapshot/Restore action suffix - **User`##`** where `##` is your assigned number.
     -   Click the 1 button.
     
-    ![](/images/selfservice4.906e7d8e.png)
+    ![](images/selfservice4.906e7d8e.png)
     
 20.  Click **Save**
     
@@ -111,13 +111,13 @@ Variables can be used in scripts executed against objects using the `@@{variable
     
 2.  Click the App variables button along the top pane to bring up the variables menu.
     
-    ![](/images/selfservice5.769e6a71.png)
+    ![](images/selfservice5.769e6a71.png)
     
 3.  In the pop-up that appears, you should see a note stating you currently do not have any variables. Click the **Add Variable** button, and fill out the following fields.
     
     -   Within the left column, click the **running person** icon to mark this as a runtime variable.
         
-        ![](/images/selfservice6.b8295994.png)
+        ![](images/selfservice6.b8295994.png)
         
     -   In the main pane, set the variable Name as **vm\_name\_prefix**.
         
@@ -126,7 +126,7 @@ Variables can be used in scripts executed against objects using the `@@{variable
     -   Check the **Mark this variable mandatory** checkbox. This ensures a value is input, as this variable contributes to the VM name.
         
     
-    ![](/images/selfservice7.57dc956e.png)
+    ![](images/selfservice7.57dc956e.png)
     
 4.  Click **Done**
     
@@ -165,7 +165,7 @@ Once the blueprint is submitted, it also needs to be approved. This process make
     
 6.  Click the **Approve** button
     
-    ![](/images/selfservice8.d37adcd2.png)
+    ![](images/selfservice8.d37adcd2.png)
     
 7.  Select **Approved** at the top of the page.
     
@@ -184,4 +184,4 @@ Note:
 
 You have successfully published your application to the Marketplace. You can view it by going to **Admin Center** > **Marketplace**
 
-![](/images/selfservice9.87e352b0.png)
+![](images/selfservice9.87e352b0.png)

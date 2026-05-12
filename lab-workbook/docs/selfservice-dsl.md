@@ -28,7 +28,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 1.  ภายใน Prism Central, คลิกที่ **App switcher** และเลือก **Self Service**
 
-    ![](/images/Picture13.9efcae30.png)
+    ![](images/Picture13.9efcae30.png)
 
 2.  เลือก **Blueprints** จากเมนูด้านซ้ายและคลิก **Upload Blueprint**. เลือก **DevWorkStation.json**.
     
@@ -36,11 +36,11 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 4.  จากเมนูแบบเลื่อนลงของ _Project_, ให้เลือก `User##`\-Project และคลิก **Continue**.
     
-    ![](/images/Marketplace1.7bb6c6d5.png)
+    ![](images/Marketplace1.7bb6c6d5.png)
 
-5.  ภายในหน้า Blueprint Settings, ทำการอัปเดตชื่อและ Environment ของ Blueprint ให้ตรงกับ User## ของคุณ และคลิกที่ **VM Details**. ![](/images/Marketplace2.ef84803e.png)
+5.  ภายในหน้า Blueprint Settings, ทำการอัปเดตชื่อและ Environment ของ Blueprint ให้ตรงกับ User## ของคุณ และคลิกที่ **VM Details**. ![](images/Marketplace2.ef84803e.png)
     
-6.  คลิกที่ **VM Configuration** เพื่อดำเนินการต่อ. ![](/images/Marketplace3.74aaaaf2.png)
+6.  คลิกที่ **VM Configuration** เพื่อดำเนินการต่อ. ![](images/Marketplace3.74aaaaf2.png)
     
 7.  คลิกที่ **Clone from environment** และเลื่อนลงไปที่ **Guest Customization**. ที่นั่นคุณจะพบ script ต่อไปนี้ (วางลงไปหากไม่มีอยู่):
     
@@ -89,7 +89,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     !!! warning
         อาจมีหลาย images บนคลัสเตอร์ ดังนั้นการเผลอเลือก image อื่นจึงเกิดขึ้นได้ง่าย. โปรดตรวจสอบให้แน่ใจว่าคุณได้เลือก image **Rocky9.qcow2**.
     
-9.  คลิก **Save** จากนั้นคลิก **Advanced Options** เพื่อกำหนดค่า credentials. ![](/images/Marketplace4.9b00280f.png)![](/images/Marketplace5.6b158667.png)
+9.  คลิก **Save** จากนั้นคลิก **Advanced Options** เพื่อกำหนดค่า credentials. ![](images/Marketplace4.9b00280f.png)![](images/Marketplace5.6b158667.png)
     
 10.  ภายในหน้า **Credentials(1)** ตรวจสอบให้แน่ใจว่ามี credential ที่ชื่อ **ROCKY** พร้อมการกำหนดค่าต่อไปนี้ และคลิก **Done**:
     
@@ -99,7 +99,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     -   **Secret Type** - **Password**
     -   **Password** - **nutanix/4u**
     
-    ![Marketplace6](/images/Marketplace6.86205342.png)
+    ![Marketplace6](images/Marketplace6.86205342.png)
 
 11.  เลื่อนลงมาและคลิก **Save** ภายใน _Advanced Options (Optional)_.
     
@@ -115,11 +115,11 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     -   **Change Image** - คลิก **Change > Upload from computer** เลือก _software-developer.png_ และคลิก **Open**. ป้อน **Workstation** เป็นชื่อไอคอน. คลิกและคลิก **Select & continue**.
 2.  คลิก **Submit for Approval**.
     
-    ![](/images/Marketplace7.4b3c030a.png)
+    ![](images/Marketplace7.4b3c030a.png)
 
 ### Approving Blueprints
 
-1.  เลือก ![mktmgr-icon](/images/Marketplace8.c6c651c9.png) **Marketplace Manager** จากเมนูด้านซ้ายเพื่อดูและจัดการ Marketplace Blueprints.
+1.  เลือก ![mktmgr-icon](images/Marketplace8.c6c651c9.png) **Marketplace Manager** จากเมนูด้านซ้ายเพื่อดูและจัดการ Marketplace Blueprints.
     
 2.  คุณจะเห็นรายชื่อของ Marketplace Blueprints และเวอร์ชันของพวกมันที่ระบุไว้. จากเมนูด้านบน ให้เลือก **Approval Pending**.
     
@@ -129,28 +129,28 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 5.  คลิกเพื่อ approve ตัว Blueprint.
     
-    ![](/images/Marketplace9.18af7ac9.png)
+    ![](images/Marketplace9.18af7ac9.png)
     
-6.  จากเมนูด้านบน เลือก **Approved**. เลือก blueprint ของคุณแล้วคลิกปุ่ม **Publish** เพื่อให้เป็นสาธารณะ (public) บน **Self Service Marketplace**. ![](/images/Marketplace10.512493b7.png)
+6.  จากเมนูด้านบน เลือก **Approved**. เลือก blueprint ของคุณแล้วคลิกปุ่ม **Publish** เพื่อให้เป็นสาธารณะ (public) บน **Self Service Marketplace**. ![](images/Marketplace10.512493b7.png)
     
 
 ## Deploy DevWorkstation from the Marketplace
 
 1.  ภายใน Prism Central, คลิกที่ **App switcher** และเลือก **Self Service** (หากยังไม่ได้อยู่ในหน้านี้)
 
-    ![](/images/Picture13.9efcae30.png)
+    ![](images/Picture13.9efcae30.png)
 
 2.  เลือก **Marketplace** จากเมนูด้านซ้าย
 
-    ![](/images/Picture14.20d9e32e.png)
+    ![](images/Picture14.20d9e32e.png)
 
 3.  เลื่อนดูในหน้า Marketplace เพื่อค้นหา Dev Workstation catalog item และเลือก **Get**.
 
-    ![](/images/Picture15.83e0fe3e.png)
+    ![](images/Picture15.83e0fe3e.png)
 
 4.  ตอนนี้ให้เลือก **Deploy**
 
-    ![](/images/Picture16.4068b654.png)
+    ![](images/Picture16.4068b654.png)
 
 5.  กรอกข้อมูลในฟิลด์บนฟอร์มตามลำดับ:
     
@@ -160,14 +160,14 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     -   ป้อน **Prism Central IP** สำหรับ lab ของคุณในส่วนของ variables
     -   ป้อน **Prism Central Pasword** สำหรับ lab ของคุณในส่วนของ variables
 
-    ![](/images/Picture17.bd9798ae.png)![](/images/Marketplace11.27485fbb.png)
+    ![](images/Picture17.bd9798ae.png)![](images/Marketplace11.27485fbb.png)
 
 6.  คลิก **Deploy**
     
 7.  คุณสามารถคลิก **View in Applications** จากกล่องโต้ตอบ (dialog box) **Deploying App** เพื่อมอนิเตอร์การ deploy ของ `DevWorkstation`.
     
 
-    ![](/images/Picture19.4f6e4ab3.png)
+    ![](images/Picture19.4f6e4ab3.png)
 
     ```
     ::: tip Note
@@ -177,13 +177,13 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 8.  เมื่อ application (deployment) เสร็จสิ้น, สถานะจะเปลี่ยนจาก **Provisioning** เป็น **Running**
 
-    ![](/images/Marketplace12.305d7c71.png)
+    ![](images/Marketplace12.305d7c71.png)
 
 ## Using Self Service DSL
 
 1.  จากมุมมอง **Application** ปัจจุบัน, ให้คลิกที่ **Open Terminal** จากบานหน้าต่างด้านขวา. Application อาจจะแสดงผลเป็น running แล้ว, แต่ cloud-init script อาจจะยังรันอยู่, ดังนั้นไฟล์ Calm DSL จึงอาจยังไม่ปรากฏขึ้น. เพื่อตรวจสอบ คุณสามารถรันคำสั่ง **sudo cloud-init status** ภายใน terminal เพื่อดูสถานะ.
 
-    ![](/images/Marketplace14.6bacb72a.png)
+    ![](images/Marketplace14.6bacb72a.png)
 
     ```
     ::: tip Note
@@ -214,17 +214,17 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 5.  ตรวจสอบการตั้งค่า config ปัจจุบันโดยรัน `calm show config`.
     
-    ![](/images/Picture9.15c2e857.png)
+    ![](images/Picture9.15c2e857.png)
 
 ### List the current Blueprints in Self Service
 
 1.  รัน `calm get bps`, แล้วเราจะเห็น Blueprints ทั้งหมดใน Self Service พร้อมด้วย UUID, description, application count, project, และ state.
     
-    ![](/images/Picture10.6b199f30.png)
+    ![](images/Picture10.6b199f30.png)
     
 2.  รัน `calm get bps -q` เพื่อแสดงผลแบบ _quiet_ โดยมีเฉพาะชื่อของ Blueprint.
     
-    ![](/images/Picture11.46c0beee.png)
+    ![](images/Picture11.46c0beee.png)
     
 
 ### Review and Modify a Blueprint
@@ -241,7 +241,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 3.  Directory _HelloBlueprint_ มีไฟล์ที่เรียกว่า _blueprint.py_, ซึ่งเป็น Python Blueprint. นอกจากนี้ยังมี directory _scripts_ ที่เก็บ scripts ที่ถูกอ้างอิงภายใน Blueprint.
     
-    ![](/images/Marketplace13.24439e83.png)
+    ![](images/Marketplace13.24439e83.png)
 
 #### Modify blueprint.py
 
@@ -257,20 +257,20 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     -   Credentials (บรรทัด 59-65)
     -   OS Image (บรรทัด 67-80)
     -   ไปที่บรรทัด 70, พิมพ์ `I` เพื่อเข้าสู่โหมด insert
-    -   อัปเดตค่า VM\_DISK\_IMAGE ให้เป็น `Rocky9.qcow2`![](/images/Picture12.a4c911b4.png)
+    -   อัปเดตค่า VM\_DISK\_IMAGE ให้เป็น `Rocky9.qcow2`![](images/Picture12.a4c911b4.png)
     -   ภายใต้คลาส (class) HelloPackage(Package) คุณจะเห็นการอ้างอิงถึง script `pkg_install_task.sh` ใน directory ของ scripts (บรรทัด 150)
     -   ข้อมูล Basic VM spec (vCPU/memory/disks/nics) (บรรทัด 164-170)
     -   Guest Customization ที่ประกอบด้วย cloud-init (บรรทัด 174-184)
 
 4.  กดปุ่ม **Insert** เพื่อเข้าสู่โหมด _Insert_. ในบรรทัดที่ 165 ให้แก้ไขจำนวน vCPU จาก **2** เป็น **4**.
     
-    ![](/images/vcpu.6911cf97.png)
+    ![](images/vcpu.6911cf97.png)
     
 5.  กด **ESC** เพื่อออกจากโหมด _Insert_ และไปที่บรรทัด 198 โดยพิมพ์ `:198`. เข้าสู่โหมด _Insert_ และเพิ่ม VM name ที่ไม่ซ้ำกันโดยใช้ macro ทันทีหลังจากบรรทัด `provider_spec = HelloVm`.
     
     -   `provider_spec.name = "User##-@@{calm_unique}@@"` (เช่น User01-@@{calm\_unique}@@)
         
-    ![](/images/vmname.b12ac73c.png)
+    ![](images/vmname.b12ac73c.png)
         
 6.  กด **ESC** เพื่อออกจากโหมด _Insert_. บันทึก (write) ไฟล์ blueprint.py แล้วออกโดยการพิมพ์คำสั่ง `:wq`.
     
@@ -281,7 +281,7 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 2.  รันคำสั่ง `cat pkg_install_task.sh` เพื่อดูเนื้อหาปัจจุบันของ install script. script นี้ทำหน้าที่อะไร?
     
-    ![](/images/more1.dbf1b0d3.png)
+    ![](images/more1.dbf1b0d3.png)
     
 3.  รันคำสั่ง `curl -Sks https://bootcamps.nutanix.com/self-service/nginx > pkg_install_task.sh` เพื่อแทนที่ (replace) install script ที่มีอยู่.
     
@@ -386,13 +386,13 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 2.  รัน `calm create bp --file blueprint.py --name FromDSL-User##` (เช่น FromDSL-User01), ซึ่งจะทำการแปลงไฟล์ .py เป็นไฟล์ .json และอัปโหลดขึ้นไปยัง Calm.
     
-    ![](/images/syncbp.9bd830c9.png)
+    ![](images/syncbp.9bd830c9.png)
     
 3.  (ตัวเลือกเสริม) รันคำสั่ง `calm compile bp -f blueprint.py` เพื่อดู Python Blueprint ในรูปแบบ json ภายใน DSL.
     
 4.  ตรวจสอบว่า Blueprint ใหม่ของคุณถูกอัปโหลดสำเร็จแล้วโดยรันคำสั่ง `calm get bps -q | grep FromDSL-User##`. (เช่น FromDSL-User01)
     
-    ![](/images/verifygrep.9b2017d5.png)
+    ![](images/verifygrep.9b2017d5.png)
     
 
 ### Launch Your Newly Uploaded Blueprint
@@ -401,19 +401,19 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
     
 2.  รันคำสั่ง `calm launch bp FromDSL-User## --app_name AppFromDSL-User## -i`. (เช่น FromDSL-User01 AppFromDSL-User01)
     
-    ![](/images/launchbp.d3069098.png)
+    ![](images/launchbp.d3069098.png)
     
 3.  เพื่อดูข้อมูลสรุปของ application, รันคำสั่ง `calm describe app AppFromDSL-User##` (เช่น AppFromDSL-User01). เมื่อสถานะของ app เปลี่ยนเป็น _running_, nginx server ได้ทำการ deploy เสร็จสมบูรณ์ผ่าน Calm DSL แล้ว.
     
-    ![](/images/describe.07507cce.png)
+    ![](images/describe.07507cce.png)
     
 4.  ถัดไป เราจะรับหมายเลข IP ของ application ผ่าน _address_ จาก output json ของ application โดยรันคำสั่ง `calm describe app AppFromDSL-User## --out json | jq '.status.resources.deployment_list[].substrate_configuration.element_list[].address'`. (เช่น AppFromDSL-User01)
     
-    ![](/images/jqout.6135379b.png)
+    ![](images/jqout.6135379b.png)
     
 5.  นำ IP ที่แสดงไปป้อนลงในเว็บเบราว์เซอร์.
     
-    ![](/images/welcome2.f8a8fcbf.png)
+    ![](images/welcome2.f8a8fcbf.png)
     
 คุณประสบความสำเร็จในการแก้ไข (modify) Blueprint ที่มีอยู่แล้ว
 

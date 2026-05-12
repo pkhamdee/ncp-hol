@@ -8,13 +8,13 @@
 
 1.  ภายใน NDB ให้เลือก **\> Data Protection > Time Machines** จากเมนู drop-down จากนั้นเลือก **List** จากเมนูด้านบน ต่อมาให้คลิกที่จุดข้างๆ รายการ `User##`\-fiestadb\_TM ของคุณ
     
-    ![](/images/n01.76184e9b.png)
+    ![](images/n01.76184e9b.png)
     
 2.  คลิก **Actions > Create a Clone of the PostgreSQL Instance**
     
 3.  ในส่วนของ _Time/Snapshot_ ให้เลือก **Snapshot** จากนั้นเลือก snapshot ที่มีอยู่
     
-    ![](/images/n02.ec5c4ccc.png)
+    ![](images/n02.ec5c4ccc.png)
     
     !!! note
         -   แม้จะไม่ได้สร้าง manual snapshots ทาง NDB ก็ยังมีความสามารถในการ clone database ตาม increments แบบ point-in-time ซึ่งรวมถึง Continuous (ทุกวินาที), Daily, Weekly, Monthly, หรือ Quarterly โดยที่ SLA จะควบคุม availability
@@ -34,7 +34,7 @@
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoQRdEfm8ZJNGlYLQ2iw08eVk/Wyj0zl3M5KyqKmBTpUaS1uxj0K05HMHaUNP+AeJ63Qa2hI1RJHBJOnV7Dx28/yN7ymQpvO1jWejv/AT/yasC9ayiIT1rCrpHvEDXH9ee0NZ3Dtv91R+8kDEQaUfJLYa5X97+jPMVFC7fWK5PqZRzx+N0bh1izSf8PW0snk3t13DYovHFtlTpzVaYRec/XfgHF9j0032vQDK3svfQqCVzT02NXeEyksLbRfGJwl3UsA1ujQdPgalil0RyyWzCMIabVofz+Czq4zFDFjX+ZPQKZr94/h/6RMBRyWFY5CsUVvw8f+Rq6kW+VTYMvvkv
     ```
     
-    ![](/images/n03.042e2942.png)
+    ![](images/n03.042e2942.png)
     
 6.  ในส่วนของ _Instance_ ให้กรอกข้อมูลในช่องต่อไปนี้
     
@@ -42,14 +42,14 @@
     -   **POSTGRES Password** - `nutanix/4u`
     -   **Database Parameter Profile** - DEFAULT\_POSTGRES\_PARAMS
     
-    ![](/images/n04.24ba1b38.png)
+    ![](images/n04.24ba1b38.png)
     
 7.  เนื่องจากมีการร้องขอให้ clone นี้ทำการ refreshed จาก production ทุกสัปดาห์โดยเริ่มตั้งแต่วันนี้ ให้ทำเครื่องหมายเลือกที่ **Schedule Data Refresh** และกรอกข้อมูลในช่องต่อไปนี้
     
     -   **Refresh Every (days)** 7
     -   **Refresh Time** 00:06:00
     
-    ![](/images/n05.4d000795.png)
+    ![](images/n05.4d000795.png)
     
     เมื่อกรอกข้อมูลในช่องด้านบนเรียบร้อยแล้ว ให้คลิก **Clone**
     
@@ -60,7 +60,7 @@
     
 8.  คุณสามารถตรวจสอบความคืบหน้าของ clone creation ได้โดยคลิกที่กล่องสีน้ำเงินที่มีคำว่า **click here**
     
-    ![](/images/n06.504c38b1.png)
+    ![](images/n06.504c38b1.png)
     
 
 เมื่อคุณตรวจสอบแล้วว่าขั้นตอน Clone creation ได้เริ่มต้นขึ้น เราสามารถดำเนินการต่อในส่วนของ [Refresh Cloned Database](#refresh-cloned-database) ได้เลย
@@ -73,14 +73,14 @@
     
 2.  เลือก `User##-fiestadb_clone` ของคุณ และคลิก **Refresh**
     
-    ![](/images/n07.dac95e65.png)
+    ![](images/n07.dac95e65.png)
     
 3.  _Point in Time_ ล่าสุดที่มีอยู่จะถูกเลือกไว้เป็นค่าเริ่มต้น (default) คลิก **Refresh**
     
     !!! tip
         หาก point in time snapshot ไม่มีให้ใช้งาน ให้เลือก snapshot แล้วเลือก snapshot จาก drop down (ซึ่งอาจเกิดจากช่วงเวลาที่ lab environment ถูกสร้างขึ้น)
     
-    ![](/images/n08.533f2e3b.png)
+    ![](images/n08.533f2e3b.png)
     
 4.  เลือก **\> Operations** จากเมนูเพื่อทำการ monitor กระบวนการ _Refresh Clone_
     

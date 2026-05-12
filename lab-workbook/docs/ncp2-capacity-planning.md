@@ -8,7 +8,7 @@ Nutanix Cloud Manager มาพร้อมกับ machine learning แบบ 
 
 engine เดียวกันนี้ยังช่วยให้ admins สามารถวางแผนสำหรับ future expansion โดยอนุญาตให้ users สร้าง planning scenarios ตามความต้องการของพวกเขาได้ ในทั้งสองกรณี (เพื่อตอบสนอง existing runway needs หรือเพื่อวางแผนสำหรับ future workloads) Nutanix Cloud Manager มีเครื่องมือที่ใช้งานง่ายแต่ทรงพลัง ซึ่งจะให้ hardware recommendations เพื่อตอบสนอง business needs
 
-![](/images/capacityplanning1.ae506819.png)
+![](images/capacityplanning1.ae506819.png)
 
 ## Interactive Demo
 

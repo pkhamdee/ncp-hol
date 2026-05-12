@@ -24,39 +24,39 @@ Projects ยังสามารถควบคุม default VM specifications
     
 2.  ไปที่ส่วน App Switcher ที่มุมซ้ายบนของ Prism Central คลิก **Admin Center** ใน App Switcher
     
-    ![App Switcher](/images/projects1.1c54fee6.png)
+    ![App Switcher](images/projects1.1c54fee6.png)
     
 3.  คลิก **Projects** คลิก **Create Project**
     
-    ![Create Project](/images/projects2.98496dab.png)
+    ![Create Project](images/projects2.98496dab.png)
     
 4.  ในช่อง Project Name ให้ป้อน XX-FiestaProject โดย "XX" คือชื่อย่อ (initials) ของคุณ จากนั้นคลิก **Create**
     
-    ![](/images/projects3.153d65cb.png)
+    ![](images/projects3.153d65cb.png)
     
 5.  คลิก **Add Infrastructure**
     
-    ![](/images/projects4.06c771cd.png)
+    ![](images/projects4.06c771cd.png)
     
 6.  ในหน้าจอถัดไป คลิก **Add Infrastructure** และเลือก **NTNX_LOCAL_AZ**
     
-    ![](/images/projects5.298b501a.png)
+    ![](images/projects5.298b501a.png)
     
 7.  คลิกปุ่ม **Configure Resources**
     
-    ![](/images/projects6.b9227320.png)
+    ![](images/projects6.b9227320.png)
     
 8.  เลือก cluster ของคุณจาก drop-down **Select clusters to be added** คลิก **+ Select VLANs** หลังจากเลือก cluster แล้ว
     
-    ![](/images/projects7.ccda839b.png)
+    ![](images/projects7.ccda839b.png)
     
 9.  ทำเครื่องหมายที่กล่อง **aux-1** คลิก **Confirm** และเลือก **Default**
     
-    ![](/images/projects8.779b848f.png)
+    ![](images/projects8.779b848f.png)
     
 10. ตรวจสอบให้แน่ใจว่า secondary VLAN ถูกตั้งค่าเป็น default คลิก **Confirm**
     
-    ![](/images/projects9.839ba441.png)
+    ![](images/projects9.839ba441.png)
     
 11. คลิก **Save** ที่มุมขวาบน
     
@@ -64,7 +64,7 @@ Projects ยังสามารถควบคุม default VM specifications
     
 13. คลิก **Create Environment**
     
-    ![](/images/projects14.b8e49c9e.png)
+    ![](images/projects14.b8e49c9e.png)
     
 14. กรอกข้อมูลในช่องต่อไปนี้:
     
@@ -82,7 +82,7 @@ Projects ยังสามารถควบคุม default VM specifications
     -   เลื่อนลงไปที่ส่วน Disks และเลือก **Windows2022MigrateLab.qcow2** จาก drop-down Image
     -   เลื่อนลงไปที่ส่วน Categories และเลือก **User`##`:Production** category จาก drop-down โดย `##` คือหมายเลขที่คุณได้รับมอบหมาย และควรเป็น category ที่คุณสร้างไว้ในแบบฝึกหัด Categories ก่อนหน้านี้
     -   เลื่อนลงไปที่ส่วน Network Adapters (NICs) และเลือก aux-1 จาก drop-down NIC 1
-    -   ![](/images/projects10.be9610bc.png)
+    -   ![](images/projects10.be9610bc.png)
 
 16. ป้อนข้อมูลต่อไปนี้ในส่วน **Linux**
     
@@ -95,7 +95,7 @@ Projects ยังสามารถควบคุม default VM specifications
     -   เลื่อนลงไปที่ส่วน Categories และเลือก **User`##`:Production** category จาก drop-down โดย `##` คือหมายเลขที่คุณได้รับมอบหมาย และควรเป็น category ที่คุณสร้างไว้ในแบบฝึกหัด Categories
     -   เลื่อนลงไปที่ส่วน NETWORK ADAPTERS (NICs) และเลือก **aux-1** จาก drop-down NIC 1
     
-    ![](/images/projects11.4b4e36c2.png)
+    ![](images/projects11.4b4e36c2.png)
     
 17. คลิก **Next**
     
@@ -106,7 +106,7 @@ Projects ยังสามารถควบคุม default VM specifications
     -   Secret Type - Password
     -   Password - nutanix/4u
     
-    ![](/images/projects12.d78b6ede.png)
+    ![](images/projects12.d78b6ede.png)
     
 19. คลิก **Save Environment & Project**
     
@@ -136,4 +136,4 @@ Projects ยังสามารถควบคุม default VM specifications
     
 28. คุณควรเห็น project ของคุณถูกทำเครื่องหมายเป็น **Active** หลังจากทำ configuration สำเร็จ
     
-    ![](/images/projects15.efde8409.png)
+    ![](images/projects15.efde8409.png)

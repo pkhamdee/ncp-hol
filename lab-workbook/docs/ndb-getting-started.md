@@ -15,7 +15,7 @@ Nutanix ขจัดความท้าทายเหล่านี้ไป
 
 นอกเหนือจากการแก้ปัญหา infrastructure ทั่วไปสำหรับการ hosting business-critical applications แล้ว NDB ยังมุ่งหวังที่จะจัดการกับ pain points หลักๆ มากมายที่เกี่ยวข้องกับการจัดการ databases ด้วย
 
-![](/images/ndb_new4.d1c366a1.png)
+![](images/ndb_new4.d1c366a1.png)
 
 จากงานวิจัยในปี 2025 ของบริษัทในอเมริกาเหนือจำนวนมากที่มีพนักงานมากกว่า 1,000 คน พบแนวโน้มข้อมูลต่อไปนี้:
 
@@ -27,7 +27,7 @@ Nutanix ขจัดความท้าทายเหล่านี้ไป
 
 ตัวเลขเหล่านี้ที่ยังคงสถานะเดิมไว้ นำไปสู่การใช้งาน storage อย่างไม่มีประสิทธิภาพ และที่แย่ไปกว่านั้นคือสูญเสียเวลาของ administrator ทำความรู้จักกับ Nutanix Database Service (NDB)
 
-![](/images/ndb_new5.dc8bc420.png)
+![](images/ndb_new5.dc8bc420.png)
 
 Nutanix Database Service (NDB) ให้บริการ Database Lifecycle management ภายใน environment ของคุณ ด้วยการใช้ประโยชน์จาก Nutanix Cloud Platform เราสามารถใช้ประโยชน์จากพลังของ full stack ทั้ง storage, compute, และ software โดย NDB จะช่วยลดความซับซ้อนของ database operations และมี common APIs, CLI, และ consumer-grade GUI experience สำหรับ multiple database engines มันทำให้ database operations (เช่น cloning) มีประสิทธิภาพ ซึ่งจะช่วยลด TCO ของ database management ให้กับลูกค้าของเรา
 
@@ -46,7 +46,7 @@ NDB ถูกแจกจ่ายในรูปแบบ virtual appliance ท
     
 3. เลือก **> Settings** จากเมนู โปรดทราบว่า NDB ได้ถูก configured สำหรับ assigned cluster ของคุณเรียบร้อยแล้ว
 
-    ![](/images/6.8d49d40d.png)
+    ![](images/6.8d49d40d.png)
 
 4. เลือก **> Policies > SLAs** จากเมนู
 
@@ -71,7 +71,7 @@ maintenance window policy ช่วยให้คุณสามารถตั
     - **Set time to** : `22:00:00`
     - **Duration (hours)**: `8`
 
-    ![](/images/19.14b49166.png)
+    ![](images/19.14b49166.png)
 
     !!! note
         - Maintenance windows สามารถตั้งค่าให้รันแบบ weekly หรือ monthly ได้

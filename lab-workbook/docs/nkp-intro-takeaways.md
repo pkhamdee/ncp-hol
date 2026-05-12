@@ -1,5 +1,3 @@
-# NKP Advanced Hands-on Lab
+# Takeaways
 
-# [#](#takeaways) Takeaways
-
-🎉 Congratulations! You have deployed your first NKP cluster getting familiar with the NKP CLI and the required inputs such as NKP cluster name, Kubernetes control plane VIP, and others.
+🎉 ขอแสดงความยินดีด้วย! คุณได้ทำการ deploy NKP cluster แรกของคุณสำเร็จแล้ว และได้เริ่มทำความคุ้นเคยกับ NKP CLI รวมถึง inputs ที่จำเป็น เช่น NKP cluster name, Kubernetes control plane VIP และอื่นๆ

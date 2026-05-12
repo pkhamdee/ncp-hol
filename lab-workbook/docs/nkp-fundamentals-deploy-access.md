@@ -1,56 +1,57 @@
-# NKP Advanced Hands-on Lab
+# Accessing the shared NKP environment
 
-# [#](#accessing-the-shared-nkp-environment) Accessing the shared NKP environment
+เริ่มต้นจาก lab นี้ คุณจะได้ใช้งาน multi-cluster setup ที่เตรียมไว้ซึ่งกล่าวถึงไปแล้วในช่วงต้นของ bootcamp ในการที่จะโต้ตอบกับ environment นี้ คุณต้องดึง access token ออกมาก่อน เพื่อนำไปใช้กับ CLIs ใน terminal ของคุณ
 
-Starting from this lab you'll be using the staged multi-cluster setup mentioned at the beginning of the bootcamp. In order to interact with the environment, you must retrieve an access token first to use with the CLIs in your terminal.
+!!! warning
+    โปรดอย่าดำเนินการใดๆ ที่เป็นการทำลาย
 
-Please do not perform destructive actions
+    คุณกำลังใช้งาน environment นี้ร่วมกับผู้อื่น
 
-You are sharing this environment with other users.
-
-1.  Access the shared NKP management console on a new tab. If you are unsure of the connection details, ask your instructor.
+1.  เข้าถึง NKP management console ที่ใช้ร่วมกันในแท็บใหม่ หากคุณไม่แน่ใจเกี่ยวกับรายละเอียดการเชื่อมต่อ โปรดสอบถามผู้สอนของคุณ
     
-    Ex: _https://`#.#.#`.16/dkp/kommander/dashboard_
+    เช่น: _https://`#.#.#`.16/dkp/kommander/dashboard_
     
-    accept the self-signed certificate.
+    กดยอมรับ self-signed certificate
     
-    ![Dashboard URL](/cloudnative/assets/dashboard-url.0d38f8c0.png)
+    ![Dashboard URL](images/dashboard-url.0d38f8c0.png)
     
-2.  Choose `log in with ntnxlab.local`, and use your credentials
+2.  เลือก `log in with ntnxlab.local` และใช้ credentials ของคุณ
     
-    You don't need to add the domain in your Username
+    คุณไม่ต้องระบุ domain ใน Username ของคุณ
     
-    ![AD authentication](/cloudnative/assets/dashboard-ldap-auth.e90e9704.gif)
+    ![AD authentication](images/dashboard-ldap-auth.e90e9704.gif)
     
-3.  Click your user at the top right, followed by **Generate Token**
+3.  คลิกที่ user ของคุณที่ด้านขวาบน ตามด้วย **Generate Token**
     
-    ![Generate token](/cloudnative/assets/dashboard-token.d17bb54b.png)
+    ![Generate token](images/dashboard-token.d17bb54b.png)
     
-4.  Choose the **Main** NKP cluster (management) because this is where you'll be deploying the example application
+4.  เลือก **Main** NKP cluster (management) เพราะนี่คือที่ที่คุณจะทำการ deploy ตัวอย่าง application
     
-    ![Token main cluster](/cloudnative/assets/token-main-cluster.70ced8b8.png)
+    ![Token main cluster](images/token-main-cluster.70ced8b8.png)
     
-5.  Re-authenticate with your adminuser`##`
+5.  Re-authenticate ด้วย adminuser`##` ของคุณ
     
-6.  Back in VS Code open a new terminal, use the `+` icon next to the _TERMINAL_ bar at the bottom
+6.  กลับไปที่ VS Code เปิด terminal ใหม่ โดยใช้ไอคอน `+` ถัดจากแถบ _TERMINAL_ ที่ด้านล่าง
     
-    ![New terminal](/cloudnative/assets/new-terminal.d7f452d7.png)
+    ![New terminal](images/new-terminal.d7f452d7.png)
     
-7.  Follow the `Linux` steps pasting the commands in the new terminal
+7.  ทำตามขั้นตอนของ `Linux` โดยการวาง (paste) คำสั่งลงใน terminal ใหม่
     
-    Ignore the install and set up kubectl. It was installed as part of the Admin VM creation.
+    !!! info
+        ให้ข้าม (ignore) ขั้นตอน install and set up kubectl มันได้ถูกติดตั้งไปแล้วในขั้นตอนของการสร้าง Admin VM
     
-    ![Paste token](/cloudnative/assets/token-steps.66812230.png)
+    ![Paste token](images/token-steps.66812230.png)
     
-8.  Once you have finished with the **the 5 code blocks**, confirm you can interact with the cluster
+8.  เมื่อคุณทำขั้นตอนกับ **code blocks ทั้ง 5** เสร็จเรียบร้อยแล้ว ให้ยืนยัน (confirm) ว่าคุณสามารถโต้ตอบกับคลัสเตอร์ได้
     
     -   command
-    -   output (example)
     
     ```
     kubectl get nodes
     ```
-    
+
+    -   output (ตัวอย่าง)
+
     ```
     NAME                         STATUS   ROLES           AGE    VERSION
     nkp-brfn6-68ppw              Ready    control-plane   12h   v1.34.1
@@ -62,9 +63,8 @@ You are sharing this environment with other users.
     nkp-md-0-rbns5-fvdf8-vkkpn   Ready    <none>          12h   v1.34.1
     ```
     
-    WARNING
-    
-    If the previous command throws an error or authentication request, ensure you applied **all** the **5** code blocks from the step before
+    !!! warning    
+        หากคำสั่งก่อนหน้านี้เกิดข้อผิดพลาด (error) หรือมีคำขอการตรวจสอบสิทธิ์ (authentication request) โปรดตรวจสอบให้แน่ใจว่าคุณได้ apply **code blocks ทั้งหมด 5 อัน** จากขั้นตอนก่อนหน้านี้
     
 
-Now you are set to operate with the shared NKP management cluster.
+ตอนนี้คุณพร้อมที่จะใช้งานร่วมกับ NKP management cluster ที่ใช้ร่วมกันแล้ว

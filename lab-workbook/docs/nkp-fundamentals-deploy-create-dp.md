@@ -1,61 +1,62 @@
-# NKP Advanced Hands-on Lab
+# Using kubectl to Create a Deployment
 
-# [#](#using-kubectl-to-create-a-deployment) Using kubectl to Create a Deployment
+มาลอง deploy แอปแรกของเราบน Kubernetes ด้วยคำสั่ง `kubectl create deployment` กันเถอะ
 
-Let’s deploy our first app on Kubernetes with the `kubectl create deployment` command.
-
-1.  We need to provide the deployment name and app image location. Back in the VS Code terminal, run the following command updating `##` first with your user number
+1.  เราจำเป็นต้องระบุชื่อ deployment และตำแหน่งของ app image กลับไปที่ VS Code terminal ให้รันคำสั่งต่อไปนี้ โดยอัปเดต `##` เป็นหมายเลข user ของคุณก่อน
     
     -   command
-    -   example
-    -   output (example)
-    
+
     ```
     kubectl create deployment user##-nkp-simple-app --image=nginx:1.27
     ```
     
+    -   example
+
     ```
     kubectl create deployment user01-nkp-simple-app --image=nginx:1.27
     ```
     
+    -   output (ตัวอย่าง)
+
     ```
     deployment.apps/user01-nkp-simple-app created
     ```
     
-    🎉 Great! You just deployed your first application by creating a deployment.
+    🎉 เยี่ยมมาก! คุณเพิ่งจะ deploy แอปพลิเคชันแรกของคุณสำเร็จด้วยการสร้าง deployment
     
-    (Optional) Explanation of deployment creation
+    **(ทางเลือก)** คำอธิบายเกี่ยวกับการสร้าง deployment
     
-    This performed a few things for you:
+    สิ่งนี้ช่วยดำเนินการบางอย่างให้คุณดังนี้:
     
-    -   searched for a suitable node where an instance of the application could be run
-    -   scheduled the application to run on that Node
-    -   configured the cluster to reschedule the instance on a new Node when needed
+    -   ค้นหา node ที่เหมาะสมที่สามารถรัน instance ของแอปพลิเคชันได้
+    -   ทำการ schedule ให้แอปพลิเคชันรันบน Node นั้น
+    -   ตั้งค่า (configure) คลัสเตอร์ให้ทำการ reschedule ตัว instance บน Node ใหม่เมื่อจำเป็น
     
-2.  Go ahead and list the deployments:
+2.  ดำเนินการต่อเพื่อดูรายการ (list) ของ deployments:
     
     -   command
-    -   output (example)
-    
+
     ```
     kubectl get deployments
     ```
     
+    -   output (ตัวอย่าง)
+
     ```
     NAME                                                      READY   UP-TO-DATE   AVAILABLE   AGE
     cluster-autoscaler-0193785b-4589-7210-9427-7709ece7adfc   1/1     1            1           45h
     user01-nkp-simple-app                                     1/1     1            1           30s
     ```
     
-    We see that the `user##-nkp-simple-app` deployment is running a single instance of the app.
+    เราจะเห็นว่า deployment `user##-nkp-simple-app` กำลังรัน app จำนวนหนึ่ง instance
     
 
-#### [#](#view-the-app) View the app
+#### View the app
 
-We will cover other options on how to expose your application outside the Kubernetes cluster on the next lab.
+เราจะกล่าวถึงตัวเลือกอื่นๆ ในการ expose แอปพลิเคชันของคุณออกสู่ภายนอก Kubernetes cluster ใน lab ถัดไป
 
-(Optional) View the app during development
+**(ทางเลือก)** การดูแอปพลิเคชันระหว่างการพัฒนา (development)
 
-Pods that are running inside Kubernetes are running on a private, isolated network. By default they are visible from other pods and services within the same Kubernetes cluster, but not outside that network.
+Pods ที่กำลังรันอยู่ภายใน Kubernetes นั้นจะรันอยู่บนเครือข่ายส่วนตัว (private network) ที่ถูกแยกออกมา โดยค่าเริ่มต้น (By default) พวกมันจะสามารถมองเห็นได้จาก pods และ services อื่นๆ ภายใน Kubernetes cluster เดียวกันเท่านั้น แต่จะไม่สามารถมองเห็นได้จากภายนอกเครือข่ายนั้น
 
-The `kubectl proxy` command can create a proxy that will forward communications into the cluster-wide, private network. We won't be using this option because this is only useful for development.
+คำสั่ง `kubectl proxy` สามารถสร้าง proxy ที่จะ forward การสื่อสารเข้าไปยังเครือข่ายส่วนตัวทั่วทั้งคลัสเตอร์ได้ เราจะไม่ใช้ตัวเลือกนี้เนื่องจากมีประโยชน์เฉพาะในระหว่างการพัฒนา (development) เท่านั้น

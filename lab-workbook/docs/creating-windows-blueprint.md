@@ -29,7 +29,7 @@ A Blueprint is the framework for every application or piece of infrastructure th
     The Project and Environment should be the same which you had created as part of the Projects Exercise.
     
 
-![](/images/selfservice10.46d64b9b.png)
+![](images/selfservice10.46d64b9b.png)
 
 6.  Click **VM Details**.
     
@@ -41,7 +41,7 @@ A Blueprint is the framework for every application or piece of infrastructure th
     
 9.  Click **Clone from environment**. Since you've previously specified the details for your Windows VM within your Project, there's no need to enter that same information again.
     
-    ![](/images/selfservice11.77b42afc.png)
+    ![](images/selfservice11.77b42afc.png)
     
 10.  In General Configuration - enter **vm-@@{calm\_array\_index}@@-@@{calm\_time}@@** within the VM Name field.
     

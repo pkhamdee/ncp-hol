@@ -4,7 +4,7 @@ Nutanix Cloud Platform มีความสามารถในด้าน In
 
 Nutanix Cloud Manager ช่วยเร่งการทำงานของ Cloud Operating Model โดยเปิดโอกาสให้ลูกค้าสามารถ Build, Operate และ Govern สภาพแวดล้อม Hybrid Multicloud ของตนเองได้
 
-![Build Operate Govern](/images/cloudoperating1.83de13f8.png)
+![Build Operate Govern](images/cloudoperating1.83de13f8.png)
 
 # A Day in the Life of an IT Administrator
 

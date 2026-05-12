@@ -2,7 +2,7 @@
 
 การทำ database VM deployment แบบดั้งเดิมมีลักษณะคล้ายกับแผนภาพด้านล่าง กระบวนการนี้มักจะเริ่มต้นด้วย IT ticket สำหรับ database (จาก Dev, Test, QA, Analytics, ฯลฯ) จากนั้น ทีมจะต้อง deploy ตัว storage resources และ VM(s) ที่จำเป็น เมื่อ infrastructure พร้อมใช้งาน Database Administrator (DBA) จะต้องทำการ provision และ configure ตัว database software เมื่อทำการ provision เสร็จแล้ว จะต้องปรับใช้ best practices ซึ่งรวมถึง data protection และ backup policies ในท้ายที่สุด database จะสามารถส่งมอบให้กับ end user ได้ ซึ่งมีขั้นตอนการส่งมอบมากมายและอาจก่อให้เกิดปัญหาตามมาได้
 
-![](/images/n00.4edf9d4c.png)
+![](images/n00.4edf9d4c.png)
 
 การทำ Provisioning และ protecting ให้กับ databases จะใช้เวลาและแรงลดลงอย่างมากเมื่อใช้ NDB ในขณะที่ดำเนินการตามขั้นตอนใน labs ให้พิจารณาว่าคุณจะดำเนินการ tasks เหล่านี้ใน existing environment ของคุณในปัจจุบันอย่างไรแล้วนำมาเปรียบเทียบกัน
 
@@ -27,7 +27,7 @@
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoQRdEfm8ZJNGlYLQ2iw08eVk/Wyj0zl3M5KyqKmBTpUaS1uxj0K05HMHaUNP+AeJ63Qa2hI1RJHBJOnV7Dx28/yN7ymQpvO1jWejv/AT/yasC9ayiIT1rCrpHvEDXH9ee0NZ3Dtv91R+8kDEQaUfJLYa5X97+jPMVFC7fWK5PqZRzx+N0bh1izSf8PW0snk3t13DYovHFtlTpzVaYRec/XfgHF9j0032vQDK3svfQqCVzT02NXeEyksLbRfGJwl3UsA1ujQdPgalil0RyyWzCMIabVofz+Czq4zFDFjX+ZPQKZr94/h/6RMBRyWFY5CsUVvw8f+Rq6kW+VTYMvvkv
     ```
     
-    ![](/images/n01a.39cf26d5.png)![](/images/n01b.0312fc1c.png)
+    ![](images/n01a.39cf26d5.png)![](images/n01b.0312fc1c.png)
     
     !!! note 
         SSH public key ด้านบนมีไว้เป็นตัวอย่างและถูกตั้งค่าให้เป็น authorized key สำหรับ operating system ที่ถูก provisioned โดย NDB ในสภาพแวดล้อมที่ไม่ใช่ lab คุณจะต้องสร้าง SSH private/public key pair ของคุณเอง และใช้ public key ในระหว่างขั้นตอนนี้
@@ -41,7 +41,7 @@
     -   **Name of Initial Database** - `User##initialdb`
     -   **Database user password** - `nutanix/4u`
     
-    ![](/images/n04.3be8877f.png)
+    ![](images/n04.3be8877f.png)
     
     !!! note    
         NDB ยังให้ความสามารถในการรัน scripts หรือ commands ทั้งก่อนและหลังการทำ database creation ซึ่งสามารถใช้เพื่อปรับแต่ง (customize) ตัว environment เพิ่มเติมตามความต้องการเฉพาะขององค์กรได้
@@ -52,7 +52,7 @@
     -   **SLA** - DEFAULT\_OOB\_GOLD\_SLA
     -   **Schedule** - (default)
     
-    ![](/images/4f2.612bbe7a.png)
+    ![](images/4f2.612bbe7a.png)
     
     !!! note    
         -   ส่วนของ Time Machine จะตั้งเวลาที่คุณต้องการทำ full snapshots ให้กับ database, วิธีการทำงานในหนึ่งวัน, และความถี่ที่คุณต้องการให้ log backups ทำงาน
@@ -65,7 +65,7 @@
         -   ทำเครื่องหมายที่ **Database Patching**
     -   **Maintenance Windows** - `user##-maintenance-policy`
     
-    ![](/images/9.60703453.png)
+    ![](images/9.60703453.png)
     
     !!! note    
         -   ตัวเลือกในการเลือก maintenance policy ระหว่างการทำ provisioning เป็นอีกวิธีหนึ่งที่ NDB ช่วยให้ database VMs ของคุณได้รับการอัปเดตและปลอดภัย
@@ -85,11 +85,11 @@
 
 1.  เลือก **\> Database Server VMs** จากนั้นเลือก **list** จากเมนูด้านบน
     
-    ![](/images/20.4255e03b.png)
+    ![](images/20.4255e03b.png)
     
 2.  คลิกที่ `User##`\-postgres ของคุณจากรายการ VMs ซึ่งควรจะนำคุณไปยังหน้า database servers details ตามที่แสดงด้านล่าง
     
-    ![](/images/21.d8923698.png)
+    ![](images/21.d8923698.png)
     
 3.  เลือก **\>Actions > Patch OS Now**
     
@@ -98,7 +98,7 @@
     -   ขยายส่วน **Custom Commands > Operating System Patching Command** : ป้อน `sudo dnf update -y --security`
     -   ภายใต้ **Reboot Needed** : เลือก Yes
     
-    ![](/images/22.e7d1968a.png)
+    ![](images/22.e7d1968a.png)
     
     !!! note    
         -   เราเลือกที่จะ reboot yes ในกรณีนี้ แต่คุณจะได้รับตัวเลือกให้ reboot ภายหลังได้หากจำเป็น
@@ -108,7 +108,7 @@
     
 5.  คลิกที่แถบสีเขียวเพื่อตรวจสอบ progress ของ patching operation
     
-    ![](/images/23.f98533e1.png)
+    ![](images/23.f98533e1.png)
     
 
 นี่คือความรวดเร็วที่คุณสามารถทำ patch ให้กับ day-zero vulnerability บน database VM operating system ด้วย NDB คุณจะต้องทำซ้ำขั้นตอนนี้กับ affected VMs อื่นๆ ใน environment ของคุณ NDB จะใช้ patch repository ที่ตั้งค่าไว้บน database VM เพื่อดึง patches มา อย่างไรก็ตาม สิ่งนี้จะทำการ patch ตัว database operating system เท่านั้น
@@ -119,15 +119,15 @@ NDB สามารถทำ patch ให้กับ database servers ของ
 
 1.  เลือก **\>Database Server VMs** จากนั้นคลิก **List** บนเมนูด้านบน
     
-    ![](/images/24.be216d06.png)
+    ![](images/24.be216d06.png)
     
 2.  เลือก `user##-postgres` VM ของคุณจากรายการ
     
-    ![](/images/25.99dd16e3.png)
+    ![](images/25.99dd16e3.png)
     
 3.  เลือก Actions Dropdown จากนั้นเลือก Maintenance
     
-    ![](/images/26.e4d8b16b.png)
+    ![](images/26.e4d8b16b.png)
     
 4.  เลือกตัวเลือกต่อไปนี้:
     
@@ -135,7 +135,7 @@ NDB สามารถทำ patch ให้กับ database servers ของ
     -   **Database Patching** - Check
     -   **Maintenance Window** - เลือก `user##-maintenance-policy`
     
-    ![](/images/27.d1bce96a.png)
+    ![](images/27.d1bce96a.png)
     
     คุณสามารถเลือกที่จะ schedule ตัว OS Patching หรือ Database patching อย่างใดอย่างหนึ่งหรือทั้งสองอย่างก็ได้ นอกจากนี้ คุณยังสามารถเลือก multiple VMs พร้อมกันเพื่อเชื่อมโยง (associate) กับ maintenance window policy ได้ เมื่อคุณเลือกเสร็จแล้ว ให้คลิก **Associate**
     

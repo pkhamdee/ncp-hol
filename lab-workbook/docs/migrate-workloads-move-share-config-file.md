@@ -11,7 +11,7 @@
     -   **username** - `<PC username> adminuser##@ntnxlab.local` หรือ `adminuser##`
     -   **password** - `<PC password provided>` จาก Connection Details
 
-    ![](/images/pc-login.0df391a6.png)
+    ![](images/pc-login.0df391a6.png)
 
 2.  นำทางไปยังส่วน App Switcher ที่บริเวณด้านซ้ายบนของ Prism Central
     
@@ -20,19 +20,19 @@
     
     คลิก `Files` ใน App Switcher ภายใต้ Unified Storage
     
-    ![](/images/open-files.12edd40b.png)
+    ![](images/open-files.12edd40b.png)
     
     file server ที่ชื่อว่า **nextfiles** ได้ถูก deploy ไว้ให้คุณใช้งานเรียบร้อยแล้ว คลิกที่ชื่อ `nextfiles` เพื่อเข้าใช้งาน
     
-    ![](/images/nextfiles.edaf5e80.png)
+    ![](images/nextfiles.edaf5e80.png)
     
 3.  คลิกที่ `Shares & Exports` จาก top menu
     
-    ![](/images/open-shares.8317afbc.png)
+    ![](images/open-shares.8317afbc.png)
     
 4.  คลิก `+New Share or Export`
     
-    ![](/images/new-share.9eac7203.png)
+    ![](images/new-share.9eac7203.png)
     
 5.  ใส่ค่า `user##` ในฟิลด์ **Name** โดยที่ `##` คือ `User #` ที่คุณได้รับมอบหมายจาก Connection Details สำหรับส่วนที่เหลือ ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
@@ -45,14 +45,14 @@
     
     -   Primary Protocol Access: เลือก `SMB (Ideal for Windows Clients)` เนื่องจาก source share เป็น Windows
     
-    ![](/images/create-file-share1.f799c6c7.png)
+    ![](images/create-file-share1.f799c6c7.png)
     
 
 6.  ในหน้า General Settings ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
     -   Enable Self-Service Restore: อนุญาตให้ผู้ใช้งานสามารถ restore files บน File Server ได้
     -   Enable Compression: เปิดใช้งาน Compression บน share เพื่อช่วยประหยัดพื้นที่จัดเก็บ
-    -   Blocked File Types: จำกัดประเภทของ file ที่อนุญาตให้จัดเก็บไว้บน share/export ได้ ![](/images/create-file-share2.11134c2f.png)
+    -   Blocked File Types: จำกัดประเภทของ file ที่อนุญาตให้จัดเก็บไว้บน share/export ได้ ![](images/create-file-share2.11134c2f.png)
 
 7.  ในหน้า Protocol Settings and Permissions ให้คงค่า default ไว้ ข้อมูลต่อไปนี้คือคำจำกัดความของแต่ละฟิลด์เพื่อเป็นข้อมูลเพิ่มเติม คลิก `Next`
     
@@ -66,11 +66,11 @@
     
     ในกรณีนี้ เราใช้ standard share ซึ่ง file server จะให้บริการจาก FSVM เพียงตัวเดียว
     
-    ![](/images/create-file-share3.95f8021f.png)
+    ![](images/create-file-share3.95f8021f.png)
     
 8.  ในหน้า Summary ตรวจสอบความถูกต้องของการตั้งค่าและคลิก `Create` share จะปรากฏขึ้นในไม่ช้า และพร้อมสำหรับจัดเก็บ files
     
-    ![](/images/create-file-share4.74e50973.png)![](/images/create-file-share5.fbf0248d.png)
+    ![](images/create-file-share4.74e50973.png)![](images/create-file-share5.fbf0248d.png)
     
 
 ## Create REST API user
@@ -79,11 +79,11 @@
 
 1.  คลิก `Configuration > Manage Roles` จาก top menu ของ Nutanix Files
 
-    ![](/images/new-api-user.7a9f9220.png)
+    ![](images/new-api-user.7a9f9220.png)
 
 2.  ในส่วนของ REST API access users ให้คลิก `+New User`
     
-    ![](/images/new-api-user2.f39cdf32.png)
+    ![](images/new-api-user2.f39cdf32.png)
     
 3.  ทำการสร้าง New user โดยใช้ credentials ต่อไปนี้ แล้วคลิกที่เครื่องหมายถูก (check mark) โปรดจำ username และ password นี้ไว้ใช้สำหรับส่วนถัดไป คุณสามารถเลือกใช้ password อื่นได้ตามอิสระ แต่คุณจะต้องใช้มันในภายหลัง
 
@@ -93,7 +93,7 @@
     !!! note
         อย่าลืมคลิกที่เครื่องหมายถูก (check mark)
 
-    ![](/images/new-api-user3.8f91f596.png)
+    ![](images/new-api-user3.8f91f596.png)
 
 4.  จาก App Switcher คุณสามารถกลับไปยังส่วนของ Infrastructure
 

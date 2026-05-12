@@ -1,45 +1,39 @@
-# NKP Advanced Hands-on Lab
+# Set up GitOps Deployment Lab
 
-Note
+จนถึงตอนนี้ ขั้นตอนทั้งหมดที่คุณได้ดำเนินการนั้นเป็นการรันคำสั่งโดยใช้ _kubectl_ หรือคลิกบน UI การ deploy แบบ manual เหล่านี้ทำให้เกิดความท้าทายดังต่อไปนี้:
 
--   Expected lab duration: 6 minutes
-
-# [#](#set-up-gitops-deployment) Set up GitOps Deployment Lab
-
-Until now, all the steps you've performed have been by executing commands using _kubectl_, or on the UI doing clicks. These manual deployments bring the following challenges:
-
-1.  **Inconsistencies**: Changes made directly to the cluster can drift from documentation or intended configurations.
+1.  **Inconsistencies**: การเปลี่ยนแปลงที่ทำโดยตรงกับคลัสเตอร์อาจคลาดเคลื่อนไปจากเอกสารประกอบหรือการกำหนดค่าที่ตั้งใจไว้
     
-2.  **Lack of Automation**: Manual updates require repetitive tasks prone to human error.
+2.  **Lack of Automation**: การอัปเดตแบบ manual จำเป็นต้องทำซ้ำๆ ซึ่งเสี่ยงต่อความผิดพลาดของมนุษย์
     
-3.  **Limited Traceability**: There’s no inherent record of who changed what and why.
+3.  **Limited Traceability**: ไม่มีบันทึกในตัวว่าใครเปลี่ยนอะไรและทำไม
     
 
 ---
 
-When implementing GitOps, the application manifests are stored in a Git repository. Using a Continuous Delivery or Deployment (CD) tool, the manifests can be automatically deployed and synced to a Kubernetes cluster.
+เมื่อใช้งาน GitOps manifest ของ application จะถูกเก็บไว้ใน Git repository เมื่อใช้เครื่องมือ Continuous Delivery หรือ Deployment (CD) manifest จะสามารถถูก deploy และ sync กับ Kubernetes cluster ได้โดยอัตโนมัติ
 
-We will use NKP's built-in GitOps tool, FluxCD to sync the repository with the Kubernetes cluster. This allows us to manage updates by making changes to the repository and allowing the GitOps tool to apply them automatically.
+เราจะใช้เครื่องมือ GitOps ที่มากับ NKP ซึ่งก็คือ FluxCD เพื่อ sync repository กับ Kubernetes cluster สิ่งนี้ช่วยให้เราสามารถจัดการการอัปเดตโดยการเปลี่ยนแปลงที่ repository และปล่อยให้เครื่องมือ GitOps นำไปประยุกต์ใช้โดยอัตโนมัติ
 
-Did You Know?
+!!! info
+    รู้หรือไม่?
 
-**GitOps** requires NKP Ultimate
+    **GitOps** จำเป็นต้องใช้ NKP Ultimate
 
-#### [#](#create-a-gitops-source) Create a GitOps Source
+#### Create a GitOps Source
 
-1.  From the left-hand menu in the NKP console, select Projects and open the project named `user##` corresponding to your username. (**user16** shown in the screenshot below)
+1.  จากเมนูด้านซ้ายใน NKP console ให้เลือก Projects และเปิด project ที่ชื่อ `user##` ซึ่งตรงกับชื่อผู้ใช้ของคุณ (ในรูปด้านล่างแสดง **user16**)
     
-    ![Projects overview](/cloudnative/assets/projects_overview.95db64a9.png)
+    ![Projects overview](images/projects_overview.95db64a9.png)
     
-    Note
+    !!! note    
+        สำหรับการทบทวนเกี่ยวกับ Projects กรุณาไปที่ [Chapter](/nkp-fundamentals-multi-proj/index.html) นี้
     
-    For a refresher on Projects, please visit this [Chapter](/cloudnative/automation/fundamentals/multitenancy-basics/nkp-projects.html).
+2.  นำทางไปยังแท็บ **Continuous Deployment (CD)** และคลิก `Add GitOps Source`
     
-2.  Navigate to **Continuous Deployment (CD)** tab and click `Add GitOps Source`.
+    ![Add GitOps source](images/add_source.9521f23c.png)
     
-    ![Add GitOps source](/cloudnative/assets/add_source.9521f23c.png)
-    
-3.  On the GitOps Source configuration page, provide the following details:
+3.  ในหน้าต่างการกำหนดค่า GitOps Source ให้ระบุรายละเอียดดังต่อไปนี้:
     
     -   **ID (name)**:
     
@@ -68,21 +62,23 @@ Did You Know?
     ./release/without-istio
     ```
     
-    Ensure the path is exactly as seen above.
+    !!! info
+        ตรวจสอบให้แน่ใจว่า path ตรงตามที่เห็นด้านบนนี้พอดี
     
-4.  Once the details are filled in, save the configuration. This will set up the GitOps Source for your project.
+4.  เมื่อกรอกรายละเอียดครบแล้ว ให้บันทึกการกำหนดค่า ซึ่งจะเป็นการตั้งค่า GitOps Source สำหรับ project ของคุณ
     
-    ![GitOps source](/cloudnative/assets/boutique_gitops_source.609165ea.gif)
+    ![GitOps source](images/boutique_gitops_source.609165ea.gif)
     
 
-The application that you will be deploying is an online boutique app, which is a microservices-based reference application designed to illustrate the complexities and best practices of managing and deploying distributed systems. The app is composed of 11 different microservices, each written in different programming languages and frameworks.
+Application ที่คุณกำลังจะ deploy คือ online boutique app ซึ่งเป็น reference application ที่ทำงานบนพื้นฐานของ microservices ซึ่งออกแบบมาเพื่อแสดงให้เห็นถึงความซับซ้อนและแนวทางปฏิบัติที่ดีที่สุดในการจัดการและ deploy ระบบแบบ distributed แอปพลิเคชันนี้ประกอบด้วย microservices ที่แตกต่างกัน 11 ตัว ซึ่งแต่ละตัวเขียนด้วยภาษาโปรแกรมและเฟรมเวิร์กที่แตกต่างกัน
 
-Did you know?
+!!! info
+    รู้หรือไม่?
 
-Platform Engineers can enable developer self-service and automation while providing a consistent and flexible developer experience.
+    Platform Engineers สามารถเปิดใช้งาน self-service สำหรับนักพัฒนาและระบบอัตโนมัติ พร้อมทั้งมอบประสบการณ์ของนักพัฒนาที่สอดคล้องและยืดหยุ่นได้
 
--   **Staging Workflow**: Code pushed to the staging directory is synced by FluxCD to staging clusters tied to the staging Project.
--   **Production Workflow**: Code pushed to the production directory is synced by FluxCD to production clusters tied to the production Project.
--   **Namespace as a Service**: Adding a new cluster to a Project automatically applies the application and namespace configurations to it.
+    -   **Staging Workflow**: โค้ดที่ถูก push ไปยัง directory สำหรับ staging จะถูก sync โดย FluxCD ไปยัง staging clusters ที่เชื่อมโยงกับ staging Project
+    -   **Production Workflow**: โค้ดที่ถูก push ไปยัง directory สำหรับ production จะถูก sync โดย FluxCD ไปยัง production clusters ที่เชื่อมโยงกับ production Project
+    -   **Namespace as a Service**: การเพิ่ม cluster ใหม่ไปยัง Project จะเป็นการนำการกำหนดค่า application และ namespace ไปใช้กับ cluster นั้นโดยอัตโนมัติ
 
-![GitOps Sync](/cloudnative/assets/gitops_sync.fe9e53be.png)
+    ![GitOps Sync](images/gitops_sync.fe9e53be.png)

@@ -1,48 +1,49 @@
-# NKP Advanced Hands-on Lab
+# Using a Service to Expose Your App
 
-# [#](#using-a-service-to-expose-your-app) Using a Service to Expose Your App
+Service ใน Kubernetes คือ abstraction ที่กำหนด logical set ของ Pods และ policy สำหรับการ routing traffic ไปยัง applications ของคุณ
 
-A Service in Kubernetes is an abstraction that defines a logical set of Pods and a policy for routing traffic to your applications.
+Services สามารถถูก expose ได้ในวิธีต่างๆ โดยการระบุ `type` ใน spec ของ Service โดย services ที่พบบ่อยที่สุดคือ:
 
-Services can be exposed in different ways by specifying a `type` in the spec of the Service. Most common services are:
-
--   _ClusterIP_ (default) - Exposes the Service on an internal IP in the cluster. Service only reachable from within the cluster.
+-   _ClusterIP_ (default) - Expose ตัว Service บน internal IP ในคลัสเตอร์ Service จะสามารถเข้าถึงได้จากภายในคลัสเตอร์เท่านั้น
     
--   _NodePort_ - Exposes the Service on the same port of each selected Node in the cluster using NAT. Service accessible from outside the cluster using `<NodeIP>:<NodePort>`. Superset of ClusterIP.
+-   _NodePort_ - Expose ตัว Service บน port เดียวกันของแต่ละ Node ที่ถูกเลือกในคลัสเตอร์โดยใช้ NAT ตัว Service สามารถเข้าถึงได้จากภายนอกคลัสเตอร์โดยใช้ `<NodeIP>:<NodePort>` เป็น Superset ของ ClusterIP
     
--   _LoadBalancer_ - Creates an external load balancer in the current cloud (if supported) and assigns a fixed, external IP to the Service. Superset of NodePort.
+-   _LoadBalancer_ - สร้าง external load balancer ใน cloud ปัจจุบัน (หากรองรับ) และกำหนด (assign) external IP แบบคงที่ให้กับ Service เป็น Superset ของ NodePort
     
 
-#### [#](#creating-a-nodeport-service) Creating a NodePort Service
+#### Creating a NodePort Service
 
-A NodePort service is the most used service type for users getting started with Kubernetes when they don't have a load balancing service.
+NodePort service เป็น service type ที่ถูกใช้มากที่สุดสำหรับผู้ใช้ที่เริ่มต้นกับ Kubernetes เมื่อพวกเขาไม่มี load balancing service
 
-1.  We'll use the expose command with NodePort as parameter to create a new service. Make sure you update `##` with your user number
+1.  เราจะใช้ expose command พร้อมกับ NodePort เป็น parameter เพื่อสร้าง service ใหม่ ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` เป็นหมายเลข user ของคุณ
     
     -   command
-    -   example
-    -   output
-    
+
     ```
     kubectl expose deployment/user##-nkp-simple-app --type="NodePort" --port 80
     ```
     
+    -   example
+
     ```
     kubectl expose deployment/user01-nkp-simple-app --type="NodePort" --port 80
     ```
     
+    -   output
+
     ```
     service/user01-nkp-simple-app exposed
     ```
     
-2.  Run the `get services` subcommand:
+2.  รัน subcommand `get services`:
     
     -   command
-    -   output (example)
-    
+
     ```
     kubectl get services
     ```
+
+    -   output (example)
     
     ```
     NAME                                                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
@@ -51,22 +52,24 @@ A NodePort service is the most used service type for users getting started with 
     user01-nkp-simple-app                                     NodePort    10.111.180.214   <none>        80:31347/TCP     46s
     ```
     
-    We have now a running service called `user##-nkp-simple-app`. Here we see that the service received a unique cluster-IP, the internal container port, and an external node port.
+    ตอนนี้เรามี service ที่กำลังรันอยู่ชื่อ `user##-nkp-simple-app` ที่นี่เราจะเห็นว่า service ได้รับ cluster-IP ที่ไม่ซ้ำกัน, internal container port, และ external node port
     
-3.  (Optional) To see additional details for this service you can run the `describe service` subcommand:
+3.  (Optional) เพื่อดูรายละเอียดเพิ่มเติมสำหรับ service นี้ คุณสามารถรัน subcommand `describe service`:
     
     -   command
-    -   example
-    -   output (example)
-    
+
     ```
     kubectl describe services/user##-nkp-simple-app
     ```
     
+    -   example
+
     ```
     kubectl describe services/user01-nkp-simple-app
     ```
     
+    -   output (example)
+
     ```
     Name:                     user01-nkp-simple-app
     Namespace:                default
@@ -88,34 +91,37 @@ A NodePort service is the most used service type for users getting started with 
     Events:                   <none>
     ```
     
-4.  Let's create an environment variable called _NODE\_PORT_ that has the value of the Node port assigned. Make sure you update `##` with your user number:
+4.  มาสร้าง environment variable ที่ชื่อ _NODE\_PORT_ ซึ่งมีค่าของ Node port ที่ถูก assign กัน ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` ด้วยหมายเลข user ของคุณ:
     
     -   command
-    -   example
-    -   output (example)
     
     ```
     export NODE_PORT="$(kubectl get services/user##-nkp-simple-app -o go-template='{{(index .spec.ports 0).nodePort}}')"
     echo "NODE_PORT=$NODE_PORT"
     ```
+
+    -   example
     
     ```
     export NODE_PORT="$(kubectl get services/user01-nkp-simple-app -o go-template='{{(index .spec.ports 0).nodePort}}')"
     echo "NODE_PORT=$NODE_PORT"
     ```
     
+    -   output (example)
+
     ```
     NODE_PORT=31347
     ```
     
-5.  To test the app, first we need to know the IP addresses for our Nodes. Run the following command:
+5.  เพื่อทดสอบแอป ก่อนอื่นเราจำเป็นต้องรู้ IP addresses สำหรับ Nodes ของเรา ให้รันคำสั่งต่อไปนี้:
     
     -   command
-    -   output (example)
     
     ```
     kubectl get nodes -o wide
     ```
+
+    -   output (example)
     
     ```
     NAME                         STATUS   ROLES           AGE   VERSION   INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
@@ -128,29 +134,31 @@ A NodePort service is the most used service type for users getting started with 
     nkp-md-0-rbns5-fvdf8-vkkpn   Ready    <none>          12h   v1.34.1   10.38.30.79   <none>        Ubuntu 24.04.2 LTS   6.8.0-64-generic   containerd://1.7.29-d2iq.1
     ```
     
-6.  Choose **any** of the _INTERNAL-IP_ addresses and run the following command. Make sure you update `<any_node_IP>` with your preferred node IP:
+6.  เลือก _INTERNAL-IP_ addresses **ใดก็ได้** และรันคำสั่งต่อไปนี้ ตรวจสอบให้แน่ใจว่าคุณอัปเดต `<any_node_IP>` ด้วย node IP ที่คุณต้องการ:
     
     -   command
-    -   example
-    -   output (example)
     
     ```
     echo http://<any_node_IP>:$NODE_PORT
     ```
+
+    -   example
     
     ```
     echo http://10.38.30.124:$NODE_PORT
     ```
     
+    -   output (example)
+
     ```
     http://10.38.30.124:31347
     ```
     
-7.  Open the URL you got from the previous command in your browser. You should see the NGINX web server page
+7.  เปิด URL ที่คุณได้รับจากคำสั่งก่อนหน้านี้ในเบราว์เซอร์ของคุณ คุณควรจะเห็นหน้า NGINX web server
     
-    ![Nginx Chrome](/cloudnative/assets/nginx_chrome.7d0cd40e.png)
+    ![Nginx Chrome](images/nginx_chrome.7d0cd40e.png)
     
 
-(Optional) Diagram representing of what you just did
+**(Optional)** แผนภาพแสดงสิ่งที่คุณเพิ่งทำไป
 
-![NodePort diagram](/cloudnative/assets/nodeport_diagram.d7992df9.png)
+![NodePort diagram](images/nodeport_diagram.d7992df9.png)

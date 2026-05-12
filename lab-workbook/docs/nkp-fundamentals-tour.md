@@ -1,23 +1,5 @@
-# NKP Advanced Hands-on Lab
+# NKP Quick Tour
 
-# [#](#nkp-quick-tour) NKP Quick Tour
+หากคุณยังไม่เคยเห็น NKP console มาก่อน เราขอแนะนำให้ทำ sandbox lab ต่อไปนี้เพื่อให้คุ้นเคยกับ UI และเรียนรู้ features หลักบางส่วนของ NKP
 
-If you have not seen the NKP console before, we recommend taking the following sandbox lab to get familiar with the UI and learn some of the main NKP features.
-
-Note
-
-Once completed, close the sandbox screen (top right corner button)
-
-This is not a live environment
-
-Click to Start Sandbox Lab
-
-![Preview image of the interactive demo](https://hcti.io/v1/image/a408f352-e07b-45dd-84b7-70c61bcf341f)
-
-<iframe class="sl-demo" src="" name="sl-embed" allow="fullscreen" allowfullscreen="" style="display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;"></iframe>
-
-<iframe class="sl-demo" src="" name="sl-embed" allow="fullscreen" allowfullscreen="" style="display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;"></iframe>
-
-## Embedded Content
-
----
+👀 [Guided walkthrough ของ NKP](https://nutanix.storylane.io/demo/fywqircxmzjk?embed=popup) 👀

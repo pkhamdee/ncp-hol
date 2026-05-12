@@ -1,27 +1,21 @@
-# NKP Advanced Hands-on Lab
+# Persistent storage Lab
 
-Note
+เมื่อสร้าง NKP cluster บน Nutanix ตัว Nutanix Container Storage Interface (CSI) Driver สำหรับ Kubernetes จะถูก deploy โดยค่าเริ่มต้น
 
--   Expected lab duration: 15 minutes
+ด้วย Nutanix CSI คุณสามารถ:
 
-# [#](#persistent-storage) Persistent storage Lab
-
-When creating an NKP cluster on Nutanix, the Nutanix Container Storage Interface (CSI) Driver for Kubernetes gets deployed by default.
-
-With Nutanix CSI you can:
-
--   Provide persistent storage to your containers
+-   จัดเตรียม persistent storage ให้กับ containers ของคุณ
     
--   Leverage PVC resources to consume dynamically Nutanix storage
+-   ใช้ประโยชน์จาก PVC resources เพื่อ consume ตัว Nutanix storage แบบไดนามิก
     
--   With Files storage classes, applications on multiple pods can access the same storage, and also have the benefit of multi-pod read and write access (ReadWriteMany)
+-   ด้วย Files storage classes ตัว applications บนหลายๆ pods จะสามารถเข้าถึง (access) ตัว storage เดียวกันได้ และยังได้รับประโยชน์จาก multi-pod read and write access (ReadWriteMany)
     
 
-To practice with stateful workloads, for this lab we'll be deploying the well-known and broadly adopted WordPress CMS. There are two components, the frontend (UI) based on PHP, and the backend (database) based on MySQL.
+เพื่อฝึกฝนเกี่ยวกับ stateful workloads ใน lab นี้เราจะทำการ deploy ตัว WordPress CMS ที่เป็นที่รู้จักและถูกนำไปใช้อย่างกว้างขวาง โดยมี 2 องค์ประกอบ (components) คือ frontend (UI) ที่ทำงานบนพื้นฐานของ PHP และ backend (database) ที่ทำงานบนพื้นฐานของ MySQL
 
--   For MySQL, you'll use block storage with Nutanix Volumes
+-   สำหรับ MySQL คุณจะได้ใช้ block storage ร่วมกับ Nutanix Volumes
     
--   For WordPress, you'll use file storage with Nutanix Files
+-   สำหรับ WordPress คุณจะได้ใช้ file storage ร่วมกับ Nutanix Files
     
 
-![WordPress diagram](/cloudnative/assets/wordpress_diagram.59a9a0b6.png)
+![WordPress diagram](images/wordpress_diagram.59a9a0b6.png)

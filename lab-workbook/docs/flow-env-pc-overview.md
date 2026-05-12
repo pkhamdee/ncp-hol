@@ -17,14 +17,14 @@ Prism Central เป็น centralized management platform ที่ช่วย
     -   **username** - `<PC username> ในรูปแบบ adminuser##@ntnxlab.local`
     -   **password** - `<PC password ที่ให้ไว้>`
     
-    ![](/images/pc-login.fc4dd230.png)
+    ![](images/pc-login.fc4dd230.png)
     
     !!! note
         หากนี่เป็นครั้งแรกที่ logging into เข้าสู่ Prism Central คุณอาจเห็น guided tour คุณสามารถปิดได้โดยเลือก **Skip the Tour**
 
 4.  หลังจากที่คุณ log in เข้าสู่ PC แล้ว ให้ทำความคุ้นเคยกับ interface นี่คือ main dashboard ของ PC ซึ่งจะให้ overview ของ clusters ทั้งหมดที่ลงทะเบียนกับ PC instance นี้
     
-    ![](/images/pc-login-dashboard.f6ec78f9.png)
+    ![](images/pc-login-dashboard.f6ec78f9.png)
     
 5.  ตรวจสอบหน้าจอ widgets และระบุ items ต่อไปนี้:
     
@@ -36,7 +36,7 @@ Prism Central เป็น centralized management platform ที่ช่วย
     !!! note
         คุณสามารถใช้ App Switcher เพื่อ navigate อย่างรวดเร็วและเข้าถึง capabilities ของ Nutanix Cloud Platform ที่ enabled ผ่าน Prism Central ตัว cluster ของคุณอาจไม่มี services ที่ enabled มากเท่าที่แสดงในนี้
     
-    ![](/images/pc-login-app-switcher2.68aa5e91.png)
+    ![](images/pc-login-app-switcher2.68aa5e91.png)
     
 7.  ขยาย hamburger menu เพื่อดู options ต่างๆ สำหรับส่วนนั้น ตัวอย่างเช่น สำหรับ Infrastructure คุณสามารถเข้าถึงทุกสิ่งที่เกี่ยวกับ infrastructure เช่น:
     
@@ -45,7 +45,7 @@ Prism Central เป็น centralized management platform ที่ช่วย
     -   Network & Security
     -   Data Protection
     
-    ![](/images/pc-login-app-switcher1.917cbb33.png)
+    ![](images/pc-login-app-switcher1.917cbb33.png)
     
 
 เราจะเจาะลึกบางส่วนเหล่านี้ใน bootcamp นี้ แต่คุณสามารถ browse และคลิกดูบางส่วนได้ตามสบาย

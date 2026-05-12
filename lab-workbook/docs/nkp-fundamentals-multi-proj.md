@@ -1,40 +1,37 @@
-# NKP Advanced Hands-on Lab
+# NKP Projects
 
-# [#](#nkp-projects) NKP Projects
+Projects สอดคล้องกับ "soft" multi-tenancy ซึ่งช่วยให้สามารถแชร์ Kubernetes clusters ระหว่างหลายๆ ทีมได้ โดยให้พวกเขาทำงานแบบ self-service
 
-Projects align with "soft" multi-tenancy enabling to share Kubernetes clusters among several teams, providing them self-service.
-
-When a Project is created, NKP creates a federated namespace that is propagated to the Kubernetes clusters associated with this Project. Federation in this context means that a common configuration is pushed out from a central location (NKP) to all Kubernetes clusters, or a pre-defined subset group, under NKP management.
+เมื่อสร้าง Project ขึ้นมา NKP จะสร้าง federated namespace ที่ถูก propagate ไปยัง Kubernetes clusters ที่เกี่ยวข้องกับ Project นี้ Federation ในบริบทนี้หมายถึง common configuration จะถูก push ออกจากจุดศูนย์กลาง (NKP) ไปยัง Kubernetes clusters ทั้งหมด หรือกลุ่มย่อย (subset group) ที่กำหนดไว้ล่วงหน้า ภายใต้การจัดการของ NKP
 
 **Project Namespaces**
 
-A Project Namespace is a NKP specific concept, it isolates configurations across clusters and are created on all clusters matching the project labels.
+Project Namespace คือ concept เฉพาะของ NKP มันใช้แยก (isolate) configurations ข้าม clusters และถูกสร้างขึ้นบน clusters ทั้งหมดที่ตรงกับ project labels
 
-In this lab you will create your own project to use with the upcoming labs.
+ใน lab นี้ คุณจะได้สร้าง project ของคุณเองเพื่อใช้กับ labs ที่จะมาถึง
 
-#### [#](#creating-a-nkp-project) Creating a NKP Project
+#### Creating a NKP Project
 
-1.  On the _Default Workspace_, choose _Projects_ on the sidebar menu and click `+ Create Project`
+1.  บน _Default Workspace_ ให้เลือก _Projects_ ที่เมนู sidebar แล้วคลิก `+ Create Project`
     
-    Note
+    !!! note    
+        หากมี projects ถูกสร้างไว้แล้ว ปุ่มสีน้ำเงิน `+ Create Project` จะอยู่ที่มุมขวาบนของหน้าจอ
     
-    If there are projects created, the `+ Create Project` blue button is at the top right of the screen
+    ![Create a project](images/project_create_01.d31f5329.png)
     
-    ![Create a project](/cloudnative/assets/project_create_01.d31f5329.png)
-    
-2.  Use the following settings. Make sure you update `##` with your user number:
+2.  ใช้ settings ต่อไปนี้ ตรวจสอบให้แน่ใจว่าคุณได้อัปเดต `##` ด้วยหมายเลข user ของคุณ:
     
     -   Project Name: **user`##`**
         
-    -   ID / Namespace: **user`##`** (same as _Project Name_)
+    -   ID / Namespace: **user`##`** (เหมือนกับ _Project Name_)
         
     -   Clusters: **Manually Selected Clusters**
         
-    -   Selected Cluster: **workload01** (only)
+    -   Selected Cluster: **workload01** (เท่านั้น)
         
     
-    ![Project settings](/cloudnative/assets/project_create_02.39ccb846.png)
+    ![Project settings](images/project_create_02.39ccb846.png)
     
-3.  Click **Continue to Project**
+3.  คลิก **Continue to Project**
     
-    ![Continue to Project](/cloudnative/assets/project_create_03.f2df98a8.png)
+    ![Continue to Project](images/project_create_03.f2df98a8.png)

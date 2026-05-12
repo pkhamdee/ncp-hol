@@ -59,7 +59,7 @@ NKP Advanced
 
 เจาะลึกไปกับ hands-on lab ซีรีส์ 4 ชั่วโมงที่ออกแบบมาเพื่อช่วยคุณสำรวจฟีเจอร์อันทรงพลังของ Nutanix Kubernetes Platform คุณจะได้ deploy NKP cluster ของคุณเองและครอบคลุมเนื้อหาทั้งหมดใน lab ของ NKP Fundamentals
 
-[Lab Guide](/cloudnative/)
+[Lab Guide](/nkp-bootcamp/index.html)
 
 ## Nutanix Enterprise AI
 

@@ -1,41 +1,36 @@
-# NKP Advanced Hands-on Lab
+# Cost visibility Lab
 
-Note
+OpenCost ซึ่งมี open-source core ได้รับการออกแบบมาสำหรับการ monitoring และ optimizing costs ภายใน Kubernetes environments OpenCost ให้ real-time visibility ของค่าใช้จ่าย cluster ช่วยให้ทีมสามารถจัดการและลดการใช้จ่ายด้าน cloud infrastructure ได้อย่างมีประสิทธิภาพ
 
--   Expected lab duration: 5 minutes
+ในฐานะส่วนหนึ่งของ bootcamp นี้ เราจะ:
 
-# [#](#cost-visibility) Cost visibility Lab
+-   Monitor costs ทั่วทั้ง individual clusters และ projects แบบไม่จำกัด
+-   แยกแยะค่าใช้จ่ายตาม Kubernetes components ต่างๆ รวมถึง deployments, services, namespaces, และ labels
+-   ให้ real-time cost performance metrics
+-   เสนอ customized cost-saving recommendations
 
-OpenCost, with its open-source core, is designed for monitoring and optimizing costs within Kubernetes environments. OpenCost provides real-time visibility into cluster expenses, empowering teams to effectively manage and reduce their cloud infrastructure spending.
+!!! info
+    รู้หรือไม่?
 
-As part of this bootcamp, we will:
+    **NKP OpenCost** มีให้ใช้งานเฉพาะกับ NKP Ultimate license เท่านั้น
 
--   Monitor costs across unlimited individual clusters and projects
--   Break down expenses by various Kubernetes components, including deployments, services, namespaces, and labels
--   Provide real-time cost performance metrics
--   Offer customized cost-saving recommendations
+#### Analyse cost of your Kubernetes clusters, projects and applications
 
-Did You Know?
-
-**NKP OpenCost** is available exclusively with the NKP Ultimate license.
-
-#### [#](#analyse-cost-of-your-kubernetes-clusters-projects-and-applications) Analyse cost of your Kubernetes clusters, projects and applications
-
-1.  Discover how much was spent on your project in the last day and 7 days.
+1.  ค้นพบว่ามีค่าใช้จ่ายเท่าใดสำหรับ project ของคุณในช่วงวันที่ผ่านมาและ 7 วันล่าสุด
     
-    ![NKP Kubecost per project](/cloudnative/assets/kubecost_1.cd9fcbfa.png)
+    ![NKP Kubecost per project](images/kubecost_1.cd9fcbfa.png)
     
-2.  Open your project and access the OpenCost dashboard to view detailed cost analyses and reports.
+2.  เปิด project ของคุณและเข้าถึง OpenCost dashboard เพื่อดู detailed cost analyses และ reports
     
-    ![NKP Navigate to dashboard](/cloudnative/assets/kubecost_dashboard_navigation.50554b38.png)
+    ![NKP Navigate to dashboard](images/kubecost_dashboard_navigation.50554b38.png)
     
-3.  Take a look at the OpenCost overview page. At the top of the page you can see a good summary for the last 7 days.
+3.  ดูที่หน้า OpenCost overview ที่ด้านบนของหน้า คุณสามารถดู summary ที่ดีสำหรับ 7 วันล่าสุด
     
-    ![Kubecost overview](/cloudnative/assets/kubecost_overview.66733a48.png)
+    ![Kubecost overview](images/kubecost_overview.66733a48.png)
     
-4.  Dive deeper by adjusting the time intervals and filtering the costs incurred at the node, namespace or even container level.
+4.  เจาะลึกยิ่งขึ้นด้วยการปรับ time intervals และ filtering ค่าใช้จ่ายที่เกิดขึ้นในระดับ node, namespace หรือแม้กระทั่ง container
     
-    ![Kubecost savings](/cloudnative/assets/kubecost_savings.8defcaa7.png)
+    ![Kubecost savings](images/kubecost_savings.8defcaa7.png)
     
 
-In summary, NKP with OpenCost offers integrated cost visualization for Kubernetes environments. It provides detailed insights into spending patterns across applications, teams, and namespaces. This solution enables real-time cost monitoring, supports showback and chargeback capabilities, and facilitates efficient resource allocation, helping organizations optimize their Kubernetes infrastructure spending and maximize their return on investment (ROI).
+โดยสรุปแล้ว NKP พร้อมด้วย OpenCost มี integrated cost visualization สำหรับ Kubernetes environments โดยให้ detailed insights เกี่ยวกับ spending patterns ใน applications, teams, และ namespaces โซลูชันนี้ช่วยให้สามารถทำ real-time cost monitoring รองรับความสามารถในการทำ showback และ chargeback และช่วยอำนวยความสะดวกในการทำ efficient resource allocation ซึ่งช่วยให้องค์กรสามารถ optimize การใช้จ่ายด้าน Kubernetes infrastructure และเพิ่ม return on investment (ROI) ให้สูงสุด

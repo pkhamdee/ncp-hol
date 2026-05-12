@@ -18,7 +18,7 @@ Nutanix Prism Central เป็น single management point สำหรับ mu
     
     Categories - **User`##` : Production** โดยที่ `##` คือหมายเลขที่คุณได้รับมอบหมาย
     
-    ![](/images/entitybrowser1.737108d0.png)
+    ![](images/entitybrowser1.737108d0.png)
     
 5.  สังเกต filters อื่นๆ ที่เป็นประโยชน์ที่มีให้ใช้งาน เช่น VM efficiency, memory usage และ storage latency
     
@@ -26,13 +26,13 @@ Nutanix Prism Central เป็น single management point สำหรับ mu
     
 7.  สำหรับชื่อ filter ให้ตั้งชื่อว่า `Initials-Production` โดยที่ initials คือชื่อย่อของคุณ
     
-    ![](/images/entitybrowser4.b988bd6c.png)
+    ![](images/entitybrowser4.b988bd6c.png)
     
 8.  คลิก **Save**
     
 9.  Clear ตัว filters ทั้งหมด จากนั้นเลือก filter ใหม่ของคุณเพื่อกลับไปยัง VMs ที่คุณระบุไว้ก่อนหน้านี้อย่างรวดเร็ว
     
-    ![](/images/entitybrowser5.8896b4c2.png)
+    ![](images/entitybrowser5.8896b4c2.png)
     
 10.  เลือก dropdown **View by** เพื่อเข้าถึง out-of-box views แบบต่างๆ
     
@@ -45,7 +45,7 @@ Nutanix Prism Central เป็น single management point สำหรับ mu
 14.  คลิก **Save**
     
 
-![](/images/entitybrowser3.4f3594a9.png)
+![](images/entitybrowser3.4f3594a9.png)
 
 !!! note
     view นี้สามารถใช้เพื่อช่วยในการระบุ (spot) ปัญหา VM performance ได้

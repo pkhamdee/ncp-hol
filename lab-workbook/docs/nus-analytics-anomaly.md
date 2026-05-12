@@ -22,7 +22,7 @@
     -   **Type**: Hourly
     -   **Interval**: `1`
     
-    ![](/images/1.fe29b12d.png)
+    ![](images/1.fe29b12d.png)
     
 
 ## Load Sample Data
@@ -35,7 +35,7 @@
     
     ตามค่าเริ่มต้น Anomaly engine จะทำงานทุกๆ 30 นาที แม้ว่าการตั้งค่านี้สามารถกำหนดค่า (configurable) ได้จาก File Analytics VM แต่การปรับเปลี่ยนตัวแปร (variable) นี้นอกเหนือจากขอบเขตของ lab นี้ ดังนั้นอาจใช้เวลาถึง 30 นาทีส่วน _Anomalies Alerts_ จึงจะอัปเดตกิจกรรม "anomalous" ที่คุณเพิ่งดำเนินการ หากคุณไม่ต้องการรอ เราได้เตรียมตัวอย่างสิ่งที่คุณจะเห็นเอาไว้ให้
     
-    ![](/images/3.155f4f1c.png)
+    ![](images/3.155f4f1c.png)
     
 
 ## Cause Error Condition
@@ -65,14 +65,14 @@
     
 11.  ดำเนินการ (Execute) command `rm myfile.txt` เนื่องจาก command นี้พยายามลบ file มันจะล้มเหลวเนื่องจาก user คนนี้ไม่มี permission _Delete_ บน folder นี้
     
-    ![](/images/6.2942fbcf.png)
+    ![](images/6.2942fbcf.png)
     
 12.  ปิด _Powershell_ และกลับไปที่ tab _Files Analytics_ ของคุณ
     
 13.  หลังจากนั้นไม่นาน กิจกรรมของคุณจะแสดงขึ้นในส่วน _Top 5 Active Users_ คลิกที่ **`devuser##`** ส่วนของ _Audit Details_ สำหรับ _`devuser##`_ จะเปิดขึ้น สังเกตกิจกรรมของคุณภายในส่วน _Total Result(s)_
     
-    ![](/images/7.c1d53c59.png)
+    ![](images/7.c1d53c59.png)
     
-    ![](/images/8.9db6f1ae.png)
+    ![](images/8.9db6f1ae.png)
     
 14.  เมื่อคุณทำเสร็จแล้ว ให้คลิก x ที่มุมขวาบน

@@ -1,26 +1,20 @@
-# NKP Advanced Hands-on Lab
+# Automation: GitOps for software delivery at scale
 
-Expected chapter duration
+**วัตถุประสงค์:** วัตถุประสงค์ของบทนี้คือการสำรวจความแตกต่างระหว่างกระบวนการ manual deployment และ deployment ที่อิงตาม GitOps สิ่งนี้จะช่วยให้คุณเห็นคุณค่าของ automation และประสิทธิภาพที่ GitOps นำมาสู่การจัดการ Kubernetes applications
 
-15 minutes
+!!! note
+    หากคุณไม่คุ้นเคยกับ GitOps คุณสามารถดูได้ที่ [CNCF glossary](https://glossary.cncf.io/gitops/)
 
-# [#](#automation-gitops-for-software-delivery-at-scale) Automation: GitOps for software delivery at scale
-
-**Objective:**  
-The objective of this chapter is to explore the differences between a manual deployment process and a GitOps-based deployment. This will help you appreciate the automation and efficiency GitOps brings to managing Kubernetes applications.
-
-Note
-
-If you are not familiar with GitOps, you can take a look to the [CNCF glossary](https://glossary.cncf.io/gitops/).
-
-**What You’ll Do:**
+**สิ่งที่คุณจะได้ทำ:**
 
 1.  **Set up GitOps Deployment**
     
-    -   Easily deploy applications just using a Git repository where the Kubernetes manifests are hosted.
+    -   deploy applications ได้อย่างง่ายดายโดยใช้แค่ Git repository ที่เป็นแหล่งโฮสต์ Kubernetes manifests
+
 2.  **Automate Multicluster Application Deployments**
     
-    -   Simplify managing large, distributed environments at scale by dynamically assigning clusters to GitOps deployments without manual intervention.
+    -   ลดความซับซ้อนในการจัดการ distributed environments ขนาดใหญ่ในระดับสเกลด้วยการ assign clusters ให้กับ GitOps deployments แบบไดนามิกโดยไม่ต้องมีการแทรกแซงแบบ manual
+    
 3.  **Recap and next steps**
     
-    -   Once you've learned how to automate application deployment at scale across multiple clusters, move on to the conclusion!
+    -   เมื่อคุณได้เรียนรู้วิธีการทำ application deployment แบบอัตโนมัติในสเกลระดับหลาย clusters แล้ว ก็สามารถขยับไปยังส่วนสรุป (conclusion) ได้เลย!

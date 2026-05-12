@@ -1,11 +1,9 @@
-# NKP Advanced Hands-on Lab
+# Takeaways
 
-# [#](#takeaways) Takeaways
+🎉 ขอแสดงความยินดีด้วย! ในบทนี้คุณได้เรียนรู้วิธีที่ platform engineers และ Kubernetes users สามารถ:
 
-🎉 Congratulations! In this chapter you have learned how platform engineers and Kubernetes users can:
+-   Monitor, visualize, และ analyze ตัว performance ของ Kubernetes clusters และ applications ด้วย Grafana visualization และ Prometheus metrics
 
--   Monitor, visualize, and analyze the performance of Kubernetes clusters and applications with Grafana visualization and Prometheus metrics
-
--   Identify both, current and potential anomalies in workload configurations and Kubernetes clusters with NKP Insights
+-   Identify ทั้ง anomalies ในปัจจุบันและที่อาจเกิดขึ้นได้ใน workload configurations และ Kubernetes clusters ด้วย NKP Insights
     
--   Explore real-time visibility into Kubernetes spending with OpenCost
+-   สำรวจ real-time visibility ของการใช้จ่าย (spending) ใน Kubernetes ด้วย OpenCost

@@ -1,28 +1,23 @@
-# NKP Advanced Hands-on Lab
-
-Expected chapter duration
-
-15 minutes
-
-This chapter is navigation only and it doesn't require any inputs
-
-# [#](#observability-critical-path-to-production) Observability: Critical path to production
+# Observability: Critical path to production
 
 **Objective:**
 
-This section covers monitoring, observability, anomaly detection, and cost management in Kubernetes. You'll learn to use Grafana, NKP Insights, and OpenCost to ensure secure, efficient, and cost-effective NKP deployments.
+ส่วนนี้ครอบคลุมถึง monitoring, observability, anomaly detection, และ cost management ใน Kubernetes คุณจะได้เรียนรู้การใช้ Grafana, NKP Insights, และ OpenCost เพื่อให้แน่ใจว่า NKP deployments นั้น secure, efficient, และ cost-effective
 
 **What You’ll Do:**
 
 1.  **Platform metrics with Grafana**
     
-    -   Monitor, visualize, and analyze the performance of kubernetes clusters and applications
+    -   Monitor, visualize, และ analyze ตัว performance ของ kubernetes clusters และ applications
+
 2.  **Platform analytics with NKP Insights**
     
-    -   Identify both, current and potential anomalies in workload configurations and Kubernetes clusters
+    -   Identify ทั้ง anomalies ในปัจจุบันและที่อาจเกิดขึ้นได้ใน workload configurations และ Kubernetes clusters
+
 3.  **Cost visibility with OpenCost**
     
-    -   Explore real-time spending across Kubernetes clusters
+    -   สำรวจ real-time spending ทั่วทั้ง Kubernetes clusters
+    
 4.  **Recap and next steps**
     
-    -   After learning about day-2 operations for infrastructure and applications, you’ll be ready to discover GitOps automation for software delivery at scale
+    -   หลังจากเรียนรู้เกี่ยวกับ day-2 operations สำหรับ infrastructure และ applications แล้ว คุณจะพร้อมสำหรับการค้นพบ GitOps automation สำหรับ software delivery ที่ at scale

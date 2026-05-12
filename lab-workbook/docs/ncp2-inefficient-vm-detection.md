@@ -15,7 +15,7 @@
 -   Bully - VM ที่ consume ตัว resources มากเกินไปและทำให้ VMs อื่นๆ ขาดแคลน (starve)
 -   Inactive - VM ที่ถูก powered off หรือมี I/O และ network traffic น้อยมาก (minimal)
 
-![](/images/inefficientvms1.fe062f9c.png)
+![](images/inefficientvms1.fe062f9c.png)
 
 ## Interactive Demo
 

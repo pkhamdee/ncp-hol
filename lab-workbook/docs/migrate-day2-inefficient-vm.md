@@ -15,7 +15,7 @@
 -   Bully - VM ที่ใช้ resources มากเกินไปและทำให้ VMs อื่นๆ ขาดแคลน (starve)
 -   Inactive - VM ที่ถูก powered off หรือมี I/O และ network traffic น้อยมาก
 
-![](/images/inefficientvms1.fe062f9c.png)
+![](images/inefficientvms1.fe062f9c.png)
 
 รายละเอียดเพิ่มเติมเกี่ยวกับวิธีการที่ VMs ถูก profiled สามารถอ่านได้ใน [documentation](https://portal.nutanix.com/page/documents/details?targetId=Intelligent-Operations-Guide-vpc_2024_3:mul-behavioral-learning-pc-c.html)
 

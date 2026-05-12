@@ -1,156 +1,13 @@
-# NKP Advanced Hands-on Lab
+# Argument-based CLI Installation
 
-# [#](#argument-based-cli-installation) Argument-based CLI Installation
-
-1.  Create a `.env` file on VS Code
+1.  สร้างไฟล์ `.env` บน VS Code
     
-    ![VS Code create .env](/cloudnative/assets/ide-env-file.774181ba.gif)
+    ![VS Code create .env](images/ide-env-file.774181ba.gif)
     
-2.  Paste the code block below and update **only** the values `highlighted`. You can find the values in your lab page, ask your instructor, or expand the following table:
-    
-    Get the IP addresses from your instructor or expand the section below to lookup your IP.
-    
-    Assigned IPs
-    
-    Important! Your MetalLB "range" is just one IP. Since you won't be using this cluster, there is no need for additional IPs. You must still input the value on the format `#.#.#.<start>-#.#.#.<end>` even if it is a single IP.
-    
-    User
-    
-    CONTROL\_PLANE\_ENDPOINT\_IP
-    
-    LB\_IP\_RANGE
-    
-    adminuser01
-    
-    #.#.#.**134**
-    
-    #.#.#.**135**\-#.#.#.**135**
-    
-    adminuser02
-    
-    #.#.#.**136**
-    
-    #.#.#.**137**\-#.#.#.**137**
-    
-    adminuser03
-    
-    #.#.#.**138**
-    
-    #.#.#.**139**\-#.#.#.**139**
-    
-    adminuser04
-    
-    #.#.#.**140**
-    
-    #.#.#.**141**\-#.#.#.**141**
-    
-    adminuser05
-    
-    #.#.#.**142**
-    
-    #.#.#.**143**\-#.#.#.**143**
-    
-    adminuser06
-    
-    #.#.#.**144**
-    
-    #.#.#.**145**\-#.#.#.**145**
-    
-    adminuser07
-    
-    #.#.#.**146**
-    
-    #.#.#.**147**\-#.#.#.**147**
-    
-    adminuser08
-    
-    #.#.#.**148**
-    
-    #.#.#.**149**\-#.#.#.**149**
-    
-    adminuser09
-    
-    #.#.#.**150**
-    
-    #.#.#.**151**\-#.#.#.**151**
-    
-    adminuser10
-    
-    #.#.#.**152**
-    
-    #.#.#.**153**\-#.#.#.**153**
-    
-    adminuser11
-    
-    #.#.#.**154**
-    
-    #.#.#.**155**\-#.#.#.**155**
-    
-    adminuser12
-    
-    #.#.#.**156**
-    
-    #.#.#.**157**\-#.#.#.**157**
-    
-    adminuser13
-    
-    #.#.#.**158**
-    
-    #.#.#.**159**\-#.#.#.**159**
-    
-    adminuser14
-    
-    #.#.#.**160**
-    
-    #.#.#.**161**\-#.#.#.**161**
-    
-    adminuser15
-    
-    #.#.#.**162**
-    
-    #.#.#.**163**\-#.#.#.**163**
-    
-    adminuser16
-    
-    #.#.#.**164**
-    
-    #.#.#.**165**\-#.#.#.**165**
-    
-    adminuser17
-    
-    #.#.#.**166**
-    
-    #.#.#.**167**\-#.#.#.**167**
-    
-    adminuser18
-    
-    #.#.#.**168**
-    
-    #.#.#.**169**\-#.#.#.**169**
-    
-    adminuser19
-    
-    #.#.#.**170**
-    
-    #.#.#.**171**\-#.#.#.**171**
-    
-    adminuser20
-    
-    #.#.#.**172**
-    
-    #.#.#.**173**\-#.#.#.**173**
-    
-    Pro tip
-    
-    1.  Do not highlight line by line for copy/pasting
-    2.  Use the copy icon and paste the entire code block in the .env file
-    3.  Update the values in the .env file  
-          
+2.  วาง code block ด้านล่างนี้และแก้ไข **เฉพาะ** ค่าที่ทำการ `highlighted` ไว้ โดยคุณสามารถดูค่าต่างๆ ได้จากหน้า lab ของคุณ
         
-    
     -   env
-    -   example
-    
+
     ```
     # NKP version to install
     # Do not change it
@@ -199,58 +56,10 @@
     
     # Required on Nutanix HPOC
     # Do not change it
-    export REGISTRY_MIRROR_URL=registry.nutanixdemo.com/bootcamps
+    export REGISTRY_MIRROR_URL=[registry.nutanixdemo.com/bootcamps](https://registry.nutanixdemo.com/bootcamps)
     ```
-    
-      
-      
-      
-      
-      
-      
-    
-      
-      
-    
-      
-      
-      
-    
-      
-      
-    
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-      
-      
-      
-    
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
+    -   example
+
     ```
     export NKP_VERSION=2.17.0
     export CLUSTER_NAME=user01-nkp
@@ -264,10 +73,10 @@
     export NUTANIX_PRISM_ELEMENT_CLUSTER_NAME=PHX-POC000
     export NUTANIX_SUBNET_NAME=secondary
     export NUTANIX_STORAGE_CONTAINER_NAME=SelfServiceContainer
-    export REGISTRY_MIRROR_URL=registry.nutanixdemo.com/bootcamps
+    export REGISTRY_MIRROR_URL=[registry.nutanixdemo.com/bootcamps](https://registry.nutanixdemo.com/bootcamps)
     ```
     
-3.  Load the environment variables with the following command
+3.  Load ค่า environment variables ด้วย command ต่อไปนี้
     
     -   command
     
@@ -275,11 +84,10 @@
     source ~/.env
     ```
     
-4.  Go ahead and create your first management cluster
+4.  ดำเนินการสร้าง management cluster แรกของคุณ
     
     -   command
-    -   output
-    
+
     ```
     nkp create cluster nutanix -c $CLUSTER_NAME \
         --bootstrap-cluster-image $REGISTRY_MIRROR_URL/mesosphere/konvoy-bootstrap:v$NKP_VERSION \
@@ -304,38 +112,39 @@
         --self-managed
     ```
     
+    -   output
+
     ```
     ✓ Creating a bootstrap cluster
     ⠈⡱ Initializing new CAPI components
     [...]
     ```
     
-    Note
-    
-    -   NKP cluster creation can take up to 30 minutes
+    !!! note    
+        -   การสร้าง NKP cluster อาจใช้เวลาสูงสุด 30 นาที
+            
+        -   cluster ที่คุณกำลัง deploy นี้ใช้ resource ขั้นต่ำที่สุดเพื่อสาธิตขั้นตอนเท่านั้น ห้ามนำไปใช้ในระบบ production คุณสามารถดู arguments ได้ในบรรทัดที่ **15** ถึง **19**
         
-    -   The cluster you are deploying uses the minimum possible resources to showcase the process; do not use this in production. You can see the arguments from line **15** to **19**.
-        
     
-    **Don't wait for your cluster to complete**. You won't use it for the upcoming labs, instead we use a shared multi-cluster setup.
+    **ไม่ต้องรอให้การสร้าง cluster เสร็จสมบูรณ์** คุณจะไม่ต้องใช้มันใน lab ถัดไป เนื่องจากเราจะใช้การตั้งค่าแบบ shared multi-cluster แทน
     
 
-(Optional) Explanation NKP cluster creation process
+**(Optional)** Explanation NKP cluster creation process
 
-NKP uses an open-source project called Cluster API (CAPI), a Kubernetes subproject focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters. In simple terms, CAPI deploys and manages Kubernetes clusters from Kubernetes itself.
+NKP ใช้ open-source project ที่เรียกว่า Cluster API (CAPI) ซึ่งเป็น Kubernetes subproject ที่เน้นการให้บริการ declarative APIs และเครื่องมือเพื่อช่วยให้การ provisioning, upgrading, และ operating Kubernetes clusters หลายๆ แห่งทำได้ง่ายขึ้น พูดง่ายๆ คือ CAPI ทำหน้าที่ deploy และจัดการ Kubernetes clusters จากตัว Kubernetes เอง
 
-When you run the NKP `create cluster` command, it deploys a small bootstrap Kubernetes cluster in your Admin VM using `kubeadm` and the Docker Engine you installed during the Admin VM creation.
+เมื่อคุณรัน command `nkp create cluster` ระบบจะทำการ deploy bootstrap Kubernetes cluster ขนาดเล็กใน Admin VM ของคุณ โดยใช้ `kubeadm` และ Docker Engine ที่คุณติดตั้งไว้ตอนสร้าง Admin VM
 
-Then, the CAPI components (infrastructure providers) are installed in the Kubernetes cluster. With the inputs you provided with the environment variables, the infrastructure provider for Nutanix is used to create the virtual machines in the Nutanix cluster and, from there, create a Kubernetes cluster (self-managed / management cluster)
+จากนั้น CAPI components (infrastructure providers) จะถูกติดตั้งลงใน Kubernetes cluster และด้วยข้อมูลที่คุณระบุผ่าน environment variables ตัว infrastructure provider สำหรับ Nutanix จะถูกนำมาใช้เพื่อสร้าง virtual machines ใน Nutanix cluster และสร้าง Kubernetes cluster (self-managed / management cluster) ขึ้นมา
 
-Once that cluster is ready, the CAPI components are migrated from the bootstrap cluster to this first NKP cluster, becoming the NKP management cluster (it can also run workloads when self-managed - single cluster). At this stage, the bootstrap cluster is deleted.
+เมื่อ cluster นั้นพร้อมใช้งาน CAPI components จะถูกย้าย (migrated) จาก bootstrap cluster ไปยัง NKP cluster แรกนี้ และกลายเป็น NKP management cluster (ซึ่งสามารถรัน workload ได้ด้วยเมื่อเป็นแบบ self-managed - single cluster) ในขั้นตอนนี้ bootstrap cluster จะถูกลบออกไป
 
-With the CAPI controllers migrated, the installation process for the NKP platform applications starts. You can recognize this in your terminal when you see the `Starting kommander installation` message.
+หลังจาก migrate CAPI controllers เรียบร้อยแล้ว ขั้นตอนการติดตั้ง NKP platform applications จะเริ่มต้นขึ้น คุณสามารถสังเกตเห็นได้ใน terminal เมื่อพบข้อความ `Starting kommander installation`
 
-After a few minutes, you'll see a message with the cluster created successfully and the command to access the NKP cluster dashboard.
+หลังจากผ่านไปไม่กี่นาที คุณจะเห็นข้อความแจ้งว่าสร้าง cluster สำเร็จ พร้อมกับ command สำหรับเข้าใช้งาน NKP cluster dashboard
 
-(Optional) Did you know NKP includes a prompt-based installation method?
+**(Optional)** Did you know NKP includes a prompt-based installation method?
 
-![TUI-based method](/cloudnative/assets/tui-based.5759fd86.png)
+![TUI-based method](images/tui-based.5759fd86.png)
 
-We didn't use this simplified method because on busy environments like Nutanix HPOC, with a hundred of requests per minute to Docker Hub, you must use an internal container registry mirror to overcome the Docker Hub rate limits for pulling container images. Providing a registry mirror is only available using argument-based installation.
+เราไม่ได้ใช้วิธีที่เรียบง่ายนี้เนื่องจากในสภาพแวดล้อมที่ใช้งานหนักอย่าง Nutanix HPOC ซึ่งมีการส่งคำขอไปยัง Docker Hub นับร้อยครั้งต่อนาที คุณจำเป็นต้องใช้ internal container registry mirror เพื่อแก้ปัญหา Docker Hub rate limits ในการ pull container images ซึ่งการระบุ registry mirror นั้นสามารถทำได้ผ่านวิธี argument-based installation เท่านั้น

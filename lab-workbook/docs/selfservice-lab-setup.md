@@ -21,22 +21,22 @@
 
 2. เลือก drop-down **App Switcher** ที่ด้านบน แล้วเลือก **Admin Center**
     
-    ![](/images/Picture1.99d4d98d.png)
+    ![](images/Picture1.99d4d98d.png)
     
 3. คลิก **Projects** จากเมนูด้านซ้าย จากนั้นคลิกปุ่ม **Create Project**
     
-    ![](/images/Picture2.ab0bbbcb.png)
+    ![](images/Picture2.ab0bbbcb.png)
     
 34. ในช่อง **Project Name** ให้กรอก `User##`-Project จากนั้นคลิก Create
     
-    ![](/images/Picture3.2c164cba.png)
+    ![](images/Picture3.2c164cba.png)
     
 
 ### Add Infrastructure
 
 1. ในส่วนของ **Summary** ให้คลิกที่ **+ Add Infrastructure** และกรอกข้อมูลในช่องด้านล่าง
     
-    ![](/images/Picture4.f8398e6a.png)
+    ![](images/Picture4.f8398e6a.png)
     
     - คลิกที่ปุ่ม drop-down **Add Infrastructure** แล้วเลือก `NTNX_LOCAL_AZ`
     - คลิก _Configure Resources_
@@ -48,7 +48,7 @@
     - คลิก **Confirm** > **Save**
     - คลิกปุ่ม **Save** จากมุมขวาบน
     
-    ![](/images/Picture4a-InfrastructureSummary.1767d57a.png)
+    ![](images/Picture4a-InfrastructureSummary.1767d57a.png)
     
 ### Configure an Environment
 
@@ -94,7 +94,7 @@ Environment คืออะไร?
 
 หน้าจอของคุณควรจะดูคล้ายกับรูปด้านล่างนี้:
 
-![](/images/Picture4b-EnvironmentSummary.3bae7a66.png)
+![](images/Picture4b-EnvironmentSummary.3bae7a66.png)
 
 ### Assign a User Group
 
@@ -106,7 +106,7 @@ Environment คืออะไร?
         - **Name** - Administrators (group)
         - **Role** - Project Admin
         
-        ![](/images/Picture5.3db23804.png)
+        ![](images/Picture5.3db23804.png)
         
     - คลิก **Save Users and Project**
         

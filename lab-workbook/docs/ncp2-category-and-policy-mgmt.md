@@ -21,14 +21,14 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
 2.  โปรดเลือก drop-down App Switcher ที่ด้านบนแล้วเลือก Admin Center
     
 
-![App Switcher Selection](/images/appswitcher1.4b238747.png)
+![App Switcher Selection](images/appswitcher1.4b238747.png)
 
 3.  ดำเนินการเลือก Categories จากเมนูด้านซ้าย
     
 4.  Prism Central มี system categories ที่กำหนดไว้ล่วงหน้า (predefined) หลายรายการ ซึ่งไม่สามารถทำ update หรือ delete ได้ คุณสามารถ assign entities ให้กับ system categories เหล่านี้ได้ในขณะที่สร้างหรืออัปเดต VMs และ entities อื่นๆ
     
 
-![Category List](/images/category1.0f8ae463.png)
+![Category List](images/category1.0f8ae463.png)
 
 5.  คลิก **New Category**
     
@@ -39,7 +39,7 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
     -   Values: **Production**
     -   คลิก **Save**
     
-    ![Category Key and Values](/images/category2.5c3357a0.png)
+    ![Category Key and Values](images/category2.5c3357a0.png)
     
 ## Assign Category to VMs
 
@@ -52,20 +52,20 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
     -   พิมพ์ **##** โดยที่ **##** ตรงกับ user number ของคุณ
     -   จากนั้นคลิกที่ **Name Contains '##'**
     
-    ![Find VMs](/images/categorytovm1.c5a97f63.png)
+    ![Find VMs](images/categorytovm1.c5a97f63.png)
     
 3.  คุณจะเห็น 2 VMs ที่ตรงกับ user number ของคุณ:
     
     -   Desktop##
     -   User##-Move
     
-    ![Found VMs](/images/categorytovm2.b4d86ec1.png)
+    ![Found VMs](images/categorytovm2.b4d86ec1.png)
     
 4.  เลือกทั้งสอง VMs
     
 5.  คลิกที่ drop-down **Actions** จากนั้นไปที่ **Other Actions > Manage Categories**
     
-    ![Manage Categories](/images/categorytovm3.a4abf2ba.png)
+    ![Manage Categories](images/categorytovm3.a4abf2ba.png)
     
 6.  ในช่อง Search ให้ค้นหา category ใหม่ของคุณคือ **User`##`: Production**
     
@@ -73,7 +73,7 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
 !!! note
     คุณสามารถประหยัดเวลาได้โดยการพิมพ์ตัวอักษรเฉพาะไม่กี่ตัวใน query ของคุณเพื่อใช้ประโยชน์จากการทำ auto-populate
 
-    ![Find Category](/images/categorytovm4.9652c95a.png)
+    ![Find Category](images/categorytovm4.9652c95a.png)
 
 1.  คลิก **Save** เพื่อใช้ category นี้กับสอง VMs ของคุณ
 

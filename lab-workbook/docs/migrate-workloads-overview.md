@@ -1,6 +1,6 @@
 # Migrating Your Workloads
 
-![](/images/migrate-overview1.b558245b.png)
+![](images/migrate-overview1.b558245b.png)
 
 มี workloads หลายประเภทที่แตกต่างกันและหลากหลายวิธีที่แต่ละ workloads สามารถถูก migrated ได้ Customers จะเลือกวิธีที่เหมาะสมตาม requirements และ constraints ของพวกเขา สำหรับ lab นี้ เราจะโฟกัสไปที่การใช้วิธีแบบ Nutanix-based เนื่องจากมันมักจะให้ user experience ที่ดีที่สุด
 
@@ -8,7 +8,7 @@
 
 ด้านล่างนี้คุณจะพบกับ distributed architecture ของ Move คุณสามารถอ่านเพิ่มเติมเกี่ยวกับ architecture และ components ทั้งหมดได้บน [Nutanix Bible](https://www.nutanixbible.com/21b-vm-migration-arch.html)
 
-![](/images/move-architecture.eb84cac6.png)
+![](images/move-architecture.eb84cac6.png)
 
 ตอนนี้คุณมี destination cluster ที่เปิดใช้งานและกำลังรันด้วย Prism Central และ AHV แล้ว มาย้าย workloads บางส่วนกันเถอะ
 
