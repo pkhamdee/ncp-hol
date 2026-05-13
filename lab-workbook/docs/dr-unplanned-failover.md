@@ -9,7 +9,7 @@
 ในแบบฝึกหัดนี้ คุณจะได้ทำการ _Unplanned_ application failover
 
 !!! note
-    หากคุณทำแบบฝึกหัด [Planned Failover with Nutanix Disaster Recovery](/dr-unplanned-failover/index.html) เสร็จแล้ว คุณสามารถข้ามไปที่ [Performing An Unplanned Failover](/dr-planned-failover/index.html)
+    หากคุณทำแบบฝึกหัด [Planned Failover with Nutanix Disaster Recovery](dr-unplanned-failover.md) เสร็จแล้ว คุณสามารถข้ามไปที่ [Performing An Unplanned Failover](dr-planned-failover.md)
 
 ## Instructor Lead
 

@@ -78,7 +78,7 @@ maintenance window policy ช่วยให้คุณสามารถตั
         - Duration จะตั้งเวลาที่ window เปิดอยู่ เมื่อ duration time สิ้นสุดลง หากมี database VMs ใดๆ ที่ยังคงรัน patches อยู่ พวกมันจะดำเนินการจนเสร็จสิ้นกระบวนการ แต่จะไม่มีกระบวนการ patching ใหม่ๆ เริ่มต้นขึ้นอีกหลังจากที่ window ปิดลงแล้ว
         - Database VMs ที่รัน Oracle, MongoDB, และ PostgreSQL จะได้รับการรองรับใน maintenance windows สำหรับการทำ patching ทั้งบน Operating System และ Database; ส่วน MSSQL Database VMs สามารถใช้ maintenance windows สำหรับ database patching ได้
 
-**เริ่มต้นด้วยการมาดูกันว่า NDB ทำให้ [Database Recovery](/ndb-postgresql-dr/index.html) นั้นรวดเร็วและมีประสิทธิภาพเพียงใด**
+**เริ่มต้นด้วยการมาดูกันว่า NDB ทำให้ [Database Recovery](ndb-postgresql-dr.md นั้นรวดเร็วและมีประสิทธิภาพเพียงใด**
 
 
 ---

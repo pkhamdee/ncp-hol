@@ -8,6 +8,6 @@ Infrastructure-as-a-Service (IaaS) ถูกกำหนดให้เป็น
 
 ใน lab นี้ คุณจะได้สร้าง Single VM Blueprint ที่เป็น Linux และ Windows (ทางเลือก), ทำการ define ตัว variables และ publish ตัว blueprints ไปยัง Marketplace
 
--   [Create Linux Blueprint](/selfservice-linux/index.html)
--   (Optional) [Create Windows Blueprint](/selfservice-windows/index.html)
+-   [Create Linux Blueprint](selfservice-linux.md)
+-   (Optional) [Create Windows Blueprint](selfservice-windows.md)
     -   การสร้าง Windows Blueprint เป็นทางเลือก (optional) การทำ Provisioning เฉพาะ Linux Blueprint ก็เพียงพอสำหรับการทำขั้นตอนต่อๆ ไปใน lab นี้ให้เสร็จสมบูรณ์

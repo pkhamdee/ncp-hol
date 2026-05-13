@@ -26,7 +26,7 @@
 6.  เพิ่มรายละเอียดของ target Nutanix File Server จากนั้นคลิก `Add`
     
     -   **Name** : ตั้งชื่ออะไรก็ได้ที่คุณต้องการ เราขอแนะนำ **Nutanix Files**
-    -   **FQDN Details/Address** : IP Address ของ nextfiles ที่คุณจดบันทึกไว้ใน [ขั้นตอนที่ 4 ของ View Source Share](/migrate/migrating-your-workloads/migrating-shares-view-source.html)
+    -   **FQDN Details/Address** : IP Address ของ nextfiles ที่คุณจดบันทึกไว้ใน [ขั้นตอนที่ 4 ของ View Source Share](migrate-workloads-move-share-view-share.md)
     -   **username** : `adminuser##` . *ตรวจสอบให้แน่ใจว่านี่คือ username เดียวกับที่คุณใช้สร้าง REST API user ในหัวข้อก่อนหน้า*
     -   **password** : `dotNext25! หรือรหัสผ่านใดๆ ที่คุณระบุตอนสร้าง REST API user`
     

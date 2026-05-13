@@ -27,7 +27,7 @@
     ![Projects overview](images/projects_overview.95db64a9.png)
     
     !!! note    
-        สำหรับการทบทวนเกี่ยวกับ Projects กรุณาไปที่ [Chapter](/nkp-fundamentals-multi-proj/index.html) นี้
+        สำหรับการทบทวนเกี่ยวกับ Projects กรุณาไปที่ [Chapter](nkp-fundamentals-multi-proj.md) นี้
     
 2.  นำทางไปยังแท็บ **Continuous Deployment (CD)** และคลิก `Add GitOps Source`
     

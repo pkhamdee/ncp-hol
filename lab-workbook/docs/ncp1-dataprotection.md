@@ -157,4 +157,4 @@ Protection policies คือนโยบายที่สามารถกำ
 
 ---
 
-[← Back: Managing Workloads](managingworkloads.md) | [Home](index.md) | [Next: Environment Details →](environmentdetails.md)
+[← Back: Managing Workloads](ncp1-managingworkloads.md) | [Home](ncp1-whatisncp.md) | [Next: Environment Details →](ncp1-environmentdetails.md)

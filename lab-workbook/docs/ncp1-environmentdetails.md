@@ -40,4 +40,4 @@ Nutanix Bootcamp ได้รับการออกแบบให้รัน
 
 ---
 
-[← Back: Data Protection](dataprotection.md) | [Home](index.md)
+[← Back: Data Protection](ncp1-dataprotection.md) | [Home](ncp1-whatisncp.md)

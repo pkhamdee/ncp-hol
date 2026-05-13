@@ -90,7 +90,7 @@
         - 'curl -Lo /usr/local/bin/kubectl [https://storage.googleapis.com/kubernetes-release/release/$](https://storage.googleapis.com/kubernetes-release/release/$)(curl -s [https://storage.googleapis.com/kubernetes-release/release/stable.txt](https://storage.googleapis.com/kubernetes-release/release/stable.txt))/bin/linux/amd64/kubectl'
         - chmod +x /usr/local/bin/kubectl
         - 'curl [https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3](https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3) | bash'
-        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
+        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](/http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
         - eject
         ```
         
@@ -122,7 +122,7 @@
         - 'curl -Lo /usr/local/bin/kubectl [https://storage.googleapis.com/kubernetes-release/release/$](https://storage.googleapis.com/kubernetes-release/release/$)(curl -s [https://storage.googleapis.com/kubernetes-release/release/stable.txt](https://storage.googleapis.com/kubernetes-release/release/stable.txt))/bin/linux/amd64/kubectl'
         - chmod +x /usr/local/bin/kubectl
         - 'curl [https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3](https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3) | bash'
-        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
+        - 'su - nutanix -c "curl -fsSL [http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh](/http://10.42.194.11/workshop_staging/tradeshows/experimental/nkp-bootcamp/install-tools.sh) | bash"'
         - eject
         ```
         

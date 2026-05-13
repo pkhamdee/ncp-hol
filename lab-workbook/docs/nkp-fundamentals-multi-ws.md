@@ -14,7 +14,7 @@ NKP จัดเตรียม workspaces พร้อมด้วย dedicated
 
 ใน lab นี้คุณจะไม่ได้ทำการสร้าง workspaces แต่จะทำการตรวจสอบ default workspace และ managed clusters ที่ถูก stage ไว้สำหรับ labs ถัดไปของคุณแทน
 
-1.  กลับไปที่ NKP management UI หากคุณปิดแท็บไปแล้ว คุณสามารถเปิดมันขึ้นมาใหม่ได้โดยใช้ https://#.#.#.**16**/dkp/kommander/dashboard (แทนที่ #.#.# ด้วย subnet ของคุณ - ซึ่งมีอยู่ในหน้า initial connection details)
+1.  กลับไปที่ NKP management UI หากคุณปิดแท็บไปแล้ว คุณสามารถเปิดมันขึ้นมาใหม่ได้โดยใช้ https:/#.#.#.**16**/dkp/kommander/dashboard (แทนที่ #.#.# ด้วย subnet ของคุณ - ซึ่งมีอยู่ในหน้า initial connection details)
     
 2.  ไปที่ NKP **Global** scope เลือก workspaces ที่เมนู sidebar และดูข้อมูลที่มีให้บนหน้าเพจ
     

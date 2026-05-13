@@ -110,7 +110,7 @@
     ![](images/11.54cc82d0.png)
     
 
-และนี่คือภาพรวมของตัวเลือกบางส่วนที่คุณมีสำหรับทำ database recovery ด้วย NDB ในขณะที่ operations เหล่านั้นกำลังดำเนินการจนเสร็จสมบูรณ์ เราไปต่อที่ส่วน [Database Provisioning and Patching](/ndb-postgresql-provision/index.html) กันเลย
+และนี่คือภาพรวมของตัวเลือกบางส่วนที่คุณมีสำหรับทำ database recovery ด้วย NDB ในขณะที่ operations เหล่านั้นกำลังดำเนินการจนเสร็จสมบูรณ์ เราไปต่อที่ส่วน [Database Provisioning and Patching](ndb-postgresql-provision.md) กันเลย
 
 
 ---

@@ -10,3 +10,5 @@
 !!! warning
     This is a warning block without a custom title.
 
+
+[← Back: What is NCP](/whatisncp.md) | [Home](/index.md) | [Next: Storage Configuration →](/storageconfiguration.md)

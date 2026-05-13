@@ -33,7 +33,7 @@
 3.  เมื่อได้รับการแจ้งเตือน ให้ใส่ URL ต่อไปนี้
     
     ```
-    [http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz](http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz)
+    [http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz](/http://10.42.194.11/workshop_staging/tradeshows/software/nutanix/kubernetes/nkp/nkp_v2.17.0_linux_amd64.tar.gz)
     ```
     
     (Optional) จะหา NKP CLI ได้จากที่ไหนเมื่อไม่ได้อยู่ใน bootcamp

@@ -24,8 +24,8 @@ markdown_extensions:
       permalink: true
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.superfences
   - pymdownx.details
@@ -93,7 +93,7 @@ nav:
       - Overview: migrate-workloads-overview.md
       - Setup Move: migrate-workloads-setup-move.md
       - Migrating VMs with Move: migrate-workloads-move-view-source-vm.md
-      - Create a Migration Plan: migrate-workloads-move-create-migration-plan.md
+      - Create a Migration Plan: migrate-workloads-move-creating-migrate-plan.md
       - Migrate the VM: migrate-workloads-move-migrate-vm.md
       - Advanced VM Migrations: migrate-workloads-move-advanced-migration.md
       - Migrate at Scale: migrate-workloads-move-migrate-at-scale.md
@@ -230,4 +230,71 @@ nav:
     - Conclusion:
       - Conclusion: nkp-conclusion.md
     - Optional Labs:
-      - Business Continuity and Disaster Recovery with NDK: nkp-option-ndk.md             
+      - Business Continuity and Disaster Recovery with NDK: nkp-option-ndk.md
+
+  - NAI Bootcamp:
+    - Nutanix Enterprise AI: nai-welcome.md
+    - Introduction:
+      - Overview: nai-intro.md
+      - Setup: nai-intro-setup.md
+      - Navigating the labs: nai-intro-navigating.md
+    - Fundamentals:
+      - Overview: nai-fundamentals-overview.md
+      - Review the NAI Interface: nai-fundamentals-interface.md
+      - Logi in to Nutanix Enterprise AI: nai-fundamentals-login.md
+      - Import an LLM:
+        - Overview: nai-fundamentals-import-llm.md
+        - Import Your First Model: nai-fundamentals-import-model.md
+      - Create An Endpoint:
+        - Overview: nai-fundamentals-endpoint.md
+        - Create an Endpoint and API Key: nai-fundamentals-endpoint-create.md
+        - Test the Endpoint: nai-fundamentals-endpoint-test.md
+        - View The Endpoint Details: nai-fundamentals-endpoint-view.md
+        - Creating Additional API Keys (Optional): nai-fundamentals-endpoint-keys.md
+      - Takeaways: nai-fundamentals-takeaways.md
+    - Application:
+      - Overview: nai-application-overview.md
+      - Create Your First Chatbot:
+        - Overview: nai-application-chatbot.md
+        - Gather Information: nai-application-chatbot-gather.md
+        - Create a Blank Chatflow in Flowise: nai-application-chatbot-flowise.md
+        - Add Nodes to Chatflow: nai-application-chatbot-addnode.md
+        - Configure Nodes: nai-application-chatbot-confnode.md
+        - Connect Nodes: nai-application-chatbot-connnode.md
+        - Test Chatflow: nai-application-chatbot-test.md
+        - Configure Shared Endpoint: nai-application-chatbot-shared.md
+      - Configure RAG:
+        - Overview: nai-application-rag.md
+        - Obtain Object Store URL and Credentials: nai-application-rag-store.md
+        - Upload Document to Object Store: nai-application-rag-upload.md
+        - Configure Embeddings and Vector Store: nai-application-rag-vector.md
+        - Configure Chatflow: nai-application-rag-chatflow.md
+        - Test the Chatbot: nai-application-rag-test.md
+      - Takeaways: nai-application-takeaways.md
+    - Conclusion:
+      - Conclusion: nai-conclusion.md
+    - Appendix:
+      - Glossary: nai-appendix-glossary.md
+      - Flowise Chatflows: nai-appendix-flowise.md
+      - Types of Large Language Models: nai-appendix-typellm.md
+          
+  - Extend To Edge:
+    - Getting Started: edge-getting-started.md
+    - Lab:
+      - Scenario 1 - Setting Up AWS:
+        - Configure AWS: edge-lab-scenario1-setupaws.md
+        - VPN Connectivity: edge-lab-scenario1-vpn.md
+      - Scenario 2 - Setting Up Layer 2:
+        - Overview & Pre-reqs: edge-lab-scenario2-overview.md
+        - Deploy Local Gateways: edge-lab-scenario2-localgw.md
+        - Deploy Remote Gateways: edge-lab-scenario2-remotegw.md
+        - Extend Layer 2 Subnet: edge-lab-scenario2-layer2.md
+      - Scenario 3 - DR:
+        - Overview: edge-lab-scenario3-overview.md
+        - Definitions: edge-lab-scenario3-def.md
+        - Setup: edge-lab-scenario3-setup.md
+        - Create Category & Associate VM: edge-lab-scenario3-cat.md
+        - Create a Protection Policy: edge-lab-scenario3-protect.md
+        - Create a Recovery Plan: edge-lab-scenario3-recover.md
+        - Failover: edge-lab-scenario3-failover.md
+    - Conclusion: edge-conclusion.md 

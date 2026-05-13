@@ -128,6 +128,6 @@ Snapshot policy ช่วยให้คุณสามารถกำหนด 
 
 คุณได้เสร็จสิ้นกระบวนการ setup แล้ว และสามารถไปยังส่วนใดส่วนหนึ่งหรือทั้งหมดของเนื้อหาเหล่านี้ได้เลย:
 
-- [Calm IaaS: Linux](/selfservice-linux/index.html)
-- [Calm IaaS: Windows](/selfservice-windows/index.html)
-- [Calm DSL](/selfservice-dsl/index.html)
+- [Calm IaaS: Linux](selfservice-linux.md)
+- [Calm IaaS: Windows](selfservice-windows.md)
+- [Calm DSL](selfservice-dsl.md)

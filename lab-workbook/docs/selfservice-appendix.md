@@ -121,4 +121,4 @@ Platform-as-a-service (PaaS), managed container offering สำหรับ [Kub
 ## Additional Resources
 
 1.  \[Blog\] [Calm Terminology](https://next.nutanix.com/blog-40/calm-terminology-actions-and-dependencies-33852)[\[Source\]](https://github.com/MichaelHaigh/calm-blueprints/blob/master/DependencyTaskExample/README.md)
-2.  [Nutanix Calm Admin Operations Guide: Major Components](https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v297:nuc-nucalm-major-components-c.html)
+2.  [Nutanix Calm Admin Operations Guide: Major Components](https://portal.nutanix.com#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v297:nuc-nucalm-major-components-c.html)

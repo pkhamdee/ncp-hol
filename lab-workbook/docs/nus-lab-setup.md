@@ -13,8 +13,6 @@
     -   Username **administrator@ntnxlab.local**
     -   Password: **cluster password**
 
-สามารถดูคำแนะนำโดยละเอียดเพิ่มเติมได้ [ที่นี่](/unified-storage/appendix/remote_desktop.html)
-
 5.  ภายใน **`User##`\-WinTools** VM ของคุณ ให้ดาวน์โหลดไฟล์ sample data ต่อไปนี้โดยคัดลอกและวาง URL นี้ลงใน Chrome
 
     ```

@@ -11,7 +11,7 @@ NCP Fundamentals
 
 ทำความคุ้นเคยกับพื้นฐานการสร้าง Nutanix Cluster แรกของคุณ ซึ่งรวมถึงการ deploy VM, การจัดการ, และการทำ network configuration
 
-[Lab Guide](/ncp1-whatisncp/index.html)
+[Lab Guide](ncp1-whatisncp.md)
 
 ## NCP Pt. 2 - Manage Your Cloud
 
@@ -22,7 +22,7 @@ NCP Fundamentals
 
 ทำความคุ้นเคยกับวิธีการสร้าง, ใช้งาน, และกำกับดูแล Nutanix cloud operating model เรียนรู้เพิ่มเติมเกี่ยวกับ RBAC, Categories, Policies, และ Self-Service
 
-[Lab Guide](/ncp2-nutanix-cloud-platform/index.html)
+[Lab Guide](ncp2-nutanix-cloud-platform.md)
 
 ## Disaster Recovery Bootcamp
 
@@ -34,7 +34,7 @@ NCP Fundamentals
 
 Bootcamp นี้มีแบบฝึกหัดสำหรับทั้ง failover scenarios แบบ Unplanned และ Planned คุณจะใช้ VMs, Protection Policy, และ Recovery Plan
 
-[Lab Guide](/dr-getting-started/index.html)
+[Lab Guide](dr-getting-started.md)
 
 ## Migrate to Nutanix on Prem
 
@@ -45,7 +45,7 @@ NCP Fundamentals
 
 เรียนรู้วิธีการ migrate VM ไปยัง AHV on prem โดยใช้ Move ซึ่งรวมถึงฟีเจอร์ Advanced Migration ที่เพิ่งเพิ่มเข้ามา นอกจากนี้ เรียนรู้การ migrate shares ไปยัง Nutanix Files และการทำ day 2 management บน Nutanix ซึ่งรวมถึงการใช้ประโยชน์จาก Categories และ Policies เพื่อเป็นส่วนหนึ่งของกระบวนการ migration
 
-[Lab Guide](/migrate-nutanix-overview/index.html)
+[Lab Guide](migrate-nutanix-overview.md)
 
 ## Modern Applications
 
@@ -59,7 +59,7 @@ NKP Advanced
 
 เจาะลึกไปกับ hands-on lab ซีรีส์ 4 ชั่วโมงที่ออกแบบมาเพื่อช่วยคุณสำรวจฟีเจอร์อันทรงพลังของ Nutanix Kubernetes Platform คุณจะได้ deploy NKP cluster ของคุณเองและครอบคลุมเนื้อหาทั้งหมดใน lab ของ NKP Fundamentals
 
-[Lab Guide](/nkp-bootcamp/index.html)
+[Lab Guide](nkp-bootcamp.md)
 
 ## Nutanix Enterprise AI
 
@@ -70,7 +70,7 @@ Nutanix Enterprise AI
 
 เรียนรู้ว่า Nutanix Enterprise AI (NAI) สามารถช่วยคุณสร้าง, deploy, และจัดการ AI applications บน Nutanix Cloud Platform ได้อย่างไร lab นี้จะแนะนำคุณเกี่ยวกับการใช้ NAI เพื่อจัดการและ deploy model, รัน inference บน model นั้น, และสร้าง RAG pipeline ของคุณเอง
 
-[Lab Guide](/xxx/)
+[Lab Guide](nai-welcome.md)
 
 ## Additional Nutanix Portfolio Labs
 
@@ -83,7 +83,7 @@ Flow Network Security
 
 เรียนรู้การใช้ประโยชน์จาก Flow Network Security Next-Gen เพื่อทำ microsegmentation ให้กับ VM workloads ในขณะที่ใช้ประโยชน์จาก policies, visualization, และ automation
 
-[Lab Guide](/flow-overview/index.html)
+[Lab Guide](flow-overview.md)
 
 ## Self-Service IaaS
 
@@ -96,7 +96,7 @@ Self-Service IaaS Bootcamp
 
 แนะนำ Self Service Fundamentals และวิธีการใช้ประโยชน์จากมันเพื่อเป็นส่วนหนึ่งใน automation journey ของคุณ
 
-[Lab Guide](/selfservice-gettingstart/index.html)
+[Lab Guide](selfservice-gettingstart.md)
 
 ## Nutanix Unified Storage (NUS)
 
@@ -108,7 +108,7 @@ Unified Storage (NUS) Bootcamp
 
 เรียนรู้การ deploy และจัดการ File shares, Analytics, และ Objects ทั้งหมดภายใต้ stack เดียว ผู้ใช้จะสามารถ block files, เรียนรู้การจัดการ files, และเรียนรู้วิธีรักษาความปลอดภัยของ storage อย่างมีประสิทธิภาพและสามารถมองเห็นแนวโน้มการเติบโตได้ผ่าน analytics
 
-[Lab Guide](/nus-getting-start/index.html)
+[Lab Guide](nus-getting-start.md)
 
 ## Nutanix Database Service (NDB)
 
@@ -120,7 +120,7 @@ Nutanix Database Service (NDB) Bootcamp
 
 เรียนรู้การทำ configure NDB สำหรับ PostgreSQL เรียนรู้การทำ configure snapshots และ clone tables ผ่าน NDB
 
-[Lab Guide](/ndb-getting-started/index.html)
+[Lab Guide](ndb-getting-started.md)
 
 ## Extending NCP from Core to Edge to Cloud
 
@@ -130,4 +130,4 @@ Nutanix Database Service (NDB) Bootcamp
 
 ทำความเข้าใจพื้นฐานของ Nutanix Disaster Recovery และใช้ประโยชน์จาก built-in capabilities เพื่อขยายไปสู่ public cloud
 
-[Lab Guide](/xxxx/)
+[Lab Guide](edge-getting-started.md)

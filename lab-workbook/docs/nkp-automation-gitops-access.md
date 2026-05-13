@@ -17,7 +17,7 @@
 5.  Application ถูกเปิดให้เข้าถึงโดยใช้ LoadBalancer IP address ที่ได้รับการจัดสรรโดย load balancer ที่มากับ NKP ซึ่งก็คือ MetalLB
     
     !!! note    
-        สำหรับการทบทวนเกี่ยวกับ MetalLB กรุณาไปที่ [Chapter](/nkp-fundamentals-expose-lb/index.html) นี้
+        สำหรับการทบทวนเกี่ยวกับ MetalLB กรุณาไปที่ [Chapter](nkp-fundamentals-expose-lb.md) นี้
     
 6.  สุดท้าย คุณสามารถเข้าถึง boutique store ได้โดยตรงจาก Kubernetes dashboard เช่นกัน ให้นำทางไปยัง `Services` และคลิกที่ URL สำหรับ `frontend-external` service
     

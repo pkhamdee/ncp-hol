@@ -265,4 +265,4 @@ Nutanix Guest Tools เป็นเครื่องมือช่วย backu
 
 ---
 
-[← Back: Network Configuration](networkconfiguration.md) | [Home](index.md) | [Next: Managing Workloads →](managingworkloads.md)
+[← Back: Network Configuration](ncp1-networkconfiguration.md) | [Home](ncp1-whatisncp.md) | [Next: Managing Workloads →](ncp1-managingworkloads.md)

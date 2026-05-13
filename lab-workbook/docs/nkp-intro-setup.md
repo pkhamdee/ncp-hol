@@ -11,12 +11,12 @@
     -   Prism Central และ staged NKP setup: adminuser## (โดเมน ntnxlab.local)
     -   Admin VM: nutanix | nutanix/4u
 
-4.  `Dedicated` compute resources สำหรับผู้ใช้ทุกคนเพื่อทำ [Deploy NKP optional lab](/nkp-intro-deploy-nkp/index.html) โดยผู้ใช้แต่ละคนจะต้อง deploy:
+4.  `Dedicated` compute resources สำหรับผู้ใช้ทุกคนเพื่อทำ [Deploy NKP optional lab](nkp-intro-deploy-nkp.md) โดยผู้ใช้แต่ละคนจะต้อง deploy:
     
     -   _Admin VM_
     -   NKP self-managed cluster
 
-5.  `Shared` NKP Ultimate multi-cluster setup ประกอบด้วย workload clusters ที่กำหนดค่าไว้ล่วงหน้าสองชุด ได้แก่ workload01 และ workload02 ซึ่งช่วยให้ผู้ใช้ทุกคนสามารถดำเนินการทำ labs ในส่วนของ [Deploy an app lab](/nkp-fundamentals-deploy-create-dp/index.html) ต่อไปได้โดยไม่ต้องรอการ deploy cluster ของแต่ละคน
+5.  `Shared` NKP Ultimate multi-cluster setup ประกอบด้วย workload clusters ที่กำหนดค่าไว้ล่วงหน้าสองชุด ได้แก่ workload01 และ workload02 ซึ่งช่วยให้ผู้ใช้ทุกคนสามารถดำเนินการทำ labs ในส่วนของ [Deploy an app lab](nkp-fundamentals-deploy-create-dp.md) ต่อไปได้โดยไม่ต้องรอการ deploy cluster ของแต่ละคน
     
 โปรดจำไว้ว่า รายละเอียดทั้งหมด เช่น credentials, environment IPs และข้อมูลอื่นๆ สามารถเข้าถึงได้ในหน้า bootcamp ของคุณ
 
@@ -61,7 +61,7 @@
 
 #### For the rest of labs
 
-เริ่มตั้งแต่ [Deploy an app (LAB)](nkp-fundamentals-deploy-create-dp/index.html) ให้ใช้ส่วนนี้
+เริ่มตั้งแต่ [Deploy an app (LAB)](nkp-fundamentals-deploy-create-dp.md) ให้ใช้ส่วนนี้
 
 |Component                  |IP             |Example                                        |
 |---------------------------|---------------|-----------------------------------------------|

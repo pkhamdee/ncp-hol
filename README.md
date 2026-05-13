@@ -39,7 +39,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Open [http://localhost:8000](http://localhost:8000). Pages reload automatically on save.
+Open [http://localhost:8000](/http://localhost:8000). Pages reload automatically on save.
 
 ### Option 2 — Serve pre-built site
 
@@ -83,7 +83,7 @@ docker build -t ncp-hol .
 docker run -p 8080:80 ncp-hol
 ```
 
-Open [http://localhost:8080](http://localhost:8080).
+Open [http://localhost:8080](/http://localhost:8080).
 
 > The Dockerfile copies the `site/` directory into an nginx image. You must run `mkdocs build` before `docker build`.
 

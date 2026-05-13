@@ -144,7 +144,7 @@ NDB สามารถทำ patch ให้กับ database servers ของ
         -   ปัจจุบัน Microsoft SQL server รองรับเฉพาะ database software updates โดยใช้ฟีเจอร์ Maintenance Window Policy เท่านั้น
     
 
-ตอนนี้เราได้ตั้งค่า patching สำหรับ database VM ของเราเรียบร้อยแล้ว เราไปต่อกันที่ส่วนของ [clone creation and management](/ndb-postgresql-create-manage/index.html) กันเลย
+ตอนนี้เราได้ตั้งค่า patching สำหรับ database VM ของเราเรียบร้อยแล้ว เราไปต่อกันที่ส่วนของ [clone creation and management](ndb-postgresql-create-manage.md) กันเลย
 
 
 ---
