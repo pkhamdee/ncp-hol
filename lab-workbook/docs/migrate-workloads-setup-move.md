@@ -104,5 +104,5 @@ destination environment ของเราก็คือ AHV เช่นกั
 
 ตอนนี้เราได้เพิ่ม source AHV และ destination AHV cluster เพื่อใช้สำหรับการ VM migration ใน lab แล้ว
 
-1.  หลังจากหยุดพักสั้นๆ คุณสามารถดำเนินการ basic migration ต่อใน "[Migrating VMs with Move](/migrate/migrating-your-workloads/migrating-vms-view-source-vm.html)"
-2.  หากได้รับคำแนะนำและคุณคุ้นเคยกับ basic migrations อยู่แล้ว คุณสามารถข้ามไปที่ "[Advanced VM Migrations](/migrate/migrating-your-workloads/migrating-create-advanced-migration-plan.html)" ได้เลย
+1.  หลังจากหยุดพักสั้นๆ คุณสามารถดำเนินการ basic migration ต่อใน "[Migrating VMs with Move](migrate-workloads-move-view-source-vm.md)"
+2.  หากได้รับคำแนะนำและคุณคุ้นเคยกับ basic migrations อยู่แล้ว คุณสามารถข้ามไปที่ "[Advanced VM Migrations](migrate-workloads-move-advanced-migration.md)" ได้เลย

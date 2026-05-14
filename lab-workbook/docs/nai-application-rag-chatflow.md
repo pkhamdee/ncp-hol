@@ -29,7 +29,7 @@ Let's start by duplicating the existing chatflow.
 
     **Node Types**
 
-    We introduced Flowise nodes in the [Add Nodes to Chatflow](/nai/application/create-chatbot/add-nodes-to-chatflow.html) section. For your chatbot, you used the following node types:
+    We introduced Flowise nodes in the [Add Nodes to Chatflow](nai-application-chatbot-connnode.md) section. For your chatbot, you used the following node types:
 
     -   **ChatOpenAI Custom** - a wrapper around Langchain's `ChatOpenAI` class that enables flexiblity by allowing parameter tweaking to connect to custom endpoints
     -   **Conversation Chain** - enables back-and-forth interactions by maintaining conversation history between the user and a language model

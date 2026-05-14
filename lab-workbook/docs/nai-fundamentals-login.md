@@ -7,7 +7,7 @@ Starting from this lab you'll be using the staged Nutanix Enterprise AI instance
 1.  Access the shared Nutanix Enterprise AI console on a new tab.
     
     !!! tip    
-        You can find the connection details for the shared instance on the [Setup](/nai/introduction/setup#environment-and-authentication-details) page of this lab guide.
+        You can find the connection details for the shared instance on the [Setup](nai-intro-setup.md) page of this lab guide.
     
 2.  Login with your assigned credentials.
     

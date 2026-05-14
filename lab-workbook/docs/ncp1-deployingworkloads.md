@@ -250,63 +250,59 @@ Nutanix Guest Tools เป็นเครื่องมือช่วย backu
 8.  ในหน้า Management สำหรับ VM เราจะไม่ใช้ default storage policy คงค่าเริ่มต้นและคลิก **Next**
     
     ![](images/deploy_workload_linux4.d82a662c.png)
-    
-9. Guest Customization ให้เลือก Script Type เป็น Cloud-init (Linux) และ Configuration Method เป็น Custom Script ในส่วนของ Startup Script ให้ใส่ข้อมูลดังนี้
 
-    ```
-    #cloud-config
-    fqdn: user## # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
-    ssh_pwauth: true
-    users:
-      - name: nutanix
-        primary_group: nutanix
-        groups: [wheel, docker]
-        shell: /bin/bash
-        sudo: ALL=(ALL) NOPASSWD:ALL
-        lock_passwd: false
-    chpasswd:
-      expire: false
-      users:
-      - name: nutanix
-        password: nutanix/4u
-        type: text
-    ```    
+    !!! tip        
+        สามารถตั้งค่าของ VM ได้ด้วย Guest Customization เช่นการ add user โดยให้เลือก Script Type เป็น Cloud-init (Linux) และ Configuration Method เป็น Custom Script ในส่วนของ Startup Script ให้ใส่ข้อมูลดังนี้
+            
+            #cloud-config
+            fqdn: user## # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
+            ssh_pwauth: true
+            users:
+            - name: nutanix
+                primary_group: nutanix
+                groups: [wheel, docker]
+                shell: /bin/bash
+                sudo: ALL=(ALL) NOPASSWD:ALL
+                lock_passwd: false
+            chpasswd:
+            expire: false
+            users:
+            - name: nutanix
+                password: nutanix/4u
+                type: text 
 
-    ตัวอย่าง
+            ตัวอย่าง
 
-    ```
-    #cloud-config
-    fqdn: user01 # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
-    ssh_pwauth: true
-    users:
-      - name: nutanix
-        primary_group: nutanix
-        groups: [wheel, docker]
-        shell: /bin/bash
-        sudo: ALL=(ALL) NOPASSWD:ALL
-        lock_passwd: false
-    chpasswd:
-      expire: false
-      users:
-      - name: nutanix
-        password: nutanix/4u
-        type: text
-    ```
+            #cloud-config
+            fqdn: user01 # <-- อัปเดตด้วยหมายเลขผู้ใช้ของคุณ
+            ssh_pwauth: true
+            users:
+            - name: nutanix
+                primary_group: nutanix
+                groups: [wheel, docker]
+                shell: /bin/bash
+                sudo: ALL=(ALL) NOPASSWD:ALL
+                lock_passwd: false
+            chpasswd:
+            expire: false
+            users:
+            - name: nutanix
+                password: nutanix/4u
+                type: text
 
-    คำอธิบาย Cloud-config
-        
-    -   **2** อัปเดตค่าด้วยผู้ใช้ของคุณ ตัวอย่าง: user**01**
-    -   **3-16** สร้างผู้ใช้ใหม่ `nutanix` และเปิดใช้งานการรองรับรหัสผ่าน เป็นเรื่องปกติที่ cloud images จะไม่มีรหัสผ่านมาให้ตั้งแต่ต้น
-    -   **15** รหัสผ่านเริ่มต้นที่ตั้งไว้คือ `nutanix/4u` ในระดับ production คุณควรใช้ SSH public key และไม่ใช้การตรวจสอบสิทธิ์ด้วยรหัสผ่าน    
+            คำอธิบาย Cloud-config
+                
+            -   **2** อัปเดตค่าด้วยผู้ใช้ของคุณ ตัวอย่าง: user**01**
+            -   **3-16** สร้างผู้ใช้ใหม่ `nutanix` และเปิดใช้งานการรองรับรหัสผ่าน เป็นเรื่องปกติที่ cloud images จะไม่มีรหัสผ่านมาให้ตั้งแต่ต้น
+            -   **15** รหัสผ่านเริ่มต้นที่ตั้งไว้คือ `nutanix/4u` ในระดับ production คุณควรใช้ SSH public key และไม่ใช้การตรวจสอบสิทธิ์ด้วยรหัสผ่าน    
 
-    ![Cloud-init](images/3-create-vm-management.de2d3a3b.png)
 
-10.  ในหน้า review ตรวจสอบการเลือกและคลิก **Create VM** เพื่อสร้าง Linux VM ของเรา
+9.  ในหน้า review ตรวจสอบการเลือกและคลิก **Create VM** เพื่อสร้าง Linux VM ของเรา
     
 
     ![](images/deploy_workload_linux5.4d98fc2f.png)
 
-11.  ทำการเปิดเครื่อง VM ที่สร้างและเชื่อมต่อกับ Console เพื่อดู Linux Virtual Machine ใหม่
+10.  ทำการเปิดเครื่อง VM ที่สร้างและเชื่อมต่อกับ Console เพื่อดู Linux Virtual Machine ใหม่
 
 ## Takeaways
 

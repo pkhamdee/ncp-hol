@@ -18,7 +18,7 @@
     
     !!! tip    
 
-        The model types are defined in the [appendix](/nai/appendix/model-types.html).
+        The model types are defined in the [appendix](nai-appendix-typellm.md).
     
 4.  Admin users can control which models are accessible to users. Hover over one of the radio buttons, and notice that the model import has been restricted by the admin.
     

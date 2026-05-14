@@ -23,7 +23,7 @@
 
 ตอนนี้เราได้ทำการ migration เสร็จสมบูรณ์แล้ว มาดูกันที่ target share จาก Windows client ของเรา
 
-1.  ล็อกอินเข้าสู่ Remote Desktop Session ของคุณ หากจำเป็น โปรดดูคำแนะนำใน [the appendix](/migrate/appendix/remote_desktop.html)
+1.  ล็อกอินเข้าสู่ Remote Desktop Session ของคุณ
     
 2.  เปิด target share โดยพิมพ์ `\\nextfiles\user##` ลงในฟิลด์ **Search** แล้วกด **Enter**
     

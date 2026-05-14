@@ -19,9 +19,9 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 ## Add Blueprint to Marketplace
 
--   ดาวน์โหลด DevWorkStation Blueprint โดยคลิก [ที่นี่](/calm-iaas/DevWorkstation.json).
+-   ดาวน์โหลด DevWorkStation Blueprint โดยคลิก [ที่นี่](DevWorkstation.json).
     
--   ดาวน์โหลดไอคอนของ DevWorkStation Blueprint สำหรับ Market Place โดยคลิก [ที่นี่](/calm-iaas/software-developer.png).
+-   ดาวน์โหลดไอคอนของ DevWorkStation Blueprint สำหรับ Market Place โดยคลิก [ที่นี่](software-developer.png).
     
 
 ### Upload Blueprint to Marketplace

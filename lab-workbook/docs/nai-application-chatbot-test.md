@@ -12,7 +12,7 @@
     
 
 !!! tip
-    While the answer is streaming, you can view the log updates from the endpoint logs on the endpoint dashboard in Nutanix Enterprise AI as described in [View the Endpoint Details](/nai/fundamentals/create-an-endpoint/view-endpoint-details.html).
+    While the answer is streaming, you can view the log updates from the endpoint logs on the endpoint dashboard in Nutanix Enterprise AI as described in [View the Endpoint Details](nai-fundamentals-endpoint-view.md).
 
 After a few minutes, the request information will be reflected in the endpoint dashboard.
 

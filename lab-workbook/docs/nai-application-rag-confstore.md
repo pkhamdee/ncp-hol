@@ -36,7 +36,7 @@
     
 2.  Enter in a name for your credential (e.g. `objects-creds`)
     
-3.  Under AWS Access Key and AWS Secret Key, enter in your Access and Secret Key for your Nutanix Objects bucket that you obtained in the [Obtain Object Store URL and Credentials](/nai/application/configure-rag/object-store-creds.html) section and click **Add**.
+3.  Under AWS Access Key and AWS Secret Key, enter in your Access and Secret Key for your Nutanix Objects bucket that you obtained in the [Obtain Object Store URL and Credentials](nai-application-rag-store.md) section and click **Add**.
     
     ![S3 Credentials](images/s3creds.8d6c1c03.png)
     

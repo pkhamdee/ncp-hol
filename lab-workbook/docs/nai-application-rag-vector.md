@@ -31,7 +31,7 @@
     
     ![OpenAI Embeddings Custom](images/openai-embeddings-custom.764f9f19.png)
     
-4.  Under **Connect Credential**, select the Shared Key credential you configured in the [Configure Shared Endpoint](/nai/application/create-chatbot/use-gpu.html) section.
+4.  Under **Connect Credential**, select the Shared Key credential you configured in the [Configure Shared Endpoint](nai-application-chatbot-shared.md) section.
     
 5.  Under **BasePath**, enter the `Shared NAI Endpoint URL`
     
