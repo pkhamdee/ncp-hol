@@ -97,3 +97,9 @@ IT Admin ต้องการรับ email notification เมื่อใด
 
 !!! note
     คุณจะได้รับ email notifications เมื่อ VMs ของคุณถูกสร้างขึ้น ตรวจสอบให้แน่ใจว่าได้ใช้อีเมลแอดเดรสที่คุณสามารถเช็คได้ในขณะที่คุณกำลังทำ lab
+
+
+
+---
+
+[← Back: Govern Your Cloud](ncp2-govern-your-cloud.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Setting Up an Approval Policy →](ncp2-setting-up-approval-policy.md)

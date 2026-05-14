@@ -137,3 +137,9 @@ Projects ยังสามารถควบคุม default VM specifications
 28. คุณควรเห็น project ของคุณถูกทำเครื่องหมายเป็น **Active** หลังจากทำ configuration สำเร็จ
     
     ![](images/projects15.efde8409.png)
+
+
+
+---
+
+[← Back: Identity and Access Management](ncp2-identity-and-access-mgmt.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Build Your Cloud →](ncp2-build-your-cloud.md)

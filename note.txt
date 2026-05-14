@@ -11,4 +11,7 @@
     This is a warning block without a custom title.
 
 
-[← Back: What is NCP](/whatisncp.md) | [Home](/index.md) | [Next: Storage Configuration →](/storageconfiguration.md)
+
+---
+
+[← Back: What is NCP](ncp1-whatisncp.md) | [Home](ncp1-whatisncp.md) | [Next: Storage Configuration →](ncp1-storageconfiguration.md)

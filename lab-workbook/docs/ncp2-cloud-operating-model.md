@@ -19,3 +19,9 @@ Software Engineer ต้องการ infrastructure สำหรับ featur
 IT Administrator จึงเข้ามาจัดการ โดยให้คำแนะนำ engineer เกี่ยวกับ deployment ที่มีโครงสร้างและปลอดภัย โดยใช้ประโยชน์จากความสามารถของ Nutanix Cloud Manager สิ่งนี้ช่วยให้มั่นใจได้ว่าสามารถเข้าถึง resources ได้อย่างรวดเร็ว ในขณะที่ยังคงรักษา security และ compliance ไว้ได้
 
 ต้องการเรียนรู้วิธีหลีกเลี่ยงข้อผิดพลาดทั่วไปเหล่านี้หรือไม่? มาสำรวจโซลูชันของ IT Admin ที่ใช้ Nutanix Cloud Manager กัน
+
+
+
+---
+
+[← Back: Nutanix Cloud Management](ncp2-nutanix-cloud-platform.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Setting Up the Environment →](ncp2-setting-up-environment.md)

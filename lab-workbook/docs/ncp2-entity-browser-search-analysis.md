@@ -49,3 +49,9 @@ Nutanix Prism Central เป็น single management point สำหรับ mu
 
 !!! note
     view นี้สามารถใช้เพื่อช่วยในการระบุ (spot) ปัญหา VM performance ได้
+
+
+
+---
+
+[← Back: Inefficient VM Detection](ncp2-inefficient-vm-detection.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Life Cycle Manager →](ncp2-life-cycle-management.md)

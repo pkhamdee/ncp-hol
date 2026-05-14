@@ -78,3 +78,9 @@ Prism Central ช่วยให้มองเห็นภาพรวม (visu
 1.  คลิก **Save** เพื่อใช้ category นี้กับสอง VMs ของคุณ
 
 ตอนนี้ VMs ของคุณถูก assigned ให้กับ category ใหม่ของคุณแล้ว คุณจะเห็นว่ายังไม่มี policies ใดที่เกี่ยวข้องกับ VMs เหล่านี้ตาม categories เหล่านี้ เราจะพูดถึงเรื่องนี้ในขั้นตอนถัดไป
+
+
+
+---
+
+[← Back: Setting Up the Environment](ncp2-setting-up-environment.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Identity and Access Management →](ncp2-identity-and-access-mgmt.md)

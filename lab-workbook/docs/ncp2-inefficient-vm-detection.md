@@ -24,3 +24,9 @@
 👀 [Guided walkthrough of VM right sizing.](https://nutanix.storylane.io/share/1cyx8cigr5qk) 👀
 
 นี่คือ [link](https://nutanix.storylane.io/share/1cyx8cigr5qk) ไปยัง guided walkthrough เพื่อสาธิตการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through นี้เสร็จสิ้นแล้ว ให้กลับมาที่ lab manual
+
+
+
+---
+
+[← Back: Capacity Planning](ncp2-capacity-planning.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Entity Browser, Search and Analysis →](ncp2-entity-browser-search-analysis.md)

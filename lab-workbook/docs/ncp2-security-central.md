@@ -11,3 +11,9 @@
 👀 [Guided walkthrough of Security Central.](https://nutanix.storylane.io/share/xq2vd24w8c6x) 👀
 
 [Interactive Demo](https://nutanix.storylane.io/share/xq2vd24w8c6x)
+
+
+
+---
+
+[← Back: Cost Governance](ncp2-cost-governance.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Conclusion →](ncp2-cloud-operating-conclusion.md)

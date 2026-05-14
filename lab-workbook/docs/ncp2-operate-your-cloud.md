@@ -12,3 +12,9 @@ Nutanix มอบความสามารถในการ operate ตัว
     -   Automate งานประจำ (routine tasks) และเร่งการแก้ไขปัญหา (issue resolution) เพื่อปรับปรุง productivity
 
 มาเจาะลึก NCM Intelligent Operations กันเถอะ!
+
+
+
+---
+
+[← Back: Self Service](ncp2-selfservice.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Reports →](ncp2-reports.md)

@@ -13,3 +13,9 @@ Categories จะถูกใช้เพื่อ map resources เข้าก
 👀 [Guided walkthrough of Cost Governance.](https://nutanix.storylane.io/share/m4xyy9kiqpbi) 👀
 
 [Interactive Demo](https://nutanix.storylane.io/share/m4xyy9kiqpbi)
+
+
+
+---
+
+[← Back: Launch an App from Marketplace](ncp2-launch-app-from-marketplace.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Security Central →](ncp2-security-central.md)

@@ -13,3 +13,9 @@
 - การตรวจสอบการใช้งานผ่าน Reporting, Capacity Planning และการระบุ Inefficient VMs
 
 เมื่อสิ้นสุด bootcamp นี้และควบคู่ไปกับ NCP Part1 ผู้เข้าร่วมจะเข้าใจ core concepts และเทคโนโลยีที่ประกอบกันเป็น Nutanix Cloud Platform
+
+
+
+---
+
+[Home](ncp2-nutanix-cloud-platform.md) | [Next: Nutanix Cloud Operating Model →](ncp2-cloud-operating-model.md)

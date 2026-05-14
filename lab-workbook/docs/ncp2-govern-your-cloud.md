@@ -15,3 +15,9 @@ Nutanix มอบความสามารถในการ operate ตัว
     -   Automate งานประจำ (routine tasks) และเร่งการแก้ไขปัญหา (issue resolution) เพื่อปรับปรุง productivity
 
 มาเจาะลึก NCM Intelligent Operations กันเถอะ!
+
+
+
+---
+
+[← Back: Life Cycle Manager](ncp2-life-cycle-management.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Playbooks →](ncp2-playbooks.md)

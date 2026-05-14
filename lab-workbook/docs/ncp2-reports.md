@@ -62,3 +62,9 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
 18.  นี่คือตัวอย่างลักษณะของ report ที่จะได้
     
     ![](images/report5.43db3977.png)
+
+
+
+---
+
+[← Back: Operate Your Cloud](ncp2-operate-your-cloud.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Capacity Planning →](ncp2-capacity-planning.md)

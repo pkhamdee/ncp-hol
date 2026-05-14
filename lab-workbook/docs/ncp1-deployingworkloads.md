@@ -263,6 +263,8 @@ Nutanix Guest Tools เป็นเครื่องมือช่วย backu
 -   ในแล็บนี้ คุณจะเห็นว่าการ deploy ทั้ง Windows และ Linux VM เป็นเรื่องง่ายเพียงใด
 -   เครื่องมือ Image Configuration ช่วยให้คุณจัดการ image ที่มีอยู่ สำหรับ VM deployment ตามต้องการและครอบคลุมรูปแบบที่หลากหลายรวมถึง raw, vhd, vhdx, vmdk, vdi, iso, และ qcow2
 
+
+
 ---
 
 [← Back: Network Configuration](ncp1-networkconfiguration.md) | [Home](ncp1-whatisncp.md) | [Next: Managing Workloads →](ncp1-managingworkloads.md)

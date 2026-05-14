@@ -155,6 +155,8 @@ Protection policies คือนโยบายที่สามารถกำ
   - Nutanix มีฟังก์ชันการป้องกันข้อมูลในระดับ VM, ไฟล์ และกลุ่มวอลุ่ม (volume group) เพื่อให้มั่นใจได้ว่า VM และข้อมูลต่างๆ จะปลอดภัย
   - นโยบายการทำสแนปช็อตและทำสำเนาระดับ VM สามารถจัดการได้ผ่าน Prism Central สำหรับไฮเปอร์ไวเซอร์ (hypervisor) ทุกตัวที่รองรับ
 
+
+
 ---
 
 [← Back: Managing Workloads](ncp1-managingworkloads.md) | [Home](ncp1-whatisncp.md) | [Next: Environment Details →](ncp1-environmentdetails.md)

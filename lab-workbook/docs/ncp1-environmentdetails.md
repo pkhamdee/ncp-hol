@@ -38,6 +38,8 @@ Nutanix Bootcamp ได้รับการออกแบบให้รัน
 |SSP Custom.      |custom01-custom25        |`HPOC-PASSWORD` |
 |Bootcamp Users.  |user01-user25            |`HPOC-PASSWORD` |
 
+
+
 ---
 
 [← Back: Data Protection](ncp1-dataprotection.md) | [Home](ncp1-whatisncp.md)

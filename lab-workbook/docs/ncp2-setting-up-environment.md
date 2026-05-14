@@ -10,3 +10,9 @@
 4.  Projects - เพื่อจัดกลุ่ม resources และ users อย่างเป็นระบบ (logically)
 
 ด้วยการนำ configurations เหล่านี้ไปใช้งาน VMs ของคุณจะดึง settings เหล่านี้ไปใช้แบบ automatically ทันทีที่ถูก deployed บน Nutanix Cloud Platform
+
+
+
+---
+
+[← Back: Nutanix Cloud Operating Model](ncp2-cloud-operating-model.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Category and Policy Management →](ncp2-category-and-policy-mgmt.md)

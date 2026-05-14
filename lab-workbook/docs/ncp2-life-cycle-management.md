@@ -11,3 +11,9 @@ Nutanix Life Cycle Manager (LCM) ช่วยทำให้ life cycle operatio
 👀 [Guided walkthrough of Life Cycle Manager.](https://nutanix.storylane.io/share/yjfg9izufdvu) 👀
 
 [Interactive Demo](https://nutanix.storylane.io/share/yjfg9izufdvu)
+
+
+
+---
+
+[← Back: Entity Browser, Search and Analysis](ncp2-entity-browser-search-analysis.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Govern Your Cloud →](ncp2-govern-your-cloud.md)

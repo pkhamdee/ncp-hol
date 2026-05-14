@@ -11,3 +11,9 @@ Infrastructure-as-a-Service (IaaS) ถูกกำหนดให้เป็น
 -   [Create Linux Blueprint](selfservice-linux.md)
 -   (Optional) [Create Windows Blueprint](selfservice-windows.md)
     -   การสร้าง Windows Blueprint เป็นทางเลือก (optional) การทำ Provisioning เฉพาะ Linux Blueprint ก็เพียงพอสำหรับการทำขั้นตอนต่อๆ ไปใน lab นี้ให้เสร็จสมบูรณ์
+
+
+
+---
+
+[← Back: Build Your Cloud](ncp2-build-your-cloud.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Operate Your Cloud →](ncp2-operate-your-cloud.md)

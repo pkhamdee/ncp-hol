@@ -75,3 +75,9 @@
 software engineer ของเราสามารถ request ตัว VM ใหม่ได้อย่างรวดเร็วจาก template\
 VM นั้นได้รับการ approved และ acknowledged โดยทีม IT administrator
 มีการสร้าง record ของการ approval และรวมถึงอีเมลด้วย (were generated)!
+
+
+
+---
+
+[← Back: Setting Up an Approval Policy](ncp2-setting-up-approval-policy.md) | [Home](ncp2-nutanix-cloud-platform.md) | [Next: Cost Governance →](ncp2-cost-governance.md)

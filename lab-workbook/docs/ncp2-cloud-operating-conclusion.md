@@ -15,3 +15,9 @@
 -   **Cost Governance is Essential**: เราตระหนักถึงบทบาทที่สำคัญของการมี cost visibility และ control ทั่วทั้ง infrastructure ของเรา ไม่ว่าจะเป็น on-premises Nutanix หรือใน public cloud ซึ่งต้องขอบคุณ Cost Governance features
     
 -   **Nutanix Security Central**: เราได้เรียนรู้วิธีที่ Security Central รวบรวมเอา advanced threat detection, continuous compliance monitoring, และ deep visibility เข้าสู่ hybrid infrastructure—ซึ่งเป็นการเสริมศักยภาพ (empowering) ให้ cloud teams สามารถ manage risk ในเชิงรุก (proactively), enforce ตัว security best practices, และรักษา security posture ที่แข็งแกร่งและสม่ำเสมอทั่วทั้ง environments ต่างๆ
+
+
+
+---
+
+[← Back: Security Central](ncp2-security-central.md) | [Home](ncp2-nutanix-cloud-platform.md)
