@@ -45,3 +45,8 @@ Nutanix Move ทำให้การย้าย VMs และ workloads ไป
     
 
 ตอนนี้เราได้ดู source VM ของเราแล้ว ต่อไปเราจะทำการสร้าง migration plan เพื่อย้าย VM กัน
+
+
+---
+
+[← Back: Setup Move](migrate-workloads-setup-move.md) | [Home](migrate-nutanix-overview.md) | [Next: Create a Migration Plan →](migrate-workloads-move-creating-migrate-plan.md)

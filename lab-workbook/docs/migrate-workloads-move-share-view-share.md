@@ -43,3 +43,8 @@
     ตรวจสอบ (Verify) ว่า source share มีไฟล์ขนาด 100MB อยู่ข้างใน นี่คือสิ่งที่เราจะทำการ migrate
     
     ![](images/files_source2next.0a288822.png)
+
+
+---
+
+[← Back: Configuring Nutanix Files](migrate-workloads-move-share-config-file.md) | [Home](migrate-nutanix-overview.md) | [Next: Create Migration Plan →](migrate-workloads-move-share-create-plan.md)

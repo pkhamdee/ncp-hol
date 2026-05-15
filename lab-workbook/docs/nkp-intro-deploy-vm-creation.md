@@ -141,3 +141,7 @@
 8.  ตรวจสอบการกำหนดค่าและคลิก **Create VM**
     
 9.  **Power On** VM ของคุณ
+
+---
+
+[← Back: Deploy Admin VM Overview](nkp-intro-deploy-admin-vm.md) | [Home](nkp-bootcamp.md) | [Next: Connect to Web IDE →](nkp-intro-connect-ide.md)

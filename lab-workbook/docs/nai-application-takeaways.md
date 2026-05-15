@@ -1,7 +1,11 @@
 # Takeaways
 
-🎉 Congratulations! You have learned how to use Generative AI applications connected to Nutanix Enterprise AI to do the following:
+🎉 ยินดีด้วย! คุณได้เรียนรู้วิธีใช้แอปพลิเคชัน Generative AI ที่เชื่อมต่อกับ Nutanix Enterprise AI เพื่อทำสิ่งต่อไปนี้:
 
--   Create a chatbot connecting to Nutanix Enterprise AI
+-   สร้าง chatbot ที่เชื่อมต่อกับ Nutanix Enterprise AI
     
--   Configure a Retrieval Augmented Generation (RAG) pipeline to make your chatbot answers more accurate by augmenting with your own data stored on Nutanix Objects.
+-   กำหนดค่า Retrieval Augmented Generation (RAG) pipeline เพื่อทำให้คำตอบของ chatbot แม่นยำยิ่งขึ้น โดยการเพิ่มข้อมูลของตัวเองที่จัดเก็บบน Nutanix Objects
+
+---
+
+[← Back: Test the Chatbot](nai-application-rag-test.md) | [Home](nai-welcome.md) | [Next: Conclusion →](nai-conclusion.md)

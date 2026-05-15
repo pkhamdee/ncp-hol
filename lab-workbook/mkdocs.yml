@@ -49,6 +49,7 @@ nav:
       - Managing Workloads: ncp1-managingworkloads.md
     - Protecting Workloads:
       - Data Protection: ncp1-dataprotection.md
+    - Glossary: glossary.md  
 
   - Nutanix Cloud Platform Bootcamp - Part2:
     - Nutanix Cloud Management: ncp2-nutanix-cloud-platform.md
@@ -144,6 +145,7 @@ nav:
       - Self Service DSL: selfservice-dsl.md
     - Appendix:
       - Glossary: selfservice-appendix.md
+                  
 
   - Nutanix Unified Storage Bootcamp:
     - Getting Started: nus-getting-start.md
@@ -267,6 +269,7 @@ nav:
         - Overview: nai-application-rag.md
         - Obtain Object Store URL and Credentials: nai-application-rag-store.md
         - Upload Document to Object Store: nai-application-rag-upload.md
+        - Configure Document Store: nai-application-rag-confstore.md
         - Configure Embeddings and Vector Store: nai-application-rag-vector.md
         - Configure Chatflow: nai-application-rag-chatflow.md
         - Test the Chatbot: nai-application-rag-test.md

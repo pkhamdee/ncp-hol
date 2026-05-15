@@ -2,63 +2,67 @@
 
 ## View Available Models
 
-1.  From the Nutanix Enterprise AI console, click on **Models**.
+1.  จาก Nutanix Enterprise AI console คลิก **Models**
     
-2.  Click on **Import from NVIDIA NGC Catalog.**
+2.  คลิก **Import from NVIDIA NGC Catalog**
     
     !!! info
     
         Model Import Options
         
-        You can import models directly from Hugging Face or the NVIDIA NGC Catalog. Alternatively, you can also upload custom model files or pre-validated models from a local NFS, SMB, or S3 store.
+        คุณสามารถ import โมเดลได้โดยตรงจาก Hugging Face หรือ NVIDIA NGC Catalog นอกจากนี้ยังสามารถอัปโหลดไฟล์โมเดล custom หรือโมเดลที่ผ่านการ validate แล้วจาก local NFS, SMB หรือ S3 store ได้อีกด้วย
     
-3.  View the list and types of available models. Click on **Filter by Capabilities** to see the types of models. We'll be using both **Text to Text** and **Embedding** models later in our RAG application.
+3.  ดูรายการและประเภทของโมเดลที่มีให้เลือก คลิก **Filter by Capabilities** เพื่อดูประเภทของโมเดล ใน RAG application ของเราจะใช้ทั้งโมเดล **Text to Text** และ **Embedding**
     
     ![Model Capabilities](images/model-capabilities.dd197ee1.png)
     
     !!! tip    
 
-        The model types are defined in the [appendix](nai-appendix-typellm.md).
+        ประเภทของโมเดลมีคำอธิบายใน [appendix](nai-appendix-typellm.md)
     
-4.  Admin users can control which models are accessible to users. Hover over one of the radio buttons, and notice that the model import has been restricted by the admin.
+4.  Admin user สามารถควบคุมว่าโมเดลใดที่ผู้ใช้สามารถเข้าถึงได้ ลองวางเมาส์เหนือ radio button ตัวใดตัวหนึ่ง จะเห็นว่า admin ได้จำกัดการ import โมเดลบางตัว
     
     ![Restricted Model](images/model-restricted.922a5249.png)
     
-5.  Click **Cancel**.
+5.  คลิก **Cancel**
 
 
 ## Import Hugging Face Model
 
-1.  Click **Import from Hugging Face Model Hub**.
+1.  คลิก **Import from Hugging Face Model Hub**
     
-2.  Click the radio button next to `meta-llama/Llama-3.2-1B-Instruct`
+2.  คลิก radio button ข้างๆ `meta-llama/Llama-3.2-1B-Instruct`
     
     !!! note    
-        This model is selectable because the admin has enabled access to this model. Note that you cannot select any other model.
+        โมเดลนี้สามารถเลือกได้เพราะ admin ได้เปิดการเข้าถึงโมเดลนี้ โปรดทราบว่าคุณไม่สามารถเลือกโมเดลอื่นได้
     
-3.  Click **Import**.
+3.  คลิก **Import**
     
 
 ![Import Screen](images/import-screen.43e04582.png)
 
-1.  Name the model `llama32-1b##`, where `##` corresponds to your username, and click **Import**.
+1.  ตั้งชื่อโมเดลว่า `llama32-1b##` โดยที่ `##` ตรงกับ username ของคุณ แล้วคลิก **Import**
 
 ![Import Dialog](images/import-dialog.f1d6367f.png)
 
-Since the model is small it will download relatively quickly. Larger models take longer to download.
+เนื่องจากโมเดลมีขนาดเล็ก การดาวน์โหลดจึงค่อนข้างรวดเร็ว โมเดลขนาดใหญ่จะใช้เวลาดาวน์โหลดนานกว่า
 
 !!! info
-    The stages of downloading a model
+    ขั้นตอนการดาวน์โหลดโมเดล
 
-    -   **Pending** - validates tokens and sets up storage by creating a PVC and provisioning a share on the file server (in this case, Nutanix Files)
-    -   **Processing** - connects to HuggingFace and downloads the model files
-    -   **Ready** - model is ready to use
+    -   **Pending** - ตรวจสอบ token และตั้งค่า storage โดยการสร้าง PVC และจัดเตรียม share บน file server (ในกรณีนี้คือ Nutanix Files)
+    -   **Processing** - เชื่อมต่อกับ HuggingFace และดาวน์โหลดไฟล์โมเดล
+    -   **Ready** - โมเดลพร้อมใช้งาน
 
-Once the model is marked as **Ready**, it is ready to use. Wait until the model is marked as ready before moving to the next step.
+เมื่อโมเดลแสดงสถานะ **Ready** แสดงว่าพร้อมใช้งานแล้ว รอจนกว่าโมเดลจะแสดงสถานะ ready ก่อนไปขั้นตอนถัดไป
 
 ![Model Active](images/ready-model.241bb89e.png)
 
 !!! info
-    How does NAI connect to Nutanix Files?
+    NAI เชื่อมต่อกับ Nutanix Files อย่างไร?
 
-    To enable persistent storage, the Nutanix Enterprise AI instance uses a storage class configured with the Nutanix CSI driver to connect to Nutanix Files.
+    เพื่อเปิดใช้งาน persistent storage Nutanix Enterprise AI instance ใช้ storage class ที่กำหนดค่าด้วย Nutanix CSI driver เพื่อเชื่อมต่อกับ Nutanix Files
+
+---
+
+[← Back: Import an LLM](nai-fundamentals-import-llm.md) | [Home](nai-welcome.md) | [Next: Create an Endpoint Overview →](nai-fundamentals-endpoint.md)

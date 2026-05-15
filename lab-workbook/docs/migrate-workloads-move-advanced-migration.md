@@ -28,3 +28,8 @@
 ขอแสดงความยินดีด้วย!! คุณเพิ่งเสร็จสิ้นการ migration โดยใช้ advanced features บางอย่างใน Nutanix Move
 
 ต่อไป มาสำรวจการใช้ Move เพื่อทำการ migrate at scale กัน
+
+
+---
+
+[← Back: Migrate the VM](migrate-workloads-move-migrate-vm.md) | [Home](migrate-nutanix-overview.md) | [Next: Migrate at Scale →](migrate-workloads-move-migrate-at-scale.md)

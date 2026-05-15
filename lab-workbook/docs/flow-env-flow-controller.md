@@ -48,3 +48,8 @@ Nutanix อ้างอิงถึง network entity ว่าเป็น **Su
 ## Takeaways
 
 Flow Network Security Next-Gen จำเป็นต้องใช้ Flow Controller และการ enable ตัว Flow Network Security คุณสามารถ protect ตัว VMs ที่อยู่ใน VLAN หรือ VPC subnets ได้ แต่ไม่สามารถทำได้ใน VLAN Basic subnets
+
+
+---
+
+[← Back: Prism Central Overview](flow-env-pc-overview.md) | [Home](flow-overview.md) | [Next: Categories →](flow-env-categories.md)

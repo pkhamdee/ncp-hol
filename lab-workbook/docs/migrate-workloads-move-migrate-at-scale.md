@@ -27,3 +27,8 @@
 ขอแสดงความยินดีด้วย!! คุณเพิ่งเสร็จสิ้นการ migrating at scale
 
 ต่อไป มาสำรวจการใช้ Move เพื่อทำการ migrate file shares กัน
+
+
+---
+
+[← Back: Advanced VM Migrations](migrate-workloads-move-advanced-migration.md) | [Home](migrate-nutanix-overview.md) | [Next: Migrating Shares with Move →](migrate-workloads-move-share.md)

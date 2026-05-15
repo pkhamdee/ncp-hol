@@ -18,3 +18,8 @@
     ```
     http://10.42.194.11/hol/unified-storage/SampleData_Small.zip
     ```
+
+
+---
+
+[← Back: Getting Started](nus-getting-start.md) | [Home](nus-getting-start.md) | [Next: Create SMB Share →](nus-files-smb.md)

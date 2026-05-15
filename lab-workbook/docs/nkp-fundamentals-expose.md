@@ -6,3 +6,8 @@
 
 -   Migrate ตัว application service ของคุณเป็น `LoadBalancer` ด้วย **MetalLB**
 -   Expose ตัว HTTP applications โดยใช้ `Ingress` ด้วย **Traefik**
+
+
+---
+
+[← Back: Using a Service to Expose Your App](nkp-fundamentals-deploy-expose.md) | [Home](nkp-bootcamp.md) | [Next: Load Balancer →](nkp-fundamentals-expose-lb.md)

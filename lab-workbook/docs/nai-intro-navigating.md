@@ -1,34 +1,39 @@
 # Navigating the labs
 
-For a better experience, it is essential to familiarize yourself with the bootcamp structure.
+เพื่อประสบการณ์ที่ดียิ่งขึ้น จำเป็นต้องทำความคุ้นเคยกับโครงสร้างของ bootcamp ก่อน
 
 #### Tips
 
-VS Code is installed in the VDI terminal. Use this to paste in information so you can easily access it later (e.g. API keys, URLs, etc)
+VS Code ได้รับการติดตั้งไว้ใน VDI terminal แล้ว ใช้เพื่อวางข้อมูลที่ต้องการเข้าถึงในภายหลัง เช่น API keys, URLs เป็นต้น
 
 #### Structure
 
-The content of this bootcamp is made up of:
+เนื้อหาของ bootcamp นี้ประกอบด้วย:
 
-1.  Individual lab exercises
-2.  Supporting content that explains concepts related to the labs
+1.  แบบฝึกหัด lab แต่ละรายการ
+2.  เนื้อหาสนับสนุนที่อธิบาย concept ที่เกี่ยวข้องกับ lab
 
-The lab exercises are designed to be taken in the provided order. They depend on each other and cannot be taken as self-contained.
+แบบฝึกหัด lab ได้รับการออกแบบให้ทำตามลำดับที่กำหนด แต่ละส่วนต่อเนื่องกันและไม่สามารถทำแยกกันได้
 
-For a better experience, open the lab guide inside the VDI terminal. If your VDI or VS Code prompts you with a clipboard warning, click Allow.
+เพื่อประสบการณ์ที่ดียิ่งขึ้น ให้เปิด lab guide ภายใน VDI terminal หาก VDI หรือ VS Code แสดงคำเตือนเกี่ยวกับ clipboard ให้คลิก Allow
 
 ![Parallels clipboard](images/parallels_clipboard_allow.6cad0831.png)
 
 #### Notes
 
-You’ll find three kinds of notes throughout the bootcamp:
+คุณจะพบ note สามประเภทตลอด bootcamp:
 
--   Informative (purple): Provides tips and additional information
--   Warning (yellow): You should take extra care on the specific task
--   Danger (red): Destructive action if you make a mistake
+-   Informative (สีม่วง): ให้คำแนะนำและข้อมูลเพิ่มเติม
+-   Warning (สีเหลือง): ควรระมัดระวังเป็นพิเศษในงานนั้น
+-   Danger (สีแดง): การกระทำที่ทำลายข้อมูลหากทำผิดพลาด
 
 #### Moving through the content
 
--   We recommend you use the previous and next links available at the end of each page to move to the previous or next section
--   If you click a link that takes you to another page in the bootcamp, return to the previous page using the browser back option
--   The sidebar locates you at what stage of the bootcamp you are
+-   แนะนำให้ใช้ลิงก์ previous และ next ที่ท้ายแต่ละหน้าเพื่อเลื่อนไปหน้าก่อนหน้าหรือถัดไป
+-   หากคลิกลิงก์ที่พาไปยังหน้าอื่นใน bootcamp ให้ใช้ปุ่ม back ของเบราว์เซอร์เพื่อกลับไปหน้าก่อนหน้า
+-   sidebar แสดงตำแหน่งปัจจุบันของคุณใน bootcamp
+
+
+---
+
+[← Back: Setup](nai-intro-setup.md) | [Home](nai-welcome.md) | [Next: Fundamentals Overview →](nai-fundamentals-overview.md)

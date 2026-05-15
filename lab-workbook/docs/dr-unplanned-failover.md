@@ -290,3 +290,8 @@ protection policy คือที่ที่คุณระบุ Recovery Poin
     
 
 ยินดีด้วย! คุณได้ทำการ planned failover และ failback ครั้งแรกของคุณสำเร็จแล้วด้วย Nutanix AHV โดยใช้ประโยชน์จากความสามารถของ native Disaster Recovery runbook และ synchronous replication
+
+
+---
+
+[← Back: Planned Failover](dr-planned-failover.md) | [Home](dr-getting-started.md)

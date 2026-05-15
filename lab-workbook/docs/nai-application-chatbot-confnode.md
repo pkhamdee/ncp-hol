@@ -1,34 +1,38 @@
 # Configure nodes
 
-Now that our nodes are on the canvas, let's configure them to actually do something.
+เมื่อ node ต่างๆ อยู่บน canvas แล้ว มากำหนดค่าให้ใช้งานได้จริงกัน
 
-You'll notice on each node one or more connector dots on the borders of the nodes. This means this is where they will connect to other nodes. Some are required connections and are indicated by a red asterisk. The connectors on the left are inputs and the connectors on the right are outputs.
+คุณจะสังเกตเห็นจุด connector หนึ่งจุดหรือมากกว่าที่ขอบของแต่ละ node นั่นคือจุดที่จะเชื่อมต่อกับ node อื่น บางส่วนเป็นการเชื่อมต่อที่จำเป็นซึ่งระบุด้วยเครื่องหมายดอกจันสีแดง connector ทางซ้ายเป็น input และทางขวาเป็น output
 
 ![Node Connectors](images/node-connectors.14826155.png)
 
-First, you'll configure our endpoint information in the **ChatOpenAI Custom** node.
+ก่อนอื่น คุณจะกำหนดค่าข้อมูล endpoint ใน **ChatOpenAI Custom** node
 
-1.  On the **ChatOpenAI Custom** node, click on the drop down under **Connect Credential**.
+1.  บน **ChatOpenAI Custom** node คลิก drop down ใต้ **Connect Credential**
     
-2.  Click **Create New**.
+2.  คลิก **Create New**
     
-3.  Provide a name for the key and copy your API key you gathered earlier, and click **Add**.
+3.  ตั้งชื่อ key และ copy API key ที่รวบรวมไว้ก่อนหน้า แล้วคลิก **Add**
     
     ![API Key Configuration](images/api-key-config.b94cdb63.png)
     
-4.  Under **Model Name**, type in your endpoint name (e.g. `llama-endpoint##`). At this point, the node should look similar to the image below.
+4.  ใต้ **Model Name** พิมพ์ชื่อ endpoint ของคุณ (เช่น `llama-endpoint##`) ณ จุดนี้ node ควรมีลักษณะคล้ายกับภาพด้านล่าง
     
     ![OpenAI Node Config](images/openai-node.6666c1de.png)
     
-5.  Click **Additional Parameters**.
+5.  คลิก **Additional Parameters**
     
-6.  Since our inference engine is running on non-accelerated CPU, let's limit the max token size. Under **Max Tokens**, enter 256.
+6.  เนื่องจาก inference engine ของเรารันบน CPU ที่ไม่มีการเร่งความเร็ว มากำหนดขนาด max token ให้จำกัดไว้ ใต้ **Max Tokens** ให้ป้อน 256
     
     !!! warning    
-        Make sure Max Tokens is set to 256, otherwise your chatbot may not return a response due to the limited resources.
+        ตรวจสอบให้แน่ใจว่า Max Tokens ถูกตั้งค่าเป็น 256 มิฉะนั้น chatbot ของคุณอาจไม่ส่งคืนคำตอบเนื่องจากทรัพยากรที่จำกัด
     
-7.  Under **BasePath** enter your endpoint URL (without `/chat/completions`)
+7.  ใต้ **BasePath** ป้อน endpoint URL ของคุณ (โดยไม่มี `/chat/completions`)
     
-8.  Click out of the dialog to save. You can double check that your inputs were saved by clicking **Additional Parameters** again.
+8.  คลิกออกจาก dialog เพื่อบันทึก คุณสามารถตรวจสอบซ้ำว่า input ถูกบันทึกโดยคลิก **Additional Parameters** อีกครั้ง
     
     ![Additional Parameters](images/additional-params.5ea734be.png)
+
+---
+
+[← Back: Add Nodes to Chatflow](nai-application-chatbot-addnode.md) | [Home](nai-welcome.md) | [Next: Connect Nodes →](nai-application-chatbot-connnode.md)

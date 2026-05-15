@@ -299,3 +299,8 @@ Key things ที่คุณควรรู้เกี่ยวกับ Nutan
 -   มีวิธีการทำ configure และ control ส่วนของ credentials อยู่หลาย methods.
 -   ในขณะที่ Multi VM Blueprints สามารถใช้งาน provisioning และจัดการ lifecycle ของแอพแบบ complex, multi-tiered applications ได้, Single VM Blueprints ก็เปิดให้ทางฝั่ง IT สามารถจัดเตรียม Infrastructure-as-a-Service ไปให้ end users ได้ด้วยเช่นกัน.
 -   พวก operation แบบ common day two เช่น, snapshots, restoring, cloning, และการทำ updating infrastructure ทุกๆ อย่างสามารถรันโดย end users จากภายใน Self Service ได้โดยตรง.
+
+
+---
+
+[← Back: Self Service IaaS Linux](selfservice-linux.md) | [Home](selfservice-gettingstart.md) | [Next: Self Service DSL →](selfservice-dsl.md)

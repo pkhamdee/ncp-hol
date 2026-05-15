@@ -33,3 +33,8 @@ NKP นำเสนอ centralized observability สำหรับ Kubernetes e
     มี built-in Grafana dashboards เพื่อทำหน้าที่ monitor K8s components นอกเหนือจาก user deployed workloads แดชบอร์ดต่อไปนี้เป็นตัวอย่างสำหรับการตรวจสอบ availability ของ Kubernetes API server คุณยังสามารถเปลี่ยน time interval ได้อย่างง่ายดาย
 
     ![K8s API dashboard](images/kube-api.d8058ec0.png)
+
+
+---
+
+[← Back: Observability Overview](nkp-observ.md) | [Home](nkp-bootcamp.md) | [Next: Platform analytics →](nkp-observ-analytics.md)

@@ -131,3 +131,8 @@ Snapshot policy ช่วยให้คุณสามารถกำหนด 
 - [Calm IaaS: Linux](selfservice-linux.md)
 - [Calm IaaS: Windows](selfservice-windows.md)
 - [Calm DSL](selfservice-dsl.md)
+
+
+---
+
+[← Back: Getting Started](selfservice-gettingstart.md) | [Home](selfservice-gettingstart.md) | [Next: Self Service IaaS Linux →](selfservice-linux.md)

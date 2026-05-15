@@ -1,8 +1,8 @@
 # Setup
 
-1.  VDI to access the environment
+1.  VDI สำหรับเข้าถึง environment
     
-2.  A 4-node HPOC cluster shared with up to 5 users
+2.  cluster HPOC แบบ 4-node ที่ใช้ร่วมกันได้สูงสุด 5 ผู้ใช้
     
 
 ## Environment and Authentication Details
@@ -10,14 +10,18 @@
 !!! info
     Access Details
 
-    Access details can be found on the Connection Details page or from your instructor.
+    รายละเอียดการเข้าถึงสามารถดูได้จากหน้า Connection Details หรือสอบถามจาก instructor
 
 #### For Fundamentals Section
 
 -   `Shared` NAI Instance
--   `Dedicated` Login to the NAI instance, using your username `adminuser##`
+-   `Dedicated` เข้าสู่ระบบ NAI instance โดยใช้ username `adminuser##` ของคุณ
 
 #### For Application Section
 
--   `Shared` NAI inference endpoints backed by GPU
--   `Dedicated` Flowise instance, Milvus Database and UI3
+-   `Shared` NAI inference endpoints ที่รองรับด้วย GPU
+-   `Dedicated` Flowise instance, Milvus Database และ UI3
+
+---
+
+[← Back: Introduction Overview](nai-intro.md) | [Home](nai-welcome.md) | [Next: Navigating the labs →](nai-intro-navigating.md)

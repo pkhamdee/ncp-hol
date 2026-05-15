@@ -1,29 +1,33 @@
 # Upload Document to Object Store
 
-1.  On your VDI workstation, download the sample document by right clicking and saving [this linkopen in new window](http://10.42.194.11/workshop_staging/tradeshows/experimental/nai-bootcamp/Release-Notes-Nutanix-Enterprise-AI-v2_5.pdf).
+1.  บน VDI workstation ของคุณ ดาวน์โหลดเอกสารตัวอย่างโดยคลิกขวาและบันทึก [ลิงก์นี้open in new window](http://10.42.194.11/workshop_staging/tradeshows/experimental/nai-bootcamp/Release-Notes-Nutanix-Enterprise-AI-v2_5.pdf)
     
     !!! tip    
-        If Chrome displays a warning, click on **Keep**
+        หาก Chrome แสดงคำเตือน ให้คลิก **Keep**
     
         ![Insecure Warning](images/insecure-download.b8e7a5e7.png)
     
-2.  If not already open, open a new tab in your browser to the URL of the Objects browser, which you obtained from the previous section.
+2.  หากยังไม่ได้เปิด ให้เปิดแท็บใหม่ในเบราว์เซอร์ไปยัง URL ของ Objects browser ที่ดูได้จากส่วนก่อนหน้า
     
     ![Objects Browser](images/objects-browser.f7413680.png)
     
-3.  Enter in the shared Access Key and Secret Key for the Nutanix Objects bucket that you obtained from the previous section and click **Login**.
+3.  ป้อน shared Access Key และ Secret Key สำหรับ Nutanix Objects bucket ที่ดูได้จากส่วนก่อนหน้า แล้วคลิก **Login**
     
-4.  Click on the bucket that corresponds with your username.
+4.  คลิก bucket ที่ตรงกับ username ของคุณ
     
-5.  Click **Upload Objects** > **Select Files**.
+5.  คลิก **Upload Objects** > **Select Files**
     
     ![Objects Upload](images/objects-upload.03a6ef63.png)
     
-6.  Select the PDF you downloaded in step 1.
+6.  เลือก PDF ที่ดาวน์โหลดในขั้นตอนที่ 1
     
-7.  When it's done uploading, click **Close**.
+7.  เมื่ออัปโหลดเสร็จแล้ว คลิก **Close**
     
     ![Completed Objects Upload](images/objects-upload-done.7c5edc16.png)
     
 
-Now we're ready to configure the document store.
+ตอนนี้เราพร้อมกำหนดค่า document store แล้ว
+
+---
+
+[← Back: Obtain Object Store URL and Credentials](nai-application-rag-store.md) | [Home](nai-welcome.md) | [Next: Configure Document Store →](nai-application-rag-confstore.md)

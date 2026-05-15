@@ -9,3 +9,8 @@
 ## Resources
 
 -   [NGT](https://portal.nutanix.com/page/documents/details?targetId=Prism-Central-Guide-vpc_2024_3:mul-ngt-pc-introduction-c.html)
+
+
+---
+
+[← Back: Inefficient VM Detection](migrate-day2-inefficient-vm.md) | [Home](migrate-nutanix-overview.md) | [Next: Conclusion →](migrate-conclusion.md)

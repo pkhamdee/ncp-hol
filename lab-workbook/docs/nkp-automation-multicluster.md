@@ -53,3 +53,8 @@
 ---
 
 หากคลัสเตอร์ใหม่ (หรือ 50 คลัสเตอร์) ที่มี label **`infraId: pc`** ถูกเพิ่มเข้ามา ตัว boutique application จะ deploy ไปยังคลัสเตอร์เหล่านั้นโดยอัตโนมัติ ทำให้มั่นใจได้ถึงการ scaling ที่ราบรื่นโดยไม่ต้องแทรกแซงแบบ manual!
+
+
+---
+
+[← Back: Access the Application](nkp-automation-gitops-access.md) | [Home](nkp-bootcamp.md) | [Next: Conclusion →](nkp-conclusion.md)

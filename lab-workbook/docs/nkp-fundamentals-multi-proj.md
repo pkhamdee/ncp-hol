@@ -35,3 +35,8 @@ Project Namespace คือ concept เฉพาะของ NKP มันใช
 3.  คลิก **Continue to Project**
     
     ![Continue to Project](images/project_create_03.f2df98a8.png)
+
+
+---
+
+[← Back: NKP Workspaces](nkp-fundamentals-multi-ws.md) | [Home](nkp-bootcamp.md) | [Next: Persistent Storage Overview →](nkp-fundamentals-storage.md)

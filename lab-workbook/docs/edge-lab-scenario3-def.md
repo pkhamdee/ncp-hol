@@ -1,39 +1,39 @@
-# Definitions Student
+# Definitions
 
-Before getting started with this lab, let's define some key terminology of business continuity and disaster recovery.
+ก่อนจะเริ่มทำ lab นี้ เรามาทำความเข้าใจคำศัพท์สำคัญบางประการเกี่ยวกับ business continuity และ disaster recovery กันก่อน 
 
 ## What is a Recovery Point Objective (RPO)?
 
-RPO is a measurement of the amount of data loss deemed acceptable by the business that an application or business process can have.
+RPO คือการวัดปริมาณข้อมูลที่สูญหายซึ่งธุรกิจยอมรับได้สำหรับ application หรือกระบวนการทางธุรกิจ 
 
-As an example, a business may say, "This application's RPO is no more than one hour". That means there needs to be protection in place (snapshots, backups, synchronous replication or application level High Availability) where you can restore while losing no more than data up to the maximum RPO of one hour.
+ตัวอย่างเช่น ธุรกิจอาจระบุว่า "application นี้มี RPO ไม่เกินหนึ่งชั่วโมง" นั่นหมายความว่าต้องมีการป้องกันไว้ (snapshots, backups, synchronous replication หรือ application level High Availability) เพื่อให้คุณสามารถกู้คืนข้อมูลได้โดยสูญเสียข้อมูลไม่เกิน RPO สูงสุดที่หนึ่งชั่วโมง 
 
-Loss of less than one hour's worth of data would be acceptable. Loss of more than one hour's worth of data would be unacceptable.
+การสูญเสียข้อมูลน้อยกว่าหนึ่งชั่วโมงถือว่ายอมรับได้ แต่การสูญเสียข้อมูลมากกว่าหนึ่งชั่วโมงถือว่ายอมรับไม่ได้ 
 
 ## What is a Recovery Time Objective (RTO)?
 
-RTO is the time it takes to recover from an outage. An RTO is usually broken down for restoring each application or business process, but may also include a maximum RTO for restoring all applications and services across the business.
+RTO คือระยะเวลาที่ใช้ในการกู้คืนจากเหตุการณ์ขัดข้อง โดยปกติ RTO จะถูกแบ่งย่อยสำหรับการกู้คืนแต่ละ application หรือกระบวนการทางธุรกิจ แต่ก็อาจรวมถึง RTO สูงสุดในการกู้คืน applications และ services ทั้งหมดทั่วทั้งธุรกิจด้วย 
 
 ## What is a Category?
 
-A category is a construct in Prism Central that uses a key-value pair to label, classify, or categorize groups of VMs. You can think of them as tags or labs applied to entities. You can easily associate entities such as VMs, VGs, and CGs with a disaster recovery policy through categories.
+category คือโครงสร้างใน Prism Central ที่ใช้คู่ key-value เพื่อระบุฉลาก แยกประเภท หรือจัดหมวดหมู่กลุ่มของ VMs คุณสามารถคิดเสียว่าเป็น tags หรือป้ายกำกับที่นำไปใช้กับ entities คุณสามารถเชื่อมโยง entities เช่น VMs, VGs และ CGs เข้ากับ disaster recovery policy ได้อย่างง่ายดายผ่าน categories 
 
-The policy definition references the category. All of the entities are selected into the policy because they are appropriately categorized.
+การกำหนด policy จะอ้างอิงถึง category โดยที่ entities ทั้งหมดจะถูกเลือกเข้าไปใน policy เนื่องจากพวกมันถูกจัดหมวดหมู่ไว้อย่างเหมาะสม 
 
 ## What is a Protection Policy?
 
-A Protection Policy is the construct for defining the Recovery Point Objective (RPO) as well as the location or locations to replicate snapshots.
+Protection Policy คือโครงสร้างสำหรับกำหนด Recovery Point Objective (RPO) รวมถึงสถานที่หรือกลุ่มสถานที่ที่จะทำการ replicate snapshots 
 
 ## What is a Recovery Plan?
 
-A Recovery Plan is the construct we use for defining how protected entities should be recovered. This includes boot stages, script execution and network mapping.
+Recovery Plan คือโครงสร้างที่เราใช้ในการกำหนดว่า entities ที่ได้รับการปกป้องควรจะถูกกู้คืนอย่างไร ซึ่งรวมถึง boot stages, script execution และ network mapping 
 
 ## What is Entity-Centric DR or Nutanix Disaster Recovery?
 
-Entity-centric DR or Nutanix Disaster Recovery are both terms used to describe DR management on Virtual Machines (VMs), Volume Groups (VGs), and Consistency Groups (CGs) from Prism Central consisting of runbook automation, boot stages, and network mapping. Because the policies are applied to individual "entities" through categories, this is called entity-centric. This is in contrast to operations that would act on an entire storage container.
+Entity-centric DR หรือ Nutanix Disaster Recovery ทั้งสองเป็นคำที่ใช้เรียกการจัดการ DR บน Virtual Machines (VMs), Volume Groups (VGs) และ Consistency Groups (CGs) จาก Prism Central ซึ่งประกอบด้วย runbook automation, boot stages และ network mapping เนื่องจาก policies ถูกนำไปใช้กับ "entities" แต่ละตัวผ่าน categories จึงเรียกว่า entity-centric ซึ่งต่างจากการดำเนินการที่ทำกับ storage container ทั้งหมด 
 
 ## Next Steps
 
-Now that you understand key terms in Nutanix Disaster Recovery, let's move on to the next section.
+เมื่อคุณเข้าใจคำศัพท์สำคัญใน Nutanix Disaster Recovery แล้ว เรามาไปที่ส่วนถัดไปกันเลย 
 
 [← Back: Overview](edge-lab-scenario3-overview.md) | [Home](edge-getting-started.md) | [Next: Setup →](edge-lab-scenario3-setup.md)

@@ -161,3 +161,7 @@ service ของ simple application ของเรานั้นเป็น 
 **(Optional)** แผนภาพแสดงสิ่งที่คุณเพิ่งทำไป
 
 ![LoadBalancer diagram](images/loadbalancer_diagram.ddf76924.png)
+
+---
+
+[← Back: Expose App Overview](nkp-fundamentals-expose.md) | [Home](nkp-bootcamp.md) | [Next: Ingress →](nkp-fundamentals-expose-ingress.md)

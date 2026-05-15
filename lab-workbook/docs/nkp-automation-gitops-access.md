@@ -29,3 +29,7 @@
 คุณควรจะเห็น frontend ของ online boutique แสดงรายการผลิตภัณฑ์และฟีเจอร์อื่นๆ ตอนนี้โหลดของใส่ shopping cart ของคุณแล้วให้รางวัลตัวเอง (แบบเสมือนจริง) ได้เลย!
 
 ![frontend boutique](images/frontend_boutique.ce7f8937.png)
+
+---
+
+[← Back: Set up GitOps Deployment](nkp-automation-gitops.md) | [Home](nkp-bootcamp.md) | [Next: Automate Multicluster App Deployments →](nkp-automation-multicluster.md)

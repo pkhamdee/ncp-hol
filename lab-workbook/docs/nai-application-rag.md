@@ -2,46 +2,50 @@
 
 ## RAG-enabled Chatbot Flow
 
-The flow of a RAG-enabled chatbot looks like the below diagram.
+กระบวนการทำงานของ chatbot ที่ใช้ RAG มีลักษณะดังแผนภาพด้านล่าง
 
 ![Chatbot Diagram](images/chatbot-with-rag-diagram.f81e33a9.png)
 
 1.  **Ask Question**
     
-    -   User asks a question to the chatbot.
+    -   ผู้ใช้ถามคำถามกับ chatbot
 
 2.  **Create Embedding of Query**
     
-    -   Instead of going directly to the inference API, Flowise will first create an embedding of the query using an **embedding** model hosted on Nutanix Enterprise AI.
+    -   แทนที่จะไปยัง inference API โดยตรง Flowise จะสร้าง embedding ของ query ก่อนโดยใช้โมเดล **embedding** ที่ host อยู่บน Nutanix Enterprise AI
 
 3.  **Search/Retrieval of Similar Content**
     
-    -   With that embedding, Flowise will search for similar embeddings in the vector database that has been populated with the embeddings of source documents.
+    -   ด้วย embedding นั้น Flowise จะค้นหา embedding ที่คล้ายกันใน vector database ที่ถูกเติมด้วย embedding ของเอกสารต้นทาง
 
 4.  **Send Prompt to Inference API**
     
-    -   Flowise augments the user's prompt with the found context and sends this to a **text generation** model hosted on Nutanix Enterprise AI.
+    -   Flowise เพิ่ม context ที่พบเข้าไปใน prompt ของผู้ใช้ แล้วส่งไปยังโมเดล **text generation** ที่ host อยู่บน Nutanix Enterprise AI
 
 5.  **Get Answer**
     
-    -   The chatbot returns an answer to the user.
+    -   chatbot ส่งคำตอบกลับไปให้ผู้ใช้
 
 ## Steps to Create a RAG-enabled Chatbot
 
-In order to chat with your documents and data, you'll do the following:
+ในการ chat กับเอกสารและข้อมูลของคุณ คุณจะทำสิ่งต่อไปนี้:
 
 1.  **Upload a document to Nutanix Objects**
     
-    -   Access your object store bucket and upload a sample document to it.
+    -   เข้าถึง object store bucket ของคุณและอัปโหลดเอกสารตัวอย่างเข้าไป
 
 2.  **Configure a Document Store in Flowise**
     
-    -   Configure a document store pointing to your bucket and define how the documents should be split and processed.
+    -   กำหนดค่า document store ที่ชี้ไปยัง bucket ของคุณ และกำหนดวิธีแบ่งและประมวลผลเอกสาร
 
 3.  **Upsert the document chunks into a Vector Database**
     
-    -   Configure the vector database and embedding model information to create vectors out of your documents.
+    -   กำหนดค่า vector database และข้อมูล embedding model เพื่อสร้าง vector จากเอกสารของคุณ
     
 4.  **Configure existing chatflow to use RAG**
     
-    -   In your chatflow, you'll add a new node for the Document Store and modify the **Conversation Chain** node to connect to your Document Store.
+    -   ใน chatflow ของคุณ คุณจะเพิ่ม node ใหม่สำหรับ Document Store และปรับแต่ง node **Conversation Chain** เพื่อเชื่อมต่อกับ Document Store ของคุณ
+
+---
+
+[← Back: Configure Shared Endpoint](nai-application-chatbot-shared.md) | [Home](nai-welcome.md) | [Next: Obtain Object Store URL and Credentials →](nai-application-rag-store.md)

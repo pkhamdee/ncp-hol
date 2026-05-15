@@ -104,3 +104,7 @@ IT Admin ต้องการรับ email notification เมื่อใด
     
 !!! note
     คุณจะได้รับ email notifications เมื่อ VMs ของคุณถูก migrate อย่างสำเร็จ (migrated successfully) ตรวจสอบให้แน่ใจว่าใช้อีเมลที่คุณสามารถเข้าไปเช็คได้ในระหว่างที่ทำ lab อยู่
+
+---
+
+[← Back: Category and Policy Management](migrate-environment-policies.md) | [Home](migrate-nutanix-overview.md) | [Next: Setup Takeaways →](migrate-environment-setup-takeaways.md)

@@ -98,3 +98,8 @@ Categories ถูกใช้ทั่วทั้ง Prism Central เพื่
 เมื่อ categories ถูก provisioned แล้ว คุณจะสามารถมองเห็นการ mapping ของ VM ไปยัง category และต่อไปยัง policy ได้อย่างง่ายดาย
 
 เราจะได้เห็นว่า policies เหล่านี้ทำงานอย่างไรในหัวข้อถัดไป
+
+
+---
+
+[← Back: Flow Controller](flow-env-flow-controller.md) | [Home](flow-overview.md) | [Next: The Application →](flow-env-application.md)

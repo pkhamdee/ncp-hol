@@ -106,3 +106,8 @@ destination environment ของเราก็คือ AHV เช่นกั
 
 1.  หลังจากหยุดพักสั้นๆ คุณสามารถดำเนินการ basic migration ต่อใน "[Migrating VMs with Move](migrate-workloads-move-view-source-vm.md)"
 2.  หากได้รับคำแนะนำและคุณคุ้นเคยกับ basic migrations อยู่แล้ว คุณสามารถข้ามไปที่ "[Advanced VM Migrations](migrate-workloads-move-advanced-migration.md)" ได้เลย
+
+
+---
+
+[← Back: Overview](migrate-workloads-overview.md) | [Home](migrate-nutanix-overview.md) | [Next: Migrating VMs with Move →](migrate-workloads-move-view-source-vm.md)

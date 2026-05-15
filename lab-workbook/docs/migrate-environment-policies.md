@@ -149,3 +149,7 @@ Entities เช่น VMs และ Volume Groups สามารถถูกเ
 ## Categories and Policies Takeaways
 
 คุณจะเห็นการนำ categories และ policies เหล่านี้ไปใช้ใน lab ถัดๆ ไป ต่อไปเราจะขยับไปที่การตั้งค่า no-code automation เพื่อเตรียมพร้อมสำหรับ onboarded workloads ของเรา
+
+---
+
+[← Back: Overview](migrate-environment-overview.md) | [Home](migrate-nutanix-overview.md) | [Next: Playbooks →](migrate-environment-playbooks.md)

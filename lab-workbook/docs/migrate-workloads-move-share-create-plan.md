@@ -74,3 +74,8 @@
 13. ในหน้า Summary คุณสามารถเลือก `Saved` สำหรับ plan ไว้ใช้งานภายหลังได้ แต่เราจะเลือก `Save and Start` สำหรับการ migration
     
     ![](images/files-migration-plan13.e8fa4e88.png)
+
+
+---
+
+[← Back: View Source Share](migrate-workloads-move-share-view-share.md) | [Home](migrate-nutanix-overview.md) | [Next: Migrate Share →](migrate-workloads-move-share-migrate-share.md)

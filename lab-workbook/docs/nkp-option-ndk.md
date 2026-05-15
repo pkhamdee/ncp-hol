@@ -9,3 +9,8 @@ NKP ทำงานร่วมกับ (integrates) Nutanix Data Services for 
 หากต้องการเจาะลึกเกี่ยวกับ NDK บน NKP คลิกด้านล่าง:
 
 👀 [Guided walkthrough ของ NDK](https://nutanix.storylane.io/demo/kx1l5xdjb2eo?embed=popup) 👀
+
+
+---
+
+[← Back: Conclusion](nkp-conclusion.md) | [Home](nkp-bootcamp.md)

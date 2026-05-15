@@ -125,3 +125,8 @@ Block storage รองรับ ReadWriteOnce (RWO) และ ReadOnlyMany (ROX
     
 
 🎉 ขอแสดงความยินดีด้วย! คุณเพิ่งจะ deploy ตัว stateful application แรกของคุณ ซึ่งก็คือ MySQL database
+
+
+---
+
+[← Back: StorageClass with Nutanix CSI](nkp-fundamentals-storage-csi.md) | [Home](nkp-bootcamp.md) | [Next: File storage with Nutanix Files →](nkp-fundamentals-storage-file.md)

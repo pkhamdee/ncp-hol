@@ -99,3 +99,8 @@
     ![](images/4.302a5168.png)
     
 9.  คลิก < ที่บริเวณมุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนถัดไป
+
+
+---
+
+[← Back: Create SMB Share](nus-files-smb.md) | [Home](nus-getting-start.md) | [Next: File Blocking →](nus-files-block.md)

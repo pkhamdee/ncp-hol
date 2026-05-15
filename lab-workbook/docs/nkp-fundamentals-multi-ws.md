@@ -30,3 +30,8 @@ NKP จัดเตรียม workspaces พร้อมด้วย dedicated
 4.  ในหน้า workspace คุณสามารถระบุจำนวนของ clusters และ cost ของมัน, projects, หรือ aggregated analytics ของ workspace clusters ของคุณที่รายงานโดย NKP Insights ได้อย่างง่ายดาย
     
     ![Workspace dashboard](images/workspace_dashboard.a5f37201.png)
+
+
+---
+
+[← Back: Multi-tenancy Overview](nkp-fundamentals-multi.md) | [Home](nkp-bootcamp.md) | [Next: NKP Projects →](nkp-fundamentals-multi-proj.md)

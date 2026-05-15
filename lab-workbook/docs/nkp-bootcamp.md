@@ -21,3 +21,8 @@
     -   [Basic Linux administration](https://www.youtube.com/watch?v=gd7BXuUQ91w) (SSH, environment variables, editors, การนำทางไปยัง directories, ฯลฯ)
     -   [Kubernetes basics](https://www.youtube.com/watch?v=s_o8dwzRlu4)
     -   Networking basics (subnet, VLAN, VPC, IP address, load balancer, Virtual IP Address (VIP), firewall, network policy, ...)
+
+
+---
+
+[Home](nkp-bootcamp.md) | [Next: Introduction Overview →](nkp-intro.md)

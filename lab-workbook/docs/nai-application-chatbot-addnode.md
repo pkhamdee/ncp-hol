@@ -1,34 +1,38 @@
 # Add nodes to the chatflow
 
-A node is a visual representation of a component that performs a specific function in our AI workflow. For our simple chatbot, we'll use 3 nodes.
+node คือการแสดงภาพของ component ที่ทำหน้าที่เฉพาะใน AI workflow ของเรา สำหรับ chatbot แบบง่ายนี้ เราจะใช้ 3 node
 
 !!! info
 
     **Node Types**
 
-    A Flowise node is a modular, configurable building block in Flowise's visual editor that represents a discrete function or component. In this chatbot, you're using the following nodes based on the Langchain framework:
+    Flowise node คือ building block แบบ modular และปรับแต่งได้ใน visual editor ของ Flowise ที่แสดงถึงฟังก์ชันหรือ component แต่ละส่วน ใน chatbot นี้ คุณใช้ node ต่อไปนี้ที่อิงตาม Langchain framework:
 
-    -   **ChatOpenAI Custom** - a wrapper around Langchain's `ChatOpenAI` class that enables flexiblity by allowing parameter tweaking to connect to custom endpoints
-    -   **Conversation Chain** - enables back-and-forth interactions by maintaining conversation history between the user and a language model
-    -   **Buffer Window Memory** - provides memory for Conversation Chain to store and retrieve past exchanges
+    -   **ChatOpenAI Custom** - wrapper รอบๆ class `ChatOpenAI` ของ Langchain ที่ให้ความยืดหยุ่นโดยการปรับ parameter เพื่อเชื่อมต่อกับ custom endpoint
+    -   **Conversation Chain** - เปิดใช้งานการสนทนาโต้ตอบโดยเก็บประวัติการสนทนาระหว่างผู้ใช้และ language model
+    -   **Buffer Window Memory** - มอบ memory ให้กับ Conversation Chain เพื่อจัดเก็บและดึงการแลกเปลี่ยนในอดีต
 
-    Flowise requires the chatflow to end with a Chain (Langchain), Engine (LlamaIndex), or Agent node. In this lab we are using the Conversation Chain.
+    Flowise กำหนดให้ chatflow ต้องจบด้วย Chain (Langchain), Engine (LlamaIndex) หรือ Agent node ใน lab นี้เราใช้ Conversation Chain
 
-1.  Click the **+** sign in the top left corner to add a new node.
+1.  คลิกเครื่องหมาย **+** ที่มุมบนซ้ายเพื่อเพิ่ม node ใหม่
     
-2.  Under Langchain > Chat Models, find **ChatOpenAI Custom** and drag it onto the canvas. You can search for **ChatOpenAI**.
+2.  ใต้ Langchain > Chat Models ค้นหา **ChatOpenAI Custom** แล้วลากไปวางบน canvas สามารถค้นหาด้วยคำว่า **ChatOpenAI**
     
     ![Flowise Nodes](images/flowise-chatopenai-custom.d41ecd91.png)![Drag and Drop](images/flowise-drag.580762bd.gif)
     
     !!! tip    
-        The Nutanix Enterprise AI endpoints are OpenAI-compatible.
+        Nutanix Enterprise AI endpoints รองรับ OpenAI-compatible API
     
-3.  Click the **+** sign in the top left corner to add another new node.
+3.  คลิกเครื่องหมาย **+** ที่มุมบนซ้ายเพื่อเพิ่ม node ใหม่อีกตัว
     
-4.  Under Langchain > Chains, find **Conversation Chain** and drag it onto the canvas.
+4.  ใต้ Langchain > Chains ค้นหา **Conversation Chain** แล้วลากไปวางบน canvas
     
-5.  Click the **+** sign in the top left corner to add our last node.
+5.  คลิกเครื่องหมาย **+** ที่มุมบนซ้ายเพื่อเพิ่ม node ตัวสุดท้าย
     
-6.  Under Langchain > Memory, find **Buffer Window Memory** and drag it onto the canvas.
+6.  ใต้ Langchain > Memory ค้นหา **Buffer Window Memory** แล้วลากไปวางบน canvas
     
-7.  Click the **Save** icon to save your chatflow.
+7.  คลิกไอคอน **Save** เพื่อบันทึก chatflow ของคุณ
+
+---
+
+[← Back: Create a Blank Chatflow in Flowise](nai-application-chatbot-flowise.md) | [Home](nai-welcome.md) | [Next: Configure Nodes →](nai-application-chatbot-confnode.md)

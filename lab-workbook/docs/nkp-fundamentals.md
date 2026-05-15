@@ -28,3 +28,8 @@
 6.  **Recap and next steps**
     
     -   ตอนนี้คุณได้เรียนรู้เพิ่มเติมเกี่ยวกับ core NKP features แล้ว คุณจะพร้อมสำหรับการค้นพบ key features บางส่วนที่ NKP มีให้สำหรับการจัดการ day-2 operations สำหรับ infrastructure และ applications [cite: nkp-fundamentals.md]
+
+
+---
+
+[← Back: Takeaways](nkp-intro-takeaways.md) | [Home](nkp-bootcamp.md) | [Next: NKP Quick Tour →](nkp-fundamentals-tour.md)

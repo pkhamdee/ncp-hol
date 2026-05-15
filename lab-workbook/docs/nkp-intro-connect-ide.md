@@ -12,3 +12,8 @@
 2.  ขั้นตอนต่อไปคือการเปิด terminal คลิกที่ไอคอนเมนูตามด้วย _Terminal_ และ _New Terminal_
     
     ![VS Code terminal](images/ide-open-terminal.429243f9.png)
+
+
+---
+
+[← Back: VM Creation](nkp-intro-deploy-vm-creation.md) | [Home](nkp-bootcamp.md) | [Next: Deploy NKP Overview →](nkp-intro-deploy-nkp.md)

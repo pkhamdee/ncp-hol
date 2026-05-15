@@ -1,36 +1,36 @@
 # Create a Protection Policy
 
-1.  In the **Core** Prism Central, select **\> Data Protection > Protection Policies**.
+1. ใน **Core Prism Central** ให้เลือก **> Data Protection > Protection Policies**
 
     !!! note
 
-        If you are the first user to get to this portion of the lab, you will see the Protection Policies overview screen.
+        หากคุณเป็นผู้ใช้รายแรกที่เข้ามาถึงส่วนนี้ของ **lab** คุณจะเห็นหน้าจอภาพรวมของ **Protection Policies**
 
-        Click **Create Protection Policies** to dismiss this screen.
+        ให้คลิก **Create Protection Policies** เพื่อออกจากหน้าจอนี้
 
-2.  In the **Policy Name** field, type **ProtectionPolicy-##** where ## is your user number.
+2. ในช่อง **Policy Name** ให้พิมพ์ **ProtectionPolicy-##** โดยที่ ## คือหมายเลขผู้ใช้งานของคุณ
     
-3.  In the **Location** drop-down field for **Primary Location**, select **Local AZ**.
+3. ในช่องรายการ **drop-down** ของ **Location** สำหรับ **Primary Location** ให้เลือก **Local AZ**
     
-4.  In the **Cluster** drop-down field for **Primary Location**, select the local **Core** Cluster and click **Save**.
+4. ในช่องรายการ **drop-down** ของ **Cluster** สำหรับ **Primary Location** ให้เลือก **Core Cluster** ในเครื่อง และคลิก **Save**
     
     ![image](images/primary_location_core.932f4297.png)
     
-5.  In the **Location** drop-down field for **Recovery Location**, select IP Address that corresponds to the **Cloud** Prism Central.
+5. ในช่องรายการ **drop-down** ของ **Location** สำหรับ **Recovery Location** ให้เลือก **IP Address** ที่ตรงกับ **Cloud Prism Central**
     
-6.  In the **Cluster** drop-down field for **Recovery Location**, select the **Cloud** cluster and click **Save**.
+6. ในช่องรายการ **drop-down** ของ **Cluster** สำหรับ **Recovery Location** ให้เลือก **Cloud** cluster และคลิก **Save**
     
-7.  In the **Values** field, input 1hr and then click save.
+7. ในช่อง **Values** ให้ใส่ค่า **1hr** จากนั้นคลิก **Save**
     
-8.  Click **Next**
+8. คลิก **Next**
     
-9.  In the search box in the **Categories** pane to the left, type in the name of the category that you previously created, **DR-RPO-User##:1hr**. Select the check box that corresponds to your User Number and click **Add**.
+9. ในช่องค้นหาที่หน้าต่าง **Categories** ด้านซ้าย ให้พิมพ์ชื่อของ **category** ที่คุณสร้างไว้ก่อนหน้านี้ คือ **DR-RPO-User##:1hr** จากนั้นเลือกช่องติ๊กถูกที่ตรงกับหมายเลขผู้ใช้งานของคุณ แล้วคลิก **Add**
     
-10.  Click **Create**
+10. คลิก **Create**
     
 
 ## Next Steps
 
-The protection policy that selects your specific VM entity is now created. Snapshots are created for your VM on the local **Core** and remote **Cloud** cluster at your configured one-hour RPO. An initial snapshot is also created.
+ขณะนี้ **protection policy** ที่เลือก **VM entity** เฉพาะของคุณถูกสร้างขึ้นเรียบร้อยแล้ว โดย **Snapshots** สำหรับ **VM** ของคุณจะถูกสร้างขึ้นทั้งบน **Core** cluster ในเครื่อง และ **Cloud** cluster ปลายทาง ตามค่า **RPO** หนึ่งชั่วโมงที่คุณกำหนดไว้ นอกจากนี้จะมีการสร้าง **initial snapshot** ขึ้นด้วย
 
 [← Back: Create Category & Associate VM](edge-lab-scenario3-cat.md) | [Home](edge-getting-started.md) | [Next: Create a Recovery Plan →](edge-lab-scenario3-recover.md)

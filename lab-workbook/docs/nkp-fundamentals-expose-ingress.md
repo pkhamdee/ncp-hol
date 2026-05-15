@@ -136,3 +136,8 @@ Kubernetes Ingress เป็น resource ที่ใช้จัดการก
 **(Optional)** แผนภาพแสดงสิ่งที่คุณเพิ่งทำไป
 
 ![Ingress diagram](images/ingress_diagram.0206ce42.png)
+
+
+---
+
+[← Back: Load Balancer](nkp-fundamentals-expose-lb.md) | [Home](nkp-bootcamp.md) | [Next: Multi-tenancy Overview →](nkp-fundamentals-multi.md)

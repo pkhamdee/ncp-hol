@@ -334,3 +334,8 @@ Inbound sources สามารถเป็น Categories, Subnets, VPCs, Addres
 application policy อนุญาตเฉพาะ traffic ที่เฉพาะเจาะจงให้เข้ามาได้ สิ่งใดที่ไม่ได้รับอนุญาตจะถูก drop ทิ้ง เราได้ทำการบันทึก policy เฉพาะนี้ในรูปแบบ monitor mode ดังนั้นมันยังคงอนุญาตให้มี traffic อยู่ และ exceptions ใดๆ ที่เกิดกับ policy นี้จะถูกแสดงให้เห็น (visualized)
 
 นี่คือ policy mode ที่ยอดเยี่ยมสำหรับการสร้าง new policies โดยไม่กระทบต่อ applications ของคุณ
+
+
+---
+
+[← Back: Isolation Policies](flow-basic-isolation.md) | [Home](flow-overview.md) | [Next: Monitor and Enforce the Policy →](flow-app-monitor.md)

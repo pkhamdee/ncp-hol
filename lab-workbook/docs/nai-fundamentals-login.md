@@ -2,32 +2,36 @@
 
 ## Accessing the shared Nutanix Enterprise AI instance
 
-Starting from this lab you'll be using the staged Nutanix Enterprise AI instance shared with other users. You have been designated with the `AI/ML User` role.
+เริ่มตั้งแต่ lab นี้ คุณจะใช้ Nutanix Enterprise AI instance ที่เตรียมไว้และใช้ร่วมกับผู้ใช้คนอื่น คุณได้รับ role `AI/ML User`
 
-1.  Access the shared Nutanix Enterprise AI console on a new tab.
+1.  เข้าถึง Nutanix Enterprise AI console ที่ใช้ร่วมกันในแท็บใหม่
     
     !!! tip    
-        You can find the connection details for the shared instance on the [Setup](nai-intro-setup.md) page of this lab guide.
+        รายละเอียดการเชื่อมต่อสำหรับ instance ที่ใช้ร่วมกันสามารถดูได้จากหน้า [Setup](nai-intro-setup.md) ของ lab guide นี้
     
-2.  Login with your assigned credentials.
+2.  เข้าสู่ระบบด้วย credentials ที่ได้รับมอบหมาย
     
     ![NAI Console](images/nai-console.4473f4d4.png)
     
     !!! info
         AI/ML User
         
-        Logging in as the `AI/ML user` role has a more limited view than the `AI/ML Admin` role.
+        การเข้าสู่ระบบด้วย role `AI/ML user` จะมีมุมมองที่จำกัดกว่า role `AI/ML Admin`
     
-3.  Click on **Settings**
+3.  คลิก **Settings**
     
-4.  Notice that a Hugging Face credential has already been pre-configured for you. A valid Hugging Face token is required for downloading models from Hugging Face.
+4.  สังเกตว่า Hugging Face credential ได้รับการตั้งค่าล่วงหน้าให้คุณแล้ว จำเป็นต้องมี Hugging Face token ที่ถูกต้องสำหรับการดาวน์โหลดโมเดลจาก Hugging Face
     
     !!! info
         Third Party Credentials
         
-        Third Party Credentials are specific to each logged in user.
+        Third Party Credentials มีความเฉพาะสำหรับผู้ใช้แต่ละคนที่เข้าสู่ระบบ
     
     !!! info
         NVIDIA NGC Personal Key
         
-        The **NVIDIA NGC Personal Key** is required for downloading NVIDIA NIM models. However, we won't be using it in this lab.
+        **NVIDIA NGC Personal Key** จำเป็นสำหรับการดาวน์โหลดโมเดล NVIDIA NIM อย่างไรก็ตาม เราจะไม่ใช้มันใน lab นี้
+
+---
+
+[← Back: Review the NAI Interface](nai-fundamentals-interface.md) | [Home](nai-welcome.md) | [Next: Import an LLM →](nai-fundamentals-import-llm.md)

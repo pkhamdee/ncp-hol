@@ -41,3 +41,8 @@
 ## Takeaways
 
 File Analytics ช่วยให้คุณเข้าใจได้ดียิ่งขึ้นว่าองค์กรของคุณใช้ประโยชน์จากข้อมูล (data) อย่างไร เพื่อช่วยให้คุณปฏิบัติตามข้อกำหนดในด้านการตรวจสอบข้อมูล (data auditing), การจำกัดการเข้าถึงข้อมูล (data access minimization), และ compliance ของคุณ
+
+
+---
+
+[← Back: Multi-Protocol](nus-files-multi-protocol.md) | [Home](nus-getting-start.md) | [Next: Anomaly Rules →](nus-analytics-anomaly.md)

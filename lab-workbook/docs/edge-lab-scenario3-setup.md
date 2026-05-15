@@ -1,83 +1,82 @@
 # Disaster Recovery Setup
 
-Before getting started with this lab, we have a few items that need to be completed. This is a task overview.
+ก่อนที่จะเริ่มทำ lab นี้ มีรายการหลายอย่างที่ต้องทำให้เสร็จสมบูรณ์ก่อน นี่คือภาพรวมของงานทั้งหมด:
 
--   Enable Nutanix Disaster Recovery on **Core** and **Cloud** Prism Central instances.
-    -   This is a once-per-cluster operation.
-    -   Seats 01, 11, 21, 31, and 41 will perform the **Core** cluster configuration.
-    -   Seats 02, 12, 22, 32, and 42 will perform the **Cloud** cluster configuration.
--   Install Nutanix Guest Tools in your guest VM. Every seat will perform this operation.
-    -   Nutanix Guest Tools are required for IP preservation during DR.
--   Apply a static IP Address to your Linux VM. Done by every seat.
-    -   Use the PuTTY SSH client in your VDI session. q
+- **Enable Nutanix Disaster Recovery** บน **Core** และ **Cloud Prism Central instances**
+    - นี่คือการดำเนินการเพียงครั้งเดียวต่อหนึ่ง **cluster**
+    - หมายเลขที่นั่ง (Seats) 01, 11, 21, 31, และ 41 จะทำหน้าที่กำหนดค่า **Core cluster**
+    - หมายเลขที่นั่ง (Seats) 02, 12, 22, 32, และ 42 จะทำหน้าที่กำหนดค่า **Cloud cluster**
+- ติดตั้ง **Nutanix Guest Tools** ใน **guest VM** ของคุณ โดยทุกที่นั่งจะต้องดำเนินการขั้นตอนนี้
+    - **Nutanix Guest Tools** จำเป็นสำหรับการคงค่า **IP (IP preservation)** ในระหว่างทำ **DR**
+- กำหนดค่า **static IP Address** ให้กับ **Linux VM** ของคุณ โดยทุกที่นั่งต้องดำเนินการ
+    - ใช้ **PuTTY SSH client** ใน **VDI session** ของคุณ
 
 ## Enable Nutanix Disaster Recovery
 
-follow along in the [guided DR enablement demo.](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=5&scale=true) Come back to these instructions when you reach the end of the guided demo.
+ทำตามขั้นตอนใน [guided DR enablement demo](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=5&scale=true) และกลับมาอ่านคำแนะนำเหล่านี้เมื่อคุณทำตาม demo จนจบแล้ว
 
-1.  Connect to the **Core** Prism Central as the local `admin` user.
+1. เชื่อมต่อเข้ากับ **Core Prism Central** ด้วยชื่อผู้ใช้ `admin`
     
-2.  In the **Core** Prism Central, Click the settings button (gear icon) at the top-right corner of the web console.
+2. ใน **Core Prism Central** ให้คลิกที่ปุ่มตั้งค่า (ไอคอนรูปฟันเฟือง) ที่มุมขวาบนของ **web console**
     
-3.  Click **Enable Disaster Recovery** in the Setup section on the left pane.
-    
-    -   The Nutanix Disaster Recovery dialog box runs pre-checks. If any pre-check fails, resolve the issue that is causing the failure and click **Check Again**. Ask your instructor for assistance if any pre-checks fail.
+3. คลิก **Enable Disaster Recovery** ในส่วน **Setup** ที่แถบด้านซ้าย
+    - กล่องโต้ตอบ **Nutanix Disaster Recovery** จะทำการตรวจสอบเบื้องต้น (**pre-checks**) หากมีการตรวจสอบใดล้มเหลว ให้แก้ไขสาเหตุนั้นแล้วคลิก **Check Again** หรือขอความช่วยเหลือจากผู้สอนหากไม่สามารถแก้ไขได้
 
-4.  Click **Enable** after all the pre-checks pass.
+4. คลิก **Enable** หลังจากที่การตรวจสอบทั้งหมดผ่านเรียบร้อยแล้ว
 
 
 ## Install NGT
 
-1.  In the **Core** Prism Central, select **\> Compute & Storage > VMs**.
+1. ใน **Core Prism Central** ให้เลือก **> Compute & Storage > VMs**
     
-2.  Click the checkbox next to your **Linux-User##** VM, where ## is your assigned seat number, 1-50.
+2. คลิกช่องติ๊กถูกถัดจาก **VM** ที่ชื่อ **Linux-User##** (โดย ## คือหมายเลขที่นั่ง 1-50 ของคุณ)
     
-3.  Select **Actions**. Scroll down and select **Install NGT**
+3. เลือก **Actions** เลื่อนลงมาแล้วเลือก **Install NGT**
     
-4.  The **Install NGT** pop-up box will appear. Select the radio button for **Restart as soon as the install is completed** then click **Confirm & Enter Password**
+4. ป๊อปอัพ **Install NGT** จะปรากฏขึ้น ให้เลือกปุ่มตัวเลือก **Restart as soon as the install is completed** จากนั้นคลิก **Confirm & Enter Password**
     
-5.  On the right side enter the VM credentials of Username = `ubuntu` / Password = `nutanix/4u` and click **Done**.
+5. ทางด้านขวาให้กรอก **VM credentials** คือ Username = `ubuntu` / Password = `nutanix/4u` แล้วคลิก **Done**
     
-6.  This installs NGT and reboots the VM. Verify NGT is installed by checking the NGT Status field in the Prism Central VM list view. It should say **Latest**
+6. ขั้นตอนนี้จะติดตั้ง **NGT** และทำการรีบูต **VM** ให้ตรวจสอบว่าติดตั้งสำเร็จโดยดูที่ฟิลด์ **NGT Status** ในหน้ารายการ **VM** ของ **Prism Central** ซึ่งควรจะขึ้นสถานะเป็น **Latest**
     
 
-## Configure a Static IP for your VM Student
+## Configure a Static IP for your VM
 
-1.  In the **Core** Prism Central, select **\> Compute & Storage > VMs**.
+1. ใน **Core Prism Central** ให้เลือก **> Compute & Storage > VMs**
     
-2.  Select the checkbox next to your VM and click **\> Actions > Update**
+2. เลือกช่องติ๊กถูกถัดจาก **VM** ของคุณ แล้วคลิก **> Actions > Update**
     
-3.  In the Configuration Tab, click **Next**
+3. ในแท็บ **Configuration** ให้คลิก **Next**
     
-4.  In the Resources Tab, click the pencil where the network is "stretch-net"
+4. ในแท็บ **Resources** ให้คลิกไอคอนรูปดินสอตรงเครือข่ายที่เป็น "stretch-net"
     
-5.  Change **Assignment Type** from **Assign Static IP** to **Assign with DHCP** and click **Save**
+5. เปลี่ยน **Assignment Type** จาก **Assign Static IP** เป็น **Assign with DHCP** แล้วคลิก **Save**
     
 
     !!! note
 
-        **Assign with Static IP** in Prism is similar to a DHCP reservation and does not apply a static IP inside the guest VM. The guest VM still uses DHCP.
+        การเลือก **Assign with Static IP** ใน **Prism** นั้นคล้ายกับความหมายของ **DHCP reservation** ซึ่งจะไม่ได้เป็นการกำหนด **static IP** ลงไปภายในตัว **guest VM** จริงๆ โดยตัว **guest VM** จะยังคงใช้ **DHCP** อยู่
 
-        We want the IP to persist after failover, therefore, we need to configure it as static inside the guest VM operating system.
+        เราต้องการให้ **IP** ยังคงเดิมหลังจากทำ **failover** ดังนั้นเราจึงจำเป็นต้องกำหนดค่าเป็น **static** ภายในระบบปฏิบัติการของ **guest VM**
 
-6.  Log into your VM via SSH with Username = `ubuntu` / Password = `nutanix/4u`
+6. เข้าสู่ **VM** ของคุณผ่าน **SSH** ด้วย Username = `ubuntu` / Password = `nutanix/4u`
     
-7.  Copy the current network config file using the following command inside the VM SSH session.
+7. คัดลอกไฟล์กำหนดค่าเครือข่ายปัจจุบันโดยใช้คำสั่งต่อไปนี้ภายใน **SSH session**
     
 
     ```
     sudo cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.copy
     ```
 
-8.  Record the adapter name and the IP Address where the current IP address is bound to after entering the following ip command.
+8. ตรวจสอบชื่อ **adapter** และ **IP Address** ที่ใช้งานอยู่ปัจจุบันโดยใช้คำสั่งด้านล่าง
 
-    -   command
+    - คำสั่ง
 
     ```
     ip a
     ```
 
-    -   example output
+    - ตัวอย่างผลลัพธ์
 
     ```
     ubuntu@Linux-Tools-VM:~$ ip a
@@ -85,37 +84,36 @@ follow along in the [guided DR enablement demo.](https://nutanix.storylane.io/sh
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
         inet 127.0.0.1/8 scope host lo
 
-    2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> ... <---- Use this interface
+    2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> ... <---- ใช้ interface นี้
         link/ether 50:6b:8d:e6:75:ac brd ff:ff:ff:ff:ff:ff
         altname enp0s3
-        inet 10.42.231.50/25 ... scope global dynamic ens3 <-- Use this IP
-
+        inet 10.42.231.50/25 ... scope global dynamic ens3 <-- ใช้ IP นี้
     ```
 
-9.  Open the network configuration file with nano
+9. เปิดไฟล์กำหนดค่าเครือข่ายด้วย **nano**
 
     ```
     sudo nano /etc/netplan/50-cloud-init.yaml
     ```
 
-10.  Copy and paste from the example into the cloud-init.yaml configuration file. Change the **adapter name**, **IP Address** and **gateway** to match your assigned VM and cluster network information.
+10. คัดลอกและวางตัวอย่างลงในไฟล์กำหนดค่า **cloud-init.yaml** โดยเปลี่ยน **adapter name**, **IP Address** และ **gateway** ให้ตรงกับ **VM** และข้อมูลเครือข่ายของ **cluster** ที่คุณได้รับมอบหมาย
 
-    -   template
+    - รูปแบบ (template)
 
     ```
     network:
       version: 2
       ethernets:
-        ens3: # Replace with your interface name.
+        ens3: # แทนที่ด้วยชื่อ interface ของคุณ
           dhcp4: false
           addresses:
-            - 10.x.y.z/25 # Replace with your VM's assigned IP address. 
+            - 10.x.y.z/25 # แทนที่ด้วย IP address ของ VM ที่คุณได้รับ
           routes:
             - to: 0.0.0.0/0
-              via: 10.x.y.129 # Replace with your assigned stretch-net gateway.
+              via: 10.x.y.129 # แทนที่ด้วย stretch-net gateway ที่คุณได้รับ
     ```
 
-    -   example
+    - ตัวอย่าง
 
     ```
     network:
@@ -130,21 +128,21 @@ follow along in the [guided DR enablement demo.](https://nutanix.storylane.io/sh
       version: 2
     ```
 
-11.  Apply the network configuration with the following command inside the guest VM.
+11. ใช้การกำหนดค่าเครือข่ายใหม่ด้วยคำสั่งต่อไปนี้ภายใน **guest VM**
 
     ```
     sudo netplan apply
     ```
 
-12.  Verify that the VM can still reach the local network by performing a ping to the local gateway IP address.
+12. ตรวจสอบว่า **VM** ยังคงสามารถเชื่อมต่อกับเครือข่ายท้องถิ่นได้โดยการ **ping** ไปยังหมายเลข **IP** ของ **local gateway**
 
-    -   template
+    - รูปแบบ
 
     ```
-    ping 10.55.XX.128 # where XX is your network number
+    ping 10.55.XX.128 # โดยที่ XX คือหมายเลขเครือข่ายของคุณ
     ```
 
-    -   example
+    - ตัวอย่าง
 
     ```
     ping 10.55.89.129
@@ -152,6 +150,6 @@ follow along in the [guided DR enablement demo.](https://nutanix.storylane.io/sh
 
 ## Next Steps
 
-Now that our guest VM has a static IP address and can ping the local gateway, we're ready to perform our DR configuration and failover.
+เมื่อ **guest VM** ของเรามีหมายเลข **static IP** และสามารถ **ping** ไปยัง **local gateway** ได้แล้ว เราก็พร้อมที่จะดำเนินการกำหนดค่า **DR** และทำการ **failover** ในขั้นตอนต่อไปครับ
 
 [← Back: Definitions](edge-lab-scenario3-def.md) | [Home](edge-getting-started.md) | [Next: Create Category & Associate VM →](edge-lab-scenario3-cat.md)

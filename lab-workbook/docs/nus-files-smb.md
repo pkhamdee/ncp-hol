@@ -131,3 +131,8 @@
     ![](images/15.6a15bba2.png)
     
 6.  คลิก < ที่มุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนต่อไป
+
+
+---
+
+[← Back: Lab Setup](nus-lab-setup.md) | [Home](nus-getting-start.md) | [Next: Create NFS Export →](nus-files-nfs.md)

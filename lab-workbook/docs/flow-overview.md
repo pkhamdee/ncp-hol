@@ -17,3 +17,8 @@ labs นี้ถูกเขียนขึ้นสำหรับซอฟต
 -   Flow Controller - 7.5
 
 lab เวอร์ชันนี้แสดงให้เห็นถึง capabilities ของ Flow Network Security Next-Gen เราจะเจาะลึกไปที่ capabilities ใหม่ๆ ของ updated policy-model เช่น การทำ clone, save, และ multi-environment isolation policies
+
+
+---
+
+[Home](flow-overview.md) | [Next: Prism Central Overview →](flow-env-pc-overview.md)

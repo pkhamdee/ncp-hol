@@ -55,3 +55,8 @@ Prism Central เป็น centralized management platform ที่ช่วย
 ## Takeaways
 
 -   Prism Central คือ main control pane ที่คุณใช้โต้ตอบ (interact) และใช้งาน Nutanix Cloud Platform ของคุณ รวมถึง Flow Network Security policies ด้วย
+
+
+---
+
+[← Back: Overview](flow-overview.md) | [Home](flow-overview.md) | [Next: Flow Controller →](flow-env-flow-controller.md)

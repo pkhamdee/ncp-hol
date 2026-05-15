@@ -20,3 +20,8 @@
         คุณยังสามารถดูเหตุการณ์ _permission denied_ ใน **Audit Trails** ได้อีกด้วย
 
 Nutanix Data Lens ให้ advanced analytics และ ransomware protection ที่เหนือกว่าและล้ำหน้ากว่า File Analytics รวมถึงมี ransomware signatures มากกว่า 5,000 รายการ และการตรวจจับ (detecting) ตัวแปรที่ไม่รู้จัก (unknown variants) โดยอิงจากรูปแบบการเข้าถึง (access patterns)
+
+
+---
+
+[← Back: Anomaly Rules](nus-analytics-anomaly.md) | [Home](nus-getting-start.md) | [Next: Bucket, Users, And Access Control →](nus-objects-buckets.md)

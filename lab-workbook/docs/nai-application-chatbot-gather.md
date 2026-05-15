@@ -1,14 +1,14 @@
 # Gather Information
 
-You'll need 3 pieces of information to get started:
+คุณจะต้องมีข้อมูล 3 อย่างเพื่อเริ่มต้น:
 
--   The URL of your endpoint that you created
--   The endpoint name
--   The API key that has access to that endpoint
+-   URL ของ endpoint ที่คุณสร้างขึ้น
+-   ชื่อ endpoint
+-   API key ที่มีสิทธิ์เข้าถึง endpoint นั้น
 
-If you need a new API key, follow the instructions in [Creating Additional API Keys](nai-fundamentals-endpoint-keys.md).
+หากต้องการ API key ใหม่ ให้ทำตามคำแนะนำใน [Creating Additional API Keys](nai-fundamentals-endpoint-keys.md)
 
-The other information can be obtained from the endpoint dashboard page. From the Nutanix Enterprise AI interface, click on Endpoints, then click on the endpoint name to view the endpoint dashboard. Find the values under:
+ข้อมูลอื่นๆ สามารถดูได้จากหน้า endpoint dashboard จาก Nutanix Enterprise AI interface คลิก Endpoints แล้วคลิกชื่อ endpoint เพื่อดู endpoint dashboard ค้นหาค่าต่อไปนี้:
 
 -   Details > Endpoint Name
 -   Endpoint Access > Endpoint URL
@@ -16,4 +16,8 @@ The other information can be obtained from the endpoint dashboard page. From the
 ![Endpoint Dashboard](images/endpoint-dashboard.a187d44f.png)
 
 !!! warning
-    Don't include `chat/completions` when copying the URL. Flowise only requires the base URL path.
+    อย่า include `chat/completions` เมื่อ copy URL Flowise ต้องการเพียง base URL path เท่านั้น
+
+---
+
+[← Back: Create Your First Chatbot](nai-application-chatbot.md) | [Home](nai-welcome.md) | [Next: Create a Blank Chatflow in Flowise →](nai-application-chatbot-flowise.md)

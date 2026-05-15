@@ -37,5 +37,3 @@ Nutanix Bootcamp ได้รับการออกแบบให้รัน
 |SSP Operators    |operator01-operator25    |`HPOC-PASSWORD` |
 |SSP Custom.      |custom01-custom25        |`HPOC-PASSWORD` |
 |Bootcamp Users.  |user01-user25            |`HPOC-PASSWORD` |
-
-

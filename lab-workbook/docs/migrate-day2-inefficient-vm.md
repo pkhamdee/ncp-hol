@@ -22,3 +22,8 @@
 ## Walkthrough
 
 นี่คือ [link](https://nutanix.storylane.io/share/1cyx8cigr5qk) สำหรับ guided walkthrough เพื่อสาธิตให้เห็นการทำงานของ feature นี้ เมื่อคุณทำ guided walk-through เสร็จแล้ว ให้กลับมาที่ lab guide นี้
+
+
+---
+
+[← Back: Capacity Planning](migrate-day2-capacity-planning.md) | [Home](migrate-nutanix-overview.md) | [Next: Management Takeaways →](migrate-day2-mgmt-takeaway.md)

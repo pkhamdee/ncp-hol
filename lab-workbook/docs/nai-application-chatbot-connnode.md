@@ -1,15 +1,19 @@
 # Connect nodes
 
-Now that our LLM is configured, we can connect our chatflow together.
+เมื่อกำหนดค่า LLM แล้ว เราสามารถเชื่อมต่อ chatflow เข้าด้วยกันได้
 
-1.  Link the **ChatOpenAI-Custom** output connector of the **ChatOpenAI Custom** node to the **Chat Model** input connector on the **Conversation Chain**.
+1.  เชื่อมต่อ output connector **ChatOpenAI-Custom** ของ **ChatOpenAI Custom** node กับ input connector **Chat Model** บน **Conversation Chain**
     
-2.  Link the **BufferWindowMemory** output connector on the **Buffer Window Memory** node to the **Memory** input connector on **Conversation Chain**.
+2.  เชื่อมต่อ output connector **BufferWindowMemory** บน **Buffer Window Memory** node กับ input connector **Memory** บน **Conversation Chain**
     
     !!! tip    
-        To connect the nodes, hover over the connector until the cursor turns into a +, and then drag it to the other connector.
+        ในการเชื่อมต่อ node วางเมาส์เหนือ connector จนกว่า cursor จะเปลี่ยนเป็น + แล้วลากไปยัง connector อีกตัว
     
 
-Your chatflow should now look similar to the image below.
+chatflow ของคุณควรมีลักษณะคล้ายกับภาพด้านล่าง
 
 ![Chatflow Example](images/chatflow-example.fe716876.png)
+
+---
+
+[← Back: Configure Nodes](nai-application-chatbot-confnode.md) | [Home](nai-welcome.md) | [Next: Test Chatflow →](nai-application-chatbot-test.md)

@@ -1,27 +1,31 @@
 # Test the Chatbot
 
-Before testing our new chatbot, let's ask a specific question to our existing chatbot.
+ก่อนทดสอบ chatbot ใหม่ มาลองถามคำถามเฉพาะเจาะจงกับ chatbot เดิมก่อน
 
-1.  If you're currently on the chatflow canvas, click the **<** arrow to return to the chatflow list.
+1.  หากคุณอยู่บน chatflow canvas ให้คลิกลูกศร **<** เพื่อกลับไปที่รายการ chatflow
     
     ![Back Arrow](images/back-arrow.7caec246.png)
     
-2.  From the chatflow list, click on your original chatflow.
+2.  จากรายการ chatflow คลิก chatflow เดิมของคุณ
     
-3.  Open up the chatbot by clicking on the chat icon.
+3.  เปิด chatbot โดยคลิกไอคอน chat
     
     ![Chat Icon](images/chat-icon.1529c512.png)
     
-4.  Ask the question `What are the new NVIDIA NIMs supported in NAI 2.5?` and view the output.
+4.  ถามคำถาม `What are the new NVIDIA NIMs supported in NAI 2.5?` และดู output
     
-    Since this chatbot is not using our document store, it is relying on its general knowledge, and will give a generic and inaccurate answer.
+    เนื่องจาก chatbot นี้ไม่ได้ใช้ document store ของเรา จึงอาศัยความรู้ทั่วไปและจะให้คำตอบที่ไม่เฉพาะเจาะจงและไม่ถูกต้อง
     
     ![Answer Without RAG](images/answer-without-rag.bc3235dc.png)
     
-5.  Click the back arrow and click on your new RAG-enabled chatflow.
+5.  คลิกลูกศรย้อนกลับและคลิก chatflow ที่เปิดใช้งาน RAG ใหม่ของคุณ
     
-6.  Open up the chatbot by clicking on the chat icon.
+6.  เปิด chatbot โดยคลิกไอคอน chat
     
-7.  Ask the same question `What are the new NVIDIA NIMs supported in NAI 2.5?` and view the output. The answer should be referenced from the document we uploaded. You can view the referenced document chunks at the end of the output.
+7.  ถามคำถามเดิม `What are the new NVIDIA NIMs supported in NAI 2.5?` และดู output คำตอบควรอ้างอิงจากเอกสารที่เราอัปโหลด คุณสามารถดู document chunk ที่อ้างอิงได้ที่ท้าย output
     
     ![Answer With RAG](images/answer-with-rag.faa6d164.png)
+
+---
+
+[← Back: Configure Chatflow](nai-application-rag-chatflow.md) | [Home](nai-welcome.md) | [Next: Application Takeaways →](nai-application-takeaways.md)

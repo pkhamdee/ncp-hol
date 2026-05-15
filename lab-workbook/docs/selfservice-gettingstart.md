@@ -16,3 +16,8 @@ Labs จัดทำขึ้นสำหรับซอฟต์แวร์เ
 -   Lab Setup
 -   Windows หรือ Linux (หรือทั้งสองอย่าง!) Deployment & Marketplace
 -   Calm Domain-Specific Language (DSL)
+
+
+---
+
+[Home](selfservice-gettingstart.md) | [Next: Self Service Lab Setup →](selfservice-lab-setup.md)

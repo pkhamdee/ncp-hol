@@ -2,38 +2,42 @@
 
 ## Chatbot Flow
 
-The flow of a chatbot looks similar to the below diagram.
+กระบวนการทำงานของ chatbot มีลักษณะคล้ายกับแผนภาพด้านล่าง
 
 ![Chatbot Diagram](images/chatbot-diagram.0ee0bf0c.png)
 
 1.  **Ask Question**
     
-    -   User asks a question to the chatbot.
+    -   ผู้ใช้ถามคำถามกับ chatbot
 
 2.  **Send Prompt to Inference API**
     
-    -   The chatbot is configured to query the inference endpoint running on Nutanix Enterprise AI.
+    -   chatbot ถูกกำหนดค่าให้ query inference endpoint ที่รันบน Nutanix Enterprise AI
 
 3.  **Get Answer**
     
-    -   The chatbot returns an answer.
+    -   chatbot ส่งคำตอบกลับมา
 
 ## Steps to Create a Chatbot
 
-In order to create your first chatbot, you'll do the following:
+ในการสร้าง chatbot แรกของคุณ คุณจะทำสิ่งต่อไปนี้:
 
 1.  **Gather information from Nutanix Enterprise AI**
     
-    -   Gather the endpoint details from Nutanix Enterprise AI.
+    -   รวบรวมรายละเอียด endpoint จาก Nutanix Enterprise AI
 
 2.  **Create a Chatflow in Flowise**
     
-    -   Login to the Flowise application and create a new chatflow.
+    -   เข้าสู่ระบบแอปพลิเคชัน Flowise และสร้าง chatflow ใหม่
 
 3.  **Add, configure, and connect nodes in the chatflow**
     
-    -   Learn about the different types of nodes that will make up your chatbot and configure them.
+    -   เรียนรู้เกี่ยวกับประเภท node ต่างๆ ที่จะประกอบเป็น chatbot ของคุณและกำหนดค่าให้
 
 4.  **Test the chatflow**
     
-    -   Now it's time to try out our chatbot.
+    -   ถึงเวลาทดสอบ chatbot ของเรา
+
+---
+
+[← Back: Application Overview](nai-application-overview.md) | [Home](nai-welcome.md) | [Next: Gather Information →](nai-application-chatbot-gather.md)

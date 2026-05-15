@@ -80,3 +80,9 @@ Performance and Availability
 #### Environment
 
 เพิ่มค่าสำหรับ environment ที่คุณต้องการแยกออกจากกัน แล้วเชื่อมโยง VM กับค่าเหล่านั้น
+
+
+
+---
+
+[← Back: Data Protection](ncp1-dataprotection.md) | [Home](ncp1-whatisncp.md)

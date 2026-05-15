@@ -21,3 +21,8 @@
 4.  **Recap and next steps**
     
     -   หลังจากเรียนรู้เกี่ยวกับ day-2 operations สำหรับ infrastructure และ applications แล้ว คุณจะพร้อมสำหรับการค้นพบ GitOps automation สำหรับ software delivery ที่ at scale
+
+
+---
+
+[← Back: Takeaways](nkp-fundamentals-takeaways.md) | [Home](nkp-bootcamp.md) | [Next: Visualizing platform metrics →](nkp-observ-metrics.md)

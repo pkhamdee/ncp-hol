@@ -1,16 +1,20 @@
 # Takeaways
 
-🎉 Congratulations! You have learned some fundamental Nutanix Enterprise AI concepts and capabilities:
+🎉 ยินดีด้วย! คุณได้เรียนรู้ concept และความสามารถพื้นฐานของ Nutanix Enterprise AI แล้ว:
 
--   How to download a model from Hugging Face
+-   วิธีดาวน์โหลดโมเดลจาก Hugging Face
     
--   How to create an endpoint to connect to the model
+-   วิธีสร้าง endpoint เพื่อเชื่อมต่อกับโมเดล
     
--   How to view and manage API keys
+-   วิธีดูและจัดการ API keys
     
--   How to view metrics and logs for an endpoint
+-   วิธีดู metrics และ log สำหรับ endpoint
     
--   How to test the endpoint from the UI
+-   วิธีทดสอบ endpoint จาก UI
     
 
-In the next section, you'll leverage Nutanix Enterprise AI for building a real-world application.
+ในส่วนถัดไป คุณจะใช้ Nutanix Enterprise AI เพื่อสร้างแอปพลิเคชันจริง
+
+---
+
+[← Back: Creating Additional API Keys](nai-fundamentals-endpoint-keys.md) | [Home](nai-welcome.md) | [Next: Application Overview →](nai-application-overview.md)

@@ -19,3 +19,8 @@
     
 
 ![WordPress diagram](images/wordpress_diagram.59a9a0b6.png)
+
+
+---
+
+[← Back: NKP Projects](nkp-fundamentals-multi-proj.md) | [Home](nkp-bootcamp.md) | [Next: StorageClass with Nutanix CSI →](nkp-fundamentals-storage-csi.md)

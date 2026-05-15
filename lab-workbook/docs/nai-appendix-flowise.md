@@ -1,6 +1,6 @@
 # Flowise Chatflows
 
-These chatflows can be downloaded and imported into Flowise.
+chatflow เหล่านี้สามารถดาวน์โหลดและ import เข้าสู่ Flowise ได้
 
 -   Chatbot Flow
 
@@ -814,3 +814,7 @@ These chatflows can be downloaded and imported into Flowise.
   \]
 }
 ```
+
+---
+
+[← Back: Glossary](nai-appendix-glossary.md) | [Home](nai-welcome.md) | [Next: Types of Large Language Models →](nai-appendix-typellm.md)

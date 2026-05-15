@@ -8,3 +8,8 @@
 !!! tip
     -   NKP CLI และ NKP Rocky image จะต้องมี version ที่ตรงกัน
     -   NKP CLI มีให้ใช้งานสำหรับ x86_64 Linux หรือ macOS
+
+
+---
+
+[← Back: Connect to Web IDE](nkp-intro-connect-ide.md) | [Home](nkp-bootcamp.md) | [Next: Install NKP CLI →](nkp-intro-deploy-nkp-cli.md)

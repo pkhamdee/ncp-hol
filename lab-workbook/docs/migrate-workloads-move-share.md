@@ -26,3 +26,8 @@ Nutanix Files และ Nutanix Objects ช่วย customers ในการ c
     
 
 source สำหรับการ migration นี้คือ Windows server ที่รัน FileShare service และมี share หนึ่งตัว share นี้มี seed data บางส่วนอยู่ภายใน destination share คือ share ที่คุณได้สร้างไว้ในส่วนก่อนหน้านี้
+
+
+---
+
+[← Back: Migrate at Scale](migrate-workloads-move-migrate-at-scale.md) | [Home](migrate-nutanix-overview.md) | [Next: Configuring Nutanix Files →](migrate-workloads-move-share-config-file.md)

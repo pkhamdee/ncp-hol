@@ -82,3 +82,7 @@ Application ที่คุณกำลังจะ deploy คือ online bout
     -   **Namespace as a Service**: การเพิ่ม cluster ใหม่ไปยัง Project จะเป็นการนำการกำหนดค่า application และ namespace ไปใช้กับ cluster นั้นโดยอัตโนมัติ
 
     ![GitOps Sync](images/gitops_sync.fe9e53be.png)
+
+---
+
+[← Back: Automation Overview](nkp-automation.md) | [Home](nkp-bootcamp.md) | [Next: Access the Application →](nkp-automation-gitops-access.md)

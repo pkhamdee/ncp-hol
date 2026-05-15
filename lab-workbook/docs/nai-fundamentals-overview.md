@@ -2,26 +2,30 @@
 
 **Objective:**  
 
-The chapter equips you with foundational skills for working with Nutanix Enterprise AI. By completing these tasks, you will gain practical insights and understanding of core NAI features.
+บทนี้จะช่วยให้คุณมีทักษะพื้นฐานในการทำงานกับ Nutanix Enterprise AI เมื่อทำงานทั้งหมดเสร็จแล้ว คุณจะได้รับความเข้าใจเชิงปฏิบัติเกี่ยวกับฟีเจอร์หลักของ NAI
 
 **What You’ll Do:**
 
 1.  **Review the Nutanix Enterprise AI interface**
     
-    -   Review the basics of the Nutanix Enterprise AI interface as an admin
+    -   ทบทวนพื้นฐานของ Nutanix Enterprise AI interface ในฐานะ admin
 
 2.  **Login to Nutanix Enterprise AI as an end user**
     
-    -   Log in to a live instance of Nutanix Enterprise AI as an end user
+    -   เข้าสู่ระบบ Nutanix Enterprise AI instance จริงในฐานะ end user
 
 3.  **Import an LLM**
     
-    -   Create a model
+    -   สร้างโมเดล
 
 4.  **Create an endpoint to connect to the LLM**
     
-    -   Create and test your first endpoint
+    -   สร้างและทดสอบ endpoint แรกของคุณ
 
 5.  **Recap and next steps**
     
-    -   Now that you've learned about core Nutanix Enterprise AI functionality, you'll be ready to move on to connecting applications to build your first chatbot and RAG pipeline.
+    -   หลังจากเรียนรู้ฟังก์ชันหลักของ Nutanix Enterprise AI แล้ว คุณจะพร้อมก้าวต่อไปสู่การเชื่อมต่อแอปพลิเคชันเพื่อสร้าง chatbot และ RAG pipeline แรกของคุณ
+
+---
+
+[← Back: Navigating the labs](nai-intro-navigating.md) | [Home](nai-welcome.md) | [Next: Review the NAI Interface →](nai-fundamentals-interface.md)

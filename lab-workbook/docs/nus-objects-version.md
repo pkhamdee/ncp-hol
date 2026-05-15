@@ -58,3 +58,8 @@ Object versioning อนุญาตให้อัปโหลด new versions 
 7.  สังเกตว่าไฟล์ทั้งสองเวอร์ชันจะถูกเก็บรักษา (preserved) ไว้ พร้อมกับแท็ก _Latest_ เพื่อระบุว่าเป็น latest version
     
 8.  คลิก **Close** และ < **Back to Object Store**
+
+
+---
+
+[← Back: Bucket, Users, And Access Control](nus-objects-buckets.md) | [Home](nus-getting-start.md) | [Next: CLI and Scripting →](nus-objects-cli.md)

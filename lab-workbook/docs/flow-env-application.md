@@ -101,3 +101,8 @@ requirements สำหรับ development ของเรานั้นคล
 ณ จุดนี้ใน lab ตอนนี้เรามี application ที่ถูก provisioned พร้อมด้วย categories ที่ถูกต้องแล้ว. เรารู้ว่า application ทำงานตามที่เราคาดหวัง. เรายังรู้ถึง requirements ของ application ที่กำหนดโดย business และสิ่งที่ application ต้องการในทางเทคนิค (technically) เพื่อให้สามารถทำงานได้.
 
 ขั้นตอนที่เหลืออยู่คือการเพิ่ม Security Policies เพื่อจำกัด (restrict) การ access ให้อนุญาตเฉพาะสิ่งที่ required เท่านั้น.
+
+
+---
+
+[← Back: Categories](flow-env-categories.md) | [Home](flow-overview.md) | [Next: Quarantine a VM →](flow-basic-quarantine.md)

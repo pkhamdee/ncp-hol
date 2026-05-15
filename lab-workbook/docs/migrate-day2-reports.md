@@ -62,3 +62,7 @@ IT Administrator ต้องการข้อมูลเกี่ยวกั
 18.  นี่คือตัวอย่างหน้าตาของ report
     
     ![](images/report5.43db3977.png)
+
+---
+
+[← Back: IAM](migrate-day2-iam.md) | [Home](migrate-nutanix-overview.md) | [Next: Capacity Planning →](migrate-day2-capacity-planning.md)

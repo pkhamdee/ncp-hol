@@ -2,40 +2,44 @@
 
 ### Text to Text
 
-Generates natural language based on a prompt. Used in chatbots, content creation, code generation, and summarization.
+สร้างภาษาธรรมชาติตาม prompt ที่กำหนด ใช้ใน chatbot การสร้างเนื้อหา การสร้างโค้ด และการสรุปความ
 
 ### Tool Calling
 
-A model that can identify and generate the necessary parameters to interact with external APIs or functions based on a user's prompt.
+โมเดลที่สามารถระบุและสร้าง parameter ที่จำเป็นสำหรับการโต้ตอบกับ API ภายนอกหรือ function ตาม prompt ของผู้ใช้
 
 ### Reasoning
 
-A model designed to break down complex problems into logical steps or subtasks to arrive at a more accurate solution.
+โมเดลที่ออกแบบมาเพื่อแบ่งปัญหาที่ซับซ้อนออกเป็นขั้นตอนเชิงตรรกะหรืองานย่อยเพื่อให้ได้คำตอบที่แม่นยำยิ่งขึ้น
 
 ### Reranker
 
-Scores and reorders a list of candidate outputs (like search results or generated answers). Helps prioritize the most relevant or high-quality options.
+ให้คะแนนและจัดเรียงรายการ output ที่เป็น candidate ใหม่ (เช่น ผลการค้นหาหรือคำตอบที่สร้างขึ้น) ช่วยจัดลำดับความสำคัญให้ตัวเลือกที่เกี่ยวข้องหรือมีคุณภาพสูงสุด
 
 ### Embedding
 
-Converts text into numerical vectors that capture semantic meaning. Useful for search, clustering, recommendations, and similarity comparison.
+แปลงข้อความเป็น vector เชิงตัวเลขที่จับความหมายเชิงความหมายไว้ มีประโยชน์สำหรับการค้นหา การจัดกลุ่ม การแนะนำ และการเปรียบเทียบความคล้ายคลึง
 
 ### Content Safety
 
-Also known as Guardrail models, these model types enforce safety, compliance, or quality rules on generated content. Can filter or modify outputs to meet specific criteria (e.g., no profanity, PII removal).
+เรียกอีกอย่างว่า Guardrail model ประเภทโมเดลเหล่านี้บังคับใช้กฎด้านความปลอดภัย ความสอดคล้อง หรือคุณภาพบน content ที่สร้างขึ้น สามารถกรองหรือปรับแต่ง output เพื่อให้เป็นไปตามเกณฑ์ที่กำหนด (เช่น ไม่มีคำหยาบ การลบข้อมูล PII)
 
 ### Image To Text
 
-A multimodal model that takes an image as input and generates a textual description or answer related to the image content as output.
+โมเดล multimodal ที่รับภาพเป็น input และสร้างคำอธิบายเชิงข้อความหรือคำตอบที่เกี่ยวข้องกับเนื้อหาของภาพเป็น output
 
 ### Text To Image
 
-A model that generates an image based on a given text description or prompt.
+โมเดลที่สร้างภาพตามคำอธิบายเชิงข้อความหรือ prompt ที่กำหนด
 
 ### Image Classification
 
-A model that takes an image as input and assigns it a specific label or class from a predefined set of categories.
+โมเดลที่รับภาพเป็น input และกำหนด label หรือ class เฉพาะจากชุดหมวดหมู่ที่กำหนดไว้ล่วงหน้า
 
 ### Object Detection
 
-A computer vision model that takes an image as input and outputs the location (bounding boxes) and labels of multiple detected objects within the image.
+โมเดล computer vision ที่รับภาพเป็น input และ output ตำแหน่ง (bounding box) และ label ของ object ต่างๆ ที่ตรวจพบภายในภาพ
+
+---
+
+[← Back: Flowise Chatflows](nai-appendix-flowise.md) | [Home](nai-welcome.md)

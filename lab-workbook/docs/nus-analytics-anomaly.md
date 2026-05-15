@@ -76,3 +76,8 @@
     ![](images/8.9db6f1ae.png)
     
 14.  เมื่อคุณทำเสร็จแล้ว ให้คลิก x ที่มุมขวาบน
+
+
+---
+
+[← Back: File System Scan](nus-analytics-filesystem-scan.md) | [Home](nus-getting-start.md) | [Next: Ransomware →](nus-analytics-ransomware.md)

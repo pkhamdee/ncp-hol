@@ -1,64 +1,64 @@
 # Create a Recovery Plan
 
-Our snapshots are being created and replicated. Now let's get everything in place to recover from those snapshots in the **Cloud** cluster.
+**Snapshots** ของเรากำลังถูกสร้างและทำการ **replicated** ตอนนี้เรามาจัดเตรียมทุกอย่างให้พร้อมเพื่อกู้คืนจาก **snapshots** เหล่านั้นใน **Cloud cluster** กันครับ
 
-1.  In the **Core** Prism Central, select **\> Data Protection > Recovery Plans**.
+1. ใน **Core Prism Central** ให้เลือก **> Data Protection > Recovery Plans**
 
     !!! note
 
-        If you are the first user to get to this portion of the lab, you will see the Recovery Plan overview screen. Click **Create new Recovery Plan** to dismiss the screen.
+        หากคุณเป็นผู้ใช้คนแรกที่เข้ามาถึงส่วนนี้ของ **lab** คุณจะเห็นหน้าจอภาพรวมของ **Recovery Plan** ให้คลิก **Create new Recovery Plan** เพื่อออกจากหน้าจอนี้
 
-2.  In the **General** section **Recovery Plan Name** field, enter **RecoveryPlan-##** where ## is your user number.
+2. ในส่วน **General** ที่ช่อง **Recovery Plan Name** ให้กรอก **RecoveryPlan-##** โดยที่ ## คือหมายเลขผู้ใช้งานของคุณ
     
-3.  You may enter a Recovery Plan Description if you would like to but it is optional.
+3. คุณสามารถกรอก **Recovery Plan Description** ได้หากต้องการ แต่เป็นส่วนที่เลือกได้ (optional)
     
-4.  Under Locations, Click the drop-down under **Primary Location** and select **Local AZ**
+4. ภายใต้หัวข้อ **Locations** ให้คลิกรายการ **drop-down** ใต้ **Primary Location** และเลือก **Local AZ**
     
-5.  Click the drop-down under **Recovery Location** and select the **Cloud** Prism Central.
+5. คลิกรายการ **drop-down** ใต้ **Recovery Location** และเลือก **Cloud Prism Central**
     
-6.  Click **Next**.
+6. คลิก **Next**
     
-7.  In the **Recovery Sequence** screen, click **\+ VM(s)** to add your VM to the Recovery Plan.
+7. ในหน้าจอ **Recovery Sequence** ให้คลิก **+ VM(s)** เพื่อเพิ่ม **VM** ของคุณเข้าใน **Recovery Plan**
     
-8.  Select the drop-down box and select **Category**.
+8. เลือกช่อง **drop-down** และเลือก **Category**
     
     !!! note
 
-        You can also use the VM Name to add to a Protection Policy or a Recovery Plan, but using categories is the best practice. These are more flexible and easy to change later without managing individual VMs.
+        คุณสามารถใช้ **VM Name** เพื่อเพิ่มเข้าไปใน **Protection Policy** หรือ **Recovery Plan** ได้เช่นกัน แต่การใช้ **categories** เป็นแนวทางปฏิบัติที่ดีที่สุด (**best practice**) เนื่องจากมีความยืดหยุ่นกว่าและง่ายต่อการเปลี่ยนแปลงในภายหลังโดยไม่ต้องจัดการ **VMs** ทีละตัว
 
-10.  In the search box to the right of Category, type in the name of the category you created, **DR-RPO-User##:1hr**.
+10. ในช่องค้นหาทางด้านขวาของ **Category** ให้พิมพ์ชื่อของ **category** ที่คุณสร้างไว้ คือ **DR-RPO-User##:1hr**
     
-11.  Select it in the results and click **Add**.
+11. เลือกรายการที่ปรากฏในผลการค้นหาแล้วคลิก **Add**
     
     !!! note
 
-        After adding your VM, it is placed into VM Stage 1. Boot Stages are where you can order VM boot sequences. This is helpful when protecting an application, as the administrator can have the database server power-on before the application and web servers.
+        หลังจากเพิ่ม **VM** ของคุณแล้ว มันจะถูกจัดไว้ใน **VM Stage 1** โดยที่ **Boot Stages** คือส่วนที่คุณสามารถลำดับขั้นตอนการเปิดเครื่อง (**boot sequences**) ของ **VM** ได้ ซึ่งจะมีประโยชน์เมื่อต้องปกป้อง **application** เนื่องจากผู้ดูแลระบบสามารถกำหนดให้ **database server** เปิดเครื่องก่อน **application** และ **web servers** ได้
 
-12.  Under **Network Type**, select **"Stretch networks"**
+12. ภายใต้ **Network Type** ให้เลือก **"Stretch networks"**
     
     ![image](images/network_type.6bee8ba9.png)
     
-13.  In the Network Settings tab, under Local AZ (Left side) click the drop-down under Production **Virtual Network or Port Group** and select **stretch-net**. Notice that Prism populates the Gateway IP and Prefix Length fields automatically.
+13. ในแท็บ **Network Settings** ภายใต้หัวข้อ **Local AZ** (ฝั่งซ้าย) ให้คลิกรายการ **drop-down** ใต้ **Production Virtual Network or Port Group** และเลือก **stretch-net** สังเกตว่า **Prism** จะใส่ข้อมูลในช่อง **Gateway IP** และ **Prefix Length** ให้โดยอัตโนมัติ
     
-14.  Since this is a lab environment, in the **Test Failback Virtual Network or Port Group** drop-down, select **stretch-net**. Production environments may have different test networks.
+14. เนื่องจากนี่เป็นสภาพแวดล้อมแบบ **lab** ในช่องรายการ **drop-down** ของ **Test Failback Virtual Network or Port Group** ให้เลือก **stretch-net** (ในสภาพแวดล้อมการทำงานจริงอาจมีเครือข่ายสำหรับทดสอบที่แตกต่างกันออกไป)
     
-15.  Under the **Cloud** PC portion (right side) select the same network of **stretch-net** in both **Virtual Network or Port Group** boxes.
+15. ภายใต้ส่วนของ **Cloud PC** (ฝั่งขวา) ให้เลือกเครือข่าย **stretch-net** เดียวกันในช่อง **Virtual Network or Port Group** ทั้งสองช่อง
     
-16.  Copy the **Gateway IP** and **Prefix Length** from the Local AZ to fill in those fields in the **Cloud** PC (Recovery) side.
+16. คัดลอกค่า **Gateway IP** และ **Prefix Length** จากฝั่ง **Local AZ** มากรอกในช่องเหล่านั้นของฝั่ง **Cloud PC (Recovery)**
     
     ![image](images/network_mapping_complete.572e9589.png)
     
-17.  Click **Done**
+17. คลิก **Done**
     
 
 ## Next Steps
 
--   Our **Cloud** cluster is setup.
--   Our Subnet Extension is live between **Core** and **Cloud**.
--   The VM has a static IP.
--   The VM's snapshots are being replicated per policy from the **Core** to the **Cloud**.
--   The recovery plan is defined so the VM knows how to run in the **Cloud**.
+- **Cloud cluster** ของเราถูกตั้งค่าเรียบร้อยแล้ว
+- **Subnet Extension** เปิดใช้งานจริงระหว่าง **Core** และ **Cloud** แล้ว
+- **VM** มีการกำหนด **static IP**
+- **VM's snapshots** กำลังถูก **replicated** ตามนโยบายจาก **Core** ไปยัง **Cloud**
+- **Recovery plan** ถูกกำหนดไว้แล้ว เพื่อให้ **VM** ทราบวิธีการรันใน **Cloud**
 
-It's time to move to the **Cloud**. ⌚ 🚚 ☁️
+ได้เวลาเคลื่อนย้ายไปสู่ **Cloud** แล้วครับ ⌚ 🚚 ☁️
 
 [← Back: Create a Protection Policy](edge-lab-scenario3-protect.md) | [Home](edge-getting-started.md) | [Next: Failover →](edge-lab-scenario3-failover.md)

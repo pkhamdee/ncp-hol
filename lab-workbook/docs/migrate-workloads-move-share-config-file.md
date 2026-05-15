@@ -98,3 +98,8 @@
 4.  จาก App Switcher คุณสามารถกลับไปยังส่วนของ Infrastructure
 
 ตอนนี้เราได้ทำการ set up และ configure ตัว environment เรียบร้อยแล้ว ในส่วนถัดไปคุณจะได้เรียนรู้วิธีการ migrate file shares
+
+
+---
+
+[← Back: Migrating Shares with Move](migrate-workloads-move-share.md) | [Home](migrate-nutanix-overview.md) | [Next: View Source Share →](migrate-workloads-move-share-view-share.md)

@@ -1,21 +1,19 @@
-# Untitled Page
+# Create a Migration Plan
 
-# [#](#create-a-migration-plan) Create a Migration Plan
+เมื่อตั้งค่า source และ destination เรียบร้อยแล้ว ให้สร้าง migration plan
 
-Once the source and destination are set up, create the migration plan.
-
-1.  Click `Create a Migration Plan`
+1.  คลิก `Create a Migration Plan`
     
     !!! note    
-        If Create a Migration Plan button is greyed out, wait 2-3 minutes.
+        หาก Create a Migration Plan button เป็นสีเทา ให้รอ 2-3 นาที
     
     ![](images/vm-migration-plan1.4764a70a.png)
     
-2.  Enter a name for the Plan `User##-VM-Plan`. Click `Proceed`
+2.  ป้อนชื่อสำหรับ Plan `User##-VM-Plan` แล้วคลิก `Proceed`
     
     ![](images/vm-migration-plan2.d8c15dbb.png)
     
-3.  Select your Source AHV and Target AHV environments. Click `Next`
+3.  เลือก Source AHV และ Target AHV environment ของคุณ แล้วคลิก `Next`
     
     -   **Select a Source** : `Nutanix AHV Source or the name used before`
     -   **Select a Target** : `Nutanix AHV Target or the name used before`
@@ -25,25 +23,25 @@ Once the source and destination are set up, create the migration plan.
     
     ![](images/vm-migration-plan3.cd692d50.png)
     
-4.  Select your Linux VM to move, `XXX-User##` where `XXX` is the preface provided to you by your instructor. Once selected, click `Next` in the bottom right-hand corner.
+4.  เลือก Linux VM ที่ต้องการย้าย `XXX-User##` โดยที่ `XXX` คือ prefix ที่ instructor กำหนดให้คุณ เมื่อเลือกแล้ว คลิก `Next` ที่มุมล่างขวา
     
     ![](images/vm-migration-plan4b.29e3733e.png)
     
-    Please ignore any warning signs when adding the VM. This will not affect the migration.
+    โปรดละเว้น warning signs ที่อาจปรากฏขณะเพิ่ม VM ซึ่งจะไม่ส่งผลต่อการ migration
     
     ![](images/vm-migration-plan5b.aad08de3.png)
     
-5.  For Networks, Select `primary` for the Target Network. Click `Next`
+5.  สำหรับ Networks เลือก `primary` สำหรับ Target Network แล้วคลิก `Next`
     
     ![](images/vm-migration-plan6b.4132b859.png)
     
-6.  On the VM preparation page, select the options shown and provide the username and password for the Linux VM.
+6.  บนหน้า VM preparation ให้เลือก option ตามที่แสดง และกรอก username และ password สำหรับ Linux VM
     
-    -   **Preparation Mode** - `Automatic`. Manual mode only migrates data over. VM preparation script and all OS configuration options will have to be run manually in manual mode.
+    -   **Preparation Mode** - `Automatic` โหมด Manual จะย้ายเฉพาะข้อมูลเท่านั้น โดย VM preparation script และ OS configuration ทั้งหมดจะต้องรันด้วยตนเองในโหมด Manual
     -   **Guest Operations**
-        -   `DHCP` and make sure `Install Nutanix guest Tools(NGT) on target VMs` is **unchecked**. If DHCP is used, like in our case, VMs will get a new IP address on the destination._Retain static IP Addresses from source VMs_: If VMs have static IPs, they are retained on the destination.
-        -   _Uninstall Virt Tools from other Hypervisor on target VMs_: Since we are moving to AHV, we do not need non AHV Tools installed on the VM.
-        -   _Bypass guest operations on source VMs_: Will only do data migration and no guest OS operations. **Keep this unchecked.**
+        -   `DHCP` และตรวจสอบให้แน่ใจว่า `Install Nutanix guest Tools(NGT) on target VMs` ถูก **ยกเลิกการเลือก** หากใช้ DHCP เช่นในกรณีของเรา VM จะได้รับ IP address ใหม่บนปลายทาง _Retain static IP Addresses from source VMs_: หาก VM มี static IP จะถูกเก็บรักษาไว้บนปลายทาง
+        -   _Uninstall Virt Tools from other Hypervisor on target VMs_: เนื่องจากเรากำลังย้ายไปยัง AHV จึงไม่จำเป็นต้องติดตั้ง Tools ที่ไม่ใช่ AHV บน VM
+        -   _Bypass guest operations on source VMs_: จะดำเนินการเฉพาะ data migration เท่านั้น โดยไม่มีการดำเนินการกับ guest OS **ให้ยกเลิกการเลือกตัวเลือกนี้**
     -   **Credentials**
         -   _User Name_: `rocky`
         -   _password_: `nutanix/4u`
@@ -51,14 +49,18 @@ Once the source and destination are set up, create the migration plan.
     ![](images/vm-migration-plan7.fbc25e07.png)
     
     !!! note 
-        You only need to enter these credentials into the **Linux VMs** field and can leave the Windows credentials empty.
+        คุณต้องป้อน credentials เหล่านี้ในช่อง **Linux VMs** เท่านั้น และสามารถเว้นว่างช่อง Windows credentials ไว้ได้
     
-7.  On the **VM Settings** page, keep the defaults and select `Next`. The fields allow for individual VM settings to be modified. This includes settings like enabling Memory Overcommit or applying categories that are present in Prism Central. You can learn more about categories in the advanced migration section. If you want to learn more about the different fields, refer to the [Move Guide](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
+7.  บนหน้า **VM Settings** ให้คงค่า default ไว้และเลือก `Next` โดย field ต่างๆ จะอนุญาตให้ปรับเปลี่ยน setting ของแต่ละ VM ได้ ซึ่งรวมถึง setting เช่น การเปิดใช้งาน Memory Overcommit หรือการใช้ category ที่มีอยู่ใน Prism Central สามารถเรียนรู้เพิ่มเติมเกี่ยวกับ category ได้ในส่วน advanced migration หากต้องการทราบข้อมูลเพิ่มเติมเกี่ยวกับ field ต่างๆ โปรดดูที่ [Move Guide](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:top-create-migration-plan-t.html)
     
     ![](images/vm-migration-plan8.4d40f0d6.png)
     
-8.  On the **Summary** page, Click `Save and Start`. Selecting Save only saves the plan. Save and start will save the plan and start the Migration.
+8.  บนหน้า **Summary** คลิก `Save and Start` การเลือก Save จะบันทึกเฉพาะ plan เท่านั้น ส่วน Save and Start จะบันทึก plan และเริ่มต้นการ Migration
     
-    -   Note: If you get a migration error upon saving the plan, wait around 30 seconds and try again.
+    -   หมายเหตุ: หากเกิด migration error เมื่อบันทึก plan ให้รอประมาณ 30 วินาทีแล้วลองใหม่
     
     ![](images/vm-migration-plan9b.e8f1b999.png)
+
+---
+
+[← Back: Migrating VMs with Move](migrate-workloads-move-view-source-vm.md) | [Home](migrate-nutanix-overview.md) | [Next: Migrate the VM →](migrate-workloads-move-migrate-vm.md)

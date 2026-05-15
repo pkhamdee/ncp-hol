@@ -155,3 +155,7 @@ inbound sources ที่เป็น address groups จะไม่มีกา
 ## Takeaways
 
 ด้วยการเปลี่ยนแปลงเล็กน้อยเพียงไม่กี่อย่าง เราสามารถ clone ตัว existing policy เพื่อช่วยให้การสร้าง additional policy เร็วขึ้นอย่างเห็นได้ชัด งานที่เราทำเพื่อสร้าง development policy นั้นถูกนำมาใช้ซ้ำ (reused)
+
+---
+
+[← Back: Monitor and Enforce the Policy](flow-app-monitor.md) | [Home](flow-overview.md) | [Next: Verify the Policy →](flow-app-verify.md)

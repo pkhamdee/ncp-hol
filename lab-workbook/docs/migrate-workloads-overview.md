@@ -24,3 +24,7 @@
 
 !!! note
     Expected Module Duration: 45 นาที
+
+---
+
+[← Back: Setup Takeaways](migrate-environment-setup-takeaways.md) | [Home](migrate-nutanix-overview.md) | [Next: Setup Move →](migrate-workloads-setup-move.md)

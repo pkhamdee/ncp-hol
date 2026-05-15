@@ -16,3 +16,7 @@
 เราหวังว่าสิ่งนี้จะช่วยตอบคำถามที่คุณมีเกี่ยวกับการ migration ไปยัง Nutanix สำหรับพวกเราที่โชคดีพอที่ได้ทำงานในอุตสาหกรรมนี้มาระยะหนึ่ง เราสามารถเห็นได้ว่า migration นี้นั้นง่ายกว่าการทำ physical to virtual migrations ในปีที่ผ่านๆ มามาก
 
 จำไว้ว่า ทีม Nutanix Services ก็มีความเชี่ยวชาญใน migrations ทุกประเภท และสามารถกระโดดเข้ามาให้ความช่วยเหลือในหลายๆ ด้านได้
+
+---
+
+[← Back: Management Takeaways](migrate-day2-mgmt-takeaway.md) | [Home](migrate-nutanix-overview.md)

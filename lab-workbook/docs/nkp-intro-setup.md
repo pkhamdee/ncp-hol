@@ -68,3 +68,8 @@
 |NKP Management UI          |#.#.#.**16** |https://10.38.30.16/dkp/kommander/dashboard    |
 |NKP Workload 01 Ingress    |#.#.#.**19** |10.38.30.19                                    |
 |NKP Workload 02 Ingress    |#.#.#.**22** |10.38.30.22                                    |
+
+
+---
+
+[← Back: Introduction Overview](nkp-intro.md) | [Home](nkp-bootcamp.md) | [Next: Navigating the labs →](nkp-intro-navigating.md)

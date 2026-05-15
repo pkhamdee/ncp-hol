@@ -1,66 +1,57 @@
-# Create the Local Gateways
+# Create the Remote Gateways
 
-First, create the Network Gateway VMs that provide the VLAN extension (VTEP) function for the local network we wish to extend. Complete the following tasks on both the **Core** and the **Cloud** cluster Prism Central.
+!!! info
 
-The local gateway is created once per cluster. follow along in the [guided local gateway deployment demo.](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=2&scale=true) Come back to these instructions when you reach the remote gateway step: **3 - Create Remote Gateways**.
+    **Remote gateway** จะถูกสร้างขึ้นเพียงครั้งเดียวต่อหนึ่ง **cluster** โปรดทำตามขั้นตอนใน [guided remote gateway configuration demo.open in new window](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=3&scale=true) และกลับมาอ่านคำแนะนำเหล่านี้เมื่อคุณถึงขั้นตอน **Subnet Extension**: **4 - Create Subnet Extension**
 
-### Core Local Gateway
+**Local gateway** แต่ละตัวต้องชี้ไปยัง **remote gateway** เพื่อจับคู่กัน
 
-1.  Connect to the **Core** Prism Central as `admin`.
+ใน **Core** cluster เราจะสร้าง **Remote Gateway** โดยใช้ **external IP address** ที่สามารถติดต่อได้ของ **Cloud** cluster local gateway
+
+ใน **Cloud** cluster เราจะสร้าง **Remote Gateway** โดยใช้ **external IP address** ที่สามารถติดต่อได้ของ **Core** cluster local gateway
+
+![images](images/Create-Remote-GW-01.053b6384.png)
+
+### Create the Remote Gateway on Core
+
+1. เชื่อมต่อเข้ากับ **Core Prism Central** ด้วยชื่อผู้ใช้ `admin`
     
-2.  Select \>**Network and Security > Connectivity > Create Gateway > Local**.
+2. เลือก **> Network and Security > Connectivity**
     
-3.  Use the following details on the **Core** cluster VM Deployment tab.
+3. คลิก **Create Gateway > Remote** และกรอกข้อมูลต่อไปนี้:
     
-    -   **Name:** Core-Local-Gateway
-    -   **Gateway Attachment:** VLAN
-    -   **Cluster:** Core
-    -   **Subnet:** primary-core
-    -   **Static IP:** x.x.x.90/25
-        -   Replace x.x.x with your **Core** Cluster primary network subnet IP and mask with slash notation.
-        -   This IP address is outside of the stretched network and used for communication to the remote VTEP gateway. It must be reachable from the remote site.
+    - **Name:** Remote-Cloud-Gateway
+    - **Gateway Service:** VTEP
+    - **Public IP Address:** y.y.y.90
+        - นี่คือ **IP** ของ **Local Gateway** บน **Cloud** cluster
+        - แทนที่ y.y.y ด้วย **Cloud cluster network** ของคุณ
 
-    ![image](images/Create-Local-GW-01.538b2c43.png)
-
-4.  Click **Next** to enter the **Service Configuration** tab and use the following details.
-
-    -   **Gateway Service:** VTEP
-    -   **VxLAN (UDP) Port** 4789
-        -   The default port, which can be customized. This port must match on both sides of the VXLAN tunnel.
-
-    ![images](images/Create-Local-GW-02.d6837262.png)
-
-5.  Click **Create**.
-
-This gateway VM creation will take a few minutes on the **Core** cluster, so let's proceed to the next steps on **Cloud**.
-
-### Cloud Local Gateway
-
-1.  Connect to the **Cloud** Prism Central as `admin`.
-    
-2.  Select **\> Network and Security > Connectivity > Create Gateway > Local**.
-    
-3.  Use the following details on the **Cloud** cluster VM Deployment tab.
+4. คลิก **Create** เพื่อเสร็จสิ้นการสร้าง **remote gateway** ของ **Core** cluster ที่ชี้ไปยัง **Cloud**
     
 
-    -   **Name:** Cloud-Local-Gateway
-    -   **Gateway Attachment:** VLAN
-    -   **Cluster:** Cloud
-    -   **Subnet:** primary-cloud
-    -   **Static IP:** y.y.y.90/25
-        -   _Replace y.y.y with your cloud cluster primary network_
+### Create the Remote Gateway on Cloud
 
-4.  Click **Next** to move to the Gateway Service Configuration tab and enter the following details.
+1. เชื่อมต่อเข้ากับ **Cloud Prism Central** ด้วยชื่อผู้ใช้ `admin`
+    
+2. เลือก **> Network and Security > Connectivity**
+    
+3. คลิก **Create Gateway > Remote** และกรอกข้อมูลต่อไปนี้:
+    
+    - **Name:** Remote-Core-Gateway
+    - **Gateway Service:** VTEP
+    - **Public IP Address:** y.y.y.90
+        - นี่คือ **IP** ของ **Local Gateway** บน **Core** cluster
+        - แทนที่ y.y.y ด้วย **Core cluster network** ของคุณ
 
-    -   **Gateway Service:** VTEP
-    -   **VxLAN (UDP) Port** 4789
+4. คลิก **Create** เพื่อเสร็จสิ้นการสร้าง **remote gateway** ของ **Cloud** cluster ที่ชี้ไปยัง **Core**
+    
 
-5.  Click **Create**.
+### Verify Gateway Creation
 
-VM creation will take a few minutes. You might need to click the **Gateways** list to refresh the page.
+เมื่อเสร็จสมบูรณ์ หน้าจอ **gateway** ควรแสดงให้เห็นว่ามี **local gateway** ปรากฏอยู่ในแต่ละ **cluster** และสถานะของ **gateways** อยู่ในสถานะ **up** นอกจากนี้แต่ละ **cluster** ควรแสดง **remote gateway** ที่สอดคล้องกับ **IP** ของ **remote cluster network gateway**
 
 ## Next Steps
 
-The local gateways are now created in both the **Core** and **Cloud** clusters. These VMs will sit and wait for incoming connections on the IPs and ports defined above. Let's create the remote gateways next so the clusters know about each other.
+เมื่อสร้าง **local** และ **remote gateways** เรียบร้อยแล้ว ตอนนี้เราสามารถดำเนินการกำหนดค่า **subnet extension** เพื่อเชื่อมต่อเครือข่ายทั้งสองเข้าด้วยกันโดยใช้ **gateway VMs**
 
 [← Back: Overview & Pre-reqs](edge-lab-scenario2-overview.md) | [Home](edge-getting-started.md) | [Next: Deploy Remote Gateways →](edge-lab-scenario2-remotegw.md)

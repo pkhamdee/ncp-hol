@@ -1,15 +1,19 @@
 # Test the Endpoint
 
-Once our endpoint is created, the IT Admin is able to test out the endpoint before handing it off to a developer for building or deploying an AI application.
+เมื่อสร้าง endpoint แล้ว IT Admin สามารถทดสอบ endpoint ก่อนส่งมอบให้นักพัฒนาสำหรับสร้างหรือ deploy แอปพลิเคชัน AI ได้
 
-1.  Once your endpoint is marked as **Active**, click on the endpoint name to view the endpoint dashboard.
+1.  เมื่อ endpoint ของคุณแสดงสถานะ **Active** ให้คลิกชื่อ endpoint เพื่อดู endpoint dashboard
     
-2.  Click on the blue **Test** button in the top left.
+2.  คลิกปุ่ม **Test** สีน้ำเงินที่มุมบนซ้าย
     
     ![Endpoint Overview](images/endpoint-dashboard-test.cf33fd2b.png)
     
-3.  Use one of the sample queries or create your own custom query, and then click **Test**. The output will start streaming. It may take a minute or so for the output to fully complete.
+3.  ใช้ sample query ตัวใดตัวหนึ่ง หรือสร้าง query เองแบบ custom แล้วคลิก **Test** output จะเริ่มแสดงแบบ streaming อาจใช้เวลาประมาณ 1 นาทีกว่า output จะแสดงครบถ้วน
     
     ![Test Endpoint](images/test-screen.db271fad.png)
     
-4.  Click **Done**.
+4.  คลิก **Done**
+
+---
+
+[← Back: Create an Endpoint and API Key](nai-fundamentals-endpoint-create.md) | [Home](nai-welcome.md) | [Next: View The Endpoint Details →](nai-fundamentals-endpoint-view.md)

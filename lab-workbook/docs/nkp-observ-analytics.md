@@ -34,3 +34,8 @@ NKP Insight alert ประกอบด้วย:
     
 
 โดยสรุป NKP Insights เป็น tool ที่จำเป็นสำหรับการเพิ่ม security และ efficiency ของ Kubernetes environments ช่วยให้องค์กรสามารถจัดการกับปัญหาก่อนที่จะบานปลาย มั่นใจได้ถึง compliance กับ best practices และปรับปรุง operational performance ด้วยการใช้ประโยชน์จาก Insights ทีม platform สามารถลด downtime และบรรลุ cost savings ในขณะที่มุ่งเน้นไปที่การส่งมอบ value ให้กับผู้ใช้
+
+
+---
+
+[← Back: Visualizing platform metrics](nkp-observ-metrics.md) | [Home](nkp-bootcamp.md) | [Next: Cost visibility →](nkp-observ-cost.md)

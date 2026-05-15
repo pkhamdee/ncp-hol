@@ -37,3 +37,7 @@
     การตั้งค่า Blocked file type ที่ระบุในระดับ share จะเขียนทับ (override) การตั้งค่าที่ระบุในระดับ server
     
 9.  คลิก < ที่มุมซ้ายบนเมื่อคุณพร้อมที่จะดำเนินการในส่วนถัดไป
+
+---
+
+[← Back: Create NFS Export](nus-files-nfs.md) | [Home](nus-getting-start.md) | [Next: Multi-Protocol →](nus-files-multi-protocol.md)

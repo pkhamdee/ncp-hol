@@ -28,3 +28,8 @@
 -   Objects: Using CLI and Scripting
 -   Objects: Tiering
 -   Objects: Multiprotocol
+
+
+---
+
+[Home](nus-getting-start.md) | [Next: Lab Setup →](nus-lab-setup.md)

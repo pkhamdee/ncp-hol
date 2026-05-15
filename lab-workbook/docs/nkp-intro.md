@@ -21,3 +21,8 @@
 4.  **Recap and next steps**
     
     -   หลังจากจบบทนี้ คุณจะพร้อมเข้าสู่การเจาะลึก NKP core features ในส่วนถัดไปของ bootcamp!
+
+
+---
+
+[← Back: Overview](nkp-bootcamp.md) | [Home](nkp-bootcamp.md) | [Next: Setup →](nkp-intro-setup.md)

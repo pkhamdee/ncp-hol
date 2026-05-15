@@ -68,3 +68,7 @@
     
 
 ตอนนี้คุณพร้อมที่จะใช้งานร่วมกับ NKP management cluster ที่ใช้ร่วมกันแล้ว
+
+---
+
+[← Back: Deploy and Expose Overview](nkp-fundamentals-deploy.md) | [Home](nkp-bootcamp.md) | [Next: Using kubectl to Create a Deployment →](nkp-fundamentals-deploy-create-dp.md)

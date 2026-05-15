@@ -4,45 +4,45 @@
 
 ![](images/slide-9.20b63a5f.jpg)
 
-In this section, you'll deploy a pair of network gateway VMs to facilitate layer 2 subnet extension between clusters at two sites, Core and Cloud. Thanks to subnet extension, VMs can seamlessly communicate between sites as if they were in the same network, and you can even move VMs between sites without changing their IP addresses.
+ในส่วนนี้ คุณจะได้ติดตั้งคู่ของ **network gateway VMs** เพื่ออำนวยความสะดวกในการทำ **layer 2 subnet extension** ระหว่าง **clusters** ของทั้งสองไซต์ ได้แก่ **Core** และ **Cloud** ด้วย **subnet extension** นี้ **VMs** จะสามารถสื่อสารข้ามไซต์ได้อย่างราบรื่นเสมือนอยู่ในเครือข่ายเดียวกัน และคุณยังสามารถย้าย **VMs** ระหว่างไซต์ได้โดยไม่ต้องเปลี่ยน **IP addresses** ของพวกมัน
 
-The gateway VMs require a dedicated, reachable IP address on the primary VLAN subnet. This address is necessary to establish communication with the remote network gateway VM on the other cluster. For this lab, we will utilize the X.X.X.90/25 IP address in each cluster’s primary VLAN for the public address of the network gateway VMs.
+**gateway VMs** จำเป็นต้องมี **IP address** ที่กำหนดไว้โดยเฉพาะและสามารถติดต่อได้บน **primary VLAN subnet** ที่อยู่เหล่านี้จำเป็นสำหรับการสร้างการสื่อสารกับ **remote network gateway VM** บนอีก **cluster** หนึ่ง สำหรับ **lab** นี้ เราจะใช้ **IP address** X.X.X.90/25 ใน **primary VLAN** ของแต่ละ **cluster** เพื่อเป็น **public address** สำหรับ **network gateway VMs**
 
-These are the same two IP subnets used for the **Core** and **Cloud** Prism Central. Check your Connection Details launcher screen for details.
+เหล่านี้คือ **IP subnets** สองชุดเดียวกันกับที่ใช้สำหรับ **Core** และ **Cloud Prism Central** โปรดตรวจสอบหน้าจอ **Connection Details launcher** ของคุณสำหรับรายละเอียดเพิ่มเติม
 
 ## Pair Availability Zones
 
-Paired availability zones are a pre-requisite for using the Subnet Extension wizard between two clusters. We'll configure the AZ pairing between two Prism Central clusters here. This AZ pairing will be used by both Subnet Extension and our Disaster Recovery.
+การจับคู่ **availability zones** เป็นสิ่งที่จำเป็นต้องทำก่อน (**pre-requisite**) สำหรับการใช้งาน **Subnet Extension wizard** ระหว่างสอง **clusters** เราจะกำหนดค่าการจับคู่ **AZ** ระหว่าง **Prism Central clusters** สองแห่งที่นี่ โดยการจับคู่ **AZ** นี้จะถูกใช้งานโดยทั้ง **Subnet Extension** และ **Disaster Recovery** ของเรา
 
 !!! info
-    please follow along in this [guided AZ pairing demoopen in new window](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=1&scale=true), but do not make changes in the cluster.
+    โปรดทำตามขั้นตอนใน [guided AZ pairing demoopen in new window](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=1&scale=true) แต่ห้ามทำการเปลี่ยนแปลงใดๆ ใน **cluster**
 
-1.  In the **Core** Prism Central, select **\> Administration > Availability Zones**.
+1. ใน **Core Prism Central** ให้เลือก **> Administration > Availability Zones**
     
-2.  Click **Connect to Availability Zone**.
+2. คลิก **Connect to Availability Zone**
     
-3.  Click the drop-down for **Availability Zone Type** and select **Physical Location**.
+3. คลิกที่รายการ **drop-down** สำหรับ **Availability Zone Type** และเลือก **Physical Location**
     
-4.  Enter the IP Address of the **Cloud** Prism Central.
+4. ป้อน **IP Address** ของ **Cloud Prism Central**
     
-5.  Enter your **username** `admin` and **password** and click **Connect**.
+5. ป้อน **username** `admin` และ **password** จากนั้นคลิก **Connect**
     
 
-The **Core** and **Cloud** Availability Zones are now paired.
+ขณะนี้ **Core** และ **Cloud Availability Zones** ได้รับการจับคู่กันเรียบร้อยแล้ว
 
 ## Subnet Extension Logical Overview
 
-The following diagram shows the L2 Subnet Extension between the **Core** and **Cloud** clusters. Network Gateway VMs are deployed with an external, reachable IP in the primary-core and primary-cloud subnets, shown on the left side of the gateway VM. Another interface on each network gateway VM extends into the stretch-net at both sites, shown on the right side of the gateway VM.
+แผนภาพต่อไปนี้แสดงให้เห็นถึง **L2 Subnet Extension** ระหว่าง **Core** และ **Cloud clusters** **Network Gateway VMs** ถูกติดตั้งด้วย **external IP** ที่สามารถติดต่อได้ใน **primary-core** และ **primary-cloud subnets** (แสดงที่ด้านซ้ายของ **gateway VM**) ส่วนอินเทอร์เฟซอื่นในแต่ละ **network gateway VM** จะขยายเข้าสู่ **stretch-net** ของทั้งสองไซต์ (แสดงที่ด้านขวาของ **gateway VM**)
 
-Note how the primary-core and primary-cloud IP subnet ranges are different, but the stretch-net IP subnet is the same at both sites! A VM in the **Core** stretch-net will have the same IP and reachability as a VM at the **Cloud** site once we're done!
+โปรดสังเกตว่าช่วง **IP subnet** ของ **primary-core** และ **primary-cloud** นั้นแตกต่างกัน แต่ **stretch-net IP subnet** จะเหมือนกันทั้งสองไซต์! **VM** ใน **Core stretch-net** จะมี **IP** เดียวกันและสามารถติดต่อสื่อสารได้เหมือนกับ **VM** ที่ไซต์ **Cloud** เมื่อเราดำเนินการเสร็จสิ้น!
 
 ![image](images/Subnet-Extend-Logical.2964b8f9.png)
 
 !!! note
-    In your lab environment these IP addresses will be different. Use the network ranges from your clusters assigned in connection details.
+    ในสภาพแวดล้อม **lab** ของคุณ **IP addresses** เหล่านี้จะแตกต่างกัน โปรดใช้ช่วงเครือข่ายจาก **clusters** ของคุณที่ได้รับมอบหมายใน **connection details**
 
 ## Next Steps
 
-Now that our AZs are paired, we're ready to deploy local and remote gateways to be used on both sides of our layer 2 subnet extension.
+เมื่อ **AZs** ของเราจับคู่กันแล้ว เราก็พร้อมที่จะติดตั้ง **local** และ **remote gateways** เพื่อใช้งานกับทั้งสองฝั่งของ **layer 2 subnet extension** ของเรา
 
 [← Back: VPN Connectivity](edge-lab-scenario1-vpn.md) | [Home](edge-getting-started.md) | [Next: Deploy Local Gateways →](edge-lab-scenario2-localgw.md)

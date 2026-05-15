@@ -1,55 +1,55 @@
 # Create the Subnet Extension
 
-The Subnet Extension only needs to be created from one Prism Central, leveraging the pair of gateways created earlier. We'll originate the L2 subnet extension from the **Core** cluster Prism Central.
+การสร้าง **Subnet Extension** จำเป็นต้องทำจาก **Prism Central** เพียงแห่งเดียวเท่านั้น โดยอาศัยคู่ของ **gateways** ที่สร้างไว้ก่อนหน้านี้ เราจะเริ่มสร้าง **L2 subnet extension** จาก **Prism Central** ของ **Core** cluster
 
-The Subnet Extension is created only once per cluster pair, follow along in the [guided Subnet Extension demo.](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=4&scale=true) Come back to these instructions when you reach the Enable DR step: **5 - Enable DR**.
+**Subnet Extension** จะถูกสร้างขึ้นเพียงครั้งเดียวต่อคู่ของ cluster โปรดทำตามขั้นตอนใน [guided Subnet Extension demo](https://nutanix.storylane.io/share/85ff2hct9ydo?flow=4&scale=true) และกลับมาอ่านคำแนะนำเหล่านี้เมื่อคุณถึงขั้นตอน **Enable DR**: **5 - Enable DR**
 
-1.  Select **\> Network and Security > Connectivity**
+1. เลือก **> Network and Security > Connectivity**
     
-2.  **Select** the **Subnet Extension** tab
+2. **เลือก** แท็บ **Subnet Extension**
     
-3.  Click the **Create Subnet Extension** button
+3. คลิกปุ่ม **Create Subnet Extension**
     
-4.  Select Extend Subnet over **VTEP**
+4. เลือก Extend Subnet over **VTEP**
     
-5.  Select **Across Availability Zones** from the drop-down
+5. เลือก **Across Availability Zones** จากรายการ **drop-down**
     
-6.  Fill out the fields with the following information
+6. กรอกข้อมูลในฟิลด์ต่างๆ ด้วยข้อมูลต่อไปนี้:
     
-    -   Local Availability zone: **Local AZ**
-    -   Remote Availability Zone: (**PC IP address of the Cloud Cluster**)
-    -   **Subnet Type Local and Remote:** VLAN
-    -   **Local Cluster:** Core
-    -   **Remote Cluster:** Cloud
-    -   **Subnet, Local and Remote:** stretch-net
-    -   **Local Gateway IP Address/Prefix:** _x.x.x.129/25_
-    -   **Remote Gateway IP Address/Prefix** _x.x.x.254/25_
-    -   **Local IP Address:** x.x.x.198
-    -   **Remote IP Address:** x.x.x.199
-    -   **VxLAN Network Identifier (VNI)** 891
-        -   Use the VLAN tag of the **Core** stretch-net.
-        -   This identifier can be any value as long as it's unique between these AZs and matches on both sides.
+    - **Local Availability zone:** **Local AZ**
+    - **Remote Availability Zone:** (**PC IP address of the Cloud Cluster**)
+    - **Subnet Type Local and Remote:** VLAN
+    - **Local Cluster:** Core
+    - **Remote Cluster:** Cloud
+    - **Subnet, Local and Remote:** stretch-net
+    - **Local Gateway IP Address/Prefix:** _x.x.x.129/25_
+    - **Remote Gateway IP Address/Prefix:** _x.x.x.254/25_
+    - **Local IP Address:** x.x.x.198
+    - **Remote IP Address:** x.x.x.199
+    - **VxLAN Network Identifier (VNI):** 891
+        - ใช้ **VLAN tag** ของ **Core** stretch-net
+        - ตัวระบุนี้สามารถเป็นค่าใดก็ได้ ตราบใดที่เป็นค่าที่ไม่ซ้ำกันระหว่าง **AZs** เหล่านี้และตรงกันทั้งสองฝั่ง
 
     !!! note
 
-        The **Subnet** field may appear gray, indicating that it cannot be edited. This is a UI issue, and the field is still editable. Please click the **Subnet** drop down to select **stretch-net**.
+        ฟิลด์ **Subnet** อาจปรากฏเป็นสีเทา ซึ่งบ่งบอกว่าไม่สามารถแก้ไขได้ นี่เป็นปัญหาของ **UI** แต่จริงๆ แล้วฟิลด์นี้ยังสามารถแก้ไขได้ โปรดคลิกที่รายการ **Subnet drop down** เพื่อเลือก **stretch-net**
 
     ![image](images/Create-Subnet-Ext-01.e2864170.png)
 
     !!! note
 
-        The **Local IP Address** and **Remote IP Address** are free addresses in the stretched network that are outside the configured DHCP scope to avoid conflict with guest VMs. These IP addresses are assigned to the network gateway VMs inside the extended subnet, **stretch-net**.
+        **Local IP Address** และ **Remote IP Address** คือ **addresses** ที่ว่างอยู่ในเครือข่ายที่ทำ **stretched** ซึ่งอยู่นอกขอบเขต **DHCP** ที่กำหนดไว้ เพื่อหลีกเลี่ยงความขัดแย้งกับ **guest VMs** โดย **IP addresses** เหล่านี้จะถูกกำหนดให้กับ **network gateway VMs** ภายใน **extended subnet** ที่ชื่อ **stretch-net**
 
 ### Verify Subnet Extension
 
-Once the subnet extension has been established, you should see the following on the **Connectivity, Subnet Extensions** tab. Connection Status of **Connected** means that the two local gateways can reach each other and should be able to exchange traffic from one site to another.
+เมื่อสร้าง **subnet extension** เรียบร้อยแล้ว คุณควรเห็นข้อมูลต่อไปนี้บนแท็บ **Connectivity, Subnet Extensions** โดยสถานะ **Connection Status** ที่เป็น **Connected** หมายความว่า **local gateways** ทั้งสองฝั่งสามารถติดต่อกันได้ และควรจะสามารถแลกเปลี่ยน **traffic** จากไซต์หนึ่งไปยังอีกไซต์หนึ่งได้
 
 ![image](images/Subnet-Ext-Status.05e4321a.png)
 
-It may take a few minutes for the connection to complete. Ask your instructor for assistance if you do not see **Connected** after a few minutes.
+อาจใช้เวลาสักครู่เพื่อให้การเชื่อมต่อเสร็จสมบูรณ์ โปรดสอบถามผู้สอนเพื่อขอความช่วยเหลือหากคุณไม่เห็นสถานะ **Connected** หลังจากผ่านไปสองสามนาที
 
 ## Next Steps
 
-Now that the layer 2 subnet extension is configured, you're ready to seamlessly move your applications across sites.
+เมื่อกำหนดค่า **layer 2 subnet extension** เรียบร้อยแล้ว คุณก็พร้อมที่จะย้าย **applications** ข้ามไซต์ได้อย่างราบรื่น
 
 [← Back: Deploy Remote Gateways](edge-lab-scenario2-remotegw.md) | [Home](edge-getting-started.md) | [Next: Overview →](edge-lab-scenario3-overview.md)

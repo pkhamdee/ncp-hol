@@ -155,3 +155,8 @@ access เดียวที่เราควร allow ให้กับ appli
 Flow Network Security Next-Gen เป็นเครื่องมือที่ทรงพลังและยืดหยุ่นสำหรับการ securing ตัว applications ของคุณ คุณสามารถผสมผสาน (Combine) ตัว Flow Network Security policies หลายประเภทเพื่อทำ protection ให้กับ applications ของคุณ ใช้ฟีเจอร์ต่างๆ เช่น การ saving ตัว policy โดยไม่ต้อง applying, การ cloning ตัว policy เพื่อเริ่มต้นด้วย baseline ที่ดี, และ monitor mode เพื่อให้แน่ใจว่า policy จะบรรลุเป้าหมายที่ต้องการโดยไม่ทำให้สิ่งใดพังทลาย
 
 ขอแสดงความยินดี คุณทำได้แล้ว! 🎉
+
+
+---
+
+[← Back: Clone the Policy](flow-app-clone.md) | [Home](flow-overview.md) | [Next: Cyber Resilience →](flow-cyber-resilience.md)

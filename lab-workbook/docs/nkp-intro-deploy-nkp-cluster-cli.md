@@ -148,3 +148,7 @@ NKP ใช้ open-source project ที่เรียกว่า Cluster API 
 ![TUI-based method](images/tui-based.5759fd86.png)
 
 เราไม่ได้ใช้วิธีที่เรียบง่ายนี้เนื่องจากในสภาพแวดล้อมที่ใช้งานหนักอย่าง Nutanix HPOC ซึ่งมีการส่งคำขอไปยัง Docker Hub นับร้อยครั้งต่อนาที คุณจำเป็นต้องใช้ internal container registry mirror เพื่อแก้ปัญหา Docker Hub rate limits ในการ pull container images ซึ่งการระบุ registry mirror นั้นสามารถทำได้ผ่านวิธี argument-based installation เท่านั้น
+
+---
+
+[← Back: Create NKP Cluster](nkp-intro-deploy-nkp-cluster.md) | [Home](nkp-bootcamp.md) | [Next: Takeaways →](nkp-intro-takeaways.md)

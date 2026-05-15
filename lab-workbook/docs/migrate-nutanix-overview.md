@@ -45,3 +45,8 @@ Additional Migration Paths
     -   วิธีการใช้ X-Play สำหรับ no-code automation
     -   การตรวจหา inefficient VMs
 -   ท้ายที่สุด เข้าใจว่ามี resources และ tools ใดบ้างที่สามารถนำมาใช้ในการวางแผนและดำเนินการ migration ให้สำเร็จ
+
+
+---
+
+[Home](migrate-nutanix-overview.md) | [Next: Overview →](migrate-environment-overview.md)

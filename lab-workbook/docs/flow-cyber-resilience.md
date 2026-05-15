@@ -11,3 +11,7 @@
 👀 [Guided walkthrough ของ Cyber Resilience.](https://nutanix.storylane.io/share/pbwogpuaodeg) 👀
 
 [Interactive Demo](https://nutanix.storylane.io/share/pbwogpuaodeg)
+
+---
+
+[← Back: Verify the Policy](flow-app-verify.md) | [Home](flow-overview.md)

@@ -60,3 +60,8 @@
 Pods ที่กำลังรันอยู่ภายใน Kubernetes นั้นจะรันอยู่บนเครือข่ายส่วนตัว (private network) ที่ถูกแยกออกมา โดยค่าเริ่มต้น (By default) พวกมันจะสามารถมองเห็นได้จาก pods และ services อื่นๆ ภายใน Kubernetes cluster เดียวกันเท่านั้น แต่จะไม่สามารถมองเห็นได้จากภายนอกเครือข่ายนั้น
 
 คำสั่ง `kubectl proxy` สามารถสร้าง proxy ที่จะ forward การสื่อสารเข้าไปยังเครือข่ายส่วนตัวทั่วทั้งคลัสเตอร์ได้ เราจะไม่ใช้ตัวเลือกนี้เนื่องจากมีประโยชน์เฉพาะในระหว่างการพัฒนา (development) เท่านั้น
+
+
+---
+
+[← Back: Accessing the shared NKP environment](nkp-fundamentals-deploy-access.md) | [Home](nkp-bootcamp.md) | [Next: Using a Service to Expose Your App →](nkp-fundamentals-deploy-expose.md)

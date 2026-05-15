@@ -62,3 +62,7 @@
     mindthegap: v1.24.0
     nkp: v2.17.0
     ```
+
+---
+
+[← Back: Deploy NKP Overview](nkp-intro-deploy-nkp.md) | [Home](nkp-bootcamp.md) | [Next: Create NKP Cluster →](nkp-intro-deploy-nkp-cluster.md)

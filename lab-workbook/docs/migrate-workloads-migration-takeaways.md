@@ -12,3 +12,8 @@
 
 -   [Move User Guide](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Move-v5_5:Nutanix-Move-v5_5)
 -   [Nutanix Files User Guide](https://portal.nutanix.com/page/documents/details?targetId=Files-v5_1:Files-v5_1)
+
+
+---
+
+[← Back: Migrate Share](migrate-workloads-move-share-migrate-share.md) | [Home](migrate-nutanix-overview.md) | [Next: Day 2 Overview →](migrate-day2-overview.md)

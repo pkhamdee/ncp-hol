@@ -73,3 +73,8 @@
 ## Takeaways
 
 Flow Network Security Next-Gen ใช้ categories และ policies เพื่อทำ restrict traffic. ตัว Policy Type ที่มี priority สูงสุดคือ Quarantine. ตัว traffic ใดๆ ที่ถูก blocked สามารถถูกมองเห็นได้แบบ visually ใน policy
+
+
+---
+
+[← Back: The Application](flow-env-application.md) | [Home](flow-overview.md) | [Next: Isolation Policies →](flow-basic-isolation.md)

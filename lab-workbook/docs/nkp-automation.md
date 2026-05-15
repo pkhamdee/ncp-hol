@@ -18,3 +18,8 @@
 3.  **Recap and next steps**
     
     -   เมื่อคุณได้เรียนรู้วิธีการทำ application deployment แบบอัตโนมัติในสเกลระดับหลาย clusters แล้ว ก็สามารถขยับไปยังส่วนสรุป (conclusion) ได้เลย!
+
+
+---
+
+[← Back: Takeaways](nkp-observ-takeaways.md) | [Home](nkp-bootcamp.md) | [Next: Set up GitOps Deployment →](nkp-automation-gitops.md)

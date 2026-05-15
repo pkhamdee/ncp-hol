@@ -24,3 +24,8 @@
 -   [Nutanix Data Services for Kubernetes (NDK) Test Drive](https://nutanix.storylane.io/share/jj0h1itrebn1?utm_source=nkp-bootcamp&scale=true)
     
 -   [Cloud Native Services on the Nutanix Cloud Bible](https://www.nutanixbible.com/18-book-of-cloud-native-services.html)
+
+
+---
+
+[← Back: Automate Multicluster App Deployments](nkp-automation-multicluster.md) | [Home](nkp-bootcamp.md) | [Next: Business Continuity and DR with NDK →](nkp-option-ndk.md)

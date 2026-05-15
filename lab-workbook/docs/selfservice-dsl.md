@@ -421,3 +421,8 @@ NCM Self-Service DSL หมายถึง Domain-Specific Language (DSL) ที
 
 -   Self Service DSL ช่วยขยายความยืดหยุ่น (flexibility) โดยการผสมผสานเข้ากับเครื่องมือ Linux ที่มีอยู่ในตัว (built-in).
 -   ตอนนี้คุณได้แก้ไข (edit) Blueprint, อัปโหลดไปยัง Self Service, และเปิดตัว (launch) application - ทั้งหมดทำผ่าน command line.
+
+
+---
+
+[← Back: Self Service IaaS Windows](selfservice-windows.md) | [Home](selfservice-gettingstart.md) | [Next: Glossary →](selfservice-appendix.md)

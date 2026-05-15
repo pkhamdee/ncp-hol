@@ -39,3 +39,8 @@
 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
 
 ขอแสดงความยินดีด้วย!! ตอนนี้คุณได้ย้าย file shares ของคุณไปยัง Nutanix และรวบรวม infrastructure ของคุณเข้าสู่ platform เดียวเป็นที่เรียบร้อยแล้ว
+
+
+---
+
+[← Back: Create Migration Plan](migrate-workloads-move-share-create-plan.md) | [Home](migrate-nutanix-overview.md) | [Next: Migration Takeaways →](migrate-workloads-migration-takeaways.md)
